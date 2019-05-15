@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4095F4122898647007B3DA9 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4095F4022898647007B3DA9 /* SignUpVC.swift */; };
+		F436D58E228BA5F600D0D6F1 /* HomeProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436D58D228BA5F600D0D6F1 /* HomeProjectVC.swift */; };
+		F436D591228BA7B400D0D6F1 /* ProjectTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436D590228BA7B400D0D6F1 /* ProjectTC.swift */; };
 		F4FD2D5522882F5000D9F15B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD2D5422882F5000D9F15B /* AppDelegate.swift */; };
 		F4FD2D5722882F5000D9F15B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD2D5622882F5000D9F15B /* ViewController.swift */; };
 		F4FD2D5A22882F5000D9F15B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4FD2D5822882F5000D9F15B /* Main.storyboard */; };
@@ -15,6 +18,12 @@
 		F4FD2D6222882F5200D9F15B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4FD2D6022882F5200D9F15B /* LaunchScreen.storyboard */; };
 		F4FD2D6D22882F5200D9F15B /* OnTimeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD2D6C22882F5200D9F15B /* OnTimeAppTests.swift */; };
 		F4FD2D7822882F5200D9F15B /* OnTimeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD2D7722882F5200D9F15B /* OnTimeAppUITests.swift */; };
+		F4FD2D8B2288321800D9F15B /* AWSegmentAddMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD2D882288321700D9F15B /* AWSegmentAddMatch.swift */; };
+		F4FD2D8C2288321800D9F15B /* AMCircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD2D892288321700D9F15B /* AMCircleImageView.swift */; };
+		F4FD2D8F2288336900D9F15B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4FD2D8E2288336900D9F15B /* Profile.storyboard */; };
+		F4FD2D9122883EA100D9F15B /* VerificationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD2D9022883EA100D9F15B /* VerificationCodeVC.swift */; };
+		F4FD2D932288593500D9F15B /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD2D922288593500D9F15B /* LoginVC.swift */; };
+		F4FD2D95228864E200D9F15B /* ForgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD2D94228864E200D9F15B /* ForgetPasswordVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F4095F4022898647007B3DA9 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		F436D58D228BA5F600D0D6F1 /* HomeProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProjectVC.swift; sourceTree = "<group>"; };
+		F436D590228BA7B400D0D6F1 /* ProjectTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTC.swift; sourceTree = "<group>"; };
 		F4FD2D5122882F5000D9F15B /* OnTimeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTimeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4FD2D5422882F5000D9F15B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4FD2D5622882F5000D9F15B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +61,12 @@
 		F4FD2D7322882F5200D9F15B /* OnTimeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnTimeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4FD2D7722882F5200D9F15B /* OnTimeAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTimeAppUITests.swift; sourceTree = "<group>"; };
 		F4FD2D7922882F5200D9F15B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4FD2D882288321700D9F15B /* AWSegmentAddMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSegmentAddMatch.swift; sourceTree = "<group>"; };
+		F4FD2D892288321700D9F15B /* AMCircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMCircleImageView.swift; sourceTree = "<group>"; };
+		F4FD2D8E2288336900D9F15B /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		F4FD2D9022883EA100D9F15B /* VerificationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeVC.swift; sourceTree = "<group>"; };
+		F4FD2D922288593500D9F15B /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		F4FD2D94228864E200D9F15B /* ForgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F436D58F228BA78000D0D6F1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F436D590228BA7B400D0D6F1 /* ProjectTC.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		F4FD2D4822882F5000D9F15B = {
 			isa = PBXGroup;
 			children = (
@@ -99,10 +125,11 @@
 		F4FD2D5322882F5000D9F15B /* OnTimeApp */ = {
 			isa = PBXGroup;
 			children = (
+				F436D58F228BA78000D0D6F1 /* Cells */,
+				F4FD2D8D2288328800D9F15B /* Controlers */,
+				F4FD2D862288321700D9F15B /* Helper */,
+				F4FD2D8522882F8B00D9F15B /* StoryBords */,
 				F4FD2D5422882F5000D9F15B /* AppDelegate.swift */,
-				F4FD2D5622882F5000D9F15B /* ViewController.swift */,
-				F4FD2D5822882F5000D9F15B /* Main.storyboard */,
-				F4FD2D5E22882F5100D9F15B /* Assets.xcassets */,
 				F4FD2D6022882F5200D9F15B /* LaunchScreen.storyboard */,
 				F4FD2D6322882F5200D9F15B /* Info.plist */,
 				F4FD2D5B22882F5000D9F15B /* OnTimeApp.xcdatamodeld */,
@@ -126,6 +153,38 @@
 				F4FD2D7922882F5200D9F15B /* Info.plist */,
 			);
 			path = OnTimeAppUITests;
+			sourceTree = "<group>";
+		};
+		F4FD2D8522882F8B00D9F15B /* StoryBords */ = {
+			isa = PBXGroup;
+			children = (
+				F4FD2D5822882F5000D9F15B /* Main.storyboard */,
+				F4FD2D8E2288336900D9F15B /* Profile.storyboard */,
+			);
+			path = StoryBords;
+			sourceTree = "<group>";
+		};
+		F4FD2D862288321700D9F15B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				F4FD2D5E22882F5100D9F15B /* Assets.xcassets */,
+				F4FD2D882288321700D9F15B /* AWSegmentAddMatch.swift */,
+				F4FD2D892288321700D9F15B /* AMCircleImageView.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		F4FD2D8D2288328800D9F15B /* Controlers */ = {
+			isa = PBXGroup;
+			children = (
+				F4FD2D5622882F5000D9F15B /* ViewController.swift */,
+				F4FD2D9022883EA100D9F15B /* VerificationCodeVC.swift */,
+				F4FD2D922288593500D9F15B /* LoginVC.swift */,
+				F4FD2D94228864E200D9F15B /* ForgetPasswordVC.swift */,
+				F4095F4022898647007B3DA9 /* SignUpVC.swift */,
+				F436D58D228BA5F600D0D6F1 /* HomeProjectVC.swift */,
+			);
+			path = Controlers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +293,7 @@
 			files = (
 				F4FD2D6222882F5200D9F15B /* LaunchScreen.storyboard in Resources */,
 				F4FD2D5F22882F5100D9F15B /* Assets.xcassets in Resources */,
+				F4FD2D8F2288336900D9F15B /* Profile.storyboard in Resources */,
 				F4FD2D5A22882F5000D9F15B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,8 +320,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4FD2D5D22882F5000D9F15B /* OnTimeApp.xcdatamodeld in Sources */,
+				F436D58E228BA5F600D0D6F1 /* HomeProjectVC.swift in Sources */,
+				F4095F4122898647007B3DA9 /* SignUpVC.swift in Sources */,
 				F4FD2D5722882F5000D9F15B /* ViewController.swift in Sources */,
+				F436D591228BA7B400D0D6F1 /* ProjectTC.swift in Sources */,
+				F4FD2D932288593500D9F15B /* LoginVC.swift in Sources */,
+				F4FD2D8C2288321800D9F15B /* AMCircleImageView.swift in Sources */,
+				F4FD2D95228864E200D9F15B /* ForgetPasswordVC.swift in Sources */,
 				F4FD2D5522882F5000D9F15B /* AppDelegate.swift in Sources */,
+				F4FD2D9122883EA100D9F15B /* VerificationCodeVC.swift in Sources */,
+				F4FD2D8B2288321800D9F15B /* AWSegmentAddMatch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
