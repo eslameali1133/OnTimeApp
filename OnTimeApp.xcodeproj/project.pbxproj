@@ -8,8 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		F4095F4122898647007B3DA9 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4095F4022898647007B3DA9 /* SignUpVC.swift */; };
+		F418A049229172570021269A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F418A047229172570021269A /* Profile.storyboard */; };
 		F436D58E228BA5F600D0D6F1 /* HomeProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436D58D228BA5F600D0D6F1 /* HomeProjectVC.swift */; };
 		F436D591228BA7B400D0D6F1 /* ProjectTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436D590228BA7B400D0D6F1 /* ProjectTC.swift */; };
+		F4ADB61A228DBDED00E38CB5 /* AloqoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADB619228DBDED00E38CB5 /* AloqoodVC.swift */; };
+		F4ADB61C228DBE1300E38CB5 /* AloqoodTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADB61B228DBE1300E38CB5 /* AloqoodTC.swift */; };
+		F4ADB61E228DFB7200E38CB5 /* AttachmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADB61D228DFB7200E38CB5 /* AttachmentVC.swift */; };
+		F4ADB620228DFDA100E38CB5 /* AttachmentTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADB61F228DFDA100E38CB5 /* AttachmentTC.swift */; };
+		F4ADB622228E01BD00E38CB5 /* InvoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADB621228E01BD00E38CB5 /* InvoiceVC.swift */; };
 		F4FD2D5522882F5000D9F15B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD2D5422882F5000D9F15B /* AppDelegate.swift */; };
 		F4FD2D5722882F5000D9F15B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD2D5622882F5000D9F15B /* ViewController.swift */; };
 		F4FD2D5A22882F5000D9F15B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4FD2D5822882F5000D9F15B /* Main.storyboard */; };
@@ -20,7 +26,6 @@
 		F4FD2D7822882F5200D9F15B /* OnTimeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD2D7722882F5200D9F15B /* OnTimeAppUITests.swift */; };
 		F4FD2D8B2288321800D9F15B /* AWSegmentAddMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD2D882288321700D9F15B /* AWSegmentAddMatch.swift */; };
 		F4FD2D8C2288321800D9F15B /* AMCircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD2D892288321700D9F15B /* AMCircleImageView.swift */; };
-		F4FD2D8F2288336900D9F15B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4FD2D8E2288336900D9F15B /* Profile.storyboard */; };
 		F4FD2D9122883EA100D9F15B /* VerificationCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD2D9022883EA100D9F15B /* VerificationCodeVC.swift */; };
 		F4FD2D932288593500D9F15B /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD2D922288593500D9F15B /* LoginVC.swift */; };
 		F4FD2D95228864E200D9F15B /* ForgetPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD2D94228864E200D9F15B /* ForgetPasswordVC.swift */; };
@@ -45,8 +50,14 @@
 
 /* Begin PBXFileReference section */
 		F4095F4022898647007B3DA9 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		F418A048229172570021269A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		F436D58D228BA5F600D0D6F1 /* HomeProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProjectVC.swift; sourceTree = "<group>"; };
 		F436D590228BA7B400D0D6F1 /* ProjectTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTC.swift; sourceTree = "<group>"; };
+		F4ADB619228DBDED00E38CB5 /* AloqoodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AloqoodVC.swift; sourceTree = "<group>"; };
+		F4ADB61B228DBE1300E38CB5 /* AloqoodTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AloqoodTC.swift; sourceTree = "<group>"; };
+		F4ADB61D228DFB7200E38CB5 /* AttachmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentVC.swift; sourceTree = "<group>"; };
+		F4ADB61F228DFDA100E38CB5 /* AttachmentTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentTC.swift; sourceTree = "<group>"; };
+		F4ADB621228E01BD00E38CB5 /* InvoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceVC.swift; sourceTree = "<group>"; };
 		F4FD2D5122882F5000D9F15B /* OnTimeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTimeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4FD2D5422882F5000D9F15B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4FD2D5622882F5000D9F15B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,7 +74,6 @@
 		F4FD2D7922882F5200D9F15B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4FD2D882288321700D9F15B /* AWSegmentAddMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSegmentAddMatch.swift; sourceTree = "<group>"; };
 		F4FD2D892288321700D9F15B /* AMCircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AMCircleImageView.swift; sourceTree = "<group>"; };
-		F4FD2D8E2288336900D9F15B /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		F4FD2D9022883EA100D9F15B /* VerificationCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeVC.swift; sourceTree = "<group>"; };
 		F4FD2D922288593500D9F15B /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		F4FD2D94228864E200D9F15B /* ForgetPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordVC.swift; sourceTree = "<group>"; };
@@ -98,6 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				F436D590228BA7B400D0D6F1 /* ProjectTC.swift */,
+				F4ADB61B228DBE1300E38CB5 /* AloqoodTC.swift */,
+				F4ADB61F228DFDA100E38CB5 /* AttachmentTC.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -158,8 +170,8 @@
 		F4FD2D8522882F8B00D9F15B /* StoryBords */ = {
 			isa = PBXGroup;
 			children = (
+				F418A047229172570021269A /* Profile.storyboard */,
 				F4FD2D5822882F5000D9F15B /* Main.storyboard */,
-				F4FD2D8E2288336900D9F15B /* Profile.storyboard */,
 			);
 			path = StoryBords;
 			sourceTree = "<group>";
@@ -183,6 +195,9 @@
 				F4FD2D94228864E200D9F15B /* ForgetPasswordVC.swift */,
 				F4095F4022898647007B3DA9 /* SignUpVC.swift */,
 				F436D58D228BA5F600D0D6F1 /* HomeProjectVC.swift */,
+				F4ADB619228DBDED00E38CB5 /* AloqoodVC.swift */,
+				F4ADB61D228DFB7200E38CB5 /* AttachmentVC.swift */,
+				F4ADB621228E01BD00E38CB5 /* InvoiceVC.swift */,
 			);
 			path = Controlers;
 			sourceTree = "<group>";
@@ -293,7 +308,7 @@
 			files = (
 				F4FD2D6222882F5200D9F15B /* LaunchScreen.storyboard in Resources */,
 				F4FD2D5F22882F5100D9F15B /* Assets.xcassets in Resources */,
-				F4FD2D8F2288336900D9F15B /* Profile.storyboard in Resources */,
+				F418A049229172570021269A /* Profile.storyboard in Resources */,
 				F4FD2D5A22882F5000D9F15B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,17 +334,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4ADB622228E01BD00E38CB5 /* InvoiceVC.swift in Sources */,
 				F4FD2D5D22882F5000D9F15B /* OnTimeApp.xcdatamodeld in Sources */,
 				F436D58E228BA5F600D0D6F1 /* HomeProjectVC.swift in Sources */,
 				F4095F4122898647007B3DA9 /* SignUpVC.swift in Sources */,
 				F4FD2D5722882F5000D9F15B /* ViewController.swift in Sources */,
 				F436D591228BA7B400D0D6F1 /* ProjectTC.swift in Sources */,
 				F4FD2D932288593500D9F15B /* LoginVC.swift in Sources */,
+				F4ADB61C228DBE1300E38CB5 /* AloqoodTC.swift in Sources */,
+				F4ADB61E228DFB7200E38CB5 /* AttachmentVC.swift in Sources */,
 				F4FD2D8C2288321800D9F15B /* AMCircleImageView.swift in Sources */,
 				F4FD2D95228864E200D9F15B /* ForgetPasswordVC.swift in Sources */,
 				F4FD2D5522882F5000D9F15B /* AppDelegate.swift in Sources */,
 				F4FD2D9122883EA100D9F15B /* VerificationCodeVC.swift in Sources */,
+				F4ADB61A228DBDED00E38CB5 /* AloqoodVC.swift in Sources */,
 				F4FD2D8B2288321800D9F15B /* AWSegmentAddMatch.swift in Sources */,
+				F4ADB620228DFDA100E38CB5 /* AttachmentTC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +385,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		F418A047229172570021269A /* Profile.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F418A048229172570021269A /* Base */,
+			);
+			name = Profile.storyboard;
+			sourceTree = "<group>";
+		};
 		F4FD2D5822882F5000D9F15B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
