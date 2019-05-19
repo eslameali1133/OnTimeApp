@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F4095F4122898647007B3DA9 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4095F4022898647007B3DA9 /* SignUpVC.swift */; };
 		F418A049229172570021269A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F418A047229172570021269A /* Profile.storyboard */; };
+		F418A04B229174A20021269A /* Introduction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F418A04A229174A20021269A /* Introduction.storyboard */; };
 		F436D58E228BA5F600D0D6F1 /* HomeProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436D58D228BA5F600D0D6F1 /* HomeProjectVC.swift */; };
 		F436D591228BA7B400D0D6F1 /* ProjectTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436D590228BA7B400D0D6F1 /* ProjectTC.swift */; };
 		F4ADB61A228DBDED00E38CB5 /* AloqoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADB619228DBDED00E38CB5 /* AloqoodVC.swift */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		F4095F4022898647007B3DA9 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		F418A048229172570021269A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
+		F418A04A229174A20021269A /* Introduction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Introduction.storyboard; sourceTree = "<group>"; };
 		F436D58D228BA5F600D0D6F1 /* HomeProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProjectVC.swift; sourceTree = "<group>"; };
 		F436D590228BA7B400D0D6F1 /* ProjectTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTC.swift; sourceTree = "<group>"; };
 		F4ADB619228DBDED00E38CB5 /* AloqoodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AloqoodVC.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			children = (
 				F418A047229172570021269A /* Profile.storyboard */,
 				F4FD2D5822882F5000D9F15B /* Main.storyboard */,
+				F418A04A229174A20021269A /* Introduction.storyboard */,
 			);
 			path = StoryBords;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F418A04B229174A20021269A /* Introduction.storyboard in Resources */,
 				F4FD2D6222882F5200D9F15B /* LaunchScreen.storyboard in Resources */,
 				F4FD2D5F22882F5100D9F15B /* Assets.xcassets in Resources */,
 				F418A049229172570021269A /* Profile.storyboard in Resources */,
