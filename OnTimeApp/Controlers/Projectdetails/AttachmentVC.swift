@@ -19,7 +19,9 @@ class AttachmentVC: UIViewController , UITableViewDataSource , UITableViewDelega
         // Do any additional setup after loading the view.
     }
     
-    
+    @IBAction func DismissView(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }

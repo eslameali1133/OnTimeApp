@@ -22,8 +22,35 @@
 		F4ADB622228E01BD00E38CB5 /* InvoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADB621228E01BD00E38CB5 /* InvoiceVC.swift */; };
 		F4B705782296AB6C00A2EF9B /* moreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B705772296AB6C00A2EF9B /* moreVC.swift */; };
 		F4B7057A2296AC9900A2EF9B /* moreTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B705792296AC9900A2EF9B /* moreTC.swift */; };
+		F4F8CBD9229D2DEF00C57BD7 /* TermsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CBD8229D2DEF00C57BD7 /* TermsVC.swift */; };
+		F4F8CBDB229D592000C57BD7 /* StartNewProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CBDA229D592000C57BD7 /* StartNewProjectVC.swift */; };
+		F4F8CBDD229D599000C57BD7 /* ProjectTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CBDC229D599000C57BD7 /* ProjectTypeVC.swift */; };
+		F4F8CBDF229D59F900C57BD7 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CBDE229D59F900C57BD7 /* NotificationVC.swift */; };
+		F4F8CBE1229D5ACC00C57BD7 /* NewProjectRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CBE0229D5ACC00C57BD7 /* NewProjectRequest.swift */; };
+		F4F8CBE3229D5B1500C57BD7 /* VerifyProjectRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CBE2229D5B1500C57BD7 /* VerifyProjectRequest.swift */; };
+		F4F8CBE5229D5B9A00C57BD7 /* ProfilePointsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CBE4229D5B9A00C57BD7 /* ProfilePointsVC.swift */; };
+		F4F8CBE7229D5BBC00C57BD7 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CBE6229D5BBC00C57BD7 /* Profile.swift */; };
+		F4F8CBE9229D5C3C00C57BD7 /* Introduction1VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CBE8229D5C3C00C57BD7 /* Introduction1VC.swift */; };
+		F4F8CBEB229D5C6100C57BD7 /* Introduction2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CBEA229D5C6100C57BD7 /* Introduction2VC.swift */; };
+		F4F8CBED229D5C9500C57BD7 /* Introduction3VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CBEC229D5C9500C57BD7 /* Introduction3VC.swift */; };
+		F4F8CBEF229D5D2800C57BD7 /* RequestDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CBEE229D5D2800C57BD7 /* RequestDetailsVC.swift */; };
+		F4F8CBF1229D5D8E00C57BD7 /* ProjectMessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CBF0229D5D8E00C57BD7 /* ProjectMessagesVC.swift */; };
+		F4F8CBF3229D5F0D00C57BD7 /* OnTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CBF2229D5F0D00C57BD7 /* OnTimeVC.swift */; };
+		F4F8CBF5229D5F3700C57BD7 /* HelpMessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CBF4229D5F3700C57BD7 /* HelpMessagesVC.swift */; };
+		F4F8CBF7229D5F6E00C57BD7 /* HelpTopicsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CBF6229D5F6E00C57BD7 /* HelpTopicsVC.swift */; };
+		F4F8CBF9229D5F9800C57BD7 /* HelpMethodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CBF8229D5F9800C57BD7 /* HelpMethodVC.swift */; };
+		F4F8CBFB229D5FC200C57BD7 /* CongratulationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CBFA229D5FC200C57BD7 /* CongratulationVC.swift */; };
+		F4F8CBFD229D5FE700C57BD7 /* ImportantNoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CBFC229D5FE700C57BD7 /* ImportantNoteVC.swift */; };
+		F4F8CBFF229D603F00C57BD7 /* PaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CBFE229D603F00C57BD7 /* PaymentVC.swift */; };
+		F4F8CC01229D606600C57BD7 /* PaymentMethodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CC00229D606600C57BD7 /* PaymentMethodVC.swift */; };
+		F4F8CC03229D60B300C57BD7 /* VisaCardsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CC02229D60B300C57BD7 /* VisaCardsVC.swift */; };
+		F4F8CC06229D611000C57BD7 /* VisaCardDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CC05229D611000C57BD7 /* VisaCardDetailsVC.swift */; };
+		F4F8CC08229D615200C57BD7 /* PaybalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CC07229D615200C57BD7 /* PaybalVC.swift */; };
+		F4F8CC0A229D618C00C57BD7 /* BankingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CC09229D618C00C57BD7 /* BankingVC.swift */; };
+		F4F8CC0C229D630D00C57BD7 /* AaqdVerificationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CC0B229D630D00C57BD7 /* AaqdVerificationCode.swift */; };
+		F4F8CC0E229D63AD00C57BD7 /* AaqdInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CC0D229D63AD00C57BD7 /* AaqdInfoVC.swift */; };
+		F4F8CC10229D63D500C57BD7 /* MakeAaqdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F8CC0F229D63D500C57BD7 /* MakeAaqdVC.swift */; };
 		F4FD2D5522882F5000D9F15B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD2D5422882F5000D9F15B /* AppDelegate.swift */; };
-		F4FD2D5722882F5000D9F15B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FD2D5622882F5000D9F15B /* ViewController.swift */; };
 		F4FD2D5A22882F5000D9F15B /* Projects.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4FD2D5822882F5000D9F15B /* Projects.storyboard */; };
 		F4FD2D5D22882F5000D9F15B /* OnTimeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4FD2D5B22882F5000D9F15B /* OnTimeApp.xcdatamodeld */; };
 		F4FD2D5F22882F5100D9F15B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4FD2D5E22882F5100D9F15B /* Assets.xcassets */; };
@@ -70,9 +97,36 @@
 		F4ADB621228E01BD00E38CB5 /* InvoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceVC.swift; sourceTree = "<group>"; };
 		F4B705772296AB6C00A2EF9B /* moreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moreVC.swift; sourceTree = "<group>"; };
 		F4B705792296AC9900A2EF9B /* moreTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moreTC.swift; sourceTree = "<group>"; };
+		F4F8CBD8229D2DEF00C57BD7 /* TermsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsVC.swift; sourceTree = "<group>"; };
+		F4F8CBDA229D592000C57BD7 /* StartNewProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartNewProjectVC.swift; sourceTree = "<group>"; };
+		F4F8CBDC229D599000C57BD7 /* ProjectTypeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTypeVC.swift; sourceTree = "<group>"; };
+		F4F8CBDE229D59F900C57BD7 /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
+		F4F8CBE0229D5ACC00C57BD7 /* NewProjectRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectRequest.swift; sourceTree = "<group>"; };
+		F4F8CBE2229D5B1500C57BD7 /* VerifyProjectRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyProjectRequest.swift; sourceTree = "<group>"; };
+		F4F8CBE4229D5B9A00C57BD7 /* ProfilePointsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePointsVC.swift; sourceTree = "<group>"; };
+		F4F8CBE6229D5BBC00C57BD7 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		F4F8CBE8229D5C3C00C57BD7 /* Introduction1VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Introduction1VC.swift; sourceTree = "<group>"; };
+		F4F8CBEA229D5C6100C57BD7 /* Introduction2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Introduction2VC.swift; sourceTree = "<group>"; };
+		F4F8CBEC229D5C9500C57BD7 /* Introduction3VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Introduction3VC.swift; sourceTree = "<group>"; };
+		F4F8CBEE229D5D2800C57BD7 /* RequestDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDetailsVC.swift; sourceTree = "<group>"; };
+		F4F8CBF0229D5D8E00C57BD7 /* ProjectMessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectMessagesVC.swift; sourceTree = "<group>"; };
+		F4F8CBF2229D5F0D00C57BD7 /* OnTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTimeVC.swift; sourceTree = "<group>"; };
+		F4F8CBF4229D5F3700C57BD7 /* HelpMessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpMessagesVC.swift; sourceTree = "<group>"; };
+		F4F8CBF6229D5F6E00C57BD7 /* HelpTopicsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpTopicsVC.swift; sourceTree = "<group>"; };
+		F4F8CBF8229D5F9800C57BD7 /* HelpMethodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpMethodVC.swift; sourceTree = "<group>"; };
+		F4F8CBFA229D5FC200C57BD7 /* CongratulationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationVC.swift; sourceTree = "<group>"; };
+		F4F8CBFC229D5FE700C57BD7 /* ImportantNoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantNoteVC.swift; sourceTree = "<group>"; };
+		F4F8CBFE229D603F00C57BD7 /* PaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentVC.swift; sourceTree = "<group>"; };
+		F4F8CC00229D606600C57BD7 /* PaymentMethodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodVC.swift; sourceTree = "<group>"; };
+		F4F8CC02229D60B300C57BD7 /* VisaCardsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaCardsVC.swift; sourceTree = "<group>"; };
+		F4F8CC05229D611000C57BD7 /* VisaCardDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisaCardDetailsVC.swift; sourceTree = "<group>"; };
+		F4F8CC07229D615200C57BD7 /* PaybalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaybalVC.swift; sourceTree = "<group>"; };
+		F4F8CC09229D618C00C57BD7 /* BankingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankingVC.swift; sourceTree = "<group>"; };
+		F4F8CC0B229D630D00C57BD7 /* AaqdVerificationCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AaqdVerificationCode.swift; sourceTree = "<group>"; };
+		F4F8CC0D229D63AD00C57BD7 /* AaqdInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AaqdInfoVC.swift; sourceTree = "<group>"; };
+		F4F8CC0F229D63D500C57BD7 /* MakeAaqdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeAaqdVC.swift; sourceTree = "<group>"; };
 		F4FD2D5122882F5000D9F15B /* OnTimeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTimeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4FD2D5422882F5000D9F15B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F4FD2D5622882F5000D9F15B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F4FD2D5922882F5000D9F15B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Projects.storyboard; sourceTree = "<group>"; };
 		F4FD2D5C22882F5000D9F15B /* OnTimeApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OnTimeApp.xcdatamodel; sourceTree = "<group>"; };
 		F4FD2D5E22882F5100D9F15B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -130,6 +184,12 @@
 		F4799718229C309C00F4CA7A /* Help */ = {
 			isa = PBXGroup;
 			children = (
+				F4F8CBF2229D5F0D00C57BD7 /* OnTimeVC.swift */,
+				F4F8CBF4229D5F3700C57BD7 /* HelpMessagesVC.swift */,
+				F4F8CBF6229D5F6E00C57BD7 /* HelpTopicsVC.swift */,
+				F4F8CBF8229D5F9800C57BD7 /* HelpMethodVC.swift */,
+				F4F8CBFA229D5FC200C57BD7 /* CongratulationVC.swift */,
+				F4F8CBFC229D5FE700C57BD7 /* ImportantNoteVC.swift */,
 			);
 			path = Help;
 			sourceTree = "<group>";
@@ -137,6 +197,12 @@
 		F4799719229C30A000F4CA7A /* Paid */ = {
 			isa = PBXGroup;
 			children = (
+				F4F8CBFE229D603F00C57BD7 /* PaymentVC.swift */,
+				F4F8CC00229D606600C57BD7 /* PaymentMethodVC.swift */,
+				F4F8CC02229D60B300C57BD7 /* VisaCardsVC.swift */,
+				F4F8CC05229D611000C57BD7 /* VisaCardDetailsVC.swift */,
+				F4F8CC07229D615200C57BD7 /* PaybalVC.swift */,
+				F4F8CC09229D618C00C57BD7 /* BankingVC.swift */,
 			);
 			path = Paid;
 			sourceTree = "<group>";
@@ -144,6 +210,14 @@
 		F479971A229C30A300F4CA7A /* Projectdetails */ = {
 			isa = PBXGroup;
 			children = (
+				F4ADB619228DBDED00E38CB5 /* AloqoodVC.swift */,
+				F4ADB61D228DFB7200E38CB5 /* AttachmentVC.swift */,
+				F4ADB621228E01BD00E38CB5 /* InvoiceVC.swift */,
+				F4F8CBEE229D5D2800C57BD7 /* RequestDetailsVC.swift */,
+				F4F8CBF0229D5D8E00C57BD7 /* ProjectMessagesVC.swift */,
+				F4F8CC0B229D630D00C57BD7 /* AaqdVerificationCode.swift */,
+				F4F8CC0D229D63AD00C57BD7 /* AaqdInfoVC.swift */,
+				F4F8CC0F229D63D500C57BD7 /* MakeAaqdVC.swift */,
 			);
 			path = Projectdetails;
 			sourceTree = "<group>";
@@ -151,6 +225,9 @@
 		F479971B229C30A700F4CA7A /* Introduction */ = {
 			isa = PBXGroup;
 			children = (
+				F4F8CBE8229D5C3C00C57BD7 /* Introduction1VC.swift */,
+				F4F8CBEA229D5C6100C57BD7 /* Introduction2VC.swift */,
+				F4F8CBEC229D5C9500C57BD7 /* Introduction3VC.swift */,
 			);
 			path = Introduction;
 			sourceTree = "<group>";
@@ -160,6 +237,13 @@
 			children = (
 				F436D58D228BA5F600D0D6F1 /* HomeProjectVC.swift */,
 				F4B705772296AB6C00A2EF9B /* moreVC.swift */,
+				F4F8CBDA229D592000C57BD7 /* StartNewProjectVC.swift */,
+				F4F8CBDC229D599000C57BD7 /* ProjectTypeVC.swift */,
+				F4F8CBDE229D59F900C57BD7 /* NotificationVC.swift */,
+				F4F8CBE0229D5ACC00C57BD7 /* NewProjectRequest.swift */,
+				F4F8CBE2229D5B1500C57BD7 /* VerifyProjectRequest.swift */,
+				F4F8CBE4229D5B9A00C57BD7 /* ProfilePointsVC.swift */,
+				F4F8CBE6229D5BBC00C57BD7 /* Profile.swift */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -171,6 +255,7 @@
 				F4FD2D922288593500D9F15B /* LoginVC.swift */,
 				F4095F4022898647007B3DA9 /* SignUpVC.swift */,
 				F4FD2D94228864E200D9F15B /* ForgetPasswordVC.swift */,
+				F4F8CBD8229D2DEF00C57BD7 /* TermsVC.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -260,10 +345,6 @@
 				F479971A229C30A300F4CA7A /* Projectdetails */,
 				F4799719229C30A000F4CA7A /* Paid */,
 				F4799718229C309C00F4CA7A /* Help */,
-				F4FD2D5622882F5000D9F15B /* ViewController.swift */,
-				F4ADB619228DBDED00E38CB5 /* AloqoodVC.swift */,
-				F4ADB61D228DFB7200E38CB5 /* AttachmentVC.swift */,
-				F4ADB621228E01BD00E38CB5 /* InvoiceVC.swift */,
 			);
 			path = Controlers;
 			sourceTree = "<group>";
@@ -405,23 +486,50 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4ADB622228E01BD00E38CB5 /* InvoiceVC.swift in Sources */,
+				F4F8CC08229D615200C57BD7 /* PaybalVC.swift in Sources */,
+				F4F8CC0A229D618C00C57BD7 /* BankingVC.swift in Sources */,
+				F4F8CBD9229D2DEF00C57BD7 /* TermsVC.swift in Sources */,
 				F4B705782296AB6C00A2EF9B /* moreVC.swift in Sources */,
+				F4F8CBEF229D5D2800C57BD7 /* RequestDetailsVC.swift in Sources */,
+				F4F8CBE7229D5BBC00C57BD7 /* Profile.swift in Sources */,
+				F4F8CC0E229D63AD00C57BD7 /* AaqdInfoVC.swift in Sources */,
+				F4F8CC03229D60B300C57BD7 /* VisaCardsVC.swift in Sources */,
+				F4F8CBFF229D603F00C57BD7 /* PaymentVC.swift in Sources */,
+				F4F8CBF7229D5F6E00C57BD7 /* HelpTopicsVC.swift in Sources */,
+				F4F8CC10229D63D500C57BD7 /* MakeAaqdVC.swift in Sources */,
 				F4FD2D5D22882F5000D9F15B /* OnTimeApp.xcdatamodeld in Sources */,
+				F4F8CBF5229D5F3700C57BD7 /* HelpMessagesVC.swift in Sources */,
+				F4F8CBFB229D5FC200C57BD7 /* CongratulationVC.swift in Sources */,
 				F436D58E228BA5F600D0D6F1 /* HomeProjectVC.swift in Sources */,
+				F4F8CC0C229D630D00C57BD7 /* AaqdVerificationCode.swift in Sources */,
 				F4095F4122898647007B3DA9 /* SignUpVC.swift in Sources */,
-				F4FD2D5722882F5000D9F15B /* ViewController.swift in Sources */,
+				F4F8CBDB229D592000C57BD7 /* StartNewProjectVC.swift in Sources */,
+				F4F8CBF9229D5F9800C57BD7 /* HelpMethodVC.swift in Sources */,
+				F4F8CBEB229D5C6100C57BD7 /* Introduction2VC.swift in Sources */,
 				F436D591228BA7B400D0D6F1 /* ProjectTC.swift in Sources */,
+				F4F8CBFD229D5FE700C57BD7 /* ImportantNoteVC.swift in Sources */,
 				F4FD2D932288593500D9F15B /* LoginVC.swift in Sources */,
+				F4F8CBE5229D5B9A00C57BD7 /* ProfilePointsVC.swift in Sources */,
+				F4F8CBF3229D5F0D00C57BD7 /* OnTimeVC.swift in Sources */,
+				F4F8CBED229D5C9500C57BD7 /* Introduction3VC.swift in Sources */,
+				F4F8CBE3229D5B1500C57BD7 /* VerifyProjectRequest.swift in Sources */,
 				F4ADB61C228DBE1300E38CB5 /* AloqoodTC.swift in Sources */,
 				F4ADB61E228DFB7200E38CB5 /* AttachmentVC.swift in Sources */,
+				F4F8CC01229D606600C57BD7 /* PaymentMethodVC.swift in Sources */,
 				F4FD2D8C2288321800D9F15B /* AMCircleImageView.swift in Sources */,
 				F4FD2D95228864E200D9F15B /* ForgetPasswordVC.swift in Sources */,
+				F4F8CC06229D611000C57BD7 /* VisaCardDetailsVC.swift in Sources */,
 				F4FD2D5522882F5000D9F15B /* AppDelegate.swift in Sources */,
+				F4F8CBF1229D5D8E00C57BD7 /* ProjectMessagesVC.swift in Sources */,
 				F4FD2D9122883EA100D9F15B /* VerificationCodeVC.swift in Sources */,
+				F4F8CBDD229D599000C57BD7 /* ProjectTypeVC.swift in Sources */,
 				F4ADB61A228DBDED00E38CB5 /* AloqoodVC.swift in Sources */,
 				F4FD2D8B2288321800D9F15B /* AWSegmentAddMatch.swift in Sources */,
 				F4ADB620228DFDA100E38CB5 /* AttachmentTC.swift in Sources */,
+				F4F8CBE1229D5ACC00C57BD7 /* NewProjectRequest.swift in Sources */,
 				F4B7057A2296AC9900A2EF9B /* moreTC.swift in Sources */,
+				F4F8CBDF229D59F900C57BD7 /* NotificationVC.swift in Sources */,
+				F4F8CBE9229D5C3C00C57BD7 /* Introduction1VC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

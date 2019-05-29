@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Introduction1VC-->
         <scene sceneID="H7Q-u7-gQD">
             <objects>
-                <viewController id="dxT-5f-dME" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Introduction1VC" id="dxT-5f-dME" customClass="Introduction1VC" customModule="OnTimeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zzo-GC-0ZB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="810"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -231,11 +231,10 @@
             </objects>
             <point key="canvasLocation" x="-1124" y="2684"/>
         </scene>
-        <!--View Controller-->
+        <!--Introduction2VC-->
         <scene sceneID="ya9-DG-UKV">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="npG-tW-bEX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="0vc-Dd-2Yp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Introduction2VC" id="0vc-Dd-2Yp" customClass="Introduction2VC" customModule="OnTimeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B9u-pd-HCQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="810"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -449,14 +448,14 @@
                     </view>
                     <size key="freeformSize" width="375" height="810"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="npG-tW-bEX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1124" y="1849"/>
         </scene>
-        <!--View Controller-->
+        <!--Introduction3VC-->
         <scene sceneID="0j1-yH-dU1">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fT3-Qh-iGL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="5Xi-6U-JgR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Introduction3VC" id="5Xi-6U-JgR" customClass="Introduction3VC" customModule="OnTimeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1g6-ZM-S3X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="810"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -670,6 +669,7 @@
                     </view>
                     <size key="freeformSize" width="375" height="810"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fT3-Qh-iGL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-135" y="1849"/>
         </scene>

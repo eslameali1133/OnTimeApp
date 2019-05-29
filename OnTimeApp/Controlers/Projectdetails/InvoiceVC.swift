@@ -1,5 +1,5 @@
 //
-//  AloqoodVC.swift
+//  InvoiceVC.swift
 //  OnTimeApp
 //
 //  Created by Husseinomda16 on 5/16/19.
@@ -8,18 +8,21 @@
 
 import UIKit
 
-class AloqoodVC: UIViewController , UITableViewDelegate , UITableViewDataSource {
+class InvoiceVC: UIViewController , UITableViewDataSource , UITableViewDelegate{
 
-    @IBOutlet weak var tblAqood: UITableView!
+    @IBOutlet weak var tblInvoice: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tblAqood.delegate = self
-        tblAqood.dataSource = self
+        tblInvoice.delegate = self
+        tblInvoice.dataSource = self
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func DismissView(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
@@ -32,6 +35,9 @@ class AloqoodVC: UIViewController , UITableViewDelegate , UITableViewDataSource 
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return 75
     }
+    
+    
+    
 }

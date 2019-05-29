@@ -354,7 +354,7 @@
         <!--Forget PasswordVC-->
         <scene sceneID="scb-Zi-cFm">
             <objects>
-                <viewController id="t1H-LJ-Nwt" customClass="ForgetPasswordVC" customModule="OnTimeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForgetPasswordVC" id="t1H-LJ-Nwt" customClass="ForgetPasswordVC" customModule="OnTimeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SI2-Vx-4Xb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -510,7 +510,7 @@
         <!--Sign UpVC-->
         <scene sceneID="2O3-me-Yfo">
             <objects>
-                <viewController id="pvu-EF-c3E" customClass="SignUpVC" customModule="OnTimeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpVC" id="pvu-EF-c3E" customClass="SignUpVC" customModule="OnTimeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yje-yB-GdM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="810"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -827,10 +827,10 @@
             </objects>
             <point key="canvasLocation" x="-738" y="1021"/>
         </scene>
-        <!--View Controller-->
+        <!--TermsVC-->
         <scene sceneID="z4Y-5r-BKQ">
             <objects>
-                <viewController id="H9B-2c-AAT" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TermsVC" id="H9B-2c-AAT" customClass="TermsVC" customModule="OnTimeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g6V-Dk-e29">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="810"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -873,6 +873,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10D-OM-mUi">
                                                         <rect key="frame" x="0.0" y="0.0" width="26.5" height="24"/>
                                                         <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="DismissView:" destination="H9B-2c-AAT" eventType="touchUpInside" id="AJl-bP-2as"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
