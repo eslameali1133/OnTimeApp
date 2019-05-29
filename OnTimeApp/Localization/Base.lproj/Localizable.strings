@@ -1,0 +1,120 @@
+/* 
+  Localizable.strings
+  IBLocalizable
+
+  Created by Chris Jimenez on 7/29/16.
+  Copyright © 2016 Chris Jimenez. All rights reserved.
+*/
+
+// MARK :- Main
+"carTime" = "Car Time";
+
+
+// MARK :- SideMenu
+"home" = "Home";
+"profile" = "Profile";
+"myCars" = "My Cars";
+"carWash" = "Car Wash";
+"engineOilChange" = "Engine Oil Change";
+"history" = "History";
+"aboutUs" = "About us";
+"login" = "Login";
+"logout" = "Logout";
+"share" = "Share";
+"rate" = "Rate";
+
+// MARK :- Profile
+"userName" = "User Name";
+"email" = "Email";
+"phone" = "Phone";
+"password" = "Password";
+"edit" = "Edit";
+"save" = "Save";
+
+
+// MARK :- My Car
+"thereAreNoCars" = "There Are No Cars";
+"addCar"  = "Add Car";
+"selectYourCar"  = "Select Your Car" ;
+"selectCarModel"  = "Select Car Model" ;
+"selectManufactureYear"  = "Select Manufacture Year" ;
+"add" = "Add";
+"addNewCar" = "Add New Car";
+"editCar" = "Edit Car";
+"save" = "Save";
+"model" = "Model";
+"manufactureYear" = "Manufacture Year";
+
+// MARK :- Car Wash
+"typeOfWashing"  = "Type Of Washing" ;
+"methodOfWashing"  = "Method Of Washing";
+"carSize"  = "Car Size";
+"schedule" = "Schedule";
+"location"  = "Location";
+"notes"  = "Notes";
+"totalPrice"  = "TotalPrice";
+"order"  = "Order";
+
+
+// MARK :- Engine Oil Change
+"recommendedOil"  = "Recommended Oil";
+"recommendedCans"  = "Recommended Cans";
+"doYouWantFilter"  = "Do You Want Filter?";
+"yes"  = "Yes";
+"no"  = "No";
+"calculate" = "Calculate";
+"pressToSelect" = "Press to Select";
+"change" = "Change";
+
+
+// MARK :- History
+"date"  = "Date";
+"car"  = "Car";
+"oilType"  = "Oil Type";
+"withFilter"  = "With Filter";
+"pending" = "Pending";
+"washType" = "Wash Type";
+"washMethod" = "Wash Method";
+
+// MARK :- Login
+"signup"  = "Sign up";
+
+// MARK :- signup
+"confirmPassword"  = "Confirm Password";
+"register"  = "Register";
+
+
+//"carBrand"  = "Car Brand";
+//"carModel"  = "Car Model";
+//"manufactureYear"  = "Manufacture Year";
+//"oilType"  = "Oil Type";
+//"year"  = "Year";
+//"month"  = "Month";
+//"day"  = "Day";
+//"hour"  = "Hour";
+//"selectYourCar"  = "Select Your Car";
+//"selectYourLocation"  = "Select Your Location";
+//"selectSchedule"  = "Select Schedule";
+//"selectFiliter"  = "Select with filiter or without";
+//"selectSchedule"  = "Select Schedule";
+//"carInfo"  = "Enter the vehicle information =";
+//"calculatePrice"  = "Click to calculate the price =";
+//"packsNumber"  = "Select number of packs";
+//"terms" = "Terms and condition";
+//"editCar"  = "Edit Car";
+//"addCar"  = "Add Car";
+//"forget"  = "Do you forget Password?";
+//"newToCarTime"  = "New To Car Time?";
+//"cPassword"  = "Confirm Password";
+//"loginToC"  = "Please login to continue";
+//"yes"  = "Yes";
+//"no"  = "No";
+//"cancel"  = "Cancel";
+//"tryAgain"  = "Try Again!";
+//"ok"  = "Ok";
+//"thankYouForAddNewCar"  = "Thank you for Add New Car";
+//"thankYouForSignup"  = "Thank you for signup";
+//"startUsingApp"  = "Start using the app";
+//"yourRequest"  = "Thank You ; Your Request Has Been Sent Successfully!";
+//"updateSuccess"  = "Update successfully";
+

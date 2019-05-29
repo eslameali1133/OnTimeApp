@@ -1,0 +1,182 @@
+/* 
+  Localizable.strings
+  IBLocalizable
+
+  Created by Chris Jimenez on 7/29/16.
+  Copyright © 2016 Chris Jimenez. All rights reserved.
+*/
+
+// MARK :- Main
+"carTime" = "كار تايم";
+
+"carHome" = "كار";
+"timeHome" = "تايم";
+
+
+// MARK :- SideMenu
+"home" = "الرئيسية";
+"profile" = "الملف الشخصي";
+"myCars" = "سياراتي";
+"carWash" = "غسيل السيارة";
+"engineOilChange" = "تغيير زيت المحرك";
+"history" = "السجل السابق";
+"aboutUs" = "معلومات عنا";
+"login" = "تسجيل الدخول";
+"logout" = "تسجيل الخروج";
+"share" = "نشر";
+"rate" = "تقييم";
+
+// MARK :- Profile
+"userName" = "إسم المستخدم";
+"email" = "البريد الإلكتروني";
+"phone" = "رقم الهاتف";
+"password" = "كلمة المرور";
+"edit" = "تعديل";
+"save" = "حفظ";
+
+
+// MARK :- My Car
+"thereAreNoCars" = "لا يوجد سيارات";
+"addCar"  = "إضافة سيارة";
+"selectYourCar"  = "اختيار السيارة" ;
+"selectCarModel"  = "موديل السيارة" ;
+"selectManufactureYear"  = "سنة الصنع" ;
+"selectCarBrand"  = "ماركة السيارة" ;
+
+"add" = "إضافة";
+"addNewCar" = "إضافة سيارة";
+"editCar" = "تعديل السيارة";
+"save" = "حفظ";
+"model" = "الموديل";
+"manufactureYear" = "سنة الصنع";
+"done" = "تم";
+"time" = "الوقت";
+"pressToSelect" = "أنقر للإختيار";
+
+
+// MARK :- Car Wash
+"typeOfWashing"  = "نوع الغسيل" ;
+"methodOfWashing"  = "طريقة الغسيل";
+"carSize"  = "حجم السيارة";
+"schedule" = "الموعد";
+"location"  = "المكان";
+"notes"  = "الملاحظات";
+"totalPrice"  = "المبلغ النهائي";
+"order"  = "طلب";
+
+
+// MARK :- Engine Oil Change
+"recommendedOil"  = "الزيت المقترح";
+"recommendedCans"  = "العلب المقترحة";
+"doYouWantFilter"  = "هل تريد فلتر؟";
+"yes"  = "نعم";
+"no"  = "لا";
+"calculate" = "حساب";
+"pressToSelect" = "أنقر للإختيار";
+"change" = "تغيير";
+"currentLocation" = "الموقع الحالي";
+
+
+// MARK :- History
+"date"  = "التاريخ";
+"car"  = "السيارة:";
+"oilType"  = "نوع الزيت:";
+"withFilter"  = "مع فلتر";
+"withFilterHistory"  = "مع فلتر:";
+
+"pending" = "قيد الانتظار";
+"washType" = "نوع الغسيل";
+"washTypeHistory" = "نوع الغسيل:";
+"washMethodHistory" = "طريقة الغسيل:";
+"notesHistory" = "الملاحظات:";
+"totalPriceHistroy" = "المبلغ النهائي:";
+"washMethod" = "طريقة الغسيل";
+
+// MARK :- Login
+"signup"  = "التسجيل";
+"continueAsAGuest" = "الإستمرار كزائر";
+"forgetPassword"  = "إستعادة كلمة المرور";
+"send" = "إرسال";
+// MARK :- signup
+"confirmPassword"  = "تأكيد كلمة المرور";
+"register"  = "تسجيل";
+
+
+"terms" = "شروط وأحكام";
+
+
+
+
+//"home" = "الرئيسية";
+//"account" = "الملف الشخصي";
+//"myCar" = "سياراتي";
+//"carWash" = "غسيل السيارة";
+//"engineOilChange" = "تغيير زيت المحرك";
+//"history" = "السجل السابق";
+//"aboutUs" = "معلومات عنا";
+//"shareTheApp" = "نشر التطبيق";
+//"rateUs" = "تقييم التطبيق";
+//"language" = "اللغة";
+//"login" = "تسجيل الدخول";
+//"logout" = "تسجيل الخروج";
+//"terms" = "شروط وأحكام";
+//
+//"fullName" = "إسم المستخدم";
+//"email" = "البريد الإلكتروني";
+//"phone" = "رقم الهاتف";
+//"password" = "كلمة المرور";
+//"edit" = "تعديل";
+//"save" = "حفط";
+//"delete" = "حذف";
+//
+//
+//"noCar" = "لا توجد سيارات";
+//"selectCarBrand"  = "تحديد ماركة السيارة" ;
+//"selectCarModel"  = "تحديد موديل السبارة" ;
+//"selectManufactureYear"  = "تحديد سنة الصنع" ;
+//"selectOilType"  = "تحديد نوع الزيت" ;
+//"selectCarSize"  = "تحديد حجم السيارة" ;
+//"done"  = "تم";
+//
+//"carBrand"  = " =ماركة السيارة";
+//"carModel"  = " =موديل السيارة";
+//"manufactureYear"  = " =سنة الصنع";
+//"oilType"  = " =نوع الزيت";
+//"carSize"  = " =حجم السيارة";
+//"addNewCar"  = "إضافة سيارة جديدة";
+//"location"  = " =الموقع";
+//
+//"year"  = "سنة";
+//"month"  = "شهر";
+//"day"  = "يوم";
+//"hour"  = "ساعة";
+//"selectYourCar"  = "تحديد السيارة";
+//"selectYourLocation"  = "تحديد الموقع";
+//"selectSchedule"  = "تحديد الموعد";
+//
+//"selectFiliter"  = "مع فلتر أو بدون";
+//
+//"carInfo"  = " =الرجاء إدخال معلومات السيارة";
+//"calculatePrice"  = "إضغط لحساب التكلفة";
+//"packsNumber"  = "تحديد عدد العلب";
+//
+//"editCar"  = "تعديل السيارة";
+//"addCar"  = "إضافة السيارة";
+//"signup"  = "التسجيل";
+//"forget"  = "Do you forget Password?";
+//"newToCarTime"  = "هل أنت جديد؟";
+//"cPassword"  = "تأكيد كلمة المرور";
+//"loginToC"  = "الرجاء تسجيل الدخول للإستمرار";
+//"yes"  = "نعم";
+//"no"  = "لا";
+//"cancel"  = "إلغاء";
+//
+//"tryAgain"  = "الرجاء المحاولة مرة أخرى!";
+//"ok"  = "موافق";
+//
+//"thankYouForAddNewCar"  = "شكراً لإضافتك سيارة جديدة!";
+//"thankYouForSignup"  = "شكراً للتسجيل في تطبيق كار تايم!";
+//"startUsingApp"  = "إبداً في استخدام التطبيق";
+//"yourRequest"  = "شكراً لك، تم إرسال طلبك بنجاح!";
+//"updateSuccess"  = "تم التعديل بنجاح!";
+
