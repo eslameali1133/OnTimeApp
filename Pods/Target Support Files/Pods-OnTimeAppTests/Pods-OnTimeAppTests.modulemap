@@ -1,0 +1,6 @@
+framework module Pods_OnTimeAppTests {
+  umbrella header "Pods-OnTimeAppTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
