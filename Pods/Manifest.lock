@@ -88,6 +88,7 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Protobuf (3.6.1)
+  - SideMenu (5.0.3)
   - Socket.IO-Client-Swift (11.1.3):
     - StarscreamSocketIO (~> 8.0.5)
   - StarscreamSocketIO (8.0.7)
@@ -109,6 +110,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - KKPinCodeTextField
   - Localize-Swift
+  - SideMenu
   - Socket.IO-Client-Swift (~> 11.1.3)
   - SVProgressHUD
   - SwiftyJSON
@@ -138,6 +140,7 @@ SPEC REPOS:
     - Localize-Swift
     - nanopb
     - Protobuf
+    - SideMenu
     - Socket.IO-Client-Swift
     - StarscreamSocketIO
     - SVProgressHUD
@@ -167,11 +170,12 @@ SPEC CHECKSUMS:
   Localize-Swift: c798ec9286494866f7068f85f7c71283ac5bdab4
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
+  SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
   Socket.IO-Client-Swift: b8e59ddc16bc3609ca2f49a4b50253f095d535c8
   StarscreamSocketIO: 00b54e4208481ca5cef089545353aaf126bae16d
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: c0690041479fe9e7086725b6dbeedbe351627859
+PODFILE CHECKSUM: 284dac97f625caaa0643af482ba8d2fca23aef95
 
 COCOAPODS: 1.6.0

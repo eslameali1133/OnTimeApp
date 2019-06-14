@@ -7,22 +7,41 @@
 //
 
 import UIKit
-
+import SideMenu
 class HomeProjectVC: UIViewController , UITableViewDelegate , UITableViewDataSource{
     
     @IBOutlet weak var tblProjects: UITableView!
     override func viewDidLoad() {
        
-       
+      //setupSideMenu()
        tblProjects.delegate = self
-        tblProjects.dataSource = self
+       tblProjects.dataSource = self
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func btnSideMenue(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Projects", bundle: nil)
+        let cont = storyboard.instantiateViewController(withIdentifier: "RightMenuNavigationController")
+        cont.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        cont.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+        self.present(cont, animated: true, completion: nil)
+    }
+    
+    ////Side Menu
 
-   
+    fileprivate func setupSideMenu() {
+        
+ SideMenuManager.default.menuRightNavigationController = storyboard!.instantiateViewController(withIdentifier: "RightMenuNavigationController") as? UISideMenuNavigationController
+            SideMenuManager.default.menuLeftNavigationController?.leftSide = false
+        SideMenuManager.default.menuAddPanGestureToPresent(toView:
+            self.navigationController!.navigationBar)
+        SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView:
+            self.navigationController!.view)
+        SideMenuManager.default.menuWidth = view.frame.width * 0.75
+       
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5

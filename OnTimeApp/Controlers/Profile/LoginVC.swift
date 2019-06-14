@@ -21,14 +21,12 @@ class LoginVC: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func btnLogin(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Projects", bundle:nil)
+        let cont = storyBoard.instantiateViewController(withIdentifier: "HomeProjectVC")as! HomeProjectVC
+        self.present(cont, animated: true, completion: nil)
+        
     }
-    */
+    
 
 }

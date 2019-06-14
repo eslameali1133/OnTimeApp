@@ -10,6 +10,7 @@
 		34CBF24D27E1DAE88492538B /* Pods_OnTimeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E402FA1DA02AB377632E73 /* Pods_OnTimeApp.framework */; };
 		42162F03091B4E942AA0B238 /* Pods_OnTimeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E83462E70C182481A0BD8C /* Pods_OnTimeAppUITests.framework */; };
 		F4095F4122898647007B3DA9 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4095F4022898647007B3DA9 /* SignUpVC.swift */; };
+		F413AD0122B11E5F005A5CD5 /* NotificationsTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F413AD0022B11E5F005A5CD5 /* NotificationsTC.swift */; };
 		F418A049229172570021269A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F418A047229172570021269A /* Profile.storyboard */; };
 		F418A04B229174A20021269A /* Introduction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F418A04A229174A20021269A /* Introduction.storyboard */; };
 		F436D58E228BA5F600D0D6F1 /* HomeProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436D58D228BA5F600D0D6F1 /* HomeProjectVC.swift */; };
@@ -24,6 +25,8 @@
 		F4ADB622228E01BD00E38CB5 /* InvoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADB621228E01BD00E38CB5 /* InvoiceVC.swift */; };
 		F4B705782296AB6C00A2EF9B /* moreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B705772296AB6C00A2EF9B /* moreVC.swift */; };
 		F4B7057A2296AC9900A2EF9B /* moreTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B705792296AC9900A2EF9B /* moreTC.swift */; };
+		F4C46A6C22AE5AF400B6E9AE /* ProjectTypeCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C46A6B22AE5AF400B6E9AE /* ProjectTypeCVC.swift */; };
+		F4DF5B61229ED65E008E99B3 /* DetailSeguVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DF5B60229ED65E008E99B3 /* DetailSeguVC.swift */; };
 		F4E74FD3229E8B0700A0D72B /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E74FAE229E8B0700A0D72B /* LanguageManager.swift */; };
 		F4E74FD4229E8B0700A0D72B /* CusImageview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E74FAF229E8B0700A0D72B /* CusImageview.swift */; };
 		F4E74FD5229E8B0700A0D72B /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E74FB1229E8B0700A0D72B /* LocationHelper.swift */; };
@@ -179,6 +182,7 @@
 		B9E83462E70C182481A0BD8C /* Pods_OnTimeAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnTimeAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E402FA1DA02AB377632E73 /* Pods_OnTimeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnTimeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4095F4022898647007B3DA9 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		F413AD0022B11E5F005A5CD5 /* NotificationsTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTC.swift; sourceTree = "<group>"; };
 		F418A048229172570021269A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		F418A04A229174A20021269A /* Introduction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Introduction.storyboard; sourceTree = "<group>"; };
 		F436D58D228BA5F600D0D6F1 /* HomeProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProjectVC.swift; sourceTree = "<group>"; };
@@ -193,6 +197,8 @@
 		F4ADB621228E01BD00E38CB5 /* InvoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceVC.swift; sourceTree = "<group>"; };
 		F4B705772296AB6C00A2EF9B /* moreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moreVC.swift; sourceTree = "<group>"; };
 		F4B705792296AC9900A2EF9B /* moreTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moreTC.swift; sourceTree = "<group>"; };
+		F4C46A6B22AE5AF400B6E9AE /* ProjectTypeCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTypeCVC.swift; sourceTree = "<group>"; };
+		F4DF5B60229ED65E008E99B3 /* DetailSeguVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSeguVC.swift; sourceTree = "<group>"; };
 		F4E74FAE229E8B0700A0D72B /* LanguageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		F4E74FAF229E8B0700A0D72B /* CusImageview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CusImageview.swift; sourceTree = "<group>"; };
 		F4E74FB1229E8B0700A0D72B /* LocationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
@@ -387,6 +393,8 @@
 				F4ADB61B228DBE1300E38CB5 /* AloqoodTC.swift */,
 				F4ADB61F228DFDA100E38CB5 /* AttachmentTC.swift */,
 				F4B705792296AC9900A2EF9B /* moreTC.swift */,
+				F4C46A6B22AE5AF400B6E9AE /* ProjectTypeCVC.swift */,
+				F413AD0022B11E5F005A5CD5 /* NotificationsTC.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -428,6 +436,7 @@
 				F4F8CC0B229D630D00C57BD7 /* AaqdVerificationCode.swift */,
 				F4F8CC0D229D63AD00C57BD7 /* AaqdInfoVC.swift */,
 				F4F8CC0F229D63D500C57BD7 /* MakeAaqdVC.swift */,
+				F4DF5B60229ED65E008E99B3 /* DetailSeguVC.swift */,
 			);
 			path = Projectdetails;
 			sourceTree = "<group>";
@@ -739,7 +748,6 @@
 				F4FD2D862288321700D9F15B /* Helper */,
 				F4FD2D8522882F8B00D9F15B /* StoryBords */,
 				F4FD2D5422882F5000D9F15B /* AppDelegate.swift */,
-				F4FD2D6022882F5200D9F15B /* LaunchScreen.storyboard */,
 				F4FD2D6322882F5200D9F15B /* Info.plist */,
 				F4FD2D5B22882F5000D9F15B /* OnTimeApp.xcdatamodeld */,
 			);
@@ -767,6 +775,7 @@
 		F4FD2D8522882F8B00D9F15B /* StoryBords */ = {
 			isa = PBXGroup;
 			children = (
+				F4FD2D6022882F5200D9F15B /* LaunchScreen.storyboard */,
 				F418A047229172570021269A /* Profile.storyboard */,
 				F4FD2D5822882F5000D9F15B /* Projects.storyboard */,
 				F418A04A229174A20021269A /* Introduction.storyboard */,
@@ -1012,6 +1021,7 @@
 				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
 				"${BUILT_PRODUCTS_DIR}/StarscreamSocketIO/StarscreamSocketIO.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -1034,6 +1044,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StarscreamSocketIO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -1154,11 +1165,13 @@
 				F4E74FEE229E8B2000A0D72B /* SharedData.swift in Sources */,
 				F4E75038229E8B7100A0D72B /* TableView+EX.swift in Sources */,
 				F4B705782296AB6C00A2EF9B /* moreVC.swift in Sources */,
+				F4DF5B61229ED65E008E99B3 /* DetailSeguVC.swift in Sources */,
 				F4E74FDF229E8B0700A0D72B /* Localizable.swift in Sources */,
 				F4F8CBEF229D5D2800C57BD7 /* RequestDetailsVC.swift in Sources */,
 				F4F8CBE7229D5BBC00C57BD7 /* Profile.swift in Sources */,
 				F4F8CC0E229D63AD00C57BD7 /* AaqdInfoVC.swift in Sources */,
 				F4F8CC03229D60B300C57BD7 /* VisaCardsVC.swift in Sources */,
+				F413AD0122B11E5F005A5CD5 /* NotificationsTC.swift in Sources */,
 				F4E74FD3229E8B0700A0D72B /* LanguageManager.swift in Sources */,
 				F4E75037229E8B7100A0D72B /* UIView.swift in Sources */,
 				F4E74FDD229E8B0700A0D72B /* AppCommon.swift in Sources */,
@@ -1202,6 +1215,7 @@
 				F4FD2D5522882F5000D9F15B /* AppDelegate.swift in Sources */,
 				F4E74FE5229E8B0700A0D72B /* LocalizableLabel.swift in Sources */,
 				F4F8CBF1229D5D8E00C57BD7 /* ProjectMessagesVC.swift in Sources */,
+				F4C46A6C22AE5AF400B6E9AE /* ProjectTypeCVC.swift in Sources */,
 				F4FD2D9122883EA100D9F15B /* VerificationCodeVC.swift in Sources */,
 				F4E74FEB229E8B0700A0D72B /* Country.swift in Sources */,
 				F4E75039229E8B7100A0D72B /* UIColor.swift in Sources */,

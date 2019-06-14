@@ -25,7 +25,7 @@ pod 'FBSDKShareKit'
 pod 'FBSDKLoginKit'
 pod 'KKPinCodeTextField'
 pod 'Socket.IO-Client-Swift', '~> 11.1.3'
-
+pod 'SideMenu'
 
   target 'OnTimeAppTests' do
     inherit! :search_paths

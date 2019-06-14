@@ -10,11 +10,15 @@ import UIKit
 
 class VerificationCodeVC: UIViewController {
 
+    @IBOutlet var popupVerefy: UIView!
     @IBOutlet weak var txtCode: UITextField!
     @IBOutlet weak var btnSend: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        popupVerefy.frame = CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y, width: self.view.frame.width, height: self.view.frame.height)
+        self.view.addSubview(popupVerefy)
+        popupVerefy.isHidden = true
        // btnSend.backgroundColor = .clear
         btnSend.layer.cornerRadius = 30
         btnSend.layer.borderWidth = 1
@@ -27,14 +31,10 @@ class VerificationCodeVC: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func btnSend(_ sender: Any) {
+        popupVerefy.isHidden = false
+        popupVerefy.backgroundColor = UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.75)
     }
-    */
+    
 
 }

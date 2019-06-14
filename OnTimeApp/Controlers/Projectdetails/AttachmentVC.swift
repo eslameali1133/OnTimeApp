@@ -10,15 +10,27 @@ import UIKit
 
 class AttachmentVC: UIViewController , UITableViewDataSource , UITableViewDelegate{
 
+    @IBOutlet var popupSocial: UIView!
     @IBOutlet weak var tblAttachment: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tblAttachment.delegate = self
+         popupSocial.frame = CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y, width: self.view.frame.width, height: self.view.frame.height)
+        self.view.addSubview(popupSocial)
+        popupSocial.isHidden = true
+                tblAttachment.delegate = self
         tblAttachment.dataSource = self
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func btnHideSocial(_ sender: Any) {
+        popupSocial.isHidden = true
+    }
+    @IBAction func btnSocial(_ sender: Any) {
+        popupSocial.isHidden = false
+        popupSocial.backgroundColor = UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.75)
+
+    }
     @IBAction func DismissView(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }

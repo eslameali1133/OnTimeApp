@@ -1,18 +1,15 @@
 //
-//  moreTC.swift
+//  NotificationsTC.swift
 //  OnTimeApp
 //
-//  Created by Husseinomda16 on 5/23/19.
+//  Created by Husseinomda16 on 6/12/19.
 //  Copyright © 2019 Ontime24. All rights reserved.
 //
 
 import UIKit
 
-class moreTC: UITableViewCell {
+class NotificationsTC: UITableViewCell {
 
-    
-    @IBOutlet weak var lblName: UILabel!
-    @IBOutlet weak var img: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
