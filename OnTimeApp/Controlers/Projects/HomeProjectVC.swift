@@ -8,16 +8,32 @@
 
 import UIKit
 import SideMenu
-class HomeProjectVC: UIViewController , UITableViewDelegate , UITableViewDataSource{
+class HomeProjectVC: UIViewController {
     
-    @IBOutlet weak var tblProjects: UITableView!
+    @IBOutlet weak var allC: UIView!
+    @IBOutlet weak var revisionC: UIView!
+    @IBOutlet weak var contenueC: UIView!
+    @IBOutlet weak var doneC: UIView!
+    
+    @IBOutlet weak var lblDonePro: UILabel!
+    @IBOutlet weak var lblContinuePro: UILabel!
+    @IBOutlet weak var lblRevisedPro: UILabel!
+    @IBOutlet weak var lblAllPro: UILabel!
     override func viewDidLoad() {
        
       //setupSideMenu()
-       tblProjects.delegate = self
-       tblProjects.dataSource = self
+       
         super.viewDidLoad()
 
+        allC.isHidden = false
+        revisionC.isHidden = true
+        contenueC.isHidden = true
+        doneC.isHidden = true
+        
+        lblAllPro.textColor = UIColor.hexColor(string: "55DBA8")
+        lblDonePro.textColor = UIColor.black
+        lblRevisedPro.textColor = UIColor.black
+        lblContinuePro.textColor = UIColor.black
         // Do any additional setup after loading the view.
     }
     
@@ -29,6 +45,53 @@ class HomeProjectVC: UIViewController , UITableViewDelegate , UITableViewDataSou
         self.present(cont, animated: true, completion: nil)
     }
     
+    
+    @IBAction func btnAllPro(_ sender: Any) {
+        allC.isHidden = false
+        revisionC.isHidden = true
+        contenueC.isHidden = true
+        doneC.isHidden = true
+        
+        lblAllPro.textColor = UIColor.hexColor(string: "55DBA8")
+        lblDonePro.textColor = UIColor.black
+        lblRevisedPro.textColor = UIColor.black
+        lblContinuePro.textColor = UIColor.black
+    }
+    @IBAction func btnContinuePro(_ sender: Any) {
+        allC.isHidden = true
+        revisionC.isHidden = true
+        contenueC.isHidden = false
+        doneC.isHidden = true
+        
+        lblAllPro.textColor = UIColor.black
+        lblDonePro.textColor = UIColor.black
+        lblRevisedPro.textColor = UIColor.black
+        lblContinuePro.textColor = UIColor.hexColor(string: "55DBA8")
+    }
+    @IBAction func btnDonePro(_ sender: Any) {
+        allC.isHidden = true
+        revisionC.isHidden = true
+        contenueC.isHidden = true
+        doneC.isHidden = false
+        
+        lblAllPro.textColor = UIColor.black
+        lblDonePro.textColor = UIColor.hexColor(string: "55DBA8")
+
+        lblRevisedPro.textColor = UIColor.black
+        lblContinuePro.textColor = UIColor.black    }
+    
+    @IBAction func btnRevisPro(_ sender: Any) {
+        allC.isHidden = true
+        revisionC.isHidden = false
+        contenueC.isHidden = true
+        doneC.isHidden = true
+        
+        lblAllPro.textColor = UIColor.black
+        lblDonePro.textColor = UIColor.black
+        
+        lblRevisedPro.textColor = UIColor.hexColor(string: "55DBA8")
+        lblContinuePro.textColor = UIColor.black
+    }
     ////Side Menu
 
     fileprivate func setupSideMenu() {
@@ -43,21 +106,4 @@ class HomeProjectVC: UIViewController , UITableViewDelegate , UITableViewDataSou
        
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectTC", for: indexPath) as! ProjectTC
-       
-        return cell
-    }
-    
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 75
-    }
-    
-
-    
 }

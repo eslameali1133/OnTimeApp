@@ -15,6 +15,10 @@
 		F418A04B229174A20021269A /* Introduction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F418A04A229174A20021269A /* Introduction.storyboard */; };
 		F436D58E228BA5F600D0D6F1 /* HomeProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436D58D228BA5F600D0D6F1 /* HomeProjectVC.swift */; };
 		F436D591228BA7B400D0D6F1 /* ProjectTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436D590228BA7B400D0D6F1 /* ProjectTC.swift */; };
+		F46A578D22B7928A00C53CDE /* AllProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46A578C22B7928A00C53CDE /* AllProjectVC.swift */; };
+		F46A579122B792C800C53CDE /* RevisiedProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46A579022B792C800C53CDE /* RevisiedProjectVC.swift */; };
+		F46A579322B792E700C53CDE /* ContinueProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46A579222B792E700C53CDE /* ContinueProjectVC.swift */; };
+		F46A579522B792FA00C53CDE /* doneProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46A579422B792FA00C53CDE /* doneProjectVC.swift */; };
 		F4799713229C2D4400F4CA7A /* ProjectDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4799712229C2D4400F4CA7A /* ProjectDetails.storyboard */; };
 		F4799715229C2F0800F4CA7A /* Paid.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4799714229C2F0800F4CA7A /* Paid.storyboard */; };
 		F4799717229C300C00F4CA7A /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4799716229C300C00F4CA7A /* Help.storyboard */; };
@@ -187,6 +191,10 @@
 		F418A04A229174A20021269A /* Introduction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Introduction.storyboard; sourceTree = "<group>"; };
 		F436D58D228BA5F600D0D6F1 /* HomeProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProjectVC.swift; sourceTree = "<group>"; };
 		F436D590228BA7B400D0D6F1 /* ProjectTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTC.swift; sourceTree = "<group>"; };
+		F46A578C22B7928A00C53CDE /* AllProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProjectVC.swift; sourceTree = "<group>"; };
+		F46A579022B792C800C53CDE /* RevisiedProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisiedProjectVC.swift; sourceTree = "<group>"; };
+		F46A579222B792E700C53CDE /* ContinueProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueProjectVC.swift; sourceTree = "<group>"; };
+		F46A579422B792FA00C53CDE /* doneProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = doneProjectVC.swift; sourceTree = "<group>"; };
 		F4799712229C2D4400F4CA7A /* ProjectDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProjectDetails.storyboard; sourceTree = "<group>"; };
 		F4799714229C2F0800F4CA7A /* Paid.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Paid.storyboard; sourceTree = "<group>"; };
 		F4799716229C300C00F4CA7A /* Help.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Help.storyboard; sourceTree = "<group>"; };
@@ -463,6 +471,10 @@
 				F4F8CBE2229D5B1500C57BD7 /* VerifyProjectRequest.swift */,
 				F4F8CBE4229D5B9A00C57BD7 /* ProfilePointsVC.swift */,
 				F4F8CBE6229D5BBC00C57BD7 /* Profile.swift */,
+				F46A578C22B7928A00C53CDE /* AllProjectVC.swift */,
+				F46A579022B792C800C53CDE /* RevisiedProjectVC.swift */,
+				F46A579222B792E700C53CDE /* ContinueProjectVC.swift */,
+				F46A579422B792FA00C53CDE /* doneProjectVC.swift */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -1171,12 +1183,15 @@
 				F4F8CBE7229D5BBC00C57BD7 /* Profile.swift in Sources */,
 				F4F8CC0E229D63AD00C57BD7 /* AaqdInfoVC.swift in Sources */,
 				F4F8CC03229D60B300C57BD7 /* VisaCardsVC.swift in Sources */,
+				F46A579122B792C800C53CDE /* RevisiedProjectVC.swift in Sources */,
 				F413AD0122B11E5F005A5CD5 /* NotificationsTC.swift in Sources */,
 				F4E74FD3229E8B0700A0D72B /* LanguageManager.swift in Sources */,
 				F4E75037229E8B7100A0D72B /* UIView.swift in Sources */,
 				F4E74FDD229E8B0700A0D72B /* AppCommon.swift in Sources */,
 				F4F8CBFF229D603F00C57BD7 /* PaymentVC.swift in Sources */,
 				F4F8CBF7229D5F6E00C57BD7 /* HelpTopicsVC.swift in Sources */,
+				F46A579522B792FA00C53CDE /* doneProjectVC.swift in Sources */,
+				F46A579322B792E700C53CDE /* ContinueProjectVC.swift in Sources */,
 				F4F8CC10229D63D500C57BD7 /* MakeAaqdVC.swift in Sources */,
 				F4E74FDA229E8B0700A0D72B /* Utilities.swift in Sources */,
 				F4FD2D5D22882F5000D9F15B /* OnTimeApp.xcdatamodeld in Sources */,
@@ -1221,6 +1236,7 @@
 				F4E75039229E8B7100A0D72B /* UIColor.swift in Sources */,
 				F4E74FE1229E8B0700A0D72B /* LocalizableTextView.swift in Sources */,
 				F4F8CBDD229D599000C57BD7 /* ProjectTypeVC.swift in Sources */,
+				F46A578D22B7928A00C53CDE /* AllProjectVC.swift in Sources */,
 				F4E74FE8229E8B0700A0D72B /* APIConstants.swift in Sources */,
 				F4ADB61A228DBDED00E38CB5 /* AloqoodVC.swift in Sources */,
 				F4E74FFB229E8B5300A0D72B /* HttpHelper.swift in Sources */,

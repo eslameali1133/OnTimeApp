@@ -15,29 +15,29 @@
             <objects>
                 <viewController storyboardIdentifier="Introduction3VC" id="5Xi-6U-JgR" customClass="Introduction3VC" customModule="OnTimeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1g6-ZM-S3X">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="810"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BZN-CB-XKM">
-                                <rect key="frame" x="20" y="20" width="335" height="790"/>
+                                <rect key="frame" x="20" y="20" width="335" height="647"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CcD-u2-25L">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="600.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="491.5"/>
                                         <subviews>
                                             <containerView opaque="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TxW-jo-2n9" userLabel="1">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="600.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="491.5"/>
                                                 <connections>
                                                     <segue destination="zq3-Sl-nr2" kind="embed" id="oVx-Dz-b53"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TG4-35-zr9" userLabel="2">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="600.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="491.5"/>
                                                 <connections>
                                                     <segue destination="W2X-cu-fM4" kind="embed" id="O0d-Ct-gMc"/>
                                                 </connections>
                                             </containerView>
                                             <containerView opaque="NO" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vkl-Gk-bfm" userLabel="3">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="600.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="491.5"/>
                                                 <connections>
                                                     <segue destination="2n1-68-f4P" kind="embed" id="LWT-x7-NXH"/>
                                                 </connections>
@@ -60,16 +60,16 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lhi-Jy-53B">
-                                        <rect key="frame" x="0.0" y="600.5" width="335" height="55"/>
+                                        <rect key="frame" x="0.0" y="491.5" width="335" height="45.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sxG-Sc-QdG">
-                                                <rect key="frame" x="109" y="23.5" width="117" height="8"/>
+                                                <rect key="frame" x="109" y="19.5" width="117" height="7"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KDa-f7-aG2" userLabel="3">
-                                                        <rect key="frame" x="0.0" y="0.0" width="32.5" height="8"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="32.5" height="7"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Iv-F8-sOu" customClass="AMCircleUIView" customModule="OnTimeApp" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="32.5" height="8"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="32.5" height="7"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
@@ -79,7 +79,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jh3-mm-2S7">
-                                                                <rect key="frame" x="0.0" y="0.0" width="32.5" height="8"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="32.5" height="7"/>
                                                                 <connections>
                                                                     <action selector="tab3:" destination="5Xi-6U-JgR" eventType="touchUpInside" id="7qt-6x-516"/>
                                                                 </connections>
@@ -98,10 +98,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4eB-MI-z4L" userLabel="2">
-                                                        <rect key="frame" x="42.5" y="0.0" width="32" height="8"/>
+                                                        <rect key="frame" x="42.5" y="0.0" width="32" height="7"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5L6-zJ-Yhn" customClass="AMCircleUIView" customModule="OnTimeApp" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="32" height="8"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="32" height="7"/>
                                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
@@ -111,7 +111,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yw3-rD-jyZ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="32" height="8"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="32" height="7"/>
                                                                 <connections>
                                                                     <action selector="tab2:" destination="5Xi-6U-JgR" eventType="touchUpInside" id="Sfe-8W-EfA"/>
                                                                 </connections>
@@ -130,10 +130,10 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZQJ-zd-PFC" userLabel="1">
-                                                        <rect key="frame" x="84.5" y="0.0" width="32.5" height="8"/>
+                                                        <rect key="frame" x="84.5" y="0.0" width="32.5" height="7"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vaR-2e-r4u" customClass="AMCircleUIView" customModule="OnTimeApp" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="32.5" height="8"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="32.5" height="7"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
@@ -143,7 +143,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yw9-hF-3cV">
-                                                                <rect key="frame" x="0.0" y="0.0" width="32.5" height="8"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="32.5" height="7"/>
                                                                 <connections>
                                                                     <action selector="tab1:" destination="5Xi-6U-JgR" eventType="touchUpInside" id="gUm-6F-fad"/>
                                                                 </connections>
@@ -173,22 +173,22 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRd-Jo-yvs">
-                                        <rect key="frame" x="0.0" y="655.5" width="335" height="134.5"/>
+                                        <rect key="frame" x="0.0" y="537" width="335" height="110"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="h1K-Hv-FwJ">
-                                                <rect key="frame" x="17" y="44" width="301.5" height="47"/>
+                                                <rect key="frame" x="33.5" y="36" width="268" height="38.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="41h-NG-aGi" customClass="AMCircleUIView" customModule="OnTimeApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="47"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="38.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تخطي" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfN-hr-NkJ">
-                                                                <rect key="frame" x="24" y="13" width="42" height="20.5"/>
+                                                                <rect key="frame" x="26" y="9" width="42" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWM-Sl-M5a">
-                                                                <rect key="frame" x="0.0" y="0.0" width="90" height="47"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="94" height="38.5"/>
                                                                 <connections>
                                                                     <action selector="btnSkip:" destination="5Xi-6U-JgR" eventType="touchUpInside" id="y6I-ji-g0g"/>
                                                                 </connections>
@@ -208,16 +208,19 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gl6-hI-O5l" customClass="AMCircleUIView" customModule="OnTimeApp" customModuleProvider="target">
-                                                        <rect key="frame" x="110" y="0.0" width="191.5" height="47"/>
+                                                        <rect key="frame" x="114" y="0.0" width="154" height="38.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التالي" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wju-vb-g8x">
-                                                                <rect key="frame" x="76.5" y="13" width="38.5" height="20.5"/>
+                                                                <rect key="frame" x="57.5" y="9" width="38.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5q-cC-kJ7">
-                                                                <rect key="frame" x="0.0" y="0.0" width="191.5" height="47"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="154" height="38.5"/>
+                                                                <connections>
+                                                                    <action selector="btnNext:" destination="5Xi-6U-JgR" eventType="touchUpInside" id="N45-Vx-QYl"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.33333333329999998" green="0.85882352939999995" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -235,7 +238,7 @@
                                                     </view>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="41h-NG-aGi" firstAttribute="width" secondItem="h1K-Hv-FwJ" secondAttribute="width" multiplier="0.3" id="AJG-vo-q1F"/>
+                                                    <constraint firstItem="41h-NG-aGi" firstAttribute="width" secondItem="h1K-Hv-FwJ" secondAttribute="width" multiplier="0.35" id="AJG-vo-q1F"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
@@ -243,7 +246,7 @@
                                         <constraints>
                                             <constraint firstItem="h1K-Hv-FwJ" firstAttribute="height" secondItem="xRd-Jo-yvs" secondAttribute="height" multiplier="0.35" id="6c7-6H-kX6"/>
                                             <constraint firstItem="h1K-Hv-FwJ" firstAttribute="centerX" secondItem="xRd-Jo-yvs" secondAttribute="centerX" id="79r-Zb-QPF"/>
-                                            <constraint firstItem="h1K-Hv-FwJ" firstAttribute="width" secondItem="xRd-Jo-yvs" secondAttribute="width" multiplier="0.9" id="IEe-xA-6hG"/>
+                                            <constraint firstItem="h1K-Hv-FwJ" firstAttribute="width" secondItem="xRd-Jo-yvs" secondAttribute="width" multiplier="0.8" id="IEe-xA-6hG"/>
                                             <constraint firstItem="h1K-Hv-FwJ" firstAttribute="centerY" secondItem="xRd-Jo-yvs" secondAttribute="centerY" id="OWY-Tc-oss"/>
                                         </constraints>
                                     </view>
@@ -274,7 +277,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5BL-qr-gVM"/>
                     </view>
-                    <size key="freeformSize" width="375" height="810"/>
                     <connections>
                         <outlet property="conrainer2" destination="TG4-35-zr9" id="i5H-lP-xZP"/>
                         <outlet property="container1" destination="TxW-jo-2n9" id="xu3-CR-tvO"/>

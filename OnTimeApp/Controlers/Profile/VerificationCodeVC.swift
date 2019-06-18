@@ -35,6 +35,8 @@ class VerificationCodeVC: UIViewController {
         popupVerefy.isHidden = false
         popupVerefy.backgroundColor = UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.75)
     }
-    
+    @IBAction func DismissView(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 
 }

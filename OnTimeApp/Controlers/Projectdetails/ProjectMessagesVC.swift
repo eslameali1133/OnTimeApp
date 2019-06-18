@@ -21,6 +21,12 @@ class ProjectMessagesVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func btnRecive(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Help", bundle: nil)
+        let cont = storyboard.instantiateViewController(withIdentifier: "CongratulationVC")
+        
+        self.present(cont, animated: true, completion: nil)
+    }
     @IBAction func btnSideMenue(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Projects", bundle: nil)
         let cont = storyboard.instantiateViewController(withIdentifier: "RightMenuNavigationController")

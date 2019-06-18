@@ -10,6 +10,7 @@ import UIKit
 
 class Introduction3VC: UIViewController {
 
+    var index = 1
     @IBOutlet weak var container3: UIView!
     @IBOutlet weak var conrainer2: UIView!
     @IBOutlet weak var container1: UIView!
@@ -28,29 +29,28 @@ class Introduction3VC: UIViewController {
     }
     
 
+    @IBAction func btnNext(_ sender: Any) {
+        if index == 3{
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Profile", bundle:nil)
+            let cont = storyBoard.instantiateViewController(withIdentifier: "LoginVC")as! LoginVC
+            self.present(cont, animated: true, completion: nil)
+        }else{
+        index += 1
+        tabChanged()
+            
+        }
+    }
     @IBAction func tab1(_ sender: Any) {
-        view1.backgroundColor = UIColor.white
-        view2.backgroundColor = UIColor.black
-        view3.backgroundColor = UIColor.black
-        container1.isHidden = false
-        conrainer2.isHidden = true
-        container3.isHidden = true
+        index = 1
+        tabChanged()
     }
     @IBAction func tab2(_ sender: Any) {
-        view1.backgroundColor = UIColor.black
-        view2.backgroundColor = UIColor.white
-        view3.backgroundColor = UIColor.black
-        container1.isHidden = true
-        conrainer2.isHidden = false
-        container3.isHidden = true
+        index = 2
+        tabChanged()
     }
     @IBAction func tab3(_ sender: Any) {
-        view1.backgroundColor = UIColor.black
-        view2.backgroundColor = UIColor.black
-        view3.backgroundColor = UIColor.white
-        container1.isHidden = true
-        conrainer2.isHidden = true
-        container3.isHidden = false
+        index = 3
+        tabChanged()
     }
     @IBAction func btnLogin(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Projects", bundle:nil)
@@ -63,6 +63,34 @@ class Introduction3VC: UIViewController {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Profile", bundle:nil)
         let cont = storyBoard.instantiateViewController(withIdentifier: "LoginVC")as! LoginVC
         self.present(cont, animated: true, completion: nil)
+    }
+    
+    func tabChanged(){
+        if index == 1 {
+            view1.backgroundColor = UIColor.white
+            view2.backgroundColor = UIColor.black
+            view3.backgroundColor = UIColor.black
+            container1.isHidden = false
+            conrainer2.isHidden = true
+            container3.isHidden = true
+        }
+        else if index == 2{
+            view1.backgroundColor = UIColor.black
+            view2.backgroundColor = UIColor.white
+            view3.backgroundColor = UIColor.black
+            container1.isHidden = true
+            conrainer2.isHidden = false
+            container3.isHidden = true
+        }
+        else if index == 3 {
+         
+            view1.backgroundColor = UIColor.black
+            view2.backgroundColor = UIColor.black
+            view3.backgroundColor = UIColor.white
+            container1.isHidden = true
+            conrainer2.isHidden = true
+            container3.isHidden = false
+        }
     }
     
 }

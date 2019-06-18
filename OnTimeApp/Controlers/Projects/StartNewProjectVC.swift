@@ -25,5 +25,8 @@ class StartNewProjectVC: UIViewController {
         cont.modalTransitionStyle = UIModalTransitionStyle.coverVertical
         self.present(cont, animated: true, completion: nil)
     }
+    @IBAction func DismissView(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
 }
