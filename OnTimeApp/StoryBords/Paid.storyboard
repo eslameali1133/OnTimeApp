@@ -23,61 +23,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fxc-V4-yt4">
                                         <rect key="frame" x="0.0" y="194" width="375" height="32.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تنبيه" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oex-Nu-gzm">
-                                                <rect key="frame" x="307.5" y="0.0" width="37.5" height="32.5"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لديك مبلغ مستحق الدفع بقيمة 123 ريال بنتظارك" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bve-xd-4x2">
-                                                <rect key="frame" x="64" y="0.0" width="243.5" height="32.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HG5-mr-9cy" customClass="AMCircleUIView" customModule="OnTimeApp" customModuleProvider="target">
-                                                <rect key="frame" x="7.5" y="6.5" width="56.5" height="19.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="دفع" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nW3-fA-3xX">
-                                                        <rect key="frame" x="16.5" y="1" width="23" height="18"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDS-mf-scG">
-                                                        <rect key="frame" x="0.0" y="0.0" width="56.5" height="19.5"/>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" red="0.33333333329999998" green="0.85882352939999995" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="rDS-mf-scG" secondAttribute="bottom" id="3r4-w2-ImX"/>
-                                                    <constraint firstItem="nW3-fA-3xX" firstAttribute="centerY" secondItem="HG5-mr-9cy" secondAttribute="centerY" id="D0d-MT-aDu"/>
-                                                    <constraint firstItem="rDS-mf-scG" firstAttribute="leading" secondItem="HG5-mr-9cy" secondAttribute="leading" id="ODm-I8-wQn"/>
-                                                    <constraint firstItem="rDS-mf-scG" firstAttribute="top" secondItem="HG5-mr-9cy" secondAttribute="top" id="lka-Or-uy9"/>
-                                                    <constraint firstAttribute="trailing" secondItem="rDS-mf-scG" secondAttribute="trailing" id="uSB-Vq-0DD"/>
-                                                    <constraint firstItem="nW3-fA-3xX" firstAttribute="centerX" secondItem="HG5-mr-9cy" secondAttribute="centerX" id="zd5-DF-NjF"/>
-                                                </constraints>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
-                                                </userDefinedRuntimeAttributes>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.91764705879999997" green="0.90196078430000004" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="Bve-xd-4x2" firstAttribute="centerY" secondItem="fxc-V4-yt4" secondAttribute="centerY" id="Bpa-A5-Cng"/>
-                                            <constraint firstItem="Bve-xd-4x2" firstAttribute="leading" secondItem="HG5-mr-9cy" secondAttribute="trailing" id="Dl1-IO-6tq"/>
-                                            <constraint firstAttribute="trailing" secondItem="Oex-Nu-gzm" secondAttribute="trailing" constant="30" id="UDH-Se-rgH"/>
-                                            <constraint firstItem="HG5-mr-9cy" firstAttribute="width" secondItem="fxc-V4-yt4" secondAttribute="width" multiplier="0.15" id="Xdh-c0-qjP"/>
-                                            <constraint firstItem="HG5-mr-9cy" firstAttribute="height" secondItem="fxc-V4-yt4" secondAttribute="height" multiplier="0.6" id="YOd-VI-Ury"/>
-                                            <constraint firstItem="Bve-xd-4x2" firstAttribute="height" secondItem="fxc-V4-yt4" secondAttribute="height" id="Yv4-w1-ZPv"/>
-                                            <constraint firstItem="Bve-xd-4x2" firstAttribute="width" secondItem="fxc-V4-yt4" secondAttribute="width" multiplier="0.65" id="ZL4-j6-XLk"/>
-                                            <constraint firstItem="Oex-Nu-gzm" firstAttribute="leading" secondItem="Bve-xd-4x2" secondAttribute="trailing" id="aJe-6W-usQ"/>
-                                            <constraint firstItem="Oex-Nu-gzm" firstAttribute="height" secondItem="fxc-V4-yt4" secondAttribute="height" id="eaM-If-KV3"/>
-                                            <constraint firstItem="Oex-Nu-gzm" firstAttribute="width" secondItem="fxc-V4-yt4" secondAttribute="width" multiplier="0.1" id="r1H-di-SoI"/>
-                                            <constraint firstItem="HG5-mr-9cy" firstAttribute="centerY" secondItem="fxc-V4-yt4" secondAttribute="centerY" id="w6r-mj-DOx"/>
-                                            <constraint firstItem="Oex-Nu-gzm" firstAttribute="centerY" secondItem="fxc-V4-yt4" secondAttribute="centerY" id="w9h-62-ENq"/>
-                                        </constraints>
+                                        <color key="backgroundColor" red="0.33333333329999998" green="0.85882352939999995" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DKb-7K-MtZ" userLabel="Header">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="194"/>
@@ -777,17 +723,19 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mi7-Mp-ggs" customClass="AMCircleUIView" customModule="OnTimeApp" customModuleProvider="target">
                                                 <rect key="frame" x="186.5" y="26" width="168.5" height="35"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="هل تملك كود خصم" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLs-PM-OCc">
-                                                        <rect key="frame" x="52.5" y="9" width="106" height="17"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="هل تملك كود خصم" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fyf-0G-oOn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="168.5" height="35"/>
                                                         <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="HLs-PM-OCc" firstAttribute="centerY" secondItem="mi7-Mp-ggs" secondAttribute="centerY" id="2ya-Se-hGh"/>
-                                                    <constraint firstAttribute="trailing" secondItem="HLs-PM-OCc" secondAttribute="trailing" constant="10" id="ukf-2C-RUi"/>
+                                                    <constraint firstItem="Fyf-0G-oOn" firstAttribute="height" secondItem="mi7-Mp-ggs" secondAttribute="height" id="PeZ-jm-CGW"/>
+                                                    <constraint firstItem="Fyf-0G-oOn" firstAttribute="centerX" secondItem="mi7-Mp-ggs" secondAttribute="centerX" id="Sip-Ld-jmH"/>
+                                                    <constraint firstItem="Fyf-0G-oOn" firstAttribute="width" secondItem="mi7-Mp-ggs" secondAttribute="width" id="egf-Jx-P1g"/>
+                                                    <constraint firstItem="Fyf-0G-oOn" firstAttribute="centerY" secondItem="mi7-Mp-ggs" secondAttribute="centerY" id="hUd-kR-I4J"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>

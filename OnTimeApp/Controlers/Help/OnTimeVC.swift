@@ -18,6 +18,18 @@ class OnTimeVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
     //    setupSideMenu()
     }
+    @IBAction func btnFaceBook(_ sender: Any) {
+        guard let url = URL(string: "https://www.facebook.com") else { return }
+        UIApplication.shared.open(url)
+    }
+    @IBAction func btnInstigram(_ sender: Any) {
+        guard let url = URL(string: "https://www.facebook.com") else { return }
+        UIApplication.shared.open(url)
+    }
+    @IBAction func btnTwitter(_ sender: Any) {
+        guard let url = URL(string: "https://www.facebook.com") else { return }
+        UIApplication.shared.open(url)
+    }
     @IBAction func btnSideMenue(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Projects", bundle: nil)
         let cont = storyboard.instantiateViewController(withIdentifier: "RightMenuNavigationController")

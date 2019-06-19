@@ -292,7 +292,7 @@
         <!--CongratulationVC-->
         <scene sceneID="2Pk-nF-q4t">
             <objects>
-                <viewController id="dX4-iU-7F5" customClass="CongratulationVC" customModule="OnTimeApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CongratulationVC" title="CongratulationVC" id="dX4-iU-7F5" customClass="CongratulationVC" customModule="OnTimeApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kLB-4x-3x6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1637,15 +1637,81 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZiN-Xw-rhv">
                                                 <rect key="frame" x="94" y="34" width="187.5" height="29"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook (1)" translatesAutoresizingMaskIntoConstraints="NO" id="m0c-tJ-Wb7">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="01c-Ht-27U">
                                                         <rect key="frame" x="0.0" y="0.0" width="55.5" height="29"/>
-                                                    </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter" translatesAutoresizingMaskIntoConstraints="NO" id="KMl-e5-VBJ">
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook (1)" translatesAutoresizingMaskIntoConstraints="NO" id="m0c-tJ-Wb7">
+                                                                <rect key="frame" x="0.0" y="0.0" width="55.5" height="29"/>
+                                                            </imageView>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lG8-Vs-NGm">
+                                                                <rect key="frame" x="0.0" y="0.0" width="55.5" height="29"/>
+                                                                <connections>
+                                                                    <action selector="btnFaceBook:" destination="NKV-LZ-JEL" eventType="touchUpInside" id="OS2-9z-BJ5"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="m0c-tJ-Wb7" firstAttribute="centerY" secondItem="01c-Ht-27U" secondAttribute="centerY" id="AEl-8y-JbF"/>
+                                                            <constraint firstItem="lG8-Vs-NGm" firstAttribute="leading" secondItem="01c-Ht-27U" secondAttribute="leading" id="Afi-vI-SF0"/>
+                                                            <constraint firstItem="m0c-tJ-Wb7" firstAttribute="centerX" secondItem="01c-Ht-27U" secondAttribute="centerX" id="bpd-rQ-w5U"/>
+                                                            <constraint firstItem="m0c-tJ-Wb7" firstAttribute="width" secondItem="01c-Ht-27U" secondAttribute="width" id="cL5-Ax-Y8U"/>
+                                                            <constraint firstAttribute="trailing" secondItem="lG8-Vs-NGm" secondAttribute="trailing" id="fch-tC-mue"/>
+                                                            <constraint firstAttribute="bottom" secondItem="lG8-Vs-NGm" secondAttribute="bottom" id="fpR-oe-p0v"/>
+                                                            <constraint firstItem="lG8-Vs-NGm" firstAttribute="top" secondItem="01c-Ht-27U" secondAttribute="top" id="kRy-OU-Vne"/>
+                                                            <constraint firstItem="m0c-tJ-Wb7" firstAttribute="height" secondItem="01c-Ht-27U" secondAttribute="height" id="vlp-T7-9MX"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EZn-8Y-Qeh">
                                                         <rect key="frame" x="65.5" y="0.0" width="56" height="29"/>
-                                                    </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instagram (4)" translatesAutoresizingMaskIntoConstraints="NO" id="FbI-yB-xcn">
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter" translatesAutoresizingMaskIntoConstraints="NO" id="KMl-e5-VBJ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="56" height="29"/>
+                                                            </imageView>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Md6-ex-Mr8">
+                                                                <rect key="frame" x="0.0" y="0.0" width="56" height="29"/>
+                                                                <connections>
+                                                                    <action selector="btnTwitter:" destination="NKV-LZ-JEL" eventType="touchUpInside" id="tEE-25-ONp"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="Md6-ex-Mr8" firstAttribute="top" secondItem="EZn-8Y-Qeh" secondAttribute="top" id="1Hx-DG-k4n"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Md6-ex-Mr8" secondAttribute="trailing" id="8sW-va-XZ9"/>
+                                                            <constraint firstItem="KMl-e5-VBJ" firstAttribute="width" secondItem="EZn-8Y-Qeh" secondAttribute="width" id="RBf-sC-STi"/>
+                                                            <constraint firstItem="KMl-e5-VBJ" firstAttribute="centerY" secondItem="EZn-8Y-Qeh" secondAttribute="centerY" id="SUU-1T-1PA"/>
+                                                            <constraint firstItem="Md6-ex-Mr8" firstAttribute="leading" secondItem="EZn-8Y-Qeh" secondAttribute="leading" id="UQA-s2-VeS"/>
+                                                            <constraint firstItem="KMl-e5-VBJ" firstAttribute="centerX" secondItem="EZn-8Y-Qeh" secondAttribute="centerX" id="fQk-qB-Weg"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Md6-ex-Mr8" secondAttribute="bottom" id="idV-iO-HX2"/>
+                                                            <constraint firstItem="KMl-e5-VBJ" firstAttribute="height" secondItem="EZn-8Y-Qeh" secondAttribute="height" id="nar-az-D3w"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wji-UC-UuL">
                                                         <rect key="frame" x="131.5" y="0.0" width="56" height="29"/>
-                                                    </imageView>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instagram (4)" translatesAutoresizingMaskIntoConstraints="NO" id="FbI-yB-xcn">
+                                                                <rect key="frame" x="0.0" y="0.0" width="56" height="29"/>
+                                                            </imageView>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4Z-3S-2JT">
+                                                                <rect key="frame" x="0.0" y="0.0" width="56" height="29"/>
+                                                                <connections>
+                                                                    <action selector="btnInstigram:" destination="NKV-LZ-JEL" eventType="touchUpInside" id="fWb-4n-vp6"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="v4Z-3S-2JT" firstAttribute="leading" secondItem="wji-UC-UuL" secondAttribute="leading" id="4F5-Mg-ibu"/>
+                                                            <constraint firstItem="v4Z-3S-2JT" firstAttribute="top" secondItem="wji-UC-UuL" secondAttribute="top" id="74Y-MH-2Db"/>
+                                                            <constraint firstAttribute="bottom" secondItem="v4Z-3S-2JT" secondAttribute="bottom" id="OuN-mI-Cfw"/>
+                                                            <constraint firstItem="FbI-yB-xcn" firstAttribute="centerX" secondItem="wji-UC-UuL" secondAttribute="centerX" id="ig0-RT-pEs"/>
+                                                            <constraint firstItem="FbI-yB-xcn" firstAttribute="centerY" secondItem="wji-UC-UuL" secondAttribute="centerY" id="qdh-Oi-cmo"/>
+                                                            <constraint firstAttribute="trailing" secondItem="v4Z-3S-2JT" secondAttribute="trailing" id="tdZ-lW-eHS"/>
+                                                            <constraint firstItem="FbI-yB-xcn" firstAttribute="height" secondItem="wji-UC-UuL" secondAttribute="height" id="vEh-Gq-TbK"/>
+                                                            <constraint firstItem="FbI-yB-xcn" firstAttribute="width" secondItem="wji-UC-UuL" secondAttribute="width" id="woH-uj-LQH"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                             </stackView>
                                         </subviews>

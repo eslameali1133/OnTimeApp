@@ -340,17 +340,19 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fEs-Ay-u1i">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_login" translatesAutoresizingMaskIntoConstraints="NO" id="p52-xh-ra2">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="259"/>
+                                    </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zMk-Ab-6v6">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="259"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 50-1" translatesAutoresizingMaskIntoConstraints="NO" id="lFG-Ll-TKT">
-                                                <rect key="frame" x="94" y="64.5" width="187.5" height="129.5"/>
+                                                <rect key="frame" x="112.5" y="77.5" width="150" height="103.5"/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.91764705879999997" green="0.90196078430000004" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="lFG-Ll-TKT" firstAttribute="width" secondItem="zMk-Ab-6v6" secondAttribute="width" multiplier="0.5" id="C4f-Cb-pe3"/>
-                                            <constraint firstItem="lFG-Ll-TKT" firstAttribute="height" secondItem="zMk-Ab-6v6" secondAttribute="height" multiplier="0.5" id="GY1-pA-Tp0"/>
+                                            <constraint firstItem="lFG-Ll-TKT" firstAttribute="width" secondItem="zMk-Ab-6v6" secondAttribute="width" multiplier="0.4" id="C4f-Cb-pe3"/>
+                                            <constraint firstItem="lFG-Ll-TKT" firstAttribute="height" secondItem="zMk-Ab-6v6" secondAttribute="height" multiplier="0.4" id="GY1-pA-Tp0"/>
                                             <constraint firstItem="lFG-Ll-TKT" firstAttribute="centerX" secondItem="zMk-Ab-6v6" secondAttribute="centerX" id="JWk-P2-8KF"/>
                                             <constraint firstItem="lFG-Ll-TKT" firstAttribute="centerY" secondItem="zMk-Ab-6v6" secondAttribute="centerY" id="Yxg-Ss-QlX"/>
                                         </constraints>
@@ -530,9 +532,13 @@
                                     <constraint firstItem="zMk-Ab-6v6" firstAttribute="leading" secondItem="fEs-Ay-u1i" secondAttribute="leading" id="0a5-du-jYs"/>
                                     <constraint firstItem="zMk-Ab-6v6" firstAttribute="height" secondItem="fEs-Ay-u1i" secondAttribute="height" multiplier="0.4" id="Cuz-Pt-nDE"/>
                                     <constraint firstItem="98C-Un-ehD" firstAttribute="top" secondItem="zMk-Ab-6v6" secondAttribute="bottom" id="Gwo-bi-I3i"/>
+                                    <constraint firstItem="p52-xh-ra2" firstAttribute="height" secondItem="zMk-Ab-6v6" secondAttribute="height" id="L8f-6S-bqY"/>
+                                    <constraint firstItem="p52-xh-ra2" firstAttribute="top" secondItem="fEs-Ay-u1i" secondAttribute="top" id="LqK-1t-3DV"/>
+                                    <constraint firstAttribute="trailing" secondItem="p52-xh-ra2" secondAttribute="trailing" id="URd-bQ-Tvh"/>
                                     <constraint firstItem="zMk-Ab-6v6" firstAttribute="top" secondItem="fEs-Ay-u1i" secondAttribute="top" id="ZqG-sJ-Yzn"/>
                                     <constraint firstAttribute="trailing" secondItem="98C-Un-ehD" secondAttribute="trailing" id="ad8-65-HUG"/>
                                     <constraint firstItem="98C-Un-ehD" firstAttribute="leading" secondItem="fEs-Ay-u1i" secondAttribute="leading" id="aih-WN-BeX"/>
+                                    <constraint firstItem="p52-xh-ra2" firstAttribute="leading" secondItem="fEs-Ay-u1i" secondAttribute="leading" id="anR-QA-UUa"/>
                                     <constraint firstItem="98C-Un-ehD" firstAttribute="height" secondItem="fEs-Ay-u1i" secondAttribute="height" multiplier="0.5" id="hFL-xn-6Zl"/>
                                     <constraint firstItem="AEF-1j-SEk" firstAttribute="width" secondItem="fEs-Ay-u1i" secondAttribute="width" multiplier="0.8" id="hH2-HO-afD"/>
                                     <constraint firstAttribute="trailing" secondItem="zMk-Ab-6v6" secondAttribute="trailing" id="xct-Gw-ePd"/>
@@ -1302,7 +1308,9 @@
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOU-e9-npu">
                                                         <rect key="frame" x="0.0" y="0.0" width="26" height="19.5"/>
-                                                        <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="btnSideMenue:" destination="H9B-2c-AAT" eventType="touchUpInside" id="ljk-jj-aJP"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1320,12 +1328,11 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hCe-QM-7Kt">
                                                 <rect key="frame" x="20" y="22.5" width="26.5" height="19.5"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-in-circle-point-to-up" translatesAutoresizingMaskIntoConstraints="NO" id="hNP-o5-UKc">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-in-circle-point-to-up" translatesAutoresizingMaskIntoConstraints="NO" id="hNP-o5-UKc">
                                                         <rect key="frame" x="0.0" y="0.0" width="26.5" height="19.5"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10D-OM-mUi">
                                                         <rect key="frame" x="0.0" y="0.0" width="26.5" height="19.5"/>
-                                                        <state key="normal" title="Button"/>
                                                         <connections>
                                                             <action selector="DismissView:" destination="H9B-2c-AAT" eventType="touchUpInside" id="AJl-bP-2as"/>
                                                         </connections>
@@ -1443,6 +1450,7 @@
         <image name="Group 72-1" width="24" height="22"/>
         <image name="Path 83" width="13.5" height="8"/>
         <image name="arrow-in-circle-point-to-up" width="26" height="26"/>
+        <image name="bg_login" width="375.5" height="389"/>
         <image name="check (1)" width="409.60000610351562" height="409.60000610351562"/>
         <image name="radio-on-button (3)" width="409.60000610351562" height="409.60000610351562"/>
         <image name="radio-on-button (4)" width="384" height="384"/>

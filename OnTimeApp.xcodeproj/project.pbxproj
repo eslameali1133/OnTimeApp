@@ -189,6 +189,7 @@
 		F413AD0022B11E5F005A5CD5 /* NotificationsTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTC.swift; sourceTree = "<group>"; };
 		F418A048229172570021269A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		F418A04A229174A20021269A /* Introduction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Introduction.storyboard; sourceTree = "<group>"; };
+		F42A854322B8DAC100DB3CA3 /* OnTimeApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OnTimeApp.entitlements; sourceTree = "<group>"; };
 		F436D58D228BA5F600D0D6F1 /* HomeProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProjectVC.swift; sourceTree = "<group>"; };
 		F436D590228BA7B400D0D6F1 /* ProjectTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTC.swift; sourceTree = "<group>"; };
 		F46A578C22B7928A00C53CDE /* AllProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProjectVC.swift; sourceTree = "<group>"; };
@@ -749,6 +750,7 @@
 		F4FD2D5322882F5000D9F15B /* OnTimeApp */ = {
 			isa = PBXGroup;
 			children = (
+				F42A854322B8DAC100DB3CA3 /* OnTimeApp.entitlements */,
 				F4E74FFC229E8B7000A0D72B /* Extention */,
 				F4E75003229E8B7000A0D72B /* Font */,
 				F4E74FF9229E8B5300A0D72B /* HttpHelper */,
@@ -894,6 +896,14 @@
 				TargetAttributes = {
 					F4FD2D5022882F5000D9F15B = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					F4FD2D6722882F5200D9F15B = {
 						CreatedOnToolsVersion = 10.1;
@@ -1443,6 +1453,7 @@
 			baseConfigurationReference = 6058482E95E9030083958117 /* Pods-OnTimeApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OnTimeApp/OnTimeApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M4GL8RY9H9;
 				INFOPLIST_FILE = OnTimeApp/Info.plist;
@@ -1462,6 +1473,7 @@
 			baseConfigurationReference = 5A3E69CD970CED6606D26B20 /* Pods-OnTimeApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = OnTimeApp/OnTimeApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M4GL8RY9H9;
 				INFOPLIST_FILE = OnTimeApp/Info.plist;
