@@ -10,6 +10,16 @@ import UIKit
 import SideMenu
 class ProfilePointsVC: UIViewController {
 
+    @IBOutlet weak var imgProfile: customImageView!{
+    didSet{
+    imgProfile.layer.cornerRadius =  imgProfile.frame.width / 2
+    imgProfile.layer.borderWidth = 1
+    //            ProfileImageView.layer.borderColor =  UIColor(red: 0, green: 156, blue: 158, alpha: 1) as! CGColor
+    
+    imgProfile.clipsToBounds = true
+    
+    }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 setupSideMenu()

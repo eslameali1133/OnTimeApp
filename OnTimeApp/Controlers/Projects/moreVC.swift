@@ -10,6 +10,16 @@ import UIKit
 
 class moreVC: UIViewController ,UITableViewDataSource , UITableViewDelegate {
 
+    @IBOutlet weak var imgProfile: customImageView!{
+    didSet{
+    imgProfile.layer.cornerRadius =  imgProfile.frame.width / 2
+    imgProfile.layer.borderWidth = 1
+    //            ProfileImageView.layer.borderColor =  UIColor(red: 0, green: 156, blue: 158, alpha: 1) as! CGColor
+    
+    imgProfile.clipsToBounds = true
+    
+    }
+    }
     var arrylabel = [
         "المشاريع",
         "الاشعارات",

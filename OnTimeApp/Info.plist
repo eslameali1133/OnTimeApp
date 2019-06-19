@@ -2,6 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>DIN NEXT™ ARABIC BLACK_0.otf</string>
+		<string>DIN NEXT™ ARABIC BOLD_0.otf</string>
+		<string>DIN NEXT™ ARABIC HEAVY_0.otf</string>
+		<string>DIN NEXT™ ARABIC LIGHT_0.otf</string>
+		<string>DIN NEXT™ ARABIC MEDIUM _0.otf</string>
+		<string>DIN NEXT™ ARABIC REGULAR_0.otf</string>
+		<string>DIN NEXT™ ARABIC ULTRALIGHT_0.otf</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

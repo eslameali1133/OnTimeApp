@@ -311,10 +311,14 @@
                                                 <rect key="frame" x="75" y="102" width="225" height="249"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="condtion" translatesAutoresizingMaskIntoConstraints="NO" id="e1v-eU-6Sq">
-                                                        <rect key="frame" x="50.5" y="0.0" width="124" height="124.5"/>
+                                                        <rect key="frame" x="50" y="0.0" width="125" height="125"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="125" id="6Iu-gj-bkD"/>
+                                                            <constraint firstAttribute="width" constant="125" id="UQn-8a-ad1"/>
+                                                        </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لفتح الرسائل نرجو توقيع العقد" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nv4-Ci-hYu">
-                                                        <rect key="frame" x="0.0" y="144.5" width="225" height="25"/>
+                                                        <rect key="frame" x="0.0" y="145" width="225" height="24.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -352,10 +356,8 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="nv4-Ci-hYu" firstAttribute="width" secondItem="UoB-Mc-ToP" secondAttribute="width" id="76N-uL-btu"/>
-                                                    <constraint firstItem="e1v-eU-6Sq" firstAttribute="height" secondItem="UoB-Mc-ToP" secondAttribute="height" multiplier="0.5" id="7Sb-XO-V08"/>
                                                     <constraint firstItem="nv4-Ci-hYu" firstAttribute="centerX" secondItem="UoB-Mc-ToP" secondAttribute="centerX" id="CUm-ax-nI3"/>
                                                     <constraint firstItem="nv4-Ci-hYu" firstAttribute="height" secondItem="UoB-Mc-ToP" secondAttribute="height" multiplier="0.1" id="J0r-4e-AuH"/>
-                                                    <constraint firstItem="e1v-eU-6Sq" firstAttribute="width" secondItem="UoB-Mc-ToP" secondAttribute="width" multiplier="0.55" id="MFD-R7-nRR"/>
                                                     <constraint firstItem="e1v-eU-6Sq" firstAttribute="centerX" secondItem="UoB-Mc-ToP" secondAttribute="centerX" id="MG8-56-m2d"/>
                                                     <constraint firstItem="ZRJ-tP-Ash" firstAttribute="centerY" secondItem="UoB-Mc-ToP" secondAttribute="centerY" multiplier="1.6" id="PBm-rS-0Ia"/>
                                                     <constraint firstItem="nv4-Ci-hYu" firstAttribute="top" secondItem="e1v-eU-6Sq" secondAttribute="bottom" constant="20" id="Sbr-NR-gZd"/>
@@ -3704,6 +3706,7 @@
         <image name="whatsapp (1)-1" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ub8-RL-MWh"/>
+        <segue reference="SdP-AL-fjX"/>
+        <segue reference="vAA-3X-hWg"/>
     </inferredMetricsTieBreakers>
 </document>

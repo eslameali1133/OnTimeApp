@@ -10,6 +10,11 @@
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="DIN NEXT™ ARABIC BLACK_0.otf">
+            <string>DINNextLTW23-Black</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Verification CodeVC-->
         <scene sceneID="UPv-Pe-xgn">
@@ -620,8 +625,8 @@
                                         <rect key="frame" x="0.0" y="259" width="375" height="323.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="نسيت كلمة المرور" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBP-9g-ebN">
-                                                <rect key="frame" x="217.5" y="20" width="137.5" height="26.5"/>
-                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
+                                                <rect key="frame" x="222.5" y="20" width="132.5" height="25"/>
+                                                <fontDescription key="fontDescription" name="DINNextLTW23-Black" family="DIN Next LT W23" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>

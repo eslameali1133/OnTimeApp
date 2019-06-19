@@ -7,24 +7,42 @@
 //
 
 import UIKit
-
-class Profile: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource {
+import Alamofire
+import SwiftyJSON
+class Profile: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource , UIImagePickerControllerDelegate ,UINavigationControllerDelegate {
     var policyChecked = false
     var invoicChecked = false
-    
+    var AlertController: UIAlertController!
+    let imgpicker = UIImagePickerController()
     @IBOutlet weak var lblKey: UILabel!
     var KeyNumber = ["+966" , "+973" , "+20" , "+970" , "+249", "+252", "+974" , "+968" , "+963" , "+213" , "+964" , "+269" , "+212" , "+965" , "+216" , "+222" , "+967" , "+971" , "+962" , "+218" , "+961" , "+253"]
     var pickerview  = UIPickerView()
     var toolBar = UIToolbar()
+    @IBOutlet weak var imgProfile:  customImageView!{
+    didSet{
+    imgProfile.layer.cornerRadius =  imgProfile.frame.width / 2
+    imgProfile.layer.borderWidth = 1
+    //            ProfileImageView.layer.borderColor =  UIColor(red: 0, green: 156, blue: 158, alpha: 1) as! CGColor
+    
+    imgProfile.clipsToBounds = true
+    
+    }
+    }
     @IBOutlet weak var chekInvoice: UIImageView!
     @IBOutlet weak var imgPeople: UIImageView!
     @IBOutlet weak var imgOrg: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        SetupUploadImage()
         lblKey.text = "+966"
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func btnUoloadImg(_ sender: Any) {
+        imgpicker.delegate = self
+        imgpicker.allowsEditing = false
+        self.present(AlertController, animated: true, completion: nil)
+    }
     @IBAction func btnKey(_ sender: Any) {
         onDoneButtonTapped()
         configurePicker()
@@ -58,6 +76,63 @@ class Profile: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource 
     @IBAction func DismissView(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func SetupUploadImage()
+    {
+        AlertController = UIAlertController(title:"" , message:"إختر الصورة" , preferredStyle: UIAlertController.Style.actionSheet)
+        
+        let Cam = UIAlertAction(title: "الكاميرا", style: UIAlertAction.Style.default, handler: { (action) in
+            self.openCame()
+        })
+        let Gerall = UIAlertAction(title: "المعرض", style: UIAlertAction.Style.default, handler: { (action) in
+            self.opengelar()
+        })
+        
+        let Cancel = UIAlertAction(title: "إلغاء", style: UIAlertAction.Style.cancel, handler: { (action) in
+            //
+        })
+        
+        self.AlertController.addAction(Cam)
+        self.AlertController.addAction(Gerall)
+        self.AlertController.addAction(Cancel)
+    }
+    
+    func openCame(){
+        
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func opengelar(){
+        
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary){
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.allowsEditing = true
+            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(_ imgpicker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        guard let selectedImage = info[.originalImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
+        
+        imgProfile.image = selectedImage
+        
+        imgpicker.dismiss(animated: true, completion: nil)
+    }
+    
     func configurePicker (){
         pickerview = UIPickerView.init()
         pickerview.delegate = self
