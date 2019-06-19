@@ -10,6 +10,12 @@
 		34CBF24D27E1DAE88492538B /* Pods_OnTimeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E402FA1DA02AB377632E73 /* Pods_OnTimeApp.framework */; };
 		42162F03091B4E942AA0B238 /* Pods_OnTimeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E83462E70C182481A0BD8C /* Pods_OnTimeAppUITests.framework */; };
 		F4095F4122898647007B3DA9 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4095F4022898647007B3DA9 /* SignUpVC.swift */; };
+		F40ACFFD22BA4ED4000F4077 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40ACFF722BA4ED4000F4077 /* UIView.swift */; };
+		F40ACFFE22BA4ED4000F4077 /* TableView+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40ACFF822BA4ED4000F4077 /* TableView+EX.swift */; };
+		F40ACFFF22BA4ED4000F4077 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40ACFF922BA4ED4000F4077 /* UIColor.swift */; };
+		F40AD00022BA4ED4000F4077 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40ACFFA22BA4ED4000F4077 /* UITextField.swift */; };
+		F40AD00122BA4ED4000F4077 /* View+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40ACFFB22BA4ED4000F4077 /* View+Ex.swift */; };
+		F40AD00222BA4ED4000F4077 /* UIText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40ACFFC22BA4ED4000F4077 /* UIText.swift */; };
 		F413AD0122B11E5F005A5CD5 /* NotificationsTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F413AD0022B11E5F005A5CD5 /* NotificationsTC.swift */; };
 		F418A049229172570021269A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F418A047229172570021269A /* Profile.storyboard */; };
 		F418A04B229174A20021269A /* Introduction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F418A04A229174A20021269A /* Introduction.storyboard */; };
@@ -60,12 +66,6 @@
 		F4E74FF7229E8B3900A0D72B /* lang-en.json in Resources */ = {isa = PBXBuildFile; fileRef = F4E74FF3229E8B3900A0D72B /* lang-en.json */; };
 		F4E74FF8229E8B3900A0D72B /* lang-ar.json in Resources */ = {isa = PBXBuildFile; fileRef = F4E74FF5229E8B3900A0D72B /* lang-ar.json */; };
 		F4E74FFB229E8B5300A0D72B /* HttpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E74FFA229E8B5300A0D72B /* HttpHelper.swift */; };
-		F4E75037229E8B7100A0D72B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E74FFD229E8B7000A0D72B /* UIView.swift */; };
-		F4E75038229E8B7100A0D72B /* TableView+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E74FFE229E8B7000A0D72B /* TableView+EX.swift */; };
-		F4E75039229E8B7100A0D72B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E74FFF229E8B7000A0D72B /* UIColor.swift */; };
-		F4E7503A229E8B7100A0D72B /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E75000229E8B7000A0D72B /* UITextField.swift */; };
-		F4E7503B229E8B7100A0D72B /* View+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E75001229E8B7000A0D72B /* View+Ex.swift */; };
-		F4E7503C229E8B7100A0D72B /* UIText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E75002229E8B7000A0D72B /* UIText.swift */; };
 		F4E7503D229E8B7100A0D72B /* HelveticaNeue-Roman.otf in Resources */ = {isa = PBXBuildFile; fileRef = F4E75005229E8B7000A0D72B /* HelveticaNeue-Roman.otf */; };
 		F4E7503E229E8B7100A0D72B /* HelveticaNeue-BoldExt.otf in Resources */ = {isa = PBXBuildFile; fileRef = F4E75006229E8B7000A0D72B /* HelveticaNeue-BoldExt.otf */; };
 		F4E7503F229E8B7100A0D72B /* HelveticaNeue-HeavyExt.otf in Resources */ = {isa = PBXBuildFile; fileRef = F4E75007229E8B7000A0D72B /* HelveticaNeue-HeavyExt.otf */; };
@@ -186,6 +186,12 @@
 		B9E83462E70C182481A0BD8C /* Pods_OnTimeAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnTimeAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E402FA1DA02AB377632E73 /* Pods_OnTimeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnTimeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4095F4022898647007B3DA9 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		F40ACFF722BA4ED4000F4077 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		F40ACFF822BA4ED4000F4077 /* TableView+EX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableView+EX.swift"; sourceTree = "<group>"; };
+		F40ACFF922BA4ED4000F4077 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		F40ACFFA22BA4ED4000F4077 /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		F40ACFFB22BA4ED4000F4077 /* View+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Ex.swift"; sourceTree = "<group>"; };
+		F40ACFFC22BA4ED4000F4077 /* UIText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIText.swift; sourceTree = "<group>"; };
 		F413AD0022B11E5F005A5CD5 /* NotificationsTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTC.swift; sourceTree = "<group>"; };
 		F418A048229172570021269A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		F418A04A229174A20021269A /* Introduction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Introduction.storyboard; sourceTree = "<group>"; };
@@ -241,12 +247,6 @@
 		F4E74FF4229E8B3900A0D72B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F4E74FF5229E8B3900A0D72B /* lang-ar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "lang-ar.json"; sourceTree = "<group>"; };
 		F4E74FFA229E8B5300A0D72B /* HttpHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpHelper.swift; sourceTree = "<group>"; };
-		F4E74FFD229E8B7000A0D72B /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		F4E74FFE229E8B7000A0D72B /* TableView+EX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableView+EX.swift"; sourceTree = "<group>"; };
-		F4E74FFF229E8B7000A0D72B /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		F4E75000229E8B7000A0D72B /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
-		F4E75001229E8B7000A0D72B /* View+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Ex.swift"; sourceTree = "<group>"; };
-		F4E75002229E8B7000A0D72B /* UIText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIText.swift; sourceTree = "<group>"; };
 		F4E75005229E8B7000A0D72B /* HelveticaNeue-Roman.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeue-Roman.otf"; sourceTree = "<group>"; };
 		F4E75006229E8B7000A0D72B /* HelveticaNeue-BoldExt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeue-BoldExt.otf"; sourceTree = "<group>"; };
 		F4E75007229E8B7000A0D72B /* HelveticaNeue-HeavyExt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HelveticaNeue-HeavyExt.otf"; sourceTree = "<group>"; };
@@ -393,6 +393,19 @@
 				94F012C9E7B531CD7AC04EE7 /* Pods-OnTimeAppUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F40ACFF622BA4ED4000F4077 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				F40ACFF722BA4ED4000F4077 /* UIView.swift */,
+				F40ACFF822BA4ED4000F4077 /* TableView+EX.swift */,
+				F40ACFF922BA4ED4000F4077 /* UIColor.swift */,
+				F40ACFFA22BA4ED4000F4077 /* UITextField.swift */,
+				F40ACFFB22BA4ED4000F4077 /* View+Ex.swift */,
+				F40ACFFC22BA4ED4000F4077 /* UIText.swift */,
+			);
+			path = Extention;
 			sourceTree = "<group>";
 		};
 		F436D58F228BA78000D0D6F1 /* Cells */ = {
@@ -639,20 +652,6 @@
 			path = HttpHelper;
 			sourceTree = "<group>";
 		};
-		F4E74FFC229E8B7000A0D72B /* Extention */ = {
-			isa = PBXGroup;
-			children = (
-				F4E74FFD229E8B7000A0D72B /* UIView.swift */,
-				F4E74FFE229E8B7000A0D72B /* TableView+EX.swift */,
-				F4E74FFF229E8B7000A0D72B /* UIColor.swift */,
-				F4E75000229E8B7000A0D72B /* UITextField.swift */,
-				F4E75001229E8B7000A0D72B /* View+Ex.swift */,
-				F4E75002229E8B7000A0D72B /* UIText.swift */,
-			);
-			name = Extention;
-			path = "../../../../Taqseem-2/Taqseem/Extention";
-			sourceTree = "<group>";
-		};
 		F4E75003229E8B7000A0D72B /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -750,8 +749,8 @@
 		F4FD2D5322882F5000D9F15B /* OnTimeApp */ = {
 			isa = PBXGroup;
 			children = (
+				F40ACFF622BA4ED4000F4077 /* Extention */,
 				F42A854322B8DAC100DB3CA3 /* OnTimeApp.entitlements */,
-				F4E74FFC229E8B7000A0D72B /* Extention */,
 				F4E75003229E8B7000A0D72B /* Font */,
 				F4E74FF9229E8B5300A0D72B /* HttpHelper */,
 				F4E74FEF229E8B3900A0D72B /* Localization */,
@@ -1180,12 +1179,13 @@
 				F4E74FD6229E8B0700A0D72B /* SidemenuEnum.swift in Sources */,
 				F4E74FD8229E8B0700A0D72B /* PickerDropdown.swift in Sources */,
 				F4F8CC08229D615200C57BD7 /* PaybalVC.swift in Sources */,
+				F40AD00122BA4ED4000F4077 /* View+Ex.swift in Sources */,
 				F4E74FDE229E8B0700A0D72B /* LocalizableString.swift in Sources */,
 				F4F8CC0A229D618C00C57BD7 /* BankingVC.swift in Sources */,
 				F4F8CBD9229D2DEF00C57BD7 /* TermsVC.swift in Sources */,
 				F4E74FE3229E8B0700A0D72B /* LocalizableNavigationItem.swift in Sources */,
 				F4E74FEE229E8B2000A0D72B /* SharedData.swift in Sources */,
-				F4E75038229E8B7100A0D72B /* TableView+EX.swift in Sources */,
+				F40AD00222BA4ED4000F4077 /* UIText.swift in Sources */,
 				F4B705782296AB6C00A2EF9B /* moreVC.swift in Sources */,
 				F4DF5B61229ED65E008E99B3 /* DetailSeguVC.swift in Sources */,
 				F4E74FDF229E8B0700A0D72B /* Localizable.swift in Sources */,
@@ -1196,18 +1196,18 @@
 				F46A579122B792C800C53CDE /* RevisiedProjectVC.swift in Sources */,
 				F413AD0122B11E5F005A5CD5 /* NotificationsTC.swift in Sources */,
 				F4E74FD3229E8B0700A0D72B /* LanguageManager.swift in Sources */,
-				F4E75037229E8B7100A0D72B /* UIView.swift in Sources */,
 				F4E74FDD229E8B0700A0D72B /* AppCommon.swift in Sources */,
 				F4F8CBFF229D603F00C57BD7 /* PaymentVC.swift in Sources */,
 				F4F8CBF7229D5F6E00C57BD7 /* HelpTopicsVC.swift in Sources */,
+				F40ACFFF22BA4ED4000F4077 /* UIColor.swift in Sources */,
 				F46A579522B792FA00C53CDE /* doneProjectVC.swift in Sources */,
 				F46A579322B792E700C53CDE /* ContinueProjectVC.swift in Sources */,
+				F40ACFFE22BA4ED4000F4077 /* TableView+EX.swift in Sources */,
 				F4F8CC10229D63D500C57BD7 /* MakeAaqdVC.swift in Sources */,
 				F4E74FDA229E8B0700A0D72B /* Utilities.swift in Sources */,
 				F4FD2D5D22882F5000D9F15B /* OnTimeApp.xcdatamodeld in Sources */,
 				F4E74FE2229E8B0700A0D72B /* LocalizableButton.swift in Sources */,
 				F4F8CBF5229D5F3700C57BD7 /* HelpMessagesVC.swift in Sources */,
-				F4E7503A229E8B7100A0D72B /* UITextField.swift in Sources */,
 				F4F8CBFB229D5FC200C57BD7 /* CongratulationVC.swift in Sources */,
 				F436D58E228BA5F600D0D6F1 /* HomeProjectVC.swift in Sources */,
 				F4E74FD7229E8B0700A0D72B /* Enum.swift in Sources */,
@@ -1222,6 +1222,7 @@
 				F4E74FE0229E8B0700A0D72B /* LocalizableTextField.swift in Sources */,
 				F4E74FD5229E8B0700A0D72B /* LocationHelper.swift in Sources */,
 				F4E74FDC229E8B0700A0D72B /* DBMethod.swift in Sources */,
+				F40AD00022BA4ED4000F4077 /* UITextField.swift in Sources */,
 				F4F8CBFD229D5FE700C57BD7 /* ImportantNoteVC.swift in Sources */,
 				F4FD2D932288593500D9F15B /* LoginVC.swift in Sources */,
 				F4F8CBE5229D5B9A00C57BD7 /* ProfilePointsVC.swift in Sources */,
@@ -1233,17 +1234,16 @@
 				F4ADB61E228DFB7200E38CB5 /* AttachmentVC.swift in Sources */,
 				F4F8CC01229D606600C57BD7 /* PaymentMethodVC.swift in Sources */,
 				F4FD2D8C2288321800D9F15B /* AMCircleImageView.swift in Sources */,
-				F4E7503C229E8B7100A0D72B /* UIText.swift in Sources */,
 				F4FD2D95228864E200D9F15B /* ForgetPasswordVC.swift in Sources */,
 				F4F8CC06229D611000C57BD7 /* VisaCardDetailsVC.swift in Sources */,
 				F4E74FE9229E8B0700A0D72B /* DateView.swift in Sources */,
+				F40ACFFD22BA4ED4000F4077 /* UIView.swift in Sources */,
 				F4FD2D5522882F5000D9F15B /* AppDelegate.swift in Sources */,
 				F4E74FE5229E8B0700A0D72B /* LocalizableLabel.swift in Sources */,
 				F4F8CBF1229D5D8E00C57BD7 /* ProjectMessagesVC.swift in Sources */,
 				F4C46A6C22AE5AF400B6E9AE /* ProjectTypeCVC.swift in Sources */,
 				F4FD2D9122883EA100D9F15B /* VerificationCodeVC.swift in Sources */,
 				F4E74FEB229E8B0700A0D72B /* Country.swift in Sources */,
-				F4E75039229E8B7100A0D72B /* UIColor.swift in Sources */,
 				F4E74FE1229E8B0700A0D72B /* LocalizableTextView.swift in Sources */,
 				F4F8CBDD229D599000C57BD7 /* ProjectTypeVC.swift in Sources */,
 				F46A578D22B7928A00C53CDE /* AllProjectVC.swift in Sources */,
@@ -1255,7 +1255,6 @@
 				F4ADB620228DFDA100E38CB5 /* AttachmentTC.swift in Sources */,
 				F4E74FEA229E8B0700A0D72B /* Countries.swift in Sources */,
 				F4F8CBE1229D5ACC00C57BD7 /* NewProjectRequest.swift in Sources */,
-				F4E7503B229E8B7100A0D72B /* View+Ex.swift in Sources */,
 				F4B7057A2296AC9900A2EF9B /* moreTC.swift in Sources */,
 				F4F8CBDF229D59F900C57BD7 /* NotificationVC.swift in Sources */,
 				F4F8CBE9229D5C3C00C57BD7 /* Introduction1VC.swift in Sources */,
