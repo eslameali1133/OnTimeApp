@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Asset 57@600x-1" translatesAutoresizingMaskIntoConstraints="NO" id="Uw8-ie-bPE">
-                                <rect key="frame" x="112.5" y="157.5" width="150" height="200"/>
+                                <rect key="frame" x="112.5" y="192" width="150" height="200"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="art_splach2" translatesAutoresizingMaskIntoConstraints="NO" id="h1t-IT-OTD">
                                 <rect key="frame" x="187.5" y="473" width="187.5" height="194"/>
@@ -31,7 +31,7 @@
                             <constraint firstItem="h1t-IT-OTD" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.5" id="RVg-AX-719"/>
                             <constraint firstItem="Uw8-ie-bPE" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.4" id="bWz-O9-sQ8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="h1t-IT-OTD" secondAttribute="bottom" id="g5x-FL-bqa"/>
-                            <constraint firstItem="Uw8-ie-bPE" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.75" id="vJ5-py-nh5"/>
+                            <constraint firstItem="Uw8-ie-bPE" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.85" id="vJ5-py-nh5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h1t-IT-OTD" secondAttribute="trailing" id="vUg-z2-FdM"/>
                             <constraint firstItem="Uw8-ie-bPE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wIA-nB-uuK"/>
                             <constraint firstItem="Uw8-ie-bPE" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.3" id="x0E-Ow-n4F"/>

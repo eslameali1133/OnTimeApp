@@ -9,6 +9,17 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="DIN NEXT™ ARABIC MEDIUM _0.otf">
+            <string>DINNextLTW23-Medium</string>
+        </array>
+        <array key="DIN NEXT™ ARABIC REGULAR_0.otf">
+            <string>DINNextLTW23-Regular</string>
+        </array>
+        <array key="DIN NEXT™ ARABIC ULTRALIGHT_0.otf">
+            <string>DINNextLTW23-UltraLight</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Introduction3VC-->
         <scene sceneID="0j1-yH-dU1">
@@ -182,9 +193,8 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="94" height="38.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تخطي" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfN-hr-NkJ">
-                                                                <rect key="frame" x="26" y="9" width="42" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <rect key="frame" x="26.5" y="6.5" width="40.5" height="25"/>
+                                                                <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="17"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWM-Sl-M5a">
@@ -194,7 +204,6 @@
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.91764705879999997" green="0.90196078430000004" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstItem="sfN-hr-NkJ" firstAttribute="centerX" secondItem="41h-NG-aGi" secondAttribute="centerX" id="8W1-1n-pBp"/>
                                                             <constraint firstItem="JWM-Sl-M5a" firstAttribute="top" secondItem="41h-NG-aGi" secondAttribute="top" id="IvB-nb-Gk7"/>
@@ -211,8 +220,8 @@
                                                         <rect key="frame" x="114" y="0.0" width="154" height="38.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التالي" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wju-vb-g8x">
-                                                                <rect key="frame" x="57.5" y="9" width="38.5" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <rect key="frame" x="59" y="6.5" width="35.5" height="25"/>
+                                                                <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="17"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -332,12 +341,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="135.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wof-oM-aQR">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="36.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="البرمجة الآمنة وفق أحدث التقنيات" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9s-WM-2XG">
-                                                        <rect key="frame" x="0.0" y="18.5" width="375" height="18"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                                        <color key="textColor" red="0.33333333329999998" green="0.85882352939999995" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <rect key="frame" x="0.0" y="8.5" width="375" height="32.5"/>
+                                                        <fontDescription key="fontDescription" name="DINNextLTW23-Medium" family="DIN Next LT W23" pointSize="20"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -345,18 +353,18 @@
                                                 <constraints>
                                                     <constraint firstItem="e9s-WM-2XG" firstAttribute="width" secondItem="Wof-oM-aQR" secondAttribute="width" id="BCO-K0-QyV"/>
                                                     <constraint firstItem="e9s-WM-2XG" firstAttribute="centerX" secondItem="Wof-oM-aQR" secondAttribute="centerX" id="GRW-cQ-nAU"/>
-                                                    <constraint firstItem="e9s-WM-2XG" firstAttribute="height" secondItem="Wof-oM-aQR" secondAttribute="height" multiplier="0.5" id="aFd-yw-5rU"/>
+                                                    <constraint firstItem="e9s-WM-2XG" firstAttribute="height" secondItem="Wof-oM-aQR" secondAttribute="height" multiplier="0.8" id="aFd-yw-5rU"/>
                                                     <constraint firstAttribute="bottom" secondItem="e9s-WM-2XG" secondAttribute="bottom" id="hcu-xN-3JJ"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a4L-Su-BdR">
-                                                <rect key="frame" x="0.0" y="36.5" width="375" height="58.5"/>
+                                                <rect key="frame" x="0.0" y="41" width="375" height="94.5"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9JM-RC-aQK">
-                                                        <rect key="frame" x="0.0" y="4.5" width="375" height="58.5"/>
+                                                        <rect key="frame" x="0.0" y="7" width="375" height="94.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <string key="text">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوي المقروء لصفحة ما سيلهي القارئ في التركيز علي الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة اللتي يقرأها</string>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="DINNextLTW23-UltraLight" family="DIN Next LT W23" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                 </subviews>
@@ -373,8 +381,8 @@
                                         <constraints>
                                             <constraint firstItem="a4L-Su-BdR" firstAttribute="leading" secondItem="e4D-1G-KPb" secondAttribute="leading" id="1Sq-af-CQ9"/>
                                             <constraint firstAttribute="trailing" secondItem="a4L-Su-BdR" secondAttribute="trailing" id="ElW-Tt-876"/>
-                                            <constraint firstItem="Wof-oM-aQR" firstAttribute="height" secondItem="e4D-1G-KPb" secondAttribute="height" multiplier="0.27" id="Im4-eG-UBy"/>
-                                            <constraint firstItem="a4L-Su-BdR" firstAttribute="height" secondItem="e4D-1G-KPb" secondAttribute="height" multiplier="0.43" id="UcU-OK-R2p"/>
+                                            <constraint firstItem="Wof-oM-aQR" firstAttribute="height" secondItem="e4D-1G-KPb" secondAttribute="height" multiplier="0.3" id="Im4-eG-UBy"/>
+                                            <constraint firstItem="a4L-Su-BdR" firstAttribute="height" secondItem="e4D-1G-KPb" secondAttribute="height" multiplier="0.7" id="UcU-OK-R2p"/>
                                             <constraint firstItem="Wof-oM-aQR" firstAttribute="leading" secondItem="e4D-1G-KPb" secondAttribute="leading" id="VK1-kr-OHA"/>
                                             <constraint firstAttribute="trailing" secondItem="Wof-oM-aQR" secondAttribute="trailing" id="oQg-tU-gBp"/>
                                             <constraint firstItem="a4L-Su-BdR" firstAttribute="top" secondItem="Wof-oM-aQR" secondAttribute="bottom" id="tJa-X2-Dsl"/>
@@ -452,12 +460,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="135.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ryn-Y5-it2">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="36.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="البرمجة الآمنة وفق أحدث التقنيات" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lW7-TE-814">
-                                                        <rect key="frame" x="0.0" y="18.5" width="375" height="18"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                                        <color key="textColor" red="0.33333333329999998" green="0.85882352939999995" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <rect key="frame" x="0.0" y="8.5" width="375" height="32.5"/>
+                                                        <fontDescription key="fontDescription" name="DINNextLTW23-Medium" family="DIN Next LT W23" pointSize="20"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -466,17 +473,17 @@
                                                     <constraint firstItem="lW7-TE-814" firstAttribute="centerX" secondItem="Ryn-Y5-it2" secondAttribute="centerX" id="Y4o-VZ-4kf"/>
                                                     <constraint firstItem="lW7-TE-814" firstAttribute="width" secondItem="Ryn-Y5-it2" secondAttribute="width" id="jAq-nq-uaQ"/>
                                                     <constraint firstAttribute="bottom" secondItem="lW7-TE-814" secondAttribute="bottom" id="zJL-hL-IYU"/>
-                                                    <constraint firstItem="lW7-TE-814" firstAttribute="height" secondItem="Ryn-Y5-it2" secondAttribute="height" multiplier="0.5" id="zuE-ag-Kja"/>
+                                                    <constraint firstItem="lW7-TE-814" firstAttribute="height" secondItem="Ryn-Y5-it2" secondAttribute="height" multiplier="0.8" id="zuE-ag-Kja"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Or7-4x-Kty">
-                                                <rect key="frame" x="0.0" y="36.5" width="375" height="58.5"/>
+                                                <rect key="frame" x="0.0" y="41" width="375" height="94.5"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2dX-6s-YRy">
-                                                        <rect key="frame" x="0.0" y="4.5" width="375" height="58.5"/>
+                                                        <rect key="frame" x="0.0" y="7" width="375" height="94.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <string key="text">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوي المقروء لصفحة ما سيلهي القارئ في التركيز علي الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة اللتي يقرأها</string>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="DINNextLTW23-UltraLight" family="DIN Next LT W23" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                 </subviews>
@@ -491,13 +498,13 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="Ryn-Y5-it2" firstAttribute="height" secondItem="x3K-QS-Wp9" secondAttribute="height" multiplier="0.27" id="FqJ-C4-Wl3"/>
+                                            <constraint firstItem="Ryn-Y5-it2" firstAttribute="height" secondItem="x3K-QS-Wp9" secondAttribute="height" multiplier="0.3" id="FqJ-C4-Wl3"/>
                                             <constraint firstItem="Or7-4x-Kty" firstAttribute="leading" secondItem="x3K-QS-Wp9" secondAttribute="leading" id="QQJ-Dg-ZSx"/>
                                             <constraint firstAttribute="trailing" secondItem="Ryn-Y5-it2" secondAttribute="trailing" id="j7e-WI-rsm"/>
                                             <constraint firstItem="Ryn-Y5-it2" firstAttribute="leading" secondItem="x3K-QS-Wp9" secondAttribute="leading" id="kFo-cn-jJB"/>
                                             <constraint firstAttribute="trailing" secondItem="Or7-4x-Kty" secondAttribute="trailing" id="oyk-hG-H2G"/>
                                             <constraint firstItem="Or7-4x-Kty" firstAttribute="top" secondItem="Ryn-Y5-it2" secondAttribute="bottom" id="qBg-xb-ZFM"/>
-                                            <constraint firstItem="Or7-4x-Kty" firstAttribute="height" secondItem="x3K-QS-Wp9" secondAttribute="height" multiplier="0.43" id="tNy-Bp-auy"/>
+                                            <constraint firstItem="Or7-4x-Kty" firstAttribute="height" secondItem="x3K-QS-Wp9" secondAttribute="height" multiplier="0.7" id="tNy-Bp-auy"/>
                                             <constraint firstItem="Ryn-Y5-it2" firstAttribute="top" secondItem="x3K-QS-Wp9" secondAttribute="top" id="tVx-2E-hp9"/>
                                         </constraints>
                                     </view>
@@ -572,31 +579,30 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="135.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fYN-Bv-z1n">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="36.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="البرمجة الآمنة وفق أحدث التقنيات" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Sd-Vj-PjC">
-                                                        <rect key="frame" x="0.0" y="18.5" width="375" height="18"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                                        <color key="textColor" red="0.33333333329999998" green="0.85882352939999995" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <rect key="frame" x="0.0" y="8.5" width="375" height="32.5"/>
+                                                        <fontDescription key="fontDescription" name="DINNextLTW23-Medium" family="DIN Next LT W23" pointSize="20"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="5Sd-Vj-PjC" firstAttribute="height" secondItem="fYN-Bv-z1n" secondAttribute="height" multiplier="0.5" id="Vj9-8y-JbB"/>
+                                                    <constraint firstItem="5Sd-Vj-PjC" firstAttribute="height" secondItem="fYN-Bv-z1n" secondAttribute="height" multiplier="0.8" id="Vj9-8y-JbB"/>
                                                     <constraint firstAttribute="bottom" secondItem="5Sd-Vj-PjC" secondAttribute="bottom" id="Whp-2c-Kha"/>
                                                     <constraint firstItem="5Sd-Vj-PjC" firstAttribute="centerX" secondItem="fYN-Bv-z1n" secondAttribute="centerX" id="xtU-Sj-7fg"/>
                                                     <constraint firstItem="5Sd-Vj-PjC" firstAttribute="width" secondItem="fYN-Bv-z1n" secondAttribute="width" id="zHw-a1-zN5"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJ0-Eu-lgg">
-                                                <rect key="frame" x="0.0" y="36.5" width="375" height="58.5"/>
+                                                <rect key="frame" x="0.0" y="41" width="375" height="94.5"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JGh-cz-oEb">
-                                                        <rect key="frame" x="0.0" y="4.5" width="375" height="58.5"/>
+                                                        <rect key="frame" x="0.0" y="7" width="375" height="94.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <string key="text">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوي المقروء لصفحة ما سيلهي القارئ في التركيز علي الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة اللتي يقرأها</string>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="DINNextLTW23-UltraLight" family="DIN Next LT W23" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                 </subviews>
@@ -611,8 +617,8 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="fYN-Bv-z1n" firstAttribute="height" secondItem="Esz-bQ-hj5" secondAttribute="height" multiplier="0.27" id="4ry-sh-Vgq"/>
-                                            <constraint firstItem="hJ0-Eu-lgg" firstAttribute="height" secondItem="Esz-bQ-hj5" secondAttribute="height" multiplier="0.43" id="8CC-yV-P04"/>
+                                            <constraint firstItem="fYN-Bv-z1n" firstAttribute="height" secondItem="Esz-bQ-hj5" secondAttribute="height" multiplier="0.3" id="4ry-sh-Vgq"/>
+                                            <constraint firstItem="hJ0-Eu-lgg" firstAttribute="height" secondItem="Esz-bQ-hj5" secondAttribute="height" multiplier="0.7" id="8CC-yV-P04"/>
                                             <constraint firstAttribute="trailing" secondItem="hJ0-Eu-lgg" secondAttribute="trailing" id="RzB-Dq-8i8"/>
                                             <constraint firstItem="hJ0-Eu-lgg" firstAttribute="top" secondItem="fYN-Bv-z1n" secondAttribute="bottom" id="U1c-b3-eDE"/>
                                             <constraint firstItem="fYN-Bv-z1n" firstAttribute="leading" secondItem="Esz-bQ-hj5" secondAttribute="leading" id="gXc-LV-3st"/>
