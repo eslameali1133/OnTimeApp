@@ -21,4 +21,9 @@ class AttachmentTC: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func btnDonload(_ sender: Any) {
+    }
+    @IBAction func btnShare(_ sender: Any) {
+    
+    }
 }

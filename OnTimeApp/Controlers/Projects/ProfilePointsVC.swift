@@ -10,6 +10,7 @@ import UIKit
 import SideMenu
 class ProfilePointsVC: UIViewController {
 
+    @IBOutlet weak var btnSideMenue: UIBarButtonItem!
     @IBOutlet weak var imgProfile: customImageView!{
     didSet{
     imgProfile.layer.cornerRadius =  imgProfile.frame.width / 2
@@ -22,12 +23,10 @@ class ProfilePointsVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-setupSideMenu()
+        sideMenue()
         // Do any additional setup after loading the view.
     }
-    override func viewWillAppear(_ animated: Bool) {
-        setupSideMenu()
-    }
+    
     @IBAction func btnSideMenue(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Projects", bundle: nil)
         let cont = storyboard.instantiateViewController(withIdentifier: "RightMenuNavigationController")
@@ -36,46 +35,21 @@ setupSideMenu()
         self.present(cont, animated: true, completion: nil)
     }
 
-    ////Side Menu
-    
-    fileprivate func setupSideMenu() {
-        //        if SharedData.SharedInstans.getLanguage() == "en"
-        //        {
-        //            // Define the menus
-        //
-        //            RigthMenubtn.title = " "
-        //            RigthMenubtn.image = nil
-        //            RigthMenubtn.isEnabled  = false
-        //
-        //            RigthMenubtn.width = 0.00000000001;
-        //            LeftMenuBtn.width = 0;
-        //
-        //            SideMenuManager.default.menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? UISideMenuNavigationController
-        //            SideMenuManager.default.menuLeftNavigationController?.leftSide = true
-        //
-        //
-        //
-        //
-        //
-        //        }else
-        //        {
-        //
-        //             Define the menus
-        SideMenuManager.default.menuRightNavigationController = storyboard!.instantiateViewController(withIdentifier: "RightMenuNavigationController") as? UISideMenuNavigationController
-        SideMenuManager.default.menuLeftNavigationController?.leftSide = false
-        //}
-        // Enable gestures. The left and/or right menus must be set up above for these to work.
-        // Note that these continue to work on the Navigation Controller independent of the View Controller it displays!
-        SideMenuManager.default.menuAddPanGestureToPresent(toView:self.view)
-        //self.navigationController!.navigationBar)
-        SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.view)
-        //self.navigationController!.view)
-        SideMenuManager.default.menuWidth = view.frame.width * 0.75
-        // Set up a cool background image for demo purposes
-        //        SideMenuManager.default.menuAnimationBackgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+    func sideMenue(){
+        if revealViewController() != nil {
+            btnSideMenue.target = revealViewController()
+            btnSideMenue.action = #selector(SWRevealViewController.rightRevealToggle(_:))
+            revealViewController()?.rightViewRevealWidth =  view.frame.width * 0.75
+            revealViewController()?.rearViewRevealWidth = view.frame.width * 0.25
+            view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
+        }
     }
+
+    
     @IBAction func DismissView(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Projects", bundle:nil)
+        let cont = storyBoard.instantiateViewController(withIdentifier: "HomeNAV")
+        self.revealViewController()?.pushFrontViewController(cont, animated: true)
     }
 
 }

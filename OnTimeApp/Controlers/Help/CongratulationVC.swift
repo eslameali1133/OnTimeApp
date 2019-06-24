@@ -10,6 +10,7 @@ import UIKit
 
 class CongratulationVC: UIViewController {
 
+    @IBOutlet weak var RatingControl: RatingControl!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,6 +18,35 @@ class CongratulationVC: UIViewController {
     }
     
 
+    @IBAction func btnDownload(_ sender: Any) {
+    }
+    @IBAction func btnShare(_ sender: Any) {
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        let textToShare = "Check Taqseema app"
+        
+        if let myWebsite = URL(string: "http://itunes.apple.com/app/id1451620043") {//Enter link to your app here
+            let objectsToShare = [textToShare, myWebsite, image ?? #imageLiteral(resourceName: "ic_launcher")] as [Any]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            
+            //Excluded Activities
+            activityVC.excludedActivityTypes = [UIActivity.ActivityType.postToFacebook, UIActivity.ActivityType.addToReadingList]
+            //
+            
+            activityVC.popoverPresentationController?.sourceView = self.view
+            self.present(activityVC, animated: true, completion: nil)
+            
+        }
+    }
+    @IBAction func btnSend(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Projects", bundle: nil)
+        let cont = storyboard.instantiateViewController(withIdentifier: "Home")
+        
+        self.present(cont, animated: true, completion: nil)
+    }
     @IBAction func btnSideMenue(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Projects", bundle: nil)
         let cont = storyboard.instantiateViewController(withIdentifier: "RightMenuNavigationController")

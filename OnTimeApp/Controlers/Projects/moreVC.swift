@@ -54,34 +54,34 @@ class moreVC: UIViewController ,UITableViewDataSource , UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             let storyBoard : UIStoryboard = UIStoryboard(name: "Projects", bundle:nil)
-            let cont = storyBoard.instantiateViewController(withIdentifier: "HomeProjectVC")as! HomeProjectVC
-            self.present(cont, animated: true, completion: nil)
+            let cont = storyBoard.instantiateViewController(withIdentifier: "HomeNAV")
+            self.revealViewController()?.pushFrontViewController(cont, animated: true)
         }
 
         else if indexPath.row == 1{
             let storyBoard : UIStoryboard = UIStoryboard(name: "Projects", bundle:nil)
-            let cont = storyBoard.instantiateViewController(withIdentifier: "NotificationVC")as! NotificationVC
-            self.present(cont, animated: true, completion: nil)
+            let cont = storyBoard.instantiateViewController(withIdentifier: "NotificationNAV")
+            self.revealViewController()?.pushFrontViewController(cont, animated: true)
         }
         else if indexPath.row == 2{
             let storyBoard : UIStoryboard = UIStoryboard(name: "Projects", bundle:nil)
-            let cont = storyBoard.instantiateViewController(withIdentifier: "ProfilePointsVC")as! ProfilePointsVC
-            self.present(cont, animated: true, completion: nil)
+            let cont = storyBoard.instantiateViewController(withIdentifier: "ProfileNAV")
+            self.revealViewController()?.pushFrontViewController(cont, animated: true)
         }
         else if indexPath.row == 4{
             let storyBoard : UIStoryboard = UIStoryboard(name: "Help", bundle:nil)
-            let cont = storyBoard.instantiateViewController(withIdentifier: "OnTimeVC")as! OnTimeVC
-            self.present(cont, animated: true, completion: nil)
+            let cont = storyBoard.instantiateViewController(withIdentifier: "AboutUsNAV")
+            self.revealViewController()?.pushFrontViewController(cont, animated: true)
         }
         else if indexPath.row == 5{
             let storyBoard : UIStoryboard = UIStoryboard(name: "Profile", bundle:nil)
-            let cont = storyBoard.instantiateViewController(withIdentifier: "TermsVC")as! TermsVC
-            self.present(cont, animated: true, completion: nil)
+            let cont = storyBoard.instantiateViewController(withIdentifier: "TermsNAV")
+            self.revealViewController()?.pushFrontViewController(cont, animated: true)
         }
         else if indexPath.row == 6{
             let storyBoard : UIStoryboard = UIStoryboard(name: "Help", bundle:nil)
-            let cont = storyBoard.instantiateViewController(withIdentifier: "HelpMethodVC")as! HelpMethodVC
-            self.present(cont, animated: true, completion: nil)
+            let cont = storyBoard.instantiateViewController(withIdentifier: "HelpNAV")
+            self.revealViewController()?.pushFrontViewController(cont, animated: true)
         }
     }
     

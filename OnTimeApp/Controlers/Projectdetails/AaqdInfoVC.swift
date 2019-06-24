@@ -34,6 +34,9 @@ var imgChecked1 = false
         popupPolecies.backgroundColor = UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.75)
     }
     
+    @IBAction func btnHidePopDetail(_ sender: Any) {
+        popupprojectDetails.isHidden = true
+    }
     @IBAction func btnHideProjectDetails(_ sender: Any) {
         popupprojectDetails.isHidden = true
     }

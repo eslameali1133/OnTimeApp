@@ -10,6 +10,9 @@ import UIKit
 
 class AttachmentVC: UIViewController , UITableViewDataSource , UITableViewDelegate{
 
+   
+    @IBOutlet weak var btnDownload: UIButton!
+    @IBOutlet weak var btnShare: UIButton!
     @IBOutlet var popupSocial: UIView!
     @IBOutlet weak var tblAttachment: UITableView!
     override func viewDidLoad() {
@@ -23,6 +26,32 @@ class AttachmentVC: UIViewController , UITableViewDataSource , UITableViewDelega
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func btnDownload(_ sender: Any) {
+    }
+    @IBAction func btnHidePopupSocial(_ sender: Any) {
+        popupSocial.isHidden = true
+    }
+    @IBAction func btnShare(_ sender: Any) {
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        let textToShare = "Check Taqseema app"
+        
+        if let myWebsite = URL(string: "http://itunes.apple.com/app/id1451620043") {//Enter link to your app here
+            let objectsToShare = [textToShare, myWebsite, image ?? #imageLiteral(resourceName: "ic_launcher")] as [Any]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            
+            //Excluded Activities
+            activityVC.excludedActivityTypes = [UIActivity.ActivityType.postToFacebook, UIActivity.ActivityType.addToReadingList]
+            //
+            
+            activityVC.popoverPresentationController?.sourceView = self.view
+            self.present(activityVC, animated: true, completion: nil)
+        }
+        
+    }
     @IBAction func btnHideSocial(_ sender: Any) {
         popupSocial.isHidden = true
     }

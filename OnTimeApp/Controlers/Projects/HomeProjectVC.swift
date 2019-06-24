@@ -10,6 +10,7 @@ import UIKit
 import SideMenu
 class HomeProjectVC: UIViewController {
     
+    @IBOutlet weak var btnSideMenue: UIBarButtonItem!
     @IBOutlet weak var  imgProfile: customImageView!{
     didSet{
     imgProfile.layer.cornerRadius =  imgProfile.frame.width / 2
@@ -20,6 +21,10 @@ class HomeProjectVC: UIViewController {
     
     }
     }
+    @IBOutlet weak var tabDone: UIView!
+    @IBOutlet weak var tabContinue: UIView!
+    @IBOutlet weak var tabRevised: UIView!
+    @IBOutlet weak var tabAll: UIView!
     @IBOutlet weak var allC: UIView!
     @IBOutlet weak var revisionC: UIView!
     @IBOutlet weak var contenueC: UIView!
@@ -30,31 +35,20 @@ class HomeProjectVC: UIViewController {
     @IBOutlet weak var lblRevisedPro: UILabel!
     @IBOutlet weak var lblAllPro: UILabel!
     override func viewDidLoad() {
-       
-      //setupSideMenu()
-       
         super.viewDidLoad()
-
+        sideMenue()
+       // setupSideMenu()
         allC.isHidden = false
         revisionC.isHidden = true
         contenueC.isHidden = true
         doneC.isHidden = true
-        
-        lblAllPro.textColor = UIColor.hexColor(string: "55DBA8")
-        lblDonePro.textColor = UIColor.black
-        lblRevisedPro.textColor = UIColor.black
-        lblContinuePro.textColor = UIColor.black
+        tabAll.backgroundColor = UIColor.hexColor(string: "55DBA8")
+//        lblAllPro.textColor = UIColor.hexColor(string: "55DBA8")
+//        lblDonePro.textColor = UIColor.black
+//        lblRevisedPro.textColor = UIColor.black
+//        lblContinuePro.textColor = UIColor.black
         // Do any additional setup after loading the view.
     }
-    
-    @IBAction func btnSideMenue(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Projects", bundle: nil)
-        let cont = storyboard.instantiateViewController(withIdentifier: "RightMenuNavigationController")
-        cont.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-        cont.modalTransitionStyle = UIModalTransitionStyle.coverVertical
-        self.present(cont, animated: true, completion: nil)
-    }
-    
     
     @IBAction func btnAllPro(_ sender: Any) {
         allC.isHidden = false
@@ -62,10 +56,15 @@ class HomeProjectVC: UIViewController {
         contenueC.isHidden = true
         doneC.isHidden = true
         
-        lblAllPro.textColor = UIColor.hexColor(string: "55DBA8")
-        lblDonePro.textColor = UIColor.black
-        lblRevisedPro.textColor = UIColor.black
-        lblContinuePro.textColor = UIColor.black
+        tabAll.backgroundColor = UIColor.hexColor(string: "55DBA8")
+        tabDone.backgroundColor = UIColor.white
+        tabRevised.backgroundColor = UIColor.white
+        tabContinue.backgroundColor = UIColor.white
+        
+//        lblAllPro.textColor = UIColor.hexColor(string: "55DBA8")
+//        lblDonePro.textColor = UIColor.black
+//        lblRevisedPro.textColor = UIColor.black
+//        lblContinuePro.textColor = UIColor.black
     }
     @IBAction func btnContinuePro(_ sender: Any) {
         allC.isHidden = true
@@ -73,10 +72,15 @@ class HomeProjectVC: UIViewController {
         contenueC.isHidden = false
         doneC.isHidden = true
         
-        lblAllPro.textColor = UIColor.black
-        lblDonePro.textColor = UIColor.black
-        lblRevisedPro.textColor = UIColor.black
-        lblContinuePro.textColor = UIColor.hexColor(string: "55DBA8")
+        tabAll.backgroundColor = UIColor.white
+        tabDone.backgroundColor = UIColor.white
+        tabRevised.backgroundColor = UIColor.white
+        tabContinue.backgroundColor = UIColor.hexColor(string: "55DBA8")
+        
+//        lblAllPro.textColor = UIColor.black
+//        lblDonePro.textColor = UIColor.black
+//        lblRevisedPro.textColor = UIColor.black
+//        lblContinuePro.textColor = UIColor.hexColor(string: "55DBA8")
     }
     @IBAction func btnDonePro(_ sender: Any) {
         allC.isHidden = true
@@ -84,11 +88,18 @@ class HomeProjectVC: UIViewController {
         contenueC.isHidden = true
         doneC.isHidden = false
         
-        lblAllPro.textColor = UIColor.black
-        lblDonePro.textColor = UIColor.hexColor(string: "55DBA8")
-
-        lblRevisedPro.textColor = UIColor.black
-        lblContinuePro.textColor = UIColor.black    }
+        tabAll.backgroundColor = UIColor.white
+        tabDone.backgroundColor = UIColor.hexColor(string: "55DBA8")
+        tabRevised.backgroundColor = UIColor.white
+        tabContinue.backgroundColor = UIColor.white
+        
+//        lblAllPro.textColor = UIColor.black
+//        lblDonePro.textColor = UIColor.hexColor(string: "55DBA8")
+//
+//        lblRevisedPro.textColor = UIColor.black
+//        lblContinuePro.textColor = UIColor.black
+        
+    }
     
     @IBAction func btnRevisPro(_ sender: Any) {
         allC.isHidden = true
@@ -96,11 +107,16 @@ class HomeProjectVC: UIViewController {
         contenueC.isHidden = true
         doneC.isHidden = true
         
-        lblAllPro.textColor = UIColor.black
-        lblDonePro.textColor = UIColor.black
+        tabAll.backgroundColor = UIColor.white
+        tabDone.backgroundColor = UIColor.white
+        tabRevised.backgroundColor = UIColor.hexColor(string: "55DBA8")
+        tabContinue.backgroundColor = UIColor.white
         
-        lblRevisedPro.textColor = UIColor.hexColor(string: "55DBA8")
-        lblContinuePro.textColor = UIColor.black
+//        lblAllPro.textColor = UIColor.black
+//        lblDonePro.textColor = UIColor.black
+//
+//        lblRevisedPro.textColor = UIColor.hexColor(string: "55DBA8")
+//        lblContinuePro.textColor = UIColor.black
     }
     ////Side Menu
 
@@ -114,6 +130,16 @@ class HomeProjectVC: UIViewController {
             self.navigationController!.view)
         SideMenuManager.default.menuWidth = view.frame.width * 0.75
        
+    }
+    
+    func sideMenue(){
+        if revealViewController() != nil {
+            btnSideMenue.target = revealViewController()
+            btnSideMenue.action = #selector(SWRevealViewController.rightRevealToggle(_:))
+            revealViewController()?.rightViewRevealWidth =  view.frame.width * 0.75
+            revealViewController()?.rearViewRevealWidth = view.frame.width * 0.25
+            view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
+        }
     }
 
 }

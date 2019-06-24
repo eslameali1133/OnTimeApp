@@ -28,6 +28,8 @@
 		F418A04B229174A20021269A /* Introduction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F418A04A229174A20021269A /* Introduction.storyboard */; };
 		F436D58E228BA5F600D0D6F1 /* HomeProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436D58D228BA5F600D0D6F1 /* HomeProjectVC.swift */; };
 		F436D591228BA7B400D0D6F1 /* ProjectTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436D590228BA7B400D0D6F1 /* ProjectTC.swift */; };
+		F44E0DF222C0297B002F0F7A /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F44E0DF122C0297B002F0F7A /* Test.storyboard */; };
+		F44E0DF622C02A62002F0F7A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F44E0DF522C02A62002F0F7A /* SWRevealViewController.m */; };
 		F46A578D22B7928A00C53CDE /* AllProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46A578C22B7928A00C53CDE /* AllProjectVC.swift */; };
 		F46A579122B792C800C53CDE /* RevisiedProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46A579022B792C800C53CDE /* RevisiedProjectVC.swift */; };
 		F46A579322B792E700C53CDE /* ContinueProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46A579222B792E700C53CDE /* ContinueProjectVC.swift */; };
@@ -43,6 +45,7 @@
 		F4B705782296AB6C00A2EF9B /* moreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B705772296AB6C00A2EF9B /* moreVC.swift */; };
 		F4B7057A2296AC9900A2EF9B /* moreTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B705792296AC9900A2EF9B /* moreTC.swift */; };
 		F4C46A6C22AE5AF400B6E9AE /* ProjectTypeCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C46A6B22AE5AF400B6E9AE /* ProjectTypeCVC.swift */; };
+		F4D01F4322C0E15200D081AD /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D01F4222C0E15100D081AD /* RatingControl.swift */; };
 		F4DF5B61229ED65E008E99B3 /* DetailSeguVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DF5B60229ED65E008E99B3 /* DetailSeguVC.swift */; };
 		F4E74FD3229E8B0700A0D72B /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E74FAE229E8B0700A0D72B /* LanguageManager.swift */; };
 		F4E74FD4229E8B0700A0D72B /* CusImageview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E74FAF229E8B0700A0D72B /* CusImageview.swift */; };
@@ -163,6 +166,10 @@
 		F42A854322B8DAC100DB3CA3 /* OnTimeApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OnTimeApp.entitlements; sourceTree = "<group>"; };
 		F436D58D228BA5F600D0D6F1 /* HomeProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProjectVC.swift; sourceTree = "<group>"; };
 		F436D590228BA7B400D0D6F1 /* ProjectTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTC.swift; sourceTree = "<group>"; };
+		F44E0DF122C0297B002F0F7A /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
+		F44E0DF322C02A49002F0F7A /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		F44E0DF422C02A61002F0F7A /* OnTimeApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OnTimeApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		F44E0DF522C02A62002F0F7A /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		F46A578C22B7928A00C53CDE /* AllProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProjectVC.swift; sourceTree = "<group>"; };
 		F46A579022B792C800C53CDE /* RevisiedProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisiedProjectVC.swift; sourceTree = "<group>"; };
 		F46A579222B792E700C53CDE /* ContinueProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueProjectVC.swift; sourceTree = "<group>"; };
@@ -178,6 +185,7 @@
 		F4B705772296AB6C00A2EF9B /* moreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moreVC.swift; sourceTree = "<group>"; };
 		F4B705792296AC9900A2EF9B /* moreTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moreTC.swift; sourceTree = "<group>"; };
 		F4C46A6B22AE5AF400B6E9AE /* ProjectTypeCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTypeCVC.swift; sourceTree = "<group>"; };
+		F4D01F4222C0E15100D081AD /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		F4DF5B60229ED65E008E99B3 /* DetailSeguVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSeguVC.swift; sourceTree = "<group>"; };
 		F4E74FAE229E8B0700A0D72B /* LanguageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		F4E74FAF229E8B0700A0D72B /* CusImageview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CusImageview.swift; sourceTree = "<group>"; };
@@ -607,6 +615,8 @@
 		F4FD2D5322882F5000D9F15B /* OnTimeApp */ = {
 			isa = PBXGroup;
 			children = (
+				F44E0DF522C02A62002F0F7A /* SWRevealViewController.m */,
+				F44E0DF322C02A49002F0F7A /* SWRevealViewController.h */,
 				F40ACFF622BA4ED4000F4077 /* Extention */,
 				F42A854322B8DAC100DB3CA3 /* OnTimeApp.entitlements */,
 				F4E75003229E8B7000A0D72B /* Font */,
@@ -621,6 +631,7 @@
 				F4FD2D5422882F5000D9F15B /* AppDelegate.swift */,
 				F4FD2D6322882F5200D9F15B /* Info.plist */,
 				F4FD2D5B22882F5000D9F15B /* OnTimeApp.xcdatamodeld */,
+				F44E0DF422C02A61002F0F7A /* OnTimeApp-Bridging-Header.h */,
 			);
 			path = OnTimeApp;
 			sourceTree = "<group>";
@@ -653,6 +664,7 @@
 				F4799712229C2D4400F4CA7A /* ProjectDetails.storyboard */,
 				F4799714229C2F0800F4CA7A /* Paid.storyboard */,
 				F4799716229C300C00F4CA7A /* Help.storyboard */,
+				F44E0DF122C0297B002F0F7A /* Test.storyboard */,
 			);
 			path = StoryBords;
 			sourceTree = "<group>";
@@ -670,6 +682,7 @@
 		F4FD2D8D2288328800D9F15B /* Controlers */ = {
 			isa = PBXGroup;
 			children = (
+				F4D01F4222C0E15100D081AD /* RatingControl.swift */,
 				F479971D229C30B300F4CA7A /* Profile */,
 				F479971C229C30AA00F4CA7A /* Projects */,
 				F479971B229C30A700F4CA7A /* Introduction */,
@@ -753,6 +766,7 @@
 				TargetAttributes = {
 					F4FD2D5022882F5000D9F15B = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 1;
@@ -812,6 +826,7 @@
 				F40AD00C22BA6CEF000F4077 /* DIN NEXT™ ARABIC HEAVY_0.otf in Resources */,
 				F418A049229172570021269A /* Profile.storyboard in Resources */,
 				F4FD2D5A22882F5000D9F15B /* Projects.storyboard in Resources */,
+				F44E0DF222C0297B002F0F7A /* Test.storyboard in Resources */,
 				F40AD00F22BA6CEF000F4077 /* DIN NEXT™ ARABIC REGULAR_0.otf in Resources */,
 				F40AD00E22BA6CEF000F4077 /* DIN NEXT™ ARABIC BLACK_0.otf in Resources */,
 				F4799715229C2F0800F4CA7A /* Paid.storyboard in Resources */,
@@ -854,6 +869,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IBLocalizable/IBLocalizable.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/InteractiveSideMenu/InteractiveSideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/KKPinCodeTextField/KKPinCodeTextField.framework",
 				"${BUILT_PRODUCTS_DIR}/Localize-Swift/Localize_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
@@ -877,6 +893,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBLocalizable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InteractiveSideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KKPinCodeTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Localize_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
@@ -995,6 +1012,7 @@
 				F4E74FD6229E8B0700A0D72B /* SidemenuEnum.swift in Sources */,
 				F4E74FD8229E8B0700A0D72B /* PickerDropdown.swift in Sources */,
 				F4F8CC08229D615200C57BD7 /* PaybalVC.swift in Sources */,
+				F4D01F4322C0E15200D081AD /* RatingControl.swift in Sources */,
 				F40AD00122BA4ED4000F4077 /* View+Ex.swift in Sources */,
 				F4E74FDE229E8B0700A0D72B /* LocalizableString.swift in Sources */,
 				F4F8CC0A229D618C00C57BD7 /* BankingVC.swift in Sources */,
@@ -1053,6 +1071,7 @@
 				F4FD2D95228864E200D9F15B /* ForgetPasswordVC.swift in Sources */,
 				F4F8CC06229D611000C57BD7 /* VisaCardDetailsVC.swift in Sources */,
 				F4E74FE9229E8B0700A0D72B /* DateView.swift in Sources */,
+				F44E0DF622C02A62002F0F7A /* SWRevealViewController.m in Sources */,
 				F40ACFFD22BA4ED4000F4077 /* UIView.swift in Sources */,
 				F4FD2D5522882F5000D9F15B /* AppDelegate.swift in Sources */,
 				F4E74FE5229E8B0700A0D72B /* LocalizableLabel.swift in Sources */,
@@ -1268,6 +1287,7 @@
 			baseConfigurationReference = 6058482E95E9030083958117 /* Pods-OnTimeApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = OnTimeApp/OnTimeApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M4GL8RY9H9;
@@ -1278,6 +1298,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Ontime24.OnTimeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OnTimeApp/OnTimeApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1288,6 +1310,7 @@
 			baseConfigurationReference = 5A3E69CD970CED6606D26B20 /* Pods-OnTimeApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = OnTimeApp/OnTimeApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M4GL8RY9H9;
@@ -1298,6 +1321,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Ontime24.OnTimeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OnTimeApp/OnTimeApp-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

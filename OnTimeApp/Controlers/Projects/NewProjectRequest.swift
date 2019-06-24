@@ -101,7 +101,7 @@ class NewProjectRequest: UIViewController , UIPickerViewDelegate , UIPickerViewD
         AlertController = UIAlertController(title:"" , message:AppCommon.sharedInstance.localization("المرفقات") , preferredStyle: UIAlertController.Style.actionSheet)
         
         let Cam = UIAlertAction(title: "الكاميرا", style: UIAlertAction.Style.default, handler: { (action) in
-            self.openCameraImagePicker()
+            self.openCame()
         })
         let Gerall = UIAlertAction(title: "المعرض", style: UIAlertAction.Style.default, handler: { (action) in
             self.openGalleryImagePicker()
@@ -210,6 +210,18 @@ class NewProjectRequest: UIViewController , UIPickerViewDelegate , UIPickerViewD
         picker.sourceType = .photoLibrary
         picker.modalPresentationStyle = .fullScreen
         self.present(picker, animated: true)
+    }
+    
+    func openCame(){
+        
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerController.SourceType.camera
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
     }
     
     func openCameraImagePicker() {

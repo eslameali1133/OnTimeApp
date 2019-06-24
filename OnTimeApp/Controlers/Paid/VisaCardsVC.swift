@@ -17,6 +17,12 @@ class VisaCardsVC: UIViewController {
     }
     
 
+    @IBAction func btnPay(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "ProjectDetails", bundle: nil)
+        let cont = storyboard.instantiateViewController(withIdentifier: "ProjectMessagesVC")
+        
+        self.present(cont, animated: true, completion: nil)
+    }
     @IBAction func DismissView(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
