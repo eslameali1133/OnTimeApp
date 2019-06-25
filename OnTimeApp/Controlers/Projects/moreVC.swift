@@ -68,6 +68,12 @@ class moreVC: UIViewController ,UITableViewDataSource , UITableViewDelegate {
             let cont = storyBoard.instantiateViewController(withIdentifier: "ProfileNAV")
             self.revealViewController()?.pushFrontViewController(cont, animated: true)
         }
+            
+        else if indexPath.row == 3{
+            guard let url = URL(string: "https://www.ontime.sa") else { return }
+            UIApplication.shared.open(url)
+        }
+            
         else if indexPath.row == 4{
             let storyBoard : UIStoryboard = UIStoryboard(name: "Help", bundle:nil)
             let cont = storyBoard.instantiateViewController(withIdentifier: "AboutUsNAV")
@@ -76,11 +82,13 @@ class moreVC: UIViewController ,UITableViewDataSource , UITableViewDelegate {
         else if indexPath.row == 5{
             let storyBoard : UIStoryboard = UIStoryboard(name: "Profile", bundle:nil)
             let cont = storyBoard.instantiateViewController(withIdentifier: "TermsNAV")
+            isSideMenueTerms = true
             self.revealViewController()?.pushFrontViewController(cont, animated: true)
         }
         else if indexPath.row == 6{
             let storyBoard : UIStoryboard = UIStoryboard(name: "Help", bundle:nil)
             let cont = storyBoard.instantiateViewController(withIdentifier: "HelpNAV")
+            isSideMenueHelp = true
             self.revealViewController()?.pushFrontViewController(cont, animated: true)
         }
     }

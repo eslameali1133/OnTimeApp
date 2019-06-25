@@ -9,7 +9,7 @@
 import UIKit
 
 class CongratulationVC: UIViewController {
-
+var documentInteractionController = UIDocumentInteractionController()
     @IBOutlet weak var RatingControl: RatingControl!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +19,11 @@ class CongratulationVC: UIViewController {
     
 
     @IBAction func btnDownload(_ sender: Any) {
+        let url = URL(string: "http://www.mywebsite.com/myfile.pdf")
+        documentInteractionController.url = url
+        documentInteractionController.uti = url!.typeIdentifier ?? "public.data, public.content"
+        documentInteractionController.name = url!.localizedName ?? url!.lastPathComponent
+        documentInteractionController.presentOptionsMenu(from: view.frame, in: view, animated: true)
     }
     @IBAction func btnShare(_ sender: Any) {
         UIGraphicsBeginImageContext(view.frame.size)
@@ -26,7 +31,7 @@ class CongratulationVC: UIViewController {
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        let textToShare = "Check Taqseema app"
+        let textToShare = "Check OnTime app"
         
         if let myWebsite = URL(string: "http://itunes.apple.com/app/id1451620043") {//Enter link to your app here
             let objectsToShare = [textToShare, myWebsite, image ?? #imageLiteral(resourceName: "ic_launcher")] as [Any]
@@ -59,3 +64,13 @@ class CongratulationVC: UIViewController {
     }
 
 }
+
+extension URL {
+    var typeIdentifier: String? {
+        return (try? resourceValues(forKeys: [.typeIdentifierKey]))?.typeIdentifier
+    }
+    var localizedName: String? {
+        return (try? resourceValues(forKeys: [.localizedNameKey]))?.localizedName
+    }
+}
+

@@ -7,12 +7,18 @@
 //
 
 import UIKit
+var isSideMenueTerms = false
 class TermsVC: UIViewController {
 
+    @IBOutlet weak var btnArrow: UIButton!
     var flag = 1
     @IBOutlet weak var btnSideMenue: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
+        if isSideMenueTerms == true {
+            btnArrow.isHidden = true
+            isSideMenueTerms = false
+        } 
         sideMenue()
 //setupSideMenu()
         // Do any additional setup after loading the view.
@@ -26,16 +32,16 @@ class TermsVC: UIViewController {
         cont.modalTransitionStyle = UIModalTransitionStyle.coverVertical
         self.present(cont, animated: true, completion: nil)
     }
+    @IBAction func btnArrow(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func DismissView(_ sender: Any) {
-        if flag == 1 {
+        
             let storyBoard : UIStoryboard = UIStoryboard(name: "Projects", bundle:nil)
             let cont = storyBoard.instantiateViewController(withIdentifier: "HomeNAV")
             self.revealViewController()?.pushFrontViewController(cont, animated: true)
             
-        }else{
-            self.dismiss(animated: true, completion: nil)
-            
-        }
+       
     }
 
     ////Side Menu

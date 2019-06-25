@@ -8,17 +8,25 @@
 
 import UIKit
 import SideMenu
+var isSideMenueHelp = false
 class HelpMethodVC: UIViewController {
-
+    @IBOutlet weak var btnArrow: UIButton!
     @IBOutlet weak var btnSideMenue: UIBarButtonItem!
     override func viewDidLoad() {
-        super.viewDidLoad()
+         super.viewDidLoad()
+        if isSideMenueHelp == true{
+            btnArrow.isHidden = true
+            isSideMenueHelp = false
+        }
         sideMenue()
 //setupSideMenu()
         // Do any additional setup after loading the view.
     }
    
 
+    @IBAction func btnArrow(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func btnSideMenue(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Projects", bundle: nil)
         let cont = storyboard.instantiateViewController(withIdentifier: "RightMenuNavigationController")
@@ -39,9 +47,11 @@ class HelpMethodVC: UIViewController {
 
     
  @IBAction func DismissView(_ sender: Any) {
+    
     let storyBoard : UIStoryboard = UIStoryboard(name: "Projects", bundle:nil)
     let cont = storyBoard.instantiateViewController(withIdentifier: "HomeNAV")
     self.revealViewController()?.pushFrontViewController(cont, animated: true)
+    
  }
 
 }

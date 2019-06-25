@@ -19,15 +19,15 @@ class OnTimeVC: UIViewController {
     }
     
     @IBAction func btnFaceBook(_ sender: Any) {
-        guard let url = URL(string: "https://www.facebook.com") else { return }
+        guard let url = URL(string: "https://www.ontime.sa") else { return }
         UIApplication.shared.open(url)
     }
     @IBAction func btnInstigram(_ sender: Any) {
-        guard let url = URL(string: "https://www.facebook.com") else { return }
+        guard let url = URL(string: "https://www.ontime.sa") else { return }
         UIApplication.shared.open(url)
     }
     @IBAction func btnTwitter(_ sender: Any) {
-        guard let url = URL(string: "https://www.facebook.com") else { return }
+        guard let url = URL(string: "https://www.ontime.sa") else { return }
         UIApplication.shared.open(url)
     }
     @IBAction func btnSideMenue(_ sender: Any) {

@@ -34,6 +34,12 @@ class SignUpVC: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource
     }
     
 
+    @IBAction func btnTermsConditions(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+        let cont = storyboard.instantiateViewController(withIdentifier: "TermsVC")
+        
+        self.present(cont, animated: true, completion: nil)
+    }
     @IBAction func btnCheckInvoce(_ sender: Any) {
         if invoicChecked == false {
             chekInvoice.image = UIImage(named: "check")
