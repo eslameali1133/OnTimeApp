@@ -11,12 +11,18 @@ import Alamofire
 import SwiftyJSON
 class MakeAaqdVC: UIViewController , UIImagePickerControllerDelegate ,UINavigationControllerDelegate {
 
+    var http = HttpHelper()
     var AlertController: UIAlertController!
+    @IBOutlet weak var txtPhone: UITextField!
+    @IBOutlet weak var txtPID: UITextField!
+    @IBOutlet weak var txtName: UITextField!
+    @IBOutlet weak var txtEmail: UITextField!
     let imgpicker = UIImagePickerController()
     @IBOutlet weak var imgPID: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+       // http.delegate = self
         SetupUploadImage()
         // Do any additional setup after loading the view.
     }
@@ -37,6 +43,12 @@ class MakeAaqdVC: UIViewController , UIImagePickerControllerDelegate ,UINavigati
     @IBAction func DismissView(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
         
+    }
+    @IBAction func btnMakeContract(_ sender: Any) {
+        if validation(){
+            AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
+            UpdateProfile()
+        }
     }
     func SetupUploadImage()
     {
@@ -92,6 +104,123 @@ class MakeAaqdVC: UIViewController , UIImagePickerControllerDelegate ,UINavigati
         imgPID.image = selectedImage
         
         imgpicker.dismiss(animated: true, completion: nil)
+    }
+
+    func validation () -> Bool {
+        var isValid = true
+        
+        
+        
+        if txtPhone.text! == "" {
+            Loader.showError(message: AppCommon.sharedInstance.localization("Phone field cannot be left blank"))
+            isValid = false
+        }
+        if txtName.text! == "" { Loader.showError(message: AppCommon.sharedInstance.localization("Name field cannot be left blank"))
+            isValid = false
+        }
+        if txtPID.text! == "" { Loader.showError(message: AppCommon.sharedInstance.localization("PID field cannot be left blank"))
+            isValid = false
+        }
+        
+        if txtEmail.text! == "" { Loader.showError(message: AppCommon.sharedInstance.localization("Email field cannot be left blank"))
+            isValid = false
+        }
+        
+        
+        return isValid
+    }
+    
+    
+    func UpdateProfile() {
+        let AccessToken = AppCommon.sharedInstance.getJSON("Profiledata")["token"].stringValue
+        var parameters = [:] as [String: Any]
+
+        print(AccessToken)
+        let imgdata = self.imgPID.image!.jpegData(compressionQuality: 0.5)
+        print(imgdata!)
+        parameters = [
+            "request_id" : "18",
+            "token": AccessToken,
+            "name": txtName.text!,
+            "email" : txtEmail.text!,
+            "phone": txtPhone.text!,
+            "national_id": txtPID.text!,
+            "img": imgdata!,
+            
+        ]
+        
+        
+        Alamofire.upload(
+            multipartFormData: { multipartFormData in
+                for (key,value) in parameters {
+                    if let value = value as? String {
+                        multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+                    }
+                }
+                
+                if let data = self.imgPID.image!.jpegData(compressionQuality: 0.5){
+                    multipartFormData.append(data, withName: "photo", fileName: "photo\(arc4random_uniform(100))"+".jpeg", mimeType: "jpeg")
+                    
+                }
+                
+        },
+            usingThreshold:UInt64.init(),
+            to: "http://appontime.net/mobile/contract_action.php",
+            method: .post, headers: nil,
+            encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .success(let upload, _, _):
+                    
+                    upload.uploadProgress(closure: { (progress) in
+                        print(progress)
+                    })
+                    upload.responseJSON { response in
+                        // If the request to get activities is succesfull, store them
+                        if response.result.isSuccess{
+                            print(response.debugDescription)
+                            AppCommon.sharedInstance.dismissLoader(self.view)
+                           // print(response.data!)
+                           // print(response.result)
+                            let json = JSON(response.data)
+                            print(json)
+                            let status =  json["status"]
+                            let message = json["msg"]
+                            let ContractID = json["contract_id"]
+                            if status.stringValue == "0" {
+                                
+                                Loader.showSuccess(message: AppCommon.sharedInstance.localization("The contract was successfully signed"))
+                                
+                                let sb = UIStoryboard(name: "ProjectDetails", bundle: nil)
+                                let controller = sb.instantiateViewController(withIdentifier: "AaqdVerificationCode") as! AaqdVerificationCode
+                                self.show(controller, sender: true)
+                            }else{
+                                Loader.showError(message: message.stringValue)
+                            }
+                            
+                        } else {
+                            let errorMessage = "ERROR MESSAGE: "
+                            if let data = response.data {
+                                // Print message
+                                print(errorMessage)
+                                AppCommon.sharedInstance.dismissLoader(self.view)
+                                
+                                
+                                
+                            }
+                            print(errorMessage) //Contains General error message or specific.
+                            print(response.debugDescription)
+                            AppCommon.sharedInstance.dismissLoader(self.view)
+                        }
+                        
+                        
+                    }
+                case .failure(let encodingError):
+                    print("FALLE ------------")
+                    print(encodingError)
+                    AppCommon.sharedInstance.dismissLoader(self.view)
+                }
+        }
+        )
     }
 
 }

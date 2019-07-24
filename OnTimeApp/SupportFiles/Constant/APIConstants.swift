@@ -9,57 +9,26 @@
 import Foundation
 
 open class APIConstants {
-   static let SERVER_URL = "http://172.107.175.8/api/"
+   static let SERVER_URL = "https://appontime.net/mobile/"
       static let Base_Image_URL = "http://172.107.175.8/taqsema/public/"
-//   static let SERVER_URL = "http://192.168.1.111:8080/cartime-1.1/cartime/api/"
     
-//socketURL
-    static let socketURL = "http://172.107.175.8:5000"
-    //chat API
-    static let SendMessage = SERVER_URL + "send-message"
-    static let SendGroupMessage = SERVER_URL + "send-group-message"
-    static let GetUserMessage = SERVER_URL + "get-user-message"
-    static let GetGroupMessage = SERVER_URL + "get-group-message"
-    static let GetMsgHistory = SERVER_URL + "get-chat-history"
-    static let GetNotification = SERVER_URL + "get-notification"
-    static let GetNotSeenNotification = SERVER_URL + "not-seen-notification"
-   
-     static let GetTerms = SERVER_URL + "terms"
+    static let RegisterUser = SERVER_URL + "register_user.php"
+    static let RegisterCompany = SERVER_URL + "register_company.php"
+    static let Login = SERVER_URL + "login.php"
+    static let SendCode = SERVER_URL + "send_vcode.php"
+    static let ForgetPassword = SERVER_URL + "forget_password.php"
+    static let CheckVCode = SERVER_URL + "check_vcode.php"
+    static let CheckPCode = SERVER_URL + "check_pcode.php"
+    static let NewPassword = SERVER_URL + "add_new_password.php"
+    static let GetDepartment = SERVER_URL + "get_departments.php"
+    static let GetServices = SERVER_URL + "get_service.php"
+    static let AddRequest = SERVER_URL + "add_request.php"
     
-    static let Login = SERVER_URL + "login"
-    static let logout = SERVER_URL + "logout"
-    static let Register = SERVER_URL + "register"
-    static let ResentCode = SERVER_URL + "resend-code"
-    static let SendCode = SERVER_URL + "send-code"
-    static let ResetPassword = SERVER_URL + "reset-password"
-    static let Verify = SERVER_URL + "verify"
-    static let facebookregister = SERVER_URL + "facebook-register"
-    static let facebookLogin = SERVER_URL + "facebook-login"
-    static let AddMember = SERVER_URL + "add-team_member"
-    static let GetMember = SERVER_URL + "get-member"
-    static let DeleteMember = SERVER_URL + "delete-team_member"
-    static let GetPlayer = SERVER_URL + "players"
-    static let PlayersMatch = SERVER_URL + "players-match"
-    static let Filter = SERVER_URL + "filter"
-    static let NearMe = SERVER_URL + "near-me"
-    static let AddMatch = SERVER_URL + "add-match"
-    static let MyMatchs = SERVER_URL + "my-matches"
-    static let Favorits = SERVER_URL + "favorite"
-    static let AddToFav = SERVER_URL + "add-favorite"
+    static let GetUserRequests = SERVER_URL + "get_user_requests.php"
+    static let Terms = SERVER_URL + "get_terms.php"
+    static let aboutUs = SERVER_URL + "who_we_are.php"
     
-    // Next Match
-    static let NextMatch = SERVER_URL + "next-match"
-    static let GetPlayerBefor = SERVER_URL + "team-match"
-    //owner
-    static let GetGround = SERVER_URL + "owner/ground"
-    static let Owner = SERVER_URL + "owner/"
-    static let GetRequest = SERVER_URL + "owner/get-requests"
-    static let ChangeStatus = SERVER_URL + "owner/change-status"
-   
-     static let GetCity = SERVER_URL + "country"
-    static let GetArea = SERVER_URL + "city"
-    
-    
-    
+    static let SendContractCode = SERVER_URL + "send_contract_code.php"
+    static let CheckContractCode = SERVER_URL + "check_contract_code.php"
     
 }

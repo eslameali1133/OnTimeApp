@@ -1,13 +1,13 @@
 //
 //  HomeProjectVC.swift
 //  OnTimeApp
-//
 //  Created by Husseinomda16 on 5/15/19.
 //  Copyright © 2019 Ontime24. All rights reserved.
 //
 
 import UIKit
 import SideMenu
+
 class HomeProjectVC: UIViewController {
     
     @IBOutlet weak var btnSideMenue: UIBarButtonItem!
@@ -36,13 +36,14 @@ class HomeProjectVC: UIViewController {
     @IBOutlet weak var lblAllPro: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         sideMenue()
        // setupSideMenu()
         allC.isHidden = false
         revisionC.isHidden = true
         contenueC.isHidden = true
         doneC.isHidden = true
-        tabAll.backgroundColor = UIColor.hexColor(string: "55DBA8")
+        tabAll.backgroundColor = UIColor.hexColor(string: "EFEFF4")
 //        lblAllPro.textColor = UIColor.hexColor(string: "55DBA8")
 //        lblDonePro.textColor = UIColor.black
 //        lblRevisedPro.textColor = UIColor.black
@@ -56,7 +57,7 @@ class HomeProjectVC: UIViewController {
         contenueC.isHidden = true
         doneC.isHidden = true
         
-        tabAll.backgroundColor = UIColor.hexColor(string: "55DBA8")
+        tabAll.backgroundColor = UIColor.hexColor(string: "EFEFF4")
         tabDone.backgroundColor = UIColor.white
         tabRevised.backgroundColor = UIColor.white
         tabContinue.backgroundColor = UIColor.white
@@ -75,7 +76,7 @@ class HomeProjectVC: UIViewController {
         tabAll.backgroundColor = UIColor.white
         tabDone.backgroundColor = UIColor.white
         tabRevised.backgroundColor = UIColor.white
-        tabContinue.backgroundColor = UIColor.hexColor(string: "55DBA8")
+        tabContinue.backgroundColor = UIColor.hexColor(string: "EFEFF4")
         
 //        lblAllPro.textColor = UIColor.black
 //        lblDonePro.textColor = UIColor.black
@@ -89,7 +90,7 @@ class HomeProjectVC: UIViewController {
         doneC.isHidden = false
         
         tabAll.backgroundColor = UIColor.white
-        tabDone.backgroundColor = UIColor.hexColor(string: "55DBA8")
+        tabDone.backgroundColor = UIColor.hexColor(string: "EFEFF4")
         tabRevised.backgroundColor = UIColor.white
         tabContinue.backgroundColor = UIColor.white
         
@@ -109,7 +110,7 @@ class HomeProjectVC: UIViewController {
         
         tabAll.backgroundColor = UIColor.white
         tabDone.backgroundColor = UIColor.white
-        tabRevised.backgroundColor = UIColor.hexColor(string: "55DBA8")
+        tabRevised.backgroundColor = UIColor.hexColor(string: "EFEFF4")
         tabContinue.backgroundColor = UIColor.white
         
 //        lblAllPro.textColor = UIColor.black
@@ -141,5 +142,7 @@ class HomeProjectVC: UIViewController {
             view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
         }
     }
+   
 
 }
+

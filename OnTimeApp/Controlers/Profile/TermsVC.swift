@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import SwiftyJSON
 var isSideMenueTerms = false
 class TermsVC: UIViewController {
-
+    @IBOutlet weak var txtTerms: UITextView!
     @IBOutlet weak var btnArrow: UIButton!
     var flag = 1
+    var http = HttpHelper()
     @IBOutlet weak var btnSideMenue: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
+        http.delegate = self
+        GetTerms()
         if isSideMenueTerms == true {
             btnArrow.isHidden = true
             isSideMenueTerms = false
@@ -44,6 +48,11 @@ class TermsVC: UIViewController {
        
     }
 
+    func GetTerms(){
+        AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
+        
+        http.GetWithoutHeader(url: APIConstants.Terms, parameters:[:], Tag: 2)
+    }
     ////Side Menu
     
     func sideMenue(){
@@ -57,3 +66,42 @@ class TermsVC: UIViewController {
     }
     
 }
+extension TermsVC: HttpHelperDelegate {
+    func receivedResponse(dictResponse: Any, Tag: Int) {
+        print(dictResponse)
+        AppCommon.sharedInstance.dismissLoader(self.view)
+        
+        let json = JSON(dictResponse)
+        if Tag == 2 {
+            
+            let status =  json["status"]
+            let Message = json["msg"]
+            let data = json["data"]
+            if status.stringValue  == "0" {
+                
+                txtTerms.text = "\(data["terms"].stringValue)"
+                
+            }
+            else {
+                Loader.showError(message: Message.stringValue)
+            }
+            
+        }
+        
+    }
+    
+    
+    func receivedErrorWithStatusCode(statusCode: Int) {
+        print(statusCode)
+        AppCommon.sharedInstance.alert(title: "Error", message: "\(statusCode)", controller: self, actionTitle: AppCommon.sharedInstance.localization("ok"), actionStyle: .default)
+        
+        AppCommon.sharedInstance.dismissLoader(self.view)
+    }
+    
+    func retryResponse(numberOfrequest: Int) {
+        
+    }
+    
+    
+}
+

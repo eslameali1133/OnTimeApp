@@ -9,24 +9,40 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-class NewProjectRequest: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource , UIDocumentMenuDelegate, UIDocumentPickerDelegate, UIImagePickerControllerDelegate , UINavigationControllerDelegate{
+import Alamofire
 
-    var arrTypes =
-        [
-        "الموشن جرافيك",
-                    "التصميم",
-                    "البرمجة",
-                    "التنفيذ",
-                    "قواعد البيانات"]
+class NewProjectRequest: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource , UIDocumentMenuDelegate, UIDocumentPickerDelegate, UIImagePickerControllerDelegate , UINavigationControllerDelegate{
+var RequestServices : RequestNServicesModelClass!
+    var attachment = [UIDocument]()
+    var Addons = [AddonsModelClass]()
+    var Services = [ServicesModelClass]()
+    
+    var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48"]
+//    //var arrTypes =
+//        [
+//        "الموشن جرافيك",
+//                    "التصميم",
+//                    "البرمجة",
+//                    "التنفيذ",
+//                    "قواعد البيانات"]
+//
     var isimgChecked1 = false
     var isimgChecked2 = false
     var isimgChecked3 = false
     var isimgChecked4 = false
+    var department_id = ""
+    var service_id = "1"
+    var http = HttpHelper()
     var pickerview  = UIPickerView()
     var toolBar = UIToolbar()
     var AlertController: UIAlertController!
     let imgpicker = UIImagePickerController()
     var documentInteractionController = UIDocumentInteractionController()
+    
+    @IBOutlet weak var txtdesc: UITextView!
+    @IBOutlet weak var txtName: UITextField!
+    @IBOutlet weak var imgServices: UIImageView!
+    @IBOutlet weak var addOnesCV: UICollectionView!
     @IBOutlet weak var lblType: UILabel!
     @IBOutlet weak var imgVoice: UIImageView!
     @IBOutlet weak var imgQueikService: UIImageView!
@@ -34,12 +50,37 @@ class NewProjectRequest: UIViewController , UIPickerViewDelegate , UIPickerViewD
     @IBOutlet weak var imgScinario: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        http.delegate = self
+        
+        addOnesCV.delegate = self
+        addOnesCV.dataSource = self
+        GetServices(ServicesID: service_id)
         SetupActionSheet()
         lblType.text = "الموشن جرافيك"
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func btnNext(_ sender: Any) {
+        //AddRequest()
+        let storyboard = UIStoryboard(name: "Projects", bundle: nil)
+        let cont = storyboard.instantiateViewController(withIdentifier: "VerifyProjectRequest") as! VerifyProjectRequest
+        print(lblType.text!)
+        let title = lblType.text
+        let name = txtName.text
+        let Desc = txtdesc.text
+        cont.tit = title!
+        cont.name = name!
+        cont.desc = Desc!
+        cont.departmentID = department_id
+        cont.serviceID = service_id
+        print(title! + name! + Desc!)
+        //cont.lblDesc.text = txtdesc.text
+        cont.attachment = attachment
+        cont.Addons = Addons
+        cont.RequestServices = RequestServices
+        
+        self.present(cont, animated: true, completion: nil)
+    }
     @IBAction func btnAttachment(_ sender: Any) {
         imgpicker.delegate = self
         imgpicker.allowsEditing = false
@@ -288,6 +329,23 @@ class NewProjectRequest: UIViewController , UIPickerViewDelegate , UIPickerViewD
         dismiss(animated: true, completion: nil)
     }
     
+    func GetServices(ServicesID : String){
+        Addons.removeAll()
+        Services.removeAll()
+
+    let AccessToken = AppCommon.sharedInstance.getJSON("Profiledata")["token"].stringValue
+    print(AccessToken)
+    let params = ["token": AccessToken,
+                  "department_id":department_id,
+                  "service_id":ServicesID] as [String: Any]
+    let headers = [
+    "Authorization": AccessToken]
+    AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
+    http.requestWithBody(url: APIConstants.GetServices, method: .post, parameters: params, tag: 1, header: headers)
+    }
+    
+    
+    
     func configurePicker (){
         pickerview = UIPickerView.init()
         pickerview.delegate = self
@@ -318,14 +376,107 @@ class NewProjectRequest: UIViewController , UIPickerViewDelegate , UIPickerViewD
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return arrTypes.count
+        return Services.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return String(arrTypes[row])
+        return String(Services[row]._name)
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        toolBar.removeFromSuperview()
+        pickerview.removeFromSuperview()
+        self.view.endEditing(true)
+        lblType.text = Services[row]._name
+        imgServices.image = UIImage(named: Services[row]._img)
+        service_id = Services[row]._id
+        GetServices(ServicesID: Services[row]._id)
         
-        lblType.text = arrTypes[row]
     }
 }
+extension NewProjectRequest : UICollectionViewDelegate , UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return Addons.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addOnesCVC", for: indexPath) as! addOnesCVC
+        cell.lblName.text = Addons[indexPath.row]._name
+        cell.Id = Addons[indexPath.row]._id
+        cell.price = Addons[indexPath.row]._price
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 35)
+    }
+}
+extension NewProjectRequest : HttpHelperDelegate {
+    func receivedResponse(dictResponse: Any, Tag: Int) {
+        print(dictResponse)
+        AppCommon.sharedInstance.dismissLoader(self.view)
+        let json = JSON(dictResponse)
+        if Tag == 1 {
+            let status =  json["status"]
+            let data = json["data"]
+            let message = json["msg"]
+            let Jaddons = data["addons"].arrayValue
+            let Jservices = json["services"].arrayValue
+            if status.stringValue == "0" {
+
+                for json in Jservices{
+                    let obj = ServicesModelClass(
+                        id: json["id"].stringValue,
+                        name: json["name"].stringValue,
+                        img: json["img"].stringValue
+                        )
+                    Services.append(obj)
+                }
+                for json in Jaddons{
+                    let obj = AddonsModelClass(
+                        id: json["id"].stringValue,
+                        name: json["name"].stringValue,
+                        price: json["price"].stringValue
+                        
+                    )
+                    //print(obj)
+                    Addons.append(obj)
+                }
+                    RequestServices = RequestNServicesModelClass(
+                        id: data["id"].stringValue,
+                        name: data["name"].stringValue,
+                        img: data["img"].stringValue,
+                        has_price: data["has_price"].stringValue,
+                        price: data["price"].stringValue,
+                        has_contract: data["has_contract"].stringValue,
+                        has_time: data["has_time"].stringValue,
+                        average_time: data["average_time"].stringValue,
+                        tax_percentage: data["tax_percentage"].stringValue,
+                        addons: Addons
+                    )
+                self.addOnesCV.reloadData()
+                print(RequestServices._average_time)
+                print(RequestServices._has_contract)
+                print(RequestServices._has_price)
+                print(RequestServices._has_time)
+                print(RequestServices._tax_percentage)
+                AppCommon.sharedInstance.dismissLoader(self.view)
+
+
+            } else {
+                Loader.showError(message: message.stringValue )
+            }
+        }
+        
+    }
+    
+    func receivedErrorWithStatusCode(statusCode: Int) {
+        print(statusCode)
+        AppCommon.sharedInstance.alert(title: "Error", message: "\(statusCode)", controller: self, actionTitle: AppCommon.sharedInstance.localization("ok"), actionStyle: .default)
+        
+        AppCommon.sharedInstance.dismissLoader(self.view)
+    }
+    func retryResponse(numberOfrequest: Int) {
+        
+    }
+    
+}
+

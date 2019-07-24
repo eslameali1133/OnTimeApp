@@ -10,6 +10,14 @@ import UIKit
 
 class ProjectTC: UITableViewCell {
 
+    var id = ""
+    var percentage = ""
+    @IBOutlet weak var statusdescr: UILabel!
+    @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var status: UILabel!
+    @IBOutlet weak var desce: UILabel!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var img: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

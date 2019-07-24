@@ -8,12 +8,19 @@
 
 import UIKit
 import SideMenu
+import SwiftyJSON
 class OnTimeVC: UIViewController {
-
+    var txtAboutUs = ""
+    var txtFacebook = ""
+    var txtTwiter = ""
+    var txtInstigram = ""
+    var http = HttpHelper()
     @IBOutlet weak var btnSideMenue: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        http.delegate = self
+        aboutUs()
         sideMenue()
         // Do any additional setup after loading the view.
     }
@@ -54,5 +61,50 @@ class OnTimeVC: UIViewController {
         let cont = storyBoard.instantiateViewController(withIdentifier: "HomeNAV")
         self.revealViewController()?.pushFrontViewController(cont, animated: true)
     }
+    
+    func aboutUs(){
+    
+        AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
+        
+        http.GetWithoutHeader(url: APIConstants.aboutUs, parameters:[:], Tag: 1)
+    }
 
+}
+extension OnTimeVC: HttpHelperDelegate {
+    func receivedResponse(dictResponse: Any, Tag: Int) {
+        print(dictResponse)
+        AppCommon.sharedInstance.dismissLoader(self.view)
+        
+        let json = JSON(dictResponse)
+        if Tag == 1 {
+            
+            let status =  json["status"]
+            let Message = json["msg"]
+            let data = json["data"]
+            if status.stringValue  == "0" {
+                txtAboutUs = data["who_we_are"].stringValue
+                txtFacebook = data["fb"].stringValue
+                txtTwiter = data["tw"].stringValue
+                txtInstigram = data["ins"].stringValue
+                
+            }
+            else {
+                Loader.showError(message: Message.stringValue)
+            }
+            
+        }
+        
+    }
+    
+    
+    func receivedErrorWithStatusCode(statusCode: Int) {
+        print(statusCode)
+        AppCommon.sharedInstance.alert(title: "Error", message: "\(statusCode)", controller: self, actionTitle: AppCommon.sharedInstance.localization("ok"), actionStyle: .default)
+        
+        AppCommon.sharedInstance.dismissLoader(self.view)
+    }
+    
+    func retryResponse(numberOfrequest: Int) {
+        
+    }
 }
