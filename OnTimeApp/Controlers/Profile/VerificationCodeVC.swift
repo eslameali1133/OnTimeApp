@@ -102,12 +102,12 @@ class VerificationCodeVC: UIViewController {
     }
     
     func ResetCode(){
-        let AccessToken = AppCommon.sharedInstance.getJSON("Profiledata")["token"].stringValue
+      //  let AccessToken = AppCommon.sharedInstance.getJSON("Profiledata")["token"].stringValue
         let params = [
-            "token": AccessToken ,
+            "token": Token ,
             "code": txtCode.text!] as [String: Any]
         let headers = [
-            "Authorization": AccessToken]
+            "Authorization": Token]
         AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
         http.requestWithBody(url: APIConstants.CheckPCode, method: .post, parameters: params, tag: 1, header: headers)
     }
@@ -134,7 +134,7 @@ extension VerificationCodeVC : HttpHelperDelegate {
                 // let storyboard = UIStoryboard(name: "StoryBord", bundle: nil)
                 let sb = UIStoryboard(name: "Profile", bundle: nil)
                let controller = sb.instantiateViewController(withIdentifier: "ResetPassword") as! ResetPassword
-               controller.Token = token.stringValue
+               controller.Token = Token
              controller.Email = Email
                self.show(controller, sender: true)
                 

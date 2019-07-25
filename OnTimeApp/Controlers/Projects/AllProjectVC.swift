@@ -8,14 +8,14 @@
 
 import UIKit
 import SwiftyJSON
-
+var Gallcount = "0"
 class AllProjectVC: UIViewController , UITableViewDataSource , UITableViewDelegate {
     var http = HttpHelper()
     var HomeRequests = [HomeRequestModelClass]()
     @IBOutlet weak var tblProjects: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+   // HomeProjectVC.setcount()
         http.delegate = self
         GetHomeRequests()
         tblProjects.delegate = self
@@ -43,6 +43,7 @@ class AllProjectVC: UIViewController , UITableViewDataSource , UITableViewDelega
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "ProjectDetails", bundle:nil)
         let cont = storyBoard.instantiateViewController(withIdentifier: "ProjectMessagesVC")as! ProjectMessagesVC
+        cont.RequestID = HomeRequests[indexPath.row]._id
         self.present(cont, animated: true, completion: nil)
     }
     
@@ -95,8 +96,8 @@ extension AllProjectVC : HttpHelperDelegate {
                     HomeRequests.append(obj)
                 }
                 tblProjects.reloadData()
-                AppCommon.sharedInstance.dismissLoader(self.view)
-                
+                Gallcount = "\(HomeRequests.count)"; AppCommon.sharedInstance.dismissLoader(self.view);
+                print(Gallcount)
                 
             } else {
                 Loader.showError(message: message.stringValue )

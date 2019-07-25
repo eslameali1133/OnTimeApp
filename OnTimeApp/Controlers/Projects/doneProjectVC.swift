@@ -8,11 +8,13 @@
 
 import UIKit
 import SwiftyJSON
+var Gdonecount = "0"
     class doneProjectVC: UIViewController , UITableViewDataSource , UITableViewDelegate {
         var http = HttpHelper()
         var HomeRequests = [HomeRequestModelClass]()
         @IBOutlet weak var tblProjects: UITableView!
         override func viewDidLoad() {
+           
             super.viewDidLoad()
             http.delegate = self
             GetHomeRequests()
@@ -91,7 +93,7 @@ extension doneProjectVC : HttpHelperDelegate {
                     HomeRequests.append(obj)
                 }
                 tblProjects.reloadData()
-                AppCommon.sharedInstance.dismissLoader(self.view)
+                Gdonecount = "\(HomeRequests.count)"; AppCommon.sharedInstance.dismissLoader(self.view);
                 
                 
             } else {

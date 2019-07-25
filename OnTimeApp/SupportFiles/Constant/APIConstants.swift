@@ -30,5 +30,6 @@ open class APIConstants {
     
     static let SendContractCode = SERVER_URL + "send_contract_code.php"
     static let CheckContractCode = SERVER_URL + "check_contract_code.php"
+    static let GetRequestContract = SERVER_URL + "get_request_contract.php"
     
 }

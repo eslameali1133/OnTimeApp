@@ -26,7 +26,7 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var chekInvoice: UIImageView!
     @IBOutlet weak var imgPeople: UIImageView!
     @IBOutlet weak var imgOrg: UIImageView!
-    var KeyNumber = ["+966" , "+973" , "+2" , "+970" , "+249", "+252", "+974" , "+968" , "+963" , "+213" , "+964" , "+269" , "+212" , "+965" , "+216" , "+222" , "+967" , "+971" , "+962" , "+218" , "+961" , "+253"]
+    var KeyNumber = ["+966" , "+973" , "+20" , "+970" , "+249", "+252", "+974" , "+968" , "+963" , "+213" , "+964" , "+269" , "+212" , "+965" , "+216" , "+222" , "+967" , "+971" , "+962" , "+218" , "+961" , "+253"]
     var pickerview  = UIPickerView()
     
     @IBOutlet weak var lblKey: UILabel!

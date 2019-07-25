@@ -140,7 +140,7 @@ print(departmentID + serviceID)
                             print(json)
                             let status =  json["status"]
                             let message = json["msg"]
-                            let ContractID = json["contract_id"]
+                            let RequestID = json["id"]
                             if status.stringValue == "0" {
                                 
 //                                Loader.showSuccess(message: AppCommon.sharedInstance.localization("The contract was successfully signed"))
@@ -148,7 +148,12 @@ print(departmentID + serviceID)
 //                                let sb = UIStoryboard(name: "ProjectDetails", bundle: nil)
 //                                let controller = sb.instantiateViewController(withIdentifier: "AaqdVerificationCode") as! AaqdVerificationCode
 //                                self.show(controller, sender: true)
-                                
+                                if hasContract == true{
+                                    let storyBoard : UIStoryboard = UIStoryboard(name: "ProjectDetails", bundle:nil)
+                                    let cont = storyBoard.instantiateViewController(withIdentifier: "ProjectMessagesVC")as! ProjectMessagesVC
+                                    cont.RequestID = RequestID.stringValue
+                                    self.present(cont, animated: true, completion: nil)
+                                }
                                 self.popupRequest.isHidden = false
                                 self.popupRequest.backgroundColor = UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.75)
                                 

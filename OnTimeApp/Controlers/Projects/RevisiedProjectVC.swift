@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+var Griviscount = "0"
     class RevisiedProjectVC: UIViewController , UITableViewDataSource , UITableViewDelegate {
         var http = HttpHelper()
         var HomeRequests = [HomeRequestModelClass]()
@@ -28,22 +29,14 @@ import SwiftyJSON
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectTC", for: indexPath) as! ProjectTC
-            print(HomeRequests[indexPath.row]._id)
-            print(HomeRequests[indexPath.row]._percentage)
-            print(HomeRequests[indexPath.row]._icon)
-            print(HomeRequests[indexPath.row]._status_descr)
-            print(HomeRequests[indexPath.row]._status)
-            print(HomeRequests[indexPath.row]._img)
-            print(HomeRequests[indexPath.row]._request_descr)
-            print(HomeRequests[indexPath.row]._request_name)
-//            cell.id = HomeRequests[indexPath.row]._id
-//            cell.percentage = HomeRequests[indexPath.row]._percentage
-//            cell.icon.image = UIImage(named: HomeRequests[indexPath.row]._icon)
-//            cell.statusdescr.text = HomeRequests[indexPath.row]._status_descr
-//            cell.status.text = HomeRequests[indexPath.row]._status
-//            cell.img.image = UIImage(named: HomeRequests[indexPath.row]._img)
-//            cell.desce.text = HomeRequests[indexPath.row]._request_descr
-//            cell.name.text = HomeRequests[indexPath.row]._request_name
+            cell.id = HomeRequests[indexPath.row]._id
+            cell.percentage = HomeRequests[indexPath.row]._percentage
+            cell.icon.image = UIImage(named: HomeRequests[indexPath.row]._icon)
+            cell.statusdescr.text = HomeRequests[indexPath.row]._status_descr
+            cell.status.text = HomeRequests[indexPath.row]._status
+            cell.img.image = UIImage(named: HomeRequests[indexPath.row]._img)
+            cell.desce.text = HomeRequests[indexPath.row]._request_descr
+            cell.name.text = HomeRequests[indexPath.row]._request_name
             return cell
         }
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -101,7 +94,7 @@ extension RevisiedProjectVC : HttpHelperDelegate {
                     print(HomeRequests)
                 }
                 tblProjects.reloadData()
-                AppCommon.sharedInstance.dismissLoader(self.view)
+                Griviscount = "\(HomeRequests.count)"; AppCommon.sharedInstance.dismissLoader(self.view);
                 
                 
             } else {

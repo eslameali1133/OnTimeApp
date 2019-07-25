@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         IQKeyboardManager.shared.enable = true
+        StartApp()
         return true
     }
 
@@ -43,6 +44,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+    }
+    
+    func StartApp(){
+        if  SharedData.SharedInstans.GetIsLogin() == false
+        {
+            let delegate = UIApplication.shared.delegate as! AppDelegate
+            // let storyboard = UIStoryboard(name: "StoryBord", bundle: nil)
+            let storyboard = UIStoryboard.init(name: "Profile", bundle: nil); delegate.window?.rootViewController = storyboard.instantiateInitialViewController()
+        }
+        else
+        {
+            
+                let delegate = UIApplication.shared.delegate as! AppDelegate
+                // let storyboard = UIStoryboard(name: "StoryBord", bundle: nil)
+                let storyboard = UIStoryboard.init(name: "Projects", bundle: nil); delegate.window?.rootViewController = storyboard.instantiateInitialViewController()
+        }
+            
     }
 
     // MARK: - Core Data stack

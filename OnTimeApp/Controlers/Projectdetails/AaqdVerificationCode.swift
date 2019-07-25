@@ -10,6 +10,7 @@ import UIKit
 import SwiftyJSON
 class AaqdVerificationCode: UIViewController {
 
+    var ContractID = ""
     var http = HttpHelper()
     @IBOutlet weak var txtCode: UITextField!
     override func viewDidLoad() {
@@ -37,10 +38,11 @@ class AaqdVerificationCode: UIViewController {
     }
     
     func SendCode(){
+        print(ContractID)
         let AccessToken = AppCommon.sharedInstance.getJSON("Profiledata")["token"].stringValue
         print(AccessToken)
         let params = ["token": AccessToken ,
-                      "contract_id" : "17"] as [String: Any]
+                      "contract_id" : ContractID] as [String: Any]
         //let headers = ["Authorization": AccessToken]
         AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
         http.requestWithBody(url: APIConstants.SendContractCode, method: .post, parameters: params, tag: 3, header: nil)
@@ -49,7 +51,7 @@ class AaqdVerificationCode: UIViewController {
         let AccessToken = AppCommon.sharedInstance.getJSON("Profiledata")["token"].stringValue
         let params = [
             "token": AccessToken ,
-            "contract_id" : "17" ,
+            "contract_id" : ContractID ,
             "code": txtCode.text!] as [String: Any]
         //let headers = ["Authorization": AccessToken]
         AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))

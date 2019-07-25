@@ -62,14 +62,14 @@ extension ForgetPasswordVC : HttpHelperDelegate {
             let status =  json["status"]
             let Message =  json["msg"]
             let Token =  json["token"]
-            //let code = json["code"]
+            let code = json["pcode"]
             if status.stringValue  == "0" {
                 let sb = UIStoryboard(name: "Profile", bundle: nil)
                 let controller = sb.instantiateViewController(withIdentifier: "VerificationCodeVC") as! VerificationCodeVC
                 
                // print(txtPhone.text!)
                // print(code.stringValue)
-               //controller.vereficationCode = code.stringValue
+               controller.vereficationCode = code.stringValue
                controller.Email = txtEmail.text!
                 controller.isRegister = false
                 controller.Token = Token.stringValue

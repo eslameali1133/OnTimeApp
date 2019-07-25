@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+var Gcontinucount = "0"
     class ContinueProjectVC: UIViewController , UITableViewDataSource , UITableViewDelegate {
         var http = HttpHelper()
         var HomeRequests = [HomeRequestModelClass]()
@@ -91,7 +92,7 @@ extension ContinueProjectVC : HttpHelperDelegate {
                     HomeRequests.append(obj)
                 }
                 tblProjects.reloadData()
-                AppCommon.sharedInstance.dismissLoader(self.view)
+                Gcontinucount = "\(HomeRequests.count)"; AppCommon.sharedInstance.dismissLoader(self.view);
                 
                 
             } else {

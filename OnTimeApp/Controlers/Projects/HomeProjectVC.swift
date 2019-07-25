@@ -10,6 +10,11 @@ import SideMenu
 
 class HomeProjectVC: UIViewController {
     
+    @IBOutlet weak var lblDonecount: UILabel!
+    @IBOutlet weak var lblContinucount: UILabel!
+    @IBOutlet weak var lblRivscount: UILabel!
+    @IBOutlet weak var lblAllcount: UILabel!
+    @IBOutlet weak var lblProfileName: UILabel!
     @IBOutlet weak var btnSideMenue: UIBarButtonItem!
     @IBOutlet weak var  imgProfile: customImageView!{
     didSet{
@@ -37,6 +42,7 @@ class HomeProjectVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        lblProfileName.text = "\(AppCommon.sharedInstance.getJSON("Profiledata")["name"].stringValue))"
         sideMenue()
        // setupSideMenu()
         allC.isHidden = false
@@ -50,7 +56,15 @@ class HomeProjectVC: UIViewController {
 //        lblContinuePro.textColor = UIColor.black
         // Do any additional setup after loading the view.
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        setcount()
+    }
+    func setcount(){
+        lblAllcount.text = Gallcount
+        lblDonecount.text = Gdonecount
+        lblContinucount.text = Gcontinucount
+        lblRivscount.text = Griviscount
+    }
     @IBAction func btnAllPro(_ sender: Any) {
         allC.isHidden = false
         revisionC.isHidden = true

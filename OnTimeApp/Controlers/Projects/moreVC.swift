@@ -7,9 +7,10 @@
 //
 
 import UIKit
-
+import SwiftyJSON
 class moreVC: UIViewController ,UITableViewDataSource , UITableViewDelegate {
 
+    @IBOutlet weak var lblProfileName: UILabel!
     @IBOutlet weak var imgProfile: customImageView!{
     didSet{
     imgProfile.layer.cornerRadius =  imgProfile.frame.width / 2
@@ -34,6 +35,7 @@ class moreVC: UIViewController ,UITableViewDataSource , UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        lblProfileName.text = "\(AppCommon.sharedInstance.getJSON("Profiledata")["name"].stringValue))"
         tblMore.delegate = self
         tblMore.dataSource = self
         // Do any additional setup after loading the view.

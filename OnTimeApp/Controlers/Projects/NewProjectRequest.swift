@@ -10,8 +10,9 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import Alamofire
-
-class NewProjectRequest: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource , UIDocumentMenuDelegate, UIDocumentPickerDelegate, UIImagePickerControllerDelegate , UINavigationControllerDelegate{
+var hasContract = false
+var hasPrice = false
+class NewProjectRequest: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource , UIDocumentMenuDelegate, UIDocumentPickerDelegate, UIImagePickerControllerDelegate , UINavigationControllerDelegate , UITextViewDelegate{
 var RequestServices : RequestNServicesModelClass!
     var attachment = [UIDocument]()
     var Addons = [AddonsModelClass]()
@@ -51,7 +52,9 @@ var RequestServices : RequestNServicesModelClass!
     override func viewDidLoad() {
         super.viewDidLoad()
         http.delegate = self
-        
+        txtdesc.delegate = self
+        txtdesc.text = "وصف المشروع"
+        txtdesc.textColor = UIColor.lightGray
         addOnesCV.delegate = self
         addOnesCV.dataSource = self
         GetServices(ServicesID: service_id)
@@ -136,6 +139,18 @@ var RequestServices : RequestNServicesModelClass!
     }
     @IBAction func DismissView(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if txtdesc.textColor == UIColor.lightGray {
+            txtdesc.text = nil
+            txtdesc.textColor = UIColor.black
+        }
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if txtdesc.text.isEmpty {
+            txtdesc.text = "وصف المشروع"
+            txtdesc.textColor = UIColor.lightGray
+        }
     }
     func SetupActionSheet()
     {
@@ -453,11 +468,15 @@ extension NewProjectRequest : HttpHelperDelegate {
                         addons: Addons
                     )
                 self.addOnesCV.reloadData()
+                if data["has_contract"].stringValue == "1"{
+                    hasContract = true
+                }
                 print(RequestServices._average_time)
                 print(RequestServices._has_contract)
                 print(RequestServices._has_price)
                 print(RequestServices._has_time)
                 print(RequestServices._tax_percentage)
+                
                 AppCommon.sharedInstance.dismissLoader(self.view)
 
 

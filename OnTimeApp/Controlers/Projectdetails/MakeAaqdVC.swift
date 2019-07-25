@@ -159,13 +159,13 @@ class MakeAaqdVC: UIViewController , UIImagePickerControllerDelegate ,UINavigati
                 }
                 
                 if let data = self.imgPID.image!.jpegData(compressionQuality: 0.5){
-                    multipartFormData.append(data, withName: "photo", fileName: "photo\(arc4random_uniform(100))"+".jpeg", mimeType: "jpeg")
+                    multipartFormData.append(data, withName: "img", fileName: "img\(arc4random_uniform(100))"+".jpeg", mimeType: "jpeg")
                     
                 }
                 
         },
             usingThreshold:UInt64.init(),
-            to: "http://appontime.net/mobile/contract_action.php",
+            to: "https://appontime.net/mobile/contract_action.php",
             method: .post, headers: nil,
             encodingCompletion: { encodingResult in
                 switch encodingResult {
@@ -192,6 +192,7 @@ class MakeAaqdVC: UIViewController , UIImagePickerControllerDelegate ,UINavigati
                                 
                                 let sb = UIStoryboard(name: "ProjectDetails", bundle: nil)
                                 let controller = sb.instantiateViewController(withIdentifier: "AaqdVerificationCode") as! AaqdVerificationCode
+                                controller.ContractID = ContractID.stringValue
                                 self.show(controller, sender: true)
                             }else{
                                 Loader.showError(message: message.stringValue)

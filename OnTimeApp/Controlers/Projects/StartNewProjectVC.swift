@@ -10,6 +10,7 @@ import UIKit
 
 class StartNewProjectVC: UIViewController {
 
+    @IBOutlet weak var lblProfileName: UILabel!
     @IBOutlet weak var imgPro:  customImageView!
 //        {
 //    didSet{
@@ -33,7 +34,7 @@ class StartNewProjectVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+lblProfileName.text = "\(AppCommon.sharedInstance.getJSON("Profiledata")["name"].stringValue))"
         // Do any additional setup after loading the view.
     }
     

@@ -11,6 +11,9 @@ import Alamofire
 import SwiftyJSON
 class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentPickerDelegate, UIImagePickerControllerDelegate , UINavigationControllerDelegate{
 
+    @IBOutlet weak var txtContract: UITextView!
+    var http = HttpHelper()
+    var RequestID = ""
     var pickerview  = UIPickerView()
     var toolBar = UIToolbar()
     var AlertController: UIAlertController!
@@ -20,6 +23,8 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        http.delegate = self
+        GetContracttext()
         SetupActionSheet()
          popupContractor.frame = CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y, width: self.view.frame.width, height: self.view.frame.height)
         self.view.addSubview(popupContractor)
@@ -81,6 +86,19 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
     }
     @IBAction func DismissView(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func GetContracttext(){
+    print(RequestID)
+        let AccessToken = AppCommon.sharedInstance.getJSON("Profiledata")["token"].stringValue
+        print(AccessToken)
+        let params = ["token": AccessToken,
+                      "request_id" : RequestID ] as [String: Any]
+        let headers = [
+            "Authorization": AccessToken]
+        //AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
+        http.requestWithBody(url: APIConstants.GetRequestContract, method: .post, parameters: params, tag: 1, header: headers)
+        
     }
     
     func SetupActionSheet()
@@ -263,4 +281,35 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
         dismiss(animated: true, completion: nil)
     }
 
+}
+extension ProjectMessagesVC : HttpHelperDelegate {
+    func receivedResponse(dictResponse: Any, Tag: Int) {
+        print(dictResponse)
+        AppCommon.sharedInstance.dismissLoader(self.view)
+        let json = JSON(dictResponse)
+        if Tag == 1 {
+            let status =  json["status"]
+            let data = json["data"]
+            let message = json["msg"]
+            
+            if status.stringValue == "0" {
+                txtContract.text = data["text"].stringValue
+                let name = data["name"].stringValue
+            } else {
+                Loader.showError(message: message.stringValue )
+            }
+        }
+        
+    }
+    
+    func receivedErrorWithStatusCode(statusCode: Int) {
+        print(statusCode)
+        AppCommon.sharedInstance.alert(title: "Error", message: "\(statusCode)", controller: self, actionTitle: AppCommon.sharedInstance.localization("ok"), actionStyle: .default)
+        
+        AppCommon.sharedInstance.dismissLoader(self.view)
+    }
+    func retryResponse(numberOfrequest: Int) {
+        
+    }
+    
 }

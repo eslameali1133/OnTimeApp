@@ -10,13 +10,19 @@ import UIKit
 import SwiftyJSON
 class LoginVC: UIViewController {
 
+    var KeyNumber = ["+966" , "+973" , "+20" , "+970" , "+249", "+252", "+974" , "+968" , "+963" , "+213" , "+964" , "+269" , "+212" , "+965" , "+216" , "+222" , "+967" , "+971" , "+962" , "+218" , "+961" , "+253"]
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var txtUserName: UITextField!
     @IBOutlet weak var btnLogin: UIButton!
     var http = HttpHelper()
+    var pickerview  = UIPickerView()
+    
+    @IBOutlet weak var lblKey: UILabel!
+    var toolBar = UIToolbar()
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        lblKey.text = "+966"
         http.delegate = self
         btnLogin.layer.cornerRadius = 25
         btnLogin.layer.borderWidth = 1
@@ -25,6 +31,11 @@ class LoginVC: UIViewController {
     }
     
 
+    @IBAction func btnKey(_ sender: Any) {
+        onDoneButtonTapped()
+        configurePicker()
+        
+    }
     @IBAction func btnLogin(_ sender: Any) {
         
         if validation(){
@@ -53,13 +64,41 @@ class LoginVC: UIViewController {
     }
     
     func Login() {
+        let Phone = lblKey.text! + txtUserName.text!
+        print(Phone)
         let params = [
-            "phone":txtUserName.text!,
+            "phone":Phone,
             "password":txtPassword.text!
             ] as [String: Any]
         //let headers = ["Accept": "application/json" ,   "lang":SharedData.SharedInstans.getLanguage() ,"Content-Type": "application/json"]
         AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
         http.requestWithBody(url: APIConstants.Login, method: .post, parameters: params, tag: 1, header: nil)
+    }
+    
+    func configurePicker (){
+        pickerview = UIPickerView.init()
+        pickerview.delegate = self
+        pickerview.backgroundColor = UIColor.white
+        pickerview.setValue(UIColor.black, forKey: "textColor")
+        pickerview.autoresizingMask = .flexibleWidth
+        pickerview.contentMode = .center
+        pickerview.frame = CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 255)
+        self.view.addSubview(pickerview)
+        
+        
+        toolBar = UIToolbar.init(frame: CGRect.init(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 50))
+        toolBar.barStyle = .default
+        
+        toolBar.items = [UIBarButtonItem.init(title: "Done", style: .plain, target: self, action: #selector(onDoneButtonTapped))]
+        
+        
+        self.view.addSubview(toolBar)
+    }
+    
+    @objc func onDoneButtonTapped() {
+        toolBar.removeFromSuperview()
+        pickerview.removeFromSuperview()
+        self.view.endEditing(true)
     }
     func ResendCode(){
         let AccessToken = AppCommon.sharedInstance.getJSON("Profiledata")["token"].stringValue
@@ -73,6 +112,24 @@ class LoginVC: UIViewController {
     
 
 }
+extension LoginVC: UIPickerViewDelegate , UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return KeyNumber.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return String(KeyNumber[row])
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        lblKey.text = KeyNumber[row]
+    }
+}
 extension LoginVC: HttpHelperDelegate {
     func receivedResponse(dictResponse: Any, Tag: Int) {
         print(dictResponse)
@@ -84,7 +141,7 @@ extension LoginVC: HttpHelperDelegate {
             let status =  json["status"]
             let Message = json["msg"]
             let data = json["data"]
-            let token = json["token"]
+            let token = data["token"]
             print(token)
             print(status)
             print(Message)
@@ -103,6 +160,7 @@ extension LoginVC: HttpHelperDelegate {
                 let delegate = UIApplication.shared.delegate as! AppDelegate
                 // let storyboard = UIStoryboard(name: "StoryBord", bundle: nil)
                 let storyboard = UIStoryboard.init(name: "Projects", bundle: nil); delegate.window?.rootViewController = storyboard.instantiateInitialViewController()
+
            
             }else if status.stringValue == "213"{
                 Loader.showError(message: Message.stringValue)
