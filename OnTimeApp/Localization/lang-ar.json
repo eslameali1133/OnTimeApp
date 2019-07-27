@@ -10,5 +10,9 @@
     "User Name field cannot be left blank" : "لا يمكن ترك حقل اسم المستخدم فارغا",
     "please enter code you received" : "الرجاء إدخال الرمز اللذي تلقيته" ,
     "CONFIRM" : "تأكيد" ,
-    "The contract was successfully signed" : "تم توقيع العقد بنجاح"
+    "The contract was successfully signed" : "تم توقيع العقد بنجاح",
+    "You must agree to the terms and conditions" : "يجب عليك الموافقه علي الشروط والاحكام",
+    "Are you sure you want to logout?" : "هل تود تسجيل الخروج" ,
+    "OK" : "نعم" ,
+    "cancel" : "إلغاء"
 }

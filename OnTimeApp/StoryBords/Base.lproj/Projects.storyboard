@@ -412,16 +412,16 @@
                                                                 <rect key="frame" x="94" y="5" width="187.5" height="63.5"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="n1G-XL-BWT">
-                                                                        <rect key="frame" x="12" y="0.0" width="163" height="33.5"/>
+                                                                        <rect key="frame" x="13" y="0.0" width="161" height="33.5"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عبد الرحمن عيسي" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="18R-yH-pah">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="108.5" height="20"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="111" height="25"/>
                                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Light" family="DIN Next LT W23" pointSize="17"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مرحبا  - " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0v-Um-4dd">
-                                                                                <rect key="frame" x="108.5" y="0.0" width="54.5" height="20"/>
+                                                                                <rect key="frame" x="111" y="0.0" width="50" height="25"/>
                                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Light" family="DIN Next LT W23" pointSize="17"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -429,16 +429,16 @@
                                                                         </subviews>
                                                                     </stackView>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="lB9-4S-mbx">
-                                                                        <rect key="frame" x="32.5" y="33.5" width="122.5" height="30"/>
+                                                                        <rect key="frame" x="33.5" y="33.5" width="120" height="30"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11 إبريل 2019" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFZ-Bt-6hX">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="85" height="17.5"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="79.5" height="22.5"/>
                                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Light" family="DIN Next LT W23" pointSize="15"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اليوم - " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQE-tb-RXU">
-                                                                                <rect key="frame" x="85" y="0.0" width="37.5" height="17.5"/>
+                                                                                <rect key="frame" x="79.5" y="0.0" width="40.5" height="22.5"/>
                                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Light" family="DIN Next LT W23" pointSize="15"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -1051,16 +1051,16 @@
                                                                 <rect key="frame" x="10" y="0.0" width="90" height="50.5"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LCv-Uc-vfr">
-                                                                        <rect key="frame" x="-1" y="8.5" width="92" height="33"/>
+                                                                        <rect key="frame" x="-1" y="4" width="92" height="42"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="السعر الإجمالي" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJt-GG-xxJ">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="92" height="16.5"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="92" height="21"/>
                                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Light" family="DIN Next LT W23" pointSize="14"/>
                                                                                 <color key="textColor" red="0.33333333329999998" green="0.85882352939999995" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1700 ر.س" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEh-n0-VXz">
-                                                                                <rect key="frame" x="0.0" y="16.5" width="92" height="16.5"/>
+                                                                                <rect key="frame" x="0.0" y="21" width="92" height="21"/>
                                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Light" family="DIN Next LT W23" pointSize="14"/>
                                                                                 <color key="textColor" red="0.79215686269999996" green="0.79215686269999996" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>
@@ -1079,16 +1079,16 @@
                                                                 <rect key="frame" x="106" y="0.0" width="90" height="50.5"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qiJ-xB-5h4">
-                                                                        <rect key="frame" x="0.0" y="8.5" width="90" height="33"/>
+                                                                        <rect key="frame" x="0.0" y="4" width="90" height="42"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="الضريبة" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2G-9Q-ezD">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="90" height="16.5"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="90" height="21"/>
                                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Light" family="DIN Next LT W23" pointSize="14"/>
                                                                                 <color key="textColor" red="0.33333333329999998" green="0.85882352939999995" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="%5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csY-Gb-tfU">
-                                                                                <rect key="frame" x="0.0" y="16.5" width="90" height="16.5"/>
+                                                                                <rect key="frame" x="0.0" y="21" width="90" height="21"/>
                                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Light" family="DIN Next LT W23" pointSize="14"/>
                                                                                 <color key="textColor" red="0.79215686269999996" green="0.79215686269999996" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>
@@ -1107,16 +1107,16 @@
                                                                 <rect key="frame" x="202" y="0.0" width="90" height="50.5"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="3jr-PK-BoY">
-                                                                        <rect key="frame" x="16" y="8.5" width="58.5" height="33"/>
+                                                                        <rect key="frame" x="14.5" y="4" width="61" height="42"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="سعر الخدمة" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Heg-Y3-wyU">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="58.5" height="16.5"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="61" height="21"/>
                                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Light" family="DIN Next LT W23" pointSize="14"/>
                                                                                 <color key="textColor" red="0.33333333329999998" green="0.85882352939999995" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="1500 ر.س" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vD-WA-NUG">
-                                                                                <rect key="frame" x="0.0" y="16.5" width="58.5" height="16.5"/>
+                                                                                <rect key="frame" x="0.0" y="21" width="61" height="21"/>
                                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Light" family="DIN Next LT W23" pointSize="14"/>
                                                                                 <color key="textColor" red="0.79215686269999996" green="0.79215686269999996" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>
@@ -1296,25 +1296,25 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="265"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" text="الإسم" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMr-Ka-bXP">
-                                                        <rect key="frame" x="305.5" y="0.0" width="29.5" height="31.5"/>
+                                                        <rect key="frame" x="302" y="0.0" width="33" height="22"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Light" family="DIN Next LT W23" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="فيديو تهنئة رمضان أون تايم" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9u5-y9-Ey3">
-                                                        <rect key="frame" x="192" y="38.5" width="143" height="17.5"/>
+                                                        <rect key="frame" x="182" y="29" width="153" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="خدمات إضافية" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcs-hf-JFs">
-                                                        <rect key="frame" x="257.5" y="63" width="77.5" height="17.5"/>
+                                                        <rect key="frame" x="255.5" y="58.5" width="79.5" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Light" family="DIN Next LT W23" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="epQ-dN-Wog">
-                                                        <rect key="frame" x="100.5" y="87.5" width="234.5" height="80"/>
+                                                        <rect key="frame" x="100.5" y="88" width="234.5" height="74.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ViewAddoneTC" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ViewAddoneTC" rowHeight="25" id="VjY-PC-lrT" customClass="ViewAddoneTC" customModule="OnTimeApp" customModuleProvider="target">
@@ -1356,7 +1356,7 @@
                                                         </prototypes>
                                                     </tableView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="وصف الخدمة :" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tQe-aA-ZSS">
-                                                        <rect key="frame" x="257" y="174.5" width="78" height="17.5"/>
+                                                        <rect key="frame" x="253.5" y="169.5" width="81.5" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Light" family="DIN Next LT W23" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1373,7 +1373,7 @@
                                                     <constraint firstItem="72U-3q-RNm" firstAttribute="height" secondItem="1Go-vJ-usT" secondAttribute="height" multiplier="0.25" id="V9I-mf-NIQ"/>
                                                     <constraint firstItem="72U-3q-RNm" firstAttribute="width" secondItem="1Go-vJ-usT" secondAttribute="width" multiplier="0.9" id="f7Y-9G-ncg"/>
                                                     <constraint firstAttribute="trailing" secondItem="epQ-dN-Wog" secondAttribute="trailing" id="ko8-b1-wdl"/>
-                                                    <constraint firstItem="epQ-dN-Wog" firstAttribute="height" secondItem="1Go-vJ-usT" secondAttribute="height" multiplier="0.3" id="vOD-mZ-Q1b"/>
+                                                    <constraint firstItem="epQ-dN-Wog" firstAttribute="height" secondItem="1Go-vJ-usT" secondAttribute="height" multiplier="0.28" id="vOD-mZ-Q1b"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
@@ -1433,7 +1433,7 @@
                                                 <rect key="frame" x="20" y="59.5" width="112.5" height="34"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تأكيد الطلب" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4o4-ke-39w">
-                                                        <rect key="frame" x="26" y="8.5" width="60.5" height="17.5"/>
+                                                        <rect key="frame" x="22.5" y="6" width="68" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="15"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -1801,16 +1801,16 @@
                                                                                     <rect key="frame" x="62" y="12.5" width="201" height="57.5"/>
                                                                                     <subviews>
                                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Qg9-BN-Wgk">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="201" height="36"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="201" height="43"/>
                                                                                             <subviews>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الرد علي طلب مشروع تصميم مواقع" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBQ-LW-B03">
-                                                                                                    <rect key="frame" x="0.0" y="0.0" width="201" height="14"/>
+                                                                                                    <rect key="frame" x="0.0" y="0.0" width="201" height="18"/>
                                                                                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="12"/>
                                                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                                                     <nil key="highlightedColor"/>
                                                                                                 </label>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="هناك حقيقة مثبتة منذ زمن طويل" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Zd-cz-aIx">
-                                                                                                    <rect key="frame" x="0.0" y="24" width="201" height="12"/>
+                                                                                                    <rect key="frame" x="0.0" y="28" width="201" height="15"/>
                                                                                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="10"/>
                                                                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                     <nil key="highlightedColor"/>
@@ -2764,16 +2764,16 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Xc3-ck-E74" customClass="AMCircleUIView" customModule="OnTimeApp" customModuleProvider="target">
-                                                                <rect key="frame" x="88.5" y="178.5" width="85" height="23.5"/>
+                                                                <rect key="frame" x="88.5" y="190" width="85" height="24"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مشروع جديد" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MlT-Ea-5je">
-                                                                        <rect key="frame" x="16" y="4.5" width="53.5" height="14"/>
+                                                                        <rect key="frame" x="13.5" y="3" width="58" height="18"/>
                                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="12"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9aH-7l-jAf">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="85" height="23.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="85" height="24"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <connections>
                                                                             <segue destination="Bo3-3O-cCD" kind="presentation" id="Bmi-0Q-Bw0"/>
@@ -2804,7 +2804,7 @@
                                                             <constraint firstItem="Xc3-ck-E74" firstAttribute="height" secondItem="c3n-LO-w0R" secondAttribute="height" multiplier="0.1" id="mmh-Zz-x9i"/>
                                                             <constraint firstItem="mhv-Ff-spr" firstAttribute="top" secondItem="c3n-LO-w0R" secondAttribute="top" id="mnv-rp-ZPx"/>
                                                             <constraint firstItem="hgV-m4-tdC" firstAttribute="centerX" secondItem="c3n-LO-w0R" secondAttribute="centerX" id="uDR-e1-c4L"/>
-                                                            <constraint firstItem="Xc3-ck-E74" firstAttribute="centerY" secondItem="c3n-LO-w0R" secondAttribute="centerY" multiplier="1.6" id="ue1-5y-EXg"/>
+                                                            <constraint firstItem="Xc3-ck-E74" firstAttribute="centerY" secondItem="c3n-LO-w0R" secondAttribute="centerY" multiplier="1.7" id="ue1-5y-EXg"/>
                                                             <constraint firstItem="hgV-m4-tdC" firstAttribute="top" secondItem="mhv-Ff-spr" secondAttribute="bottom" constant="20" id="v8Z-cx-Fza"/>
                                                         </constraints>
                                                     </view>
@@ -3066,16 +3066,16 @@
                                                         <rect key="frame" x="56.5" y="0.0" width="262.5" height="50.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="IuT-dh-hx9">
-                                                                <rect key="frame" x="49.5" y="0.0" width="163" height="21"/>
+                                                                <rect key="frame" x="48" y="0.0" width="166" height="22"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عبد الرحمن عيسي" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykC-IX-Hzm">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="108.5" height="20"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="114.5" height="22"/>
                                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مرحبا  - " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t63-Mk-uYH">
-                                                                        <rect key="frame" x="108.5" y="0.0" width="54.5" height="20"/>
+                                                                        <rect key="frame" x="114.5" y="0.0" width="51.5" height="22"/>
                                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -3083,10 +3083,10 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="5Sr-al-rtU">
-                                                                <rect key="frame" x="70.5" y="31" width="121" height="19.5"/>
+                                                                <rect key="frame" x="73.5" y="32" width="115" height="18.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00966 453 569 54" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdQ-5Q-aSW">
-                                                                        <rect key="frame" x="0.0" y="2" width="121" height="17.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="115" height="18.5"/>
                                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Light" family="DIN Next LT W23" pointSize="15"/>
                                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
@@ -3793,16 +3793,16 @@
                                                         <rect key="frame" x="37.5" y="0.0" width="225" height="42.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="w1A-82-ogg">
-                                                                <rect key="frame" x="41" y="0.0" width="143.5" height="21.5"/>
+                                                                <rect key="frame" x="41.5" y="0.0" width="142.5" height="21.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عبد الرحمن عيسي" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lo5-NC-Myv">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="95.5" height="17.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="98" height="21.5"/>
                                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Light" family="DIN Next LT W23" pointSize="15"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مرحبا  - " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wzr-NG-Pem">
-                                                                        <rect key="frame" x="95.5" y="0.0" width="48" height="17.5"/>
+                                                                        <rect key="frame" x="98" y="0.0" width="44.5" height="21.5"/>
                                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Light" family="DIN Next LT W23" pointSize="15"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -3810,16 +3810,16 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="S3v-1E-Kzx">
-                                                                <rect key="frame" x="51.5" y="21.5" width="122.5" height="21"/>
+                                                                <rect key="frame" x="52.5" y="21.5" width="120" height="21"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11 إبريل 2019" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTu-53-8WN">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="85" height="17.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="79.5" height="21"/>
                                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Light" family="DIN Next LT W23" pointSize="15"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="اليوم - " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fmv-T2-rYy">
-                                                                        <rect key="frame" x="85" y="0.0" width="37.5" height="17.5"/>
+                                                                        <rect key="frame" x="79.5" y="0.0" width="40.5" height="21"/>
                                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Light" family="DIN Next LT W23" pointSize="15"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>

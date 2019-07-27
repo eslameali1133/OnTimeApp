@@ -152,6 +152,10 @@ class SignUpVC: UIViewController {
             Loader.showError(message: AppCommon.sharedInstance.localization("Email field cannot be left blank"))
             isValid = false
         }
+        if policyChecked == false  {
+            Loader.showError(message: AppCommon.sharedInstance.localization("You must agree to the terms and conditions"))
+            isValid = false
+        }
         
         
         return isValid
