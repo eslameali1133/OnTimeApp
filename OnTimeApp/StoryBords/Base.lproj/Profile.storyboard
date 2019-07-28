@@ -232,6 +232,7 @@
                         <outlet property="btnSend" destination="1Z6-LQ-as7" id="D3k-ga-wc2"/>
                         <outlet property="popupVerefy" destination="Wul-si-dYq" id="pbc-ak-Bnh"/>
                         <outlet property="txtCode" destination="UES-bK-DJH" id="SvW-V8-NdC"/>
+                        <outlet property="txtEmail" destination="Nzb-0l-3Sn" id="ujT-AN-zLu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qsm-x1-jgE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -266,7 +267,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KvZ-Jb-TNG">
                                                     <rect key="frame" x="15" y="0.0" width="270" height="45.5"/>
                                                     <subviews>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="00966 1234 3456 22" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nzb-0l-3Sn">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ontime@yahoo.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nzb-0l-3Sn">
                                                             <rect key="frame" x="40.5" y="0.0" width="229.5" height="45.5"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="17"/>
@@ -321,6 +322,7 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXt-20-l8v">
                                                             <rect key="frame" x="0.0" y="0.0" width="135" height="37"/>
                                                             <connections>
+                                                                <action selector="btnResendCode:" destination="lQU-I1-UPt" eventType="touchUpInside" id="Vbl-9v-DdC"/>
                                                                 <segue destination="KrC-QF-bVt" kind="presentation" id="aqw-sB-hc0"/>
                                                             </connections>
                                                         </button>
@@ -765,17 +767,11 @@
                                                     <constraint firstItem="csx-gm-l14" firstAttribute="leading" secondItem="ZYM-C7-8ke" secondAttribute="leading" id="jqS-UY-3WJ"/>
                                                 </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="y3q-nT-dsh">
-                                                <rect key="frame" x="53" y="255" width="269" height="48.5"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eqi-BC-WtY" customClass="AMUIView" customModule="OnTimeApp" customModuleProvider="target">
+                                                <rect key="frame" x="122" y="268.5" width="131" height="55"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQk-wg-bwf">
-                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="48.5"/>
-                                                        <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHf-Oa-qZp">
-                                                        <rect key="frame" x="134.5" y="0.0" width="134.5" height="48.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="131" height="55"/>
                                                         <color key="backgroundColor" red="0.0" green="0.61998144239999997" blue="0.45425420840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="17"/>
                                                         <state key="normal" title="إرسال">
@@ -786,23 +782,28 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="kQk-wg-bwf" firstAttribute="width" secondItem="y3q-nT-dsh" secondAttribute="width" multiplier="0.35" id="BVO-9U-l5v"/>
-                                                    <constraint firstItem="kQk-wg-bwf" firstAttribute="centerY" secondItem="y3q-nT-dsh" secondAttribute="centerY" id="Yig-dK-Fuq"/>
-                                                    <constraint firstItem="QHf-Oa-qZp" firstAttribute="width" secondItem="y3q-nT-dsh" secondAttribute="width" multiplier="0.5" id="j4N-BI-0Xd"/>
-                                                    <constraint firstItem="QHf-Oa-qZp" firstAttribute="centerY" secondItem="y3q-nT-dsh" secondAttribute="centerY" id="mmp-Lw-NoX"/>
+                                                    <constraint firstItem="QHf-Oa-qZp" firstAttribute="centerX" secondItem="eqi-BC-WtY" secondAttribute="centerX" id="976-PE-qB7"/>
+                                                    <constraint firstItem="QHf-Oa-qZp" firstAttribute="width" secondItem="eqi-BC-WtY" secondAttribute="width" id="QYc-Z1-z3M"/>
+                                                    <constraint firstItem="QHf-Oa-qZp" firstAttribute="centerY" secondItem="eqi-BC-WtY" secondAttribute="centerY" id="ekv-Wn-vBH"/>
+                                                    <constraint firstItem="QHf-Oa-qZp" firstAttribute="height" secondItem="eqi-BC-WtY" secondAttribute="height" id="hHh-bp-Cs5"/>
                                                 </constraints>
-                                            </stackView>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isCornerRadius" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="GBP-9g-ebN" firstAttribute="top" secondItem="VWS-Rz-f9E" secondAttribute="top" constant="20" id="6KJ-K9-YfW"/>
-                                            <constraint firstItem="y3q-nT-dsh" firstAttribute="centerX" secondItem="VWS-Rz-f9E" secondAttribute="centerX" id="U6W-h1-CTy"/>
+                                            <constraint firstAttribute="bottom" secondItem="eqi-BC-WtY" secondAttribute="bottom" id="S7m-4v-hoh"/>
+                                            <constraint firstItem="eqi-BC-WtY" firstAttribute="width" secondItem="VWS-Rz-f9E" secondAttribute="width" multiplier="0.35" id="UBb-Ix-Xk7"/>
+                                            <constraint firstItem="eqi-BC-WtY" firstAttribute="centerX" secondItem="VWS-Rz-f9E" secondAttribute="centerX" id="UTw-tV-p8T"/>
                                             <constraint firstItem="ZYM-C7-8ke" firstAttribute="centerX" secondItem="VWS-Rz-f9E" secondAttribute="centerX" id="V9z-TC-vrs"/>
                                             <constraint firstAttribute="trailing" secondItem="GBP-9g-ebN" secondAttribute="trailing" constant="20" id="dIm-jf-u6P"/>
+                                            <constraint firstItem="eqi-BC-WtY" firstAttribute="height" secondItem="VWS-Rz-f9E" secondAttribute="height" multiplier="0.17" id="jQK-Zd-9KR"/>
                                             <constraint firstItem="ZYM-C7-8ke" firstAttribute="centerY" secondItem="VWS-Rz-f9E" secondAttribute="centerY" id="og4-JM-eq0"/>
-                                            <constraint firstItem="y3q-nT-dsh" firstAttribute="height" secondItem="VWS-Rz-f9E" secondAttribute="height" multiplier="0.15" id="rQ2-Ty-YbF"/>
-                                            <constraint firstAttribute="bottom" secondItem="y3q-nT-dsh" secondAttribute="bottom" constant="20" id="seP-x0-inL"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1154,7 +1155,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="35"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Light" family="DIN Next LT W23" pointSize="15"/>
-                                                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                                     </textField>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pPH-zU-NCx">
                                                                         <rect key="frame" x="0.0" y="33.5" width="335" height="1.5"/>
@@ -1180,7 +1181,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="35"/>
                                                                         <nil key="textColor"/>
                                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Light" family="DIN Next LT W23" pointSize="15"/>
-                                                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                                     </textField>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gc2-iz-hsH">
                                                                         <rect key="frame" x="0.0" y="33" width="335" height="2"/>
@@ -1797,6 +1798,6 @@
         <image name="undraw_sync4_xlc6 (2)" width="203.5" height="162"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aqw-sB-hc0"/>
+        <segue reference="qri-gn-kze"/>
     </inferredMetricsTieBreakers>
 </document>

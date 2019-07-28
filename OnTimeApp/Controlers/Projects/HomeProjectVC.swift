@@ -7,9 +7,13 @@
 
 import UIKit
 import SideMenu
-
+import SwiftyJSON
 class HomeProjectVC: UIViewController {
-    
+    var http = HttpHelper()
+    var All = [HomeRequestModelClass]()
+    var Done = [HomeRequestModelClass]()
+    var Revised = [HomeRequestModelClass]()
+    var Continue = [HomeRequestModelClass]()
     @IBOutlet weak var lblDonecount: UILabel!
     @IBOutlet weak var lblContinucount: UILabel!
     @IBOutlet weak var lblRivscount: UILabel!
@@ -41,10 +45,14 @@ class HomeProjectVC: UIViewController {
     @IBOutlet weak var lblAllPro: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        GetAllRequests()
+        GetDoneRequests()
+        GetRevisedRequests()
+        GetContinueRequests()
         lblProfileName.text = "\(AppCommon.sharedInstance.getJSON("Profiledata")["name"].stringValue))"
         sideMenue()
        // setupSideMenu()
+         http.delegate = self
         allC.isHidden = false
         revisionC.isHidden = true
         contenueC.isHidden = true
@@ -157,6 +165,195 @@ class HomeProjectVC: UIViewController {
         }
     }
    
+    func GetAllRequests(){
+        let AccessToken = AppCommon.sharedInstance.getJSON("Profiledata")["token"].stringValue
+        print(AccessToken)
+        let params = ["token": AccessToken,
+                      "type" : "all" ] as [String: Any]
+        AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
+        http.requestWithBody(url: APIConstants.GetUserRequests, method: .post, parameters: params, tag: 1, header: nil)
+    }
+    func GetRevisedRequests(){
+        let AccessToken = AppCommon.sharedInstance.getJSON("Profiledata")["token"].stringValue
+        print(AccessToken)
+        let params = ["token": AccessToken,
+                      "type" : "under_preview" ] as [String: Any]
+        AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
+        http.requestWithBody(url: APIConstants.GetUserRequests, method: .post, parameters: params, tag: 2, header: nil)
+    }
+    func GetContinueRequests(){
+        let AccessToken = AppCommon.sharedInstance.getJSON("Profiledata")["token"].stringValue
+        print(AccessToken)
+        let params = ["token": AccessToken,
+                      "type" : "in_progress" ] as [String: Any]
+        AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
+        http.requestWithBody(url: APIConstants.GetUserRequests, method: .post, parameters: params, tag: 3, header: nil)
+    }
+    func GetDoneRequests(){
+        let AccessToken = AppCommon.sharedInstance.getJSON("Profiledata")["token"].stringValue
+        print(AccessToken)
+        let params = ["token": AccessToken,
+                      "type" : "finished" ] as [String: Any]
+        AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
+        http.requestWithBody(url: APIConstants.GetUserRequests, method: .post, parameters: params, tag: 4, header: nil)
+    }
+    
+}
+extension HomeProjectVC : HttpHelperDelegate {
+    func receivedResponse(dictResponse: Any, Tag: Int) {
+        print(dictResponse)
+        AppCommon.sharedInstance.dismissLoader(self.view)
+        let json = JSON(dictResponse)
+        if Tag == 1 {
+            let status =  json["status"]
+            let data = json["data"].arrayValue
+            let message = json["msg"]
+            
+            if status.stringValue == "0" {
+                
+                for json in data{
+                    let obj = HomeRequestModelClass(
+                        id: json["id"].stringValue,
+                        request_name: json["request_name"].stringValue,
+                        request_descr: json["request_descr"].stringValue,
+                        img: json["img"].stringValue,
+                        status: json["status"].stringValue,
+                        status_descr: json["status_descr"].stringValue,
+                        icon: json["icon"].stringValue,
+                        percentage: json["percentage"].stringValue,
+                        componants_ready: json["componants_ready"].stringValue,
+                        create_time: json["create_time"].stringValue,
+                        end_time: json["end_time"].stringValue,
+                        has_contract: json["has_contract"].stringValue,
+                        has_price: json["has_price"].stringValue,
+                        new_message: json["new_message"].stringValue,
+                        start_time: json["start_time"].stringValue,
+                        stop_time: json["stop_time"].stringValue
+                    )
+                    All.append(obj)
+                }
+                lblAllcount.text = "\(All.count)"; AppCommon.sharedInstance.dismissLoader(self.view);
 
+                
+            } else {
+                Loader.showError(message: message.stringValue )
+            }
+        }
+        else if Tag == 2 {
+            let status =  json["status"]
+            let data = json["data"].arrayValue
+            let message = json["msg"]
+            
+            if status.stringValue == "0" {
+                
+                for json in data{
+                    let obj = HomeRequestModelClass(
+                        id: json["id"].stringValue,
+                        request_name: json["request_name"].stringValue,
+                        request_descr: json["request_descr"].stringValue,
+                        img: json["img"].stringValue,
+                        status: json["status"].stringValue,
+                        status_descr: json["status_descr"].stringValue,
+                        icon: json["icon"].stringValue,
+                        percentage: json["percentage"].stringValue,
+                        componants_ready: json["componants_ready"].stringValue,
+                        create_time: json["create_time"].stringValue,
+                        end_time: json["end_time"].stringValue,
+                        has_contract: json["has_contract"].stringValue,
+                        has_price: json["has_price"].stringValue,
+                        new_message: json["new_message"].stringValue,
+                        start_time: json["start_time"].stringValue,
+                        stop_time: json["stop_time"].stringValue
+                    )
+                    Revised.append(obj)
+                }
+                lblRivscount.text = "\(Revised.count)"; AppCommon.sharedInstance.dismissLoader(self.view);
+                
+            } else {
+                Loader.showError(message: message.stringValue )
+            }
+        }
+        else if Tag == 3 {
+            let status =  json["status"]
+            let data = json["data"].arrayValue
+            let message = json["msg"]
+            
+            if status.stringValue == "0" {
+                
+                for json in data{
+                    let obj = HomeRequestModelClass(
+                        id: json["id"].stringValue,
+                        request_name: json["request_name"].stringValue,
+                        request_descr: json["request_descr"].stringValue,
+                        img: json["img"].stringValue,
+                        status: json["status"].stringValue,
+                        status_descr: json["status_descr"].stringValue,
+                        icon: json["icon"].stringValue,
+                        percentage: json["percentage"].stringValue,
+                        componants_ready: json["componants_ready"].stringValue,
+                        create_time: json["create_time"].stringValue,
+                        end_time: json["end_time"].stringValue,
+                        has_contract: json["has_contract"].stringValue,
+                        has_price: json["has_price"].stringValue,
+                        new_message: json["new_message"].stringValue,
+                        start_time: json["start_time"].stringValue,
+                        stop_time: json["stop_time"].stringValue
+                    )
+                    Continue.append(obj)
+                }
+                lblContinucount.text = "\(Continue.count)"; AppCommon.sharedInstance.dismissLoader(self.view);
+                
+                
+            } else {
+                Loader.showError(message: message.stringValue )
+            }
+        }
+        else if Tag == 4 {
+            let status =  json["status"]
+            let data = json["data"].arrayValue
+            let message = json["msg"]
+            
+            if status.stringValue == "0" {
+                
+                for json in data{
+                    let obj = HomeRequestModelClass(
+                        id: json["id"].stringValue,
+                        request_name: json["request_name"].stringValue,
+                        request_descr: json["request_descr"].stringValue,
+                        img: json["img"].stringValue,
+                        status: json["status"].stringValue,
+                        status_descr: json["status_descr"].stringValue,
+                        icon: json["icon"].stringValue,
+                        percentage: json["percentage"].stringValue,
+                        componants_ready: json["componants_ready"].stringValue,
+                        create_time: json["create_time"].stringValue,
+                        end_time: json["end_time"].stringValue,
+                        has_contract: json["has_contract"].stringValue,
+                        has_price: json["has_price"].stringValue,
+                        new_message: json["new_message"].stringValue,
+                        start_time: json["start_time"].stringValue,
+                        stop_time: json["stop_time"].stringValue
+                    )
+                    Done.append(obj)
+                }
+                lblDonecount.text = "\(Done.count)"; AppCommon.sharedInstance.dismissLoader(self.view);
+                
+            } else {
+                Loader.showError(message: message.stringValue )
+            }
+        }
+        
+    }
+    
+    func receivedErrorWithStatusCode(statusCode: Int) {
+        print(statusCode)
+        AppCommon.sharedInstance.alert(title: "Error", message: "\(statusCode)", controller: self, actionTitle: AppCommon.sharedInstance.localization("ok"), actionStyle: .default)
+        
+        AppCommon.sharedInstance.dismissLoader(self.view)
+    }
+    func retryResponse(numberOfrequest: Int) {
+        
+    }
+    
 }
 

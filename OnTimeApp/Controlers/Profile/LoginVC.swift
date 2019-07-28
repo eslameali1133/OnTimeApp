@@ -163,11 +163,13 @@ extension LoginVC: HttpHelperDelegate {
 
            
             }else if status.stringValue == "213"{
+                let Token = json["token"]
+                print(Token)
                 Loader.showError(message: Message.stringValue)
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Profile", bundle:nil)
                 let cont = storyBoard.instantiateViewController(withIdentifier: "VerificationCodeVC")as! VerificationCodeVC
                 //print(UserDefaults.standard.string(forKey: "code"))
-                cont.Token = token.stringValue
+                cont.Token = Token.stringValue
                 cont.isLogin = true
                 self.present(cont, animated: true, completion: nil)
             }

@@ -28,9 +28,10 @@ class moreVC: UIViewController ,UITableViewDataSource , UITableViewDelegate {
         "اعمالنا",
         "من نحن",
         "الشروط والاحكام",
-        "المساعده"]
+        "المساعده",
+        "الخروج"]
         
-    var arryimag = ["briefcase-2","notification-1","Mask Group 2-1","computer-graphic","info-sign-1","question (1)-1","phone-call-small"]
+    var arryimag = ["briefcase-2","notification-1","Mask Group 2-1","computer-graphic","info-sign-1","question (1)-1","phone-call-small" , "phone-call-small"]
     @IBOutlet weak var tblMore: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,6 +94,44 @@ class moreVC: UIViewController ,UITableViewDataSource , UITableViewDelegate {
             isSideMenueHelp = true
             self.revealViewController()?.pushFrontViewController(cont, animated: true)
         }
+        else if indexPath.row == 7{
+            let dialogMessage = UIAlertController(title: AppCommon.sharedInstance.localization("CONFIRM"), message: AppCommon.sharedInstance.localization("Are you sure you want to logout?"), preferredStyle: .alert)
+            
+            // Create OK button with action handler
+            let ok = UIAlertAction(title: AppCommon.sharedInstance.localization("OK"), style: .default, handler: { (action) -> Void in
+                print("Ok button tapped")
+                self.Logout()
+                AppCommon.sharedInstance.showlogin(vc: self)
+            })
+            
+            // Create Cancel button with action handlder
+            let cancel = UIAlertAction(title: AppCommon.sharedInstance.localization("cancel"), style: .cancel) { (action) -> Void in
+                dialogMessage.dismiss(animated: false, completion: nil)
+            }
+            
+            //Add OK and Cancel button to dialog message
+            dialogMessage.addAction(ok)
+            dialogMessage.addAction(cancel)
+            
+            // Present dialog message to user
+            self.present(dialogMessage, animated: true, completion: nil)
+        }
+    }
+    
+    func Logout() {
+//        let AccessToken = UserDefaults.standard.string(forKey: "access_token")!
+//        let token_type = UserDefaults.standard.string(forKey: "token_type")!
+//
+//
+//        let headers = [
+//            "Authorization" : "\(token_type) \(AccessToken)",
+//            "lang":SharedData.SharedInstans.getLanguage()
+//        ]
+//        AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
+//        http.requestWithBody(url: "\(APIConstants.logout)?device_id=\(DeviceID)", method: .post, tag: 1, header: headers)
+        UserDefaults.standard.removeObject(forKey: "Profiledata")
+        SharedData.SharedInstans.SetIsLogin(false)
+        //Loader.showSuccess(message: message.stringValue)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

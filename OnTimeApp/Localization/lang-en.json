@@ -10,5 +10,9 @@
     "User Name field cannot be left blank" : "User Name field cannot be left blank",
     "please enter code you received" : "please enter code you received",
     "CONFIRM" : "CONFIRM" ,
-    "The contract was successfully signed" : "The contract was successfully signed"
+    "The contract was successfully signed" : "The contract was successfully signed",
+    "You must agree to the terms and conditions" : "You must agree to the terms and conditions" ,
+    "Are you sure you want to logout?" : "Are you sure you want to logout?" ,
+    "OK" : "OK" ,
+    "cancel" : "cancel"
 }

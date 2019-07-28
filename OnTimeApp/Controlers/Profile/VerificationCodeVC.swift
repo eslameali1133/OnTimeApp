@@ -19,6 +19,7 @@ class VerificationCodeVC: UIViewController {
     var Token = ""
     @IBOutlet var popupVerefy: UIView!
     
+    @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtCode: KKPinCodeTextField!
     @IBOutlet weak var btnSend: UIButton!
     override func viewDidLoad() {
@@ -45,11 +46,40 @@ class VerificationCodeVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    @IBAction func btnResend(_ sender: Any) {
-        popupVerefy.isHidden = false
-        popupVerefy.backgroundColor = UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.75)
+    func Emailvalidation () -> Bool {
+        var isValid = true
+        
+        if txtEmail.text! == "" {
+            Loader.showError(message: AppCommon.sharedInstance.localization("Phone field cannot be left blank"))
+            isValid = false
+        }
+        
+        
+        return isValid
     }
+
+    @IBAction func btnResendCode(_ sender: Any) {
+        if Emailvalidation(){
+            ResendCode()
+        }
+    }
+        @IBAction func btnResend(_ sender: Any) {
+        
+        if isRegister == true {
+         SendCode()
+        }else{
+//            popupVerefy.isHidden = false
+//            popupVerefy.backgroundColor = UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.75)
+            ResendCode()
+        }
+    }
+    func ResendCode(){
+        print(Email)
+        let params = ["email":Email] as [String: Any]
+        //AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
+        http.requestWithBody(url: APIConstants.ForgetPassword, method: .post, parameters: params, tag: 4, header: nil)
+    }
+
     @IBAction func btnSend(_ sender: Any) {
         
         if validation(){
@@ -58,7 +88,7 @@ class VerificationCodeVC: UIViewController {
                 isLogin = false
                 confirm()
             }else{
-                ResetCode()
+                 ResetCode()
             }
             
         }
@@ -175,7 +205,22 @@ extension VerificationCodeVC : HttpHelperDelegate {
             } else {
                 Loader.showError(message: message.stringValue )
             }
-        }
+        }else if Tag == 4 {
+                
+                let status =  json["status"]
+                let Message =  json["msg"]
+                let Token =  json["token"]
+                let code = json["pcode"]
+                if status.stringValue  == "0" {
+                     self.vereficationCode = code.stringValue
+                    self.Token = Token.stringValue
+                   
+                }
+                else{
+                    
+                    Loader.showError(message: Message.stringValue )
+                }
+            }
     }
     
     func receivedErrorWithStatusCode(statusCode: Int) {
