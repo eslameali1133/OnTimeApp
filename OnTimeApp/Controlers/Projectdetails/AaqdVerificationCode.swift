@@ -53,9 +53,9 @@ class AaqdVerificationCode: UIViewController {
             "token": AccessToken ,
             "contract_id" : ContractID ,
             "code": txtCode.text!] as [String: Any]
-        //let headers = ["Authorization": AccessToken]
+        let headers = ["Authorization": AccessToken]
         AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
-        http.requestWithBody(url: APIConstants.CheckContractCode, method: .post, parameters: params, tag: 2, header: nil)
+        http.requestWithBody(url: APIConstants.CheckContractCode, method: .post, parameters: params, tag: 2, header: headers)
     }
 }
 extension AaqdVerificationCode : HttpHelperDelegate {

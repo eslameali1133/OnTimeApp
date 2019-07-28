@@ -21,12 +21,12 @@ class customImageView: UIImageView{
         //            URL(string:url)
         if Url == nil{
             print("Error : Url is Emty")
-            self.image = #imageLiteral(resourceName: "officePlaceholder-1")
+            self.image = #imageLiteral(resourceName: "Group 660")
             return
         }
         let urlRequest = URLRequest(url: Url!)
         
-        image = #imageLiteral(resourceName: "officePlaceholder-1")
+        image = #imageLiteral(resourceName: "Group 660")
         if let imageForCash = imageCash.object(forKey: Url as AnyObject) as? UIImage{
             
             self.image = imageForCash
@@ -62,7 +62,7 @@ class customImageView: UIImageView{
                         imageCash.setObject(imageToCash!, forKey: Url as AnyObject)
                     }else
                     {
-                        self.image = #imageLiteral(resourceName: "officePlaceholder-1")
+                        self.image = #imageLiteral(resourceName: "Group 660")
                     }
                 }
                 

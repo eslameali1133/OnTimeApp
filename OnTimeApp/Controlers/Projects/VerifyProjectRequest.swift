@@ -13,8 +13,9 @@ class VerifyProjectRequest: UIViewController , UITableViewDelegate , UITableView
     
     
 var policiesChecked = false
-    var attachment = [UIDocument]()
+    var attachment : [UIImage] = []
     var Addons = [AddonsModelClass]()
+      var Addonselected = [AddonsModelClass]()
     var RequestServices : RequestNServicesModelClass!
     var tit = ""
     var name = ""
@@ -29,7 +30,7 @@ var policiesChecked = false
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblServicePrice: UILabel!
-    @IBOutlet weak var imgService: UIImageView!
+    @IBOutlet weak var imgService: customImageView!
     @IBOutlet weak var txtDesc: UITextView!
     @IBOutlet var popupRequest: UIView!
     override func viewDidLoad() {
@@ -77,11 +78,12 @@ print(departmentID + serviceID)
         lblTotalPrice.text = ""
         lblTitle.text = RequestServices._name
         lblServicePrice.text = RequestServices._price
-        imgService.image = UIImage(named: RequestServices._img)
-        
+        imgService.loadimageUsingUrlString(url: RequestServices._img)
+      
     }
     
     func AddRequest(){
+          AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
         let AccessToken = AppCommon.sharedInstance.getJSON("Profiledata")["token"].stringValue
         print(AccessToken)
         var params = ["token": AccessToken ,
@@ -107,16 +109,19 @@ print(departmentID + serviceID)
         //http.requestWithBody(url: APIConstants.AddRequest, method: .post, parameters: params, tag: 2, header: headers)
         Alamofire.upload(
             multipartFormData: { multipartFormData in
+                
+                
                 for (key,value) in params {
                     if let value = value as? String {
                         multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
                     }
                 }
                 
-                //if let data = self.imgPID.image!.jpegData(compressionQuality: 0.5){
-                //    multipartFormData.append(data, withName: "photo", fileName: "photo\(arc4random_uniform(100))"+".jpeg", mimeType: "jpeg")
-                
-                //}
+                for (index ,image) in self.attachment.enumerated() {
+                    if  let imageData = image.jpegData(compressionQuality: 0.5){
+                        multipartFormData.append(imageData, withName: "attachments", fileName: "Uploadimage\(arc4random_uniform(100))"+"\(index)"+".jpeg", mimeType: "image/jpeg")
+                    }
+                }
                 
         },
             usingThreshold:UInt64.init(),
@@ -132,31 +137,30 @@ print(departmentID + serviceID)
                     upload.responseJSON { response in
                         // If the request to get activities is succesfull, store them
                         if response.result.isSuccess{
+                             AppCommon.sharedInstance.dismissLoader(self.view)
                             print(response.debugDescription)
                             AppCommon.sharedInstance.dismissLoader(self.view)
                             // print(response.data!)
                             // print(response.result)
-                            let json = JSON(response.data)
+                            let json = JSON(response.data!)
                             print(json)
                             let status =  json["status"]
                             let message = json["msg"]
                             let RequestID = json["id"]
                             if status.stringValue == "0" {
                                 
-//                                Loader.showSuccess(message: AppCommon.sharedInstance.localization("The contract was successfully signed"))
-//
-//                                let sb = UIStoryboard(name: "ProjectDetails", bundle: nil)
-//                                let controller = sb.instantiateViewController(withIdentifier: "AaqdVerificationCode") as! AaqdVerificationCode
-//                                self.show(controller, sender: true)
+
                                 if hasContract == true{
                                     let storyBoard : UIStoryboard = UIStoryboard(name: "ProjectDetails", bundle:nil)
                                     let cont = storyBoard.instantiateViewController(withIdentifier: "ProjectMessagesVC")as! ProjectMessagesVC
                                     cont.RequestID = RequestID.stringValue
                                     self.present(cont, animated: true, completion: nil)
                                 }
+                                else
+                                {
                                 self.popupRequest.isHidden = false
                                 self.popupRequest.backgroundColor = UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.75)
-                                
+                                }
                             }else{
                                 Loader.showError(message: message.stringValue)
                             }
@@ -189,12 +193,12 @@ print(departmentID + serviceID)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Addons.count
+        return Addonselected.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ViewAddoneTC", for: indexPath) as! ViewAddoneTC
-        cell.lblName.text = Addons[indexPath.row]._name
+        cell.lblName.text = Addonselected[indexPath.row]._name
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

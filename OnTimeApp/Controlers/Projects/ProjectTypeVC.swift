@@ -91,7 +91,8 @@ class ProjectTypeVC: UIViewController , UICollectionViewDelegate , UICollectionV
         cell.lblTitle.text = Departments[indexPath.row]._name
         cell.lblDescreption.text = Departments[indexPath.row]._descr
         print(Departments[indexPath.row]._photo)
-        cell.imgType.image = UIImage(named: Departments[indexPath.row]._photo)
+        cell.imgType.loadimageUsingUrlString(url:  Departments[indexPath.row]._photo)
+//            = UIImage(named: Departments[indexPath.row]._photo)
         cell.ID = Departments[indexPath.row]._id
         return cell
     }

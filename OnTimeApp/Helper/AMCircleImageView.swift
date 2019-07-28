@@ -55,7 +55,7 @@ class AMCircleUIView: UIView {
     @IBInspectable var borderColor: UIColor = UIColor.clear {
         didSet {
             self.layer.borderColor = self.borderColor.cgColor
-            self.layer.borderWidth = 2.0
+            self.layer.borderWidth = 1.0
         }
     }
     

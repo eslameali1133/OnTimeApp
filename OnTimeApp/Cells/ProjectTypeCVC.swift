@@ -12,7 +12,7 @@ class ProjectTypeCVC: UICollectionViewCell {
     var ID = ""
     @IBOutlet weak var lblDescreption: UITextView!
     @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var imgType: UIImageView!
+    @IBOutlet weak var imgType: customImageView!
     
     @IBAction func btnAdd(_ sender: UIButton) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Projects", bundle:nil)

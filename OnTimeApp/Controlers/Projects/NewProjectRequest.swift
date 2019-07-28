@@ -14,18 +14,12 @@ var hasContract = false
 var hasPrice = false
 class NewProjectRequest: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource , UIDocumentMenuDelegate, UIDocumentPickerDelegate, UIImagePickerControllerDelegate , UINavigationControllerDelegate , UITextViewDelegate{
 var RequestServices : RequestNServicesModelClass!
-    var attachment = [UIDocument]()
+    var attachment : [UIImage] = []
     var Addons = [AddonsModelClass]()
     var Services = [ServicesModelClass]()
     
     var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48"]
-//    //var arrTypes =
-//        [
-//        "الموشن جرافيك",
-//                    "التصميم",
-//                    "البرمجة",
-//                    "التنفيذ",
-//                    "قواعد البيانات"]
+
 //
     var isimgChecked1 = false
     var isimgChecked2 = false
@@ -42,13 +36,16 @@ var RequestServices : RequestNServicesModelClass!
     
     @IBOutlet weak var txtdesc: UITextView!
     @IBOutlet weak var txtName: UITextField!
-    @IBOutlet weak var imgServices: UIImageView!
+    @IBOutlet weak var imgServices: customImageView!
     @IBOutlet weak var addOnesCV: UICollectionView!
     @IBOutlet weak var lblType: UILabel!
+     @IBOutlet weak var lbl_Time: UILabel!
+     @IBOutlet weak var lbl_Price: UILabel!
     @IBOutlet weak var imgVoice: UIImageView!
     @IBOutlet weak var imgQueikService: UIImageView!
     @IBOutlet weak var imgTranslation: UIImageView!
     @IBOutlet weak var imgScinario: UIImageView!
+    var Price = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         http.delegate = self
@@ -59,7 +56,7 @@ var RequestServices : RequestNServicesModelClass!
         addOnesCV.dataSource = self
         GetServices(ServicesID: service_id)
         SetupActionSheet()
-        lblType.text = "الموشن جرافيك"
+     
         // Do any additional setup after loading the view.
     }
     
@@ -77,7 +74,7 @@ var RequestServices : RequestNServicesModelClass!
         cont.departmentID = department_id
         cont.serviceID = service_id
         print(title! + name! + Desc!)
-        //cont.lblDesc.text = txtdesc.text
+       
         cont.attachment = attachment
         cont.Addons = Addons
         cont.RequestServices = RequestServices
@@ -177,7 +174,7 @@ var RequestServices : RequestNServicesModelClass!
         self.AlertController.addAction(Cam)
         self.AlertController.addAction(Gerall)
         self.AlertController.addAction(Docs)
-        self.AlertController.addAction(Map)
+//        self.AlertController.addAction(Map)
         self.AlertController.addAction(Cancel)
     }
     
@@ -290,55 +287,32 @@ var RequestServices : RequestNServicesModelClass!
         self.present(picker, animated: true)
     }
     
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        guard let selectedImage = info[.originalImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
+        
+     
+        attachment.append(selectedImage)
+        print(attachment.count)
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    
     // MARK: - UIImagePickerControllerDelegate Methods
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [AnyHashable: Any]!) {
-        //        imageProfile.contentMode = .scaleAspectFit
+        
+        
+      
         print("image: \(image)")
+       
         dismiss(animated: true, completion: nil)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        //        let assetPath = info[UIImagePickerControllerReferenceURL] as! URL
-        //        let imgName = assetPath.lastPathComponent
-        
-        if #available(iOS 11.0, *) {
-            if let assetPath = info["UIImagePickerControllerImageURL"] as? URL{
-                let imgName = assetPath.lastPathComponent
-                print(imgName)
-                if (assetPath.absoluteString.hasSuffix("jpg")) {
-                    print("jpg")
-                    if let pickedImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
-                        print("image: \(pickedImage)")
-                        
-                    }
-                }else if (assetPath.absoluteString.hasSuffix("jpeg")) {
-                    print("jpeg")
-                    
-                }
-                else if (assetPath.absoluteString.hasSuffix("png")) {
-                    print("png")
-                   
-                }
-                else if (assetPath.absoluteString.hasSuffix("gif")) {
-                    print("gif")
-                    
-                }
-                else {
-                    print("Unknown")
-                }
-                
-            }else {
-                if let pickedImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
-                  //  sendImg.image = pickedImage
-                    let imagePath = URL(fileURLWithPath: "")
-                    
-                }
-            }
-        } else {
-            // Fallback on earlier versions
-        }
-        dismiss(animated: true, completion: nil)
-    }
+   
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
@@ -402,8 +376,11 @@ var RequestServices : RequestNServicesModelClass!
         pickerview.removeFromSuperview()
         self.view.endEditing(true)
         lblType.text = Services[row]._name
-        imgServices.image = UIImage(named: Services[row]._img)
+        
+        imgServices.loadimageUsingUrlString(url: Services[row]._img)
         service_id = Services[row]._id
+        print( Services[row]._id)
+        
         GetServices(ServicesID: Services[row]._id)
         
     }
@@ -470,7 +447,29 @@ extension NewProjectRequest : HttpHelperDelegate {
                 self.addOnesCV.reloadData()
                 if data["has_contract"].stringValue == "1"{
                     hasContract = true
+                }else{
+                     hasContract = false
                 }
+                
+                print(data["has_time"].stringValue)
+                if data["has_time"].stringValue == "1" {
+                    self.lbl_Time.text = "\(data["average_time"].stringValue) d "
+                }
+                else{
+                       self.lbl_Time.text = "بعد اعتماد الطلب"
+                }
+                
+                if data["has_price"].stringValue == "1" {
+                    self.lbl_Price.text = "\(data["price"].stringValue) "
+                    self.Price = data["price"].intValue
+                    hasPrice = true
+                }
+                else{
+                    self.lbl_Price.text = "بعد اعتماد الطلب"
+                      hasPrice = false
+                }
+                self.lblType.text = data["name"].stringValue
+                 imgServices.loadimageUsingUrlString(url:  data["img"].stringValue)
                 print(RequestServices._average_time)
                 print(RequestServices._has_contract)
                 print(RequestServices._has_price)

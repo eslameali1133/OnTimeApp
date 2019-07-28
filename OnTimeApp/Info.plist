@@ -56,5 +56,9 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>This app will use camera to upload Projects imges or profile image</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>To can upload your Project images and profile image</string>
 </dict>
 </plist>

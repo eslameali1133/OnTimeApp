@@ -80,7 +80,7 @@ class VerificationCodeVC: UIViewController {
     }
     
     func SendCode(){
-        //let AccessToken = AppCommon.sharedInstance.getJSON("Profiledata")["token"].stringValue
+      
         print(Token)
     let params = ["token": Token] as [String: Any]
         let headers = [
