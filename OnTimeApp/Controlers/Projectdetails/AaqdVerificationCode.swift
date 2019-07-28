@@ -44,7 +44,7 @@ class AaqdVerificationCode: UIViewController {
         let params = ["token": AccessToken ,
                       "contract_id" : ContractID] as [String: Any]
         //let headers = ["Authorization": AccessToken]
-        AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
+        //AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
         http.requestWithBody(url: APIConstants.SendContractCode, method: .post, parameters: params, tag: 3, header: nil)
     }
     func confirm(){
@@ -54,7 +54,7 @@ class AaqdVerificationCode: UIViewController {
             "contract_id" : ContractID ,
             "code": txtCode.text!] as [String: Any]
         let headers = ["Authorization": AccessToken]
-        AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
+        //AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
         http.requestWithBody(url: APIConstants.CheckContractCode, method: .post, parameters: params, tag: 2, header: headers)
     }
 }

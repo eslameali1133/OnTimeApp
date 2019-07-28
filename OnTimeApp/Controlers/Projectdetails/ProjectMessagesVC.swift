@@ -33,6 +33,12 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func btnAcceptContract(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "ProjectDetails", bundle: nil)
+        let cont = storyboard.instantiateViewController(withIdentifier: "MakeAaqdVC") as! MakeAaqdVC
+        cont.RequestID = RequestID
+        self.present(cont, animated: true, completion: nil)
+    }
     @IBAction func btnRecive(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Help", bundle: nil)
         let cont = storyboard.instantiateViewController(withIdentifier: "CongratulationVC")

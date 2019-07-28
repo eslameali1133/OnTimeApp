@@ -10,7 +10,7 @@ import UIKit
 import SwiftyJSON
 import Alamofire
 class VerifyProjectRequest: UIViewController , UITableViewDelegate , UITableViewDataSource{
-    
+    var sum = 0
     
 var policiesChecked = false
     var attachment : [UIImage] = []
@@ -35,7 +35,7 @@ var policiesChecked = false
     @IBOutlet var popupRequest: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        SelectedAddOnes()
 print(departmentID + serviceID)
         SetData()
         tblAddones.delegate = self
@@ -71,11 +71,28 @@ print(departmentID + serviceID)
     @IBAction func btnVerify(_ sender: Any) {
         AddRequest()
     }
+    func SelectedAddOnes(){
+    
+        for i in Addons {
+            for j in AddonsR {
+                if i._id == j{
+                    Addonselected.append(i)
+                    sum += Int(i._price)!
+                }
+            }
+            
+        }
+        let price = Int(RequestServices._price)!
+        let tax = (Int(RequestServices._tax_percentage)! * price ) / 100
+        print(sum)
+        print(tax)
+        print(price)
+        lblTotalPrice.text = "\(sum + tax + price)"
+    }
     func SetData(){
         lblName.text = name
         lblDesc.text = desc
         lblTax.text = RequestServices._tax_percentage
-        lblTotalPrice.text = ""
         lblTitle.text = RequestServices._name
         lblServicePrice.text = RequestServices._price
         imgService.loadimageUsingUrlString(url: RequestServices._img)
@@ -98,6 +115,7 @@ print(departmentID + serviceID)
         for  i in AddonsR
         {
             params["addons[\(count)]"] = i
+            print(i)
             count += 1
             
         }

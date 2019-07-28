@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 class MakeAaqdVC: UIViewController , UIImagePickerControllerDelegate ,UINavigationControllerDelegate {
 
+    var RequestID = ""
     var http = HttpHelper()
     var AlertController: UIAlertController!
     @IBOutlet weak var txtPhone: UITextField!
@@ -22,6 +23,7 @@ class MakeAaqdVC: UIViewController , UIImagePickerControllerDelegate ,UINavigati
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print(RequestID)
        // http.delegate = self
         SetupUploadImage()
         // Do any additional setup after loading the view.
@@ -139,7 +141,7 @@ class MakeAaqdVC: UIViewController , UIImagePickerControllerDelegate ,UINavigati
         let imgdata = self.imgPID.image!.jpegData(compressionQuality: 0.5)
         print(imgdata!)
         parameters = [
-            "request_id" : "18",
+            "request_id" : RequestID,
             "token": AccessToken,
             "name": txtName.text!,
             "email" : txtEmail.text!,
