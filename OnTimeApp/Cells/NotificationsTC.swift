@@ -10,6 +10,10 @@ import UIKit
 
 class NotificationsTC: UITableViewCell {
 
+    @IBOutlet weak var lblTime: UILabel!
+    @IBOutlet weak var lblMessage: UILabel!
+    @IBOutlet weak var lblHeader: UILabel!
+    @IBOutlet weak var imgNotification: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

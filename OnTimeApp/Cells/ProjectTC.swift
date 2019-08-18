@@ -17,7 +17,16 @@ class ProjectTC: UITableViewCell {
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var desce: UILabel!
     @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var img: customImageView!{
+        didSet{
+            img.layer.cornerRadius =  img.frame.width / 2
+            img.layer.borderWidth = 0
+            //            ProfileImageView.layer.borderColor =  UIColor(red: 0, green: 156, blue: 158, alpha: 1) as! CGColor
+            
+            img.clipsToBounds = true
+            
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

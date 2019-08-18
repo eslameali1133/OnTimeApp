@@ -41,9 +41,14 @@ class SignUpVC: UIViewController {
         imgPeople.image = UIImage(named: "radio-on-button (4)")
         http.delegate = self
         lblKey.text = "+966"
-        btnSignUp.layer.cornerRadius = 20
-        btnSignUp.layer.borderWidth = 1
-        btnSignUp.layer.borderColor = UIColor.white.cgColor
+        btnSignUp.layer.cornerRadius = 25
+        //btnSignUp.layer.borderWidth = 1
+        //btnSignUp.layer.borderColor = UIColor.white.cgColor
+        btnSignUp.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+        btnSignUp.layer.shadowOffset = CGSize(width: 0, height: 4)
+        btnSignUp.layer.shadowOpacity = 1.0
+        btnSignUp.layer.shadowRadius = 3.0
+        btnSignUp.layer.masksToBounds = false
         // Do any additional setup after loading the view.
     }
     
@@ -134,10 +139,11 @@ class SignUpVC: UIViewController {
             Loader.showError(message: AppCommon.sharedInstance.localization("Name field cannot be left blank"))
             isValid = false
         }
-        
+        if type == "Organization" {
         if txtOrgName.text! == "" {
             Loader.showError(message: AppCommon.sharedInstance.localization("Name field cannot be left blank"))
             isValid = false
+        }
         }
         
         // Email Validation

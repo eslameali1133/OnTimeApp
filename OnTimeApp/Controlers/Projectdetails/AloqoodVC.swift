@@ -45,12 +45,13 @@ class AloqoodVC: UIViewController , UITableViewDelegate , UITableViewDataSource 
         self.dismiss(animated: true, completion: nil)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return GRequestDetail._contracts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AloqoodTC", for: indexPath) as! AloqoodTC
-        
+        cell.lblName.text = GRequestDetail._contracts[indexPath.row]._name
+        cell.pdf = GRequestDetail._contracts[indexPath.row]._pdf
         return cell
     }
     

@@ -13,6 +13,8 @@ class VisaCardDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20.0)!]
         // Do any additional setup after loading the view.
     }
     

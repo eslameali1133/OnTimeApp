@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+var GRate = ""
 @IBDesignable class RatingControl: UIStackView {
     
     //MARK: Properties
@@ -57,9 +57,13 @@ import UIKit
         if selectedRating == rating {
             // If the selected star represents the current rating, reset the rating to 0.
             rating = 0
+            GRate = "0"
+            print(GRate)
         } else {
             // Otherwise set the rating to the selected star
             rating = selectedRating
+            GRate = "\(selectedRating)"
+            print(GRate)
         }
     }
     

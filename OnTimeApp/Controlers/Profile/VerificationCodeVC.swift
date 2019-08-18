@@ -36,10 +36,15 @@ class VerificationCodeVC: UIViewController {
         self.view.addSubview(popupVerefy)
         popupVerefy.isHidden = true
        // btnSend.backgroundColor = .clear
-        btnSend.layer.cornerRadius = 30
-        btnSend.layer.borderWidth = 1
-        btnSend.layer.borderColor = UIColor.white.cgColor
+        btnSend.layer.cornerRadius = 25
+        //btnSend.layer.borderWidth = 1
+        //btnSend.layer.borderColor = UIColor.white.cgColor
     
+        btnSend.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+        btnSend.layer.shadowOffset = CGSize(width: 0, height: 4)
+        btnSend.layer.shadowOpacity = 1.0
+        btnSend.layer.shadowRadius = 3.0
+        btnSend.layer.masksToBounds = false
    
 
         

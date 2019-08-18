@@ -19,6 +19,7 @@ class HelpMethodVC: UIViewController {
             isSideMenueHelp = false
         }
         sideMenue()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20.0)!]
 //setupSideMenu()
         // Do any additional setup after loading the view.
     }

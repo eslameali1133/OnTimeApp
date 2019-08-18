@@ -32,4 +32,11 @@ open class APIConstants {
     static let CheckContractCode = SERVER_URL + "check_contract_code.php"
     static let GetRequestContract = SERVER_URL + "get_request_contract.php"
     
+    static let GetRequestDetails = SERVER_URL + "request_details.php"
+    static let RecieveProject = SERVER_URL + "get_finished_project.php"
+    static let SendRate = SERVER_URL + "add_finish_comment.php"
+    
+    static let GetNotificatios = SERVER_URL + "get_user_notification.php"
+    static let ReadNotification = SERVER_URL + "read_notification.php"
+    
 }

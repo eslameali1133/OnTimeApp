@@ -11,6 +11,8 @@ import Alamofire
 import SwiftyJSON
 class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentPickerDelegate, UIImagePickerControllerDelegate , UINavigationControllerDelegate{
 
+    var Addons = [AddonsModelClass]()
+    var contracts = [ContractModelClass]()
     @IBOutlet weak var txtContract: UITextView!
     var http = HttpHelper()
     var RequestID = ""
@@ -30,6 +32,9 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
         self.view.addSubview(popupContractor)
         popupContractor.isHidden = true
         
+        
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20.0)!]
         // Do any additional setup after loading the view.
     }
     
@@ -40,10 +45,8 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
         self.present(cont, animated: true, completion: nil)
     }
     @IBAction func btnRecive(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Help", bundle: nil)
-        let cont = storyboard.instantiateViewController(withIdentifier: "CongratulationVC")
+        RecieveProject()
         
-        self.present(cont, animated: true, completion: nil)
     }
     @IBAction func btnSideMenue(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Projects", bundle: nil)
@@ -75,10 +78,7 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
         popupContractor.isHidden = true
     }
     @IBAction func btnDetails(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "ProjectDetails", bundle: nil)
-        let cont = storyboard.instantiateViewController(withIdentifier: "DetailSeguVC")
-        
-        self.show(cont, sender: true)
+        GetRequestDetails()
     }
     
     @IBAction func btnContract(_ sender: Any) {
@@ -94,6 +94,16 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
         self.dismiss(animated: true, completion: nil)
     }
     
+    func GetRequestDetails(){
+        
+        let AccessToken = AppCommon.sharedInstance.getJSON("Profiledata")["token"].stringValue
+        print(AccessToken)
+        let params = ["token": AccessToken,
+                      "request_id" : RequestID ] as [String: Any]
+        AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
+        http.requestWithBody(url: APIConstants.GetRequestDetails, method: .post, parameters: params, tag: 2, header: nil)
+    }
+    
     func GetContracttext(){
     print(RequestID)
         let AccessToken = AppCommon.sharedInstance.getJSON("Profiledata")["token"].stringValue
@@ -105,6 +115,17 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
         //AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
         http.requestWithBody(url: APIConstants.GetRequestContract, method: .post, parameters: params, tag: 1, header: headers)
         
+    }
+    func RecieveProject(){
+        let AccessToken = AppCommon.sharedInstance.getJSON("Profiledata")["token"].stringValue
+        print(AccessToken)
+        print(RequestID)
+        let params = ["token": AccessToken,
+                      "request_id" : RequestID ] as [String: Any]
+        let headers = [
+            "Authorization": AccessToken]
+        //AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
+        http.requestWithBody(url: APIConstants.RecieveProject, method: .post, parameters: params, tag: 3, header: headers)
     }
     
     func SetupActionSheet()
@@ -301,6 +322,73 @@ extension ProjectMessagesVC : HttpHelperDelegate {
             if status.stringValue == "0" {
                 txtContract.text = data["text"].stringValue
                 let name = data["name"].stringValue
+            } else {
+                Loader.showError(message: message.stringValue )
+            }
+        }else if Tag == 2 {
+            let status =  json["status"]
+            let data = json["data"]
+            let message = json["msg"]
+            let Jaddons = data["addons"].arrayValue
+            let JContracts = data["contracts"].arrayValue
+            
+            if status.stringValue == "0" {
+                
+                for json in Jaddons{
+                    let obj = AddonsModelClass(
+                        id: "",
+                        name: json["name"].stringValue,
+                        price: ""
+                        
+                    )
+                    //print(obj)
+                    Addons.append(obj)
+                }
+                for json in JContracts{
+                    let obj = ContractModelClass(
+                        name: json["name"].stringValue,
+                        pdf: json["pdf"].stringValue
+                    )
+                    //print(obj)
+                    contracts.append(obj)
+                }
+                
+                GRequestDetail = RequestDetailModelClass(
+                    request_name: data["request_name"].stringValue,
+                    request_descr: data["request_descr"].stringValue,
+                    start_time: data["start_time"].stringValue,
+                    end_time: data["end_time"].stringValue,
+                    service_name: data["service_name"].stringValue,
+                    start_from: data["start_from"].stringValue,
+                    total_time: data["total_time"].stringValue,
+                    terms: data["terms"].stringValue,
+                    addons: Addons,
+                    Contracts: contracts
+                )
+                
+                let storyboard = UIStoryboard(name: "ProjectDetails", bundle: nil)
+                let cont = storyboard.instantiateViewController(withIdentifier: "DetailSeguVC") as! DetailSeguVC
+                cont.RequestID = RequestID
+                self.show(cont, sender: true)
+                
+                
+            } else {
+                Loader.showError(message: message.stringValue )
+            }
+        }else if Tag == 3 {
+            let status =  json["status"]
+            let data = json["data"]
+            let message = json["msg"]
+            let ProjectURL = data["project_url"]
+            
+            if status.stringValue == "0" {
+                
+                let storyboard = UIStoryboard(name: "Help", bundle: nil)
+                let cont = storyboard.instantiateViewController(withIdentifier: "CongratulationVC") as! CongratulationVC
+                cont.ProjectURL = ProjectURL.stringValue
+                cont.RequestID = RequestID
+                self.present(cont, animated: true, completion: nil)
+                
             } else {
                 Loader.showError(message: message.stringValue )
             }

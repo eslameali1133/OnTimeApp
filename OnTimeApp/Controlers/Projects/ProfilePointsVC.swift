@@ -10,6 +10,8 @@ import UIKit
 import SideMenu
 class ProfilePointsVC: UIViewController {
 
+    @IBOutlet weak var lblPhone: UILabel!
+    @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var btnSideMenue: UIBarButtonItem!
     @IBOutlet weak var imgProfile: customImageView!{
     didSet{
@@ -24,6 +26,10 @@ class ProfilePointsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         sideMenue()
+        SetData()
+        
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20.0)!]
         // Do any additional setup after loading the view.
     }
     
@@ -45,6 +51,13 @@ class ProfilePointsVC: UIViewController {
         }
     }
 
+    func SetData(){
+    
+        lblName.text = AppCommon.sharedInstance.getJSON("Profiledata")["name"].stringValue
+        lblPhone.text = AppCommon.sharedInstance.getJSON("Profiledata")["phone"].stringValue
+        imgProfile.loadimageUsingUrlString(url: AppCommon.sharedInstance.getJSON("Profiledata")["img"].stringValue)
+        
+    }
     
     @IBAction func DismissView(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Projects", bundle:nil)

@@ -35,7 +35,7 @@ class AllProjectVC: UIViewController , UITableViewDataSource , UITableViewDelega
         cell.icon.image = UIImage(named: HomeRequests[indexPath.row]._icon)
         cell.statusdescr.text = HomeRequests[indexPath.row]._status_descr
         cell.status.text = HomeRequests[indexPath.row]._status
-        cell.img.image = UIImage(named: HomeRequests[indexPath.row]._img)
+        cell.img.loadimageUsingUrlString(url: HomeRequests[indexPath.row]._img)
         cell.desce.text = HomeRequests[indexPath.row]._request_descr
         cell.name.text = HomeRequests[indexPath.row]._request_name
         return cell

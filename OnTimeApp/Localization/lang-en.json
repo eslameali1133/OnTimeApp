@@ -14,5 +14,17 @@
     "You must agree to the terms and conditions" : "You must agree to the terms and conditions" ,
     "Are you sure you want to logout?" : "Are you sure you want to logout?" ,
     "OK" : "OK" ,
-    "cancel" : "cancel"
+    "cancel" : "cancel",
+    "The Profile was successfully Editted" : "The Profile was successfully Editted",
+    "Change Language" : "Change Language" ,
+    "Help" : "Help" ,
+    "Terms & Conditions" : "Terms & Conditions" ,
+    "About US" : "About US" ,
+    "Our Products" : "Our Products" ,
+    "Profile" : "Profile" ,
+    "Notification" : "Notification" ,
+    "Projects" : "Projects" ,
+    "changeLanguage" : "changeLanguage" ,
+    "changeLanguageMessage" : "changeLanguageMessage" ,
+    "change" : "change"
 }

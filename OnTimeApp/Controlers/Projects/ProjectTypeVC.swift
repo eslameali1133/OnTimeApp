@@ -19,6 +19,8 @@ class ProjectTypeVC: UIViewController , UICollectionViewDelegate , UICollectionV
         GetDepartments()
         collectionImg.delegate = self
         collectionImg.dataSource = self
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20.0)!]
         // Do any additional setup after loading the view.
     }
     

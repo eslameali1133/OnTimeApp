@@ -34,7 +34,7 @@ var Griviscount = "0"
             cell.icon.image = UIImage(named: HomeRequests[indexPath.row]._icon)
             cell.statusdescr.text = HomeRequests[indexPath.row]._status_descr
             cell.status.text = HomeRequests[indexPath.row]._status
-            cell.img.image = UIImage(named: HomeRequests[indexPath.row]._img)
+            cell.img.loadimageUsingUrlString(url: HomeRequests[indexPath.row]._img)
             cell.desce.text = HomeRequests[indexPath.row]._request_descr
             cell.name.text = HomeRequests[indexPath.row]._request_name
             return cell
@@ -42,6 +42,7 @@ var Griviscount = "0"
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             let storyBoard : UIStoryboard = UIStoryboard(name: "ProjectDetails", bundle:nil)
             let cont = storyBoard.instantiateViewController(withIdentifier: "ProjectMessagesVC")as! ProjectMessagesVC
+            cont.RequestID = HomeRequests[indexPath.row]._id
             self.present(cont, animated: true, completion: nil)
         }
         

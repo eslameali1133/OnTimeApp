@@ -12,9 +12,12 @@ import SwiftyJSON
 import Alamofire
 var hasContract = false
 var hasPrice = false
+var isEdit = false
+var RequestID = ""
 class NewProjectRequest: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource , UIDocumentMenuDelegate, UIDocumentPickerDelegate, UIImagePickerControllerDelegate , UINavigationControllerDelegate , UITextViewDelegate{
 var RequestServices : RequestNServicesModelClass!
     var attachment : [UIImage] = []
+    var AttachmentFiles : [Any] = []
     var Addons = [AddonsModelClass]()
     var Services = [ServicesModelClass]()
     var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48"]
@@ -56,11 +59,14 @@ var RequestServices : RequestNServicesModelClass!
         GetServices(ServicesID: service_id)
         SetupActionSheet()
      
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20.0)!]
         // Do any additional setup after loading the view.
     }
     
     @IBAction func btnNext(_ sender: Any) {
         //AddRequest()
+        if isEdit == false {
         let storyboard = UIStoryboard(name: "Projects", bundle: nil)
         let cont = storyboard.instantiateViewController(withIdentifier: "VerifyProjectRequest") as! VerifyProjectRequest
         print(lblType.text!)
@@ -79,6 +85,9 @@ var RequestServices : RequestNServicesModelClass!
         cont.RequestServices = RequestServices
         
         self.present(cont, animated: true, completion: nil)
+        }else{
+            EditRequest()
+        }
     }
     @IBAction func btnAttachment(_ sender: Any) {
         imgpicker.delegate = self
@@ -254,6 +263,110 @@ var RequestServices : RequestNServicesModelClass!
         self.present(importMenu, animated: true, completion: nil)
     }
     
+    func EditRequest (){
+        AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
+        let AccessToken = AppCommon.sharedInstance.getJSON("Profiledata")["token"].stringValue
+        print(AccessToken)
+        var params = ["token": AccessToken ,
+                      "request_id":RequestID ,
+                      "service_id":service_id ,
+                      "name" : txtName.text!,
+                      "descr" : txtdesc.text!,
+                      "attachments" : attachment
+            ] as [String: Any]
+        
+        var count = 1
+        for  i in AddonsR
+        {
+            params["addons[\(count)]"] = i
+            print(i)
+            count += 1
+            
+        }
+        
+        print(params)
+        let headers = [
+            "Authorization": AccessToken]
+        //AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
+        //http.requestWithBody(url: APIConstants.AddRequest, method: .post, parameters: params, tag: 2, header: headers)
+        Alamofire.upload(
+            multipartFormData: { multipartFormData in
+                
+                
+                for (key,value) in params {
+                    if let value = value as? String {
+                        multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+                    }
+                }
+                
+                for (index ,image) in self.attachment.enumerated() {
+                    if  let imageData = image.jpegData(compressionQuality: 0.5){
+                        multipartFormData.append(imageData, withName: "attachments", fileName: "Uploadimage\(arc4random_uniform(100))"+"\(index)"+".jpeg", mimeType: "image/jpeg")
+                    }
+                }
+                
+        },
+            usingThreshold:UInt64.init(),
+            to: "https://appontime.net/mobile/edit_request_immediately.php",
+            method: .post, headers: headers,
+            encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .success(let upload, _, _):
+                    
+                    upload.uploadProgress(closure: { (progress) in
+                        print(progress)
+                    })
+                    upload.responseJSON { response in
+                        // If the request to get activities is succesfull, store them
+                        if response.result.isSuccess{
+                            AppCommon.sharedInstance.dismissLoader(self.view)
+                            print(response.debugDescription)
+                            AppCommon.sharedInstance.dismissLoader(self.view)
+                            // print(response.data!)
+                            // print(response.result)
+                            let json = JSON(response.data!)
+                            print(json)
+                            let status =  json["status"]
+                            let message = json["msg"]
+                            if status.stringValue == "0" {
+
+                                
+//                                if hasContract == true{
+//                                    let storyBoard : UIStoryboard = UIStoryboard(name: "ProjectDetails", bundle:nil)
+//                                    let cont = storyBoard.instantiateViewController(withIdentifier: "ProjectMessagesVC")as! ProjectMessagesVC
+//                                    cont.RequestID = RequestID.stringValue
+//                                    self.present(cont, animated: true, completion: nil)
+//                                }
+                            }else{
+                                Loader.showError(message: message.stringValue)
+                            }
+                            
+                        } else {
+                            let errorMessage = "ERROR MESSAGE: "
+                            if let data = response.data {
+                                // Print message
+                                print(errorMessage)
+                                AppCommon.sharedInstance.dismissLoader(self.view)
+                                
+                                
+                                
+                            }
+                            print(errorMessage) //Contains General error message or specific.
+                            print(response.debugDescription)
+                            AppCommon.sharedInstance.dismissLoader(self.view)
+                        }
+                        
+                        
+                    }
+                case .failure(let encodingError):
+                    print("FALLE ------------")
+                    print(encodingError)
+                    AppCommon.sharedInstance.dismissLoader(self.view)
+                }
+        }
+        )
+    }
+    
     func openGalleryImagePicker() {
         
         let picker = UIImagePickerController()
@@ -296,7 +409,10 @@ var RequestServices : RequestNServicesModelClass!
         
      
         attachment.append(selectedImage)
+        AttachmentFiles.append(selectedImage)
+        AttachmentFiles.append(Bundle.main.url(forResource: "Doc1", withExtension: "pdf"))
         print(attachment.count)
+        print(AttachmentFiles.count)
         picker.dismiss(animated: true, completion: nil)
     }
     

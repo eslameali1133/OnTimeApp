@@ -13,11 +13,18 @@ var imgChecked1 = false
     var imgChecked2 = false
     @IBOutlet weak var imgScinario: UIImageView!
     @IBOutlet weak var imgQuickService: UIImageView!
+    @IBOutlet weak var AddOnesCV: UICollectionView!
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var txtTerms: UITextView!
+    @IBOutlet weak var txtDesc: UITextView!
     @IBOutlet var popupPolecies: UIView!
     @IBOutlet var popupprojectDetails: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        SetData()
+        AddOnesCV.delegate = self
+        AddOnesCV.dataSource = self
          popupPolecies.frame = CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y, width: self.view.frame.width, height: self.view.frame.height)
         self.view.addSubview(popupPolecies)
         popupPolecies.isHidden = true
@@ -68,5 +75,28 @@ var imgChecked1 = false
     @IBAction func DismissView(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    func SetData(){
+    
+        lblName.text = GRequestDetail._request_name
+        txtDesc.text = GRequestDetail._request_descr
+        txtTerms.text = GRequestDetail._terms
+    }
 
 }
+extension AaqdInfoVC : UICollectionViewDelegate , UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return GRequestDetail._addons.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "addOnesCVC", for: indexPath) as! addOnesCVC
+        cell.lblName.text = GRequestDetail._addons[indexPath.row]._name
+        cell.Id = GRequestDetail._addons[indexPath.row]._id
+        cell.price = GRequestDetail._addons[indexPath.row]._price
+        return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 30)
+    }
+}
+

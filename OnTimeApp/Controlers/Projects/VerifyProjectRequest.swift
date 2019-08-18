@@ -44,6 +44,7 @@ print(departmentID + serviceID)
         self.view.addSubview(popupRequest)
         popupRequest.isHidden = true
         
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20.0)!]
         // Do any additional setup after loading the view.
     }
     
@@ -100,6 +101,7 @@ print(departmentID + serviceID)
     }
     
     func AddRequest(){
+        print(attachment.count)
           AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
         let AccessToken = AppCommon.sharedInstance.getJSON("Profiledata")["token"].stringValue
         print(AccessToken)

@@ -16,17 +16,21 @@ class LoginVC: UIViewController {
     @IBOutlet weak var btnLogin: UIButton!
     var http = HttpHelper()
     var pickerview  = UIPickerView()
-    
     @IBOutlet weak var lblKey: UILabel!
     var toolBar = UIToolbar()
     override func viewDidLoad() {
         super.viewDidLoad()
-
         lblKey.text = "+966"
         http.delegate = self
         btnLogin.layer.cornerRadius = 25
-        btnLogin.layer.borderWidth = 1
-        btnLogin.layer.borderColor = UIColor.white.cgColor
+        //btnLogin.layer.borderWidth = 1
+        //btnLogin.layer.borderColor = UIColor.white.cgColor
+        btnLogin.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+        btnLogin.layer.shadowOffset = CGSize(width: 0, height: 4)
+        btnLogin.layer.shadowOpacity = 1.0
+        btnLogin.layer.shadowRadius = 3.0
+        btnLogin.layer.masksToBounds = false
+        
         // Do any additional setup after loading the view.
     }
     

@@ -21,6 +21,8 @@ class HelpMessagesVC: UIViewController , UIDocumentMenuDelegate, UIDocumentPicke
         super.viewDidLoad()
 
         SetupActionSheet()
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20.0)!]
         // Do any additional setup after loading the view.
     }
     @IBAction func btnAttachment(_ sender: Any) {

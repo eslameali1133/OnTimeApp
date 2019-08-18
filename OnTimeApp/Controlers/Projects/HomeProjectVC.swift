@@ -8,7 +8,7 @@
 import UIKit
 import SideMenu
 import SwiftyJSON
-class HomeProjectVC: UIViewController {
+class HomeProjectVC: AllignLocalizerVC {
     var http = HttpHelper()
     var All = [HomeRequestModelClass]()
     var Done = [HomeRequestModelClass]()
@@ -30,6 +30,10 @@ class HomeProjectVC: UIViewController {
     
     }
     }
+    @IBOutlet weak var AllLine: UIView!
+    @IBOutlet weak var ReviLine: UIView!
+    @IBOutlet weak var continLine: UIView!
+    @IBOutlet weak var DoneLine: UIView!
     @IBOutlet weak var tabDone: UIView!
     @IBOutlet weak var tabContinue: UIView!
     @IBOutlet weak var tabRevised: UIView!
@@ -53,15 +57,30 @@ class HomeProjectVC: UIViewController {
         sideMenue()
        // setupSideMenu()
          http.delegate = self
-        allC.isHidden = false
-        revisionC.isHidden = true
-        contenueC.isHidden = true
-        doneC.isHidden = true
-        tabAll.backgroundColor = UIColor.hexColor(string: "EFEFF4")
-//        lblAllPro.textColor = UIColor.hexColor(string: "55DBA8")
-//        lblDonePro.textColor = UIColor.black
-//        lblRevisedPro.textColor = UIColor.black
-//        lblContinuePro.textColor = UIColor.black
+        
+        AllTab()
+        lblContinuePro.font = UIFont(name: "DINNextLTW23-Light", size: 13.0)!
+        lblRevisedPro.font = UIFont(name: "DINNextLTW23-Light", size: 13.0)!
+        lblDonePro.font = UIFont(name: "DINNextLTW23-Light", size: 13.0)!
+        lblAllPro.font = UIFont(name: "DINNextLTW23-Light", size: 13.0)!
+        
+//        DIN Next LT W23
+//            == DINNextLTW23-Heavy
+//            == DINNextLTW23-Regular
+//            == DINNextLTW23-Bold
+//            == DINNextLTW23-Medium
+//            == DINNextLTW23-Light
+//            == DINNextLTW23-UltraLight
+//            == DINNextLTW23-Black
+//
+//        for family: String in UIFont.familyNames
+//        {
+//            print(family)
+//            for names: String in UIFont.fontNames(forFamilyName: family)
+//            {
+//                print("== \(names)")
+//            }
+//        }
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -73,21 +92,39 @@ class HomeProjectVC: UIViewController {
         lblContinucount.text = Gcontinucount
         lblRivscount.text = Griviscount
     }
+    func AllTab(){
+        allC.isHidden = false
+        revisionC.isHidden = true
+        contenueC.isHidden = true
+        doneC.isHidden = true
+        
+        lblAllPro.textColor = UIColor.hexColor(string: "55DBA8")
+        lblDonePro.textColor = UIColor.black
+        lblRevisedPro.textColor = UIColor.black
+        lblContinuePro.textColor = UIColor.black
+        
+        AllLine.backgroundColor = UIColor.hexColor(string: "55DBA8")
+        ReviLine.backgroundColor = UIColor.clear
+        continLine.backgroundColor = UIColor.clear
+        DoneLine.backgroundColor = UIColor.clear
+        
+    }
     @IBAction func btnAllPro(_ sender: Any) {
         allC.isHidden = false
         revisionC.isHidden = true
         contenueC.isHidden = true
         doneC.isHidden = true
         
-        tabAll.backgroundColor = UIColor.hexColor(string: "EFEFF4")
-        tabDone.backgroundColor = UIColor.white
-        tabRevised.backgroundColor = UIColor.white
-        tabContinue.backgroundColor = UIColor.white
+        lblAllPro.textColor = UIColor.hexColor(string: "55DBA8")
+        lblDonePro.textColor = UIColor.black
+        lblRevisedPro.textColor = UIColor.black
+        lblContinuePro.textColor = UIColor.black
         
-//        lblAllPro.textColor = UIColor.hexColor(string: "55DBA8")
-//        lblDonePro.textColor = UIColor.black
-//        lblRevisedPro.textColor = UIColor.black
-//        lblContinuePro.textColor = UIColor.black
+        AllLine.backgroundColor = UIColor.hexColor(string: "55DBA8")
+        ReviLine.backgroundColor = UIColor.clear
+        continLine.backgroundColor = UIColor.clear
+        DoneLine.backgroundColor = UIColor.clear
+        
     }
     @IBAction func btnContinuePro(_ sender: Any) {
         allC.isHidden = true
@@ -95,15 +132,21 @@ class HomeProjectVC: UIViewController {
         contenueC.isHidden = false
         doneC.isHidden = true
         
-        tabAll.backgroundColor = UIColor.white
-        tabDone.backgroundColor = UIColor.white
-        tabRevised.backgroundColor = UIColor.white
-        tabContinue.backgroundColor = UIColor.hexColor(string: "EFEFF4")
+//        tabAll.backgroundColor = UIColor.white
+//        tabDone.backgroundColor = UIColor.white
+//        tabRevised.backgroundColor = UIColor.white
+//        tabContinue.backgroundColor = UIColor.hexColor(string: "EFEFF4")
         
-//        lblAllPro.textColor = UIColor.black
-//        lblDonePro.textColor = UIColor.black
-//        lblRevisedPro.textColor = UIColor.black
-//        lblContinuePro.textColor = UIColor.hexColor(string: "55DBA8")
+        lblAllPro.textColor = UIColor.black
+        lblDonePro.textColor = UIColor.black
+        lblRevisedPro.textColor = UIColor.black
+        lblContinuePro.textColor = UIColor.hexColor(string: "55DBA8")
+        
+        AllLine.backgroundColor = UIColor.clear
+        ReviLine.backgroundColor = UIColor.clear
+        continLine.backgroundColor = UIColor.hexColor(string: "55DBA8")
+        DoneLine.backgroundColor = UIColor.clear
+        
     }
     @IBAction func btnDonePro(_ sender: Any) {
         allC.isHidden = true
@@ -111,16 +154,20 @@ class HomeProjectVC: UIViewController {
         contenueC.isHidden = true
         doneC.isHidden = false
         
-        tabAll.backgroundColor = UIColor.white
-        tabDone.backgroundColor = UIColor.hexColor(string: "EFEFF4")
-        tabRevised.backgroundColor = UIColor.white
-        tabContinue.backgroundColor = UIColor.white
+//        tabAll.backgroundColor = UIColor.white
+//        tabDone.backgroundColor = UIColor.hexColor(string: "EFEFF4")
+//        tabRevised.backgroundColor = UIColor.white
+//        tabContinue.backgroundColor = UIColor.white
         
-//        lblAllPro.textColor = UIColor.black
-//        lblDonePro.textColor = UIColor.hexColor(string: "55DBA8")
-//
-//        lblRevisedPro.textColor = UIColor.black
-//        lblContinuePro.textColor = UIColor.black
+        lblAllPro.textColor = UIColor.black
+        lblDonePro.textColor = UIColor.hexColor(string: "55DBA8")
+        lblRevisedPro.textColor = UIColor.black
+        lblContinuePro.textColor = UIColor.black
+        
+        AllLine.backgroundColor = UIColor.clear
+        ReviLine.backgroundColor = UIColor.clear
+        continLine.backgroundColor = UIColor.clear
+        DoneLine.backgroundColor = UIColor.hexColor(string: "55DBA8")
         
     }
     
@@ -130,16 +177,22 @@ class HomeProjectVC: UIViewController {
         contenueC.isHidden = true
         doneC.isHidden = true
         
-        tabAll.backgroundColor = UIColor.white
-        tabDone.backgroundColor = UIColor.white
-        tabRevised.backgroundColor = UIColor.hexColor(string: "EFEFF4")
-        tabContinue.backgroundColor = UIColor.white
+//        tabAll.backgroundColor = UIColor.white
+//        tabDone.backgroundColor = UIColor.white
+//        tabRevised.backgroundColor = UIColor.hexColor(string: "EFEFF4")
+//        tabContinue.backgroundColor = UIColor.white
         
-//        lblAllPro.textColor = UIColor.black
-//        lblDonePro.textColor = UIColor.black
-//
-//        lblRevisedPro.textColor = UIColor.hexColor(string: "55DBA8")
-//        lblContinuePro.textColor = UIColor.black
+        lblAllPro.textColor = UIColor.black
+        lblDonePro.textColor = UIColor.black
+
+        lblRevisedPro.textColor = UIColor.hexColor(string: "55DBA8")
+        lblContinuePro.textColor = UIColor.black
+        
+        AllLine.backgroundColor = UIColor.clear
+        ReviLine.backgroundColor = UIColor.hexColor(string: "55DBA8")
+        continLine.backgroundColor = UIColor.clear
+        DoneLine.backgroundColor = UIColor.clear
+        
     }
     ////Side Menu
 
@@ -158,6 +211,7 @@ class HomeProjectVC: UIViewController {
     func sideMenue(){
         if revealViewController() != nil {
             btnSideMenue.target = revealViewController()
+            
             btnSideMenue.action = #selector(SWRevealViewController.rightRevealToggle(_:))
             revealViewController()?.rightViewRevealWidth =  view.frame.width * 0.75
             revealViewController()?.rearViewRevealWidth = view.frame.width * 0.25

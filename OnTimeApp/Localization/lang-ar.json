@@ -14,5 +14,17 @@
     "You must agree to the terms and conditions" : "يجب عليك الموافقه علي الشروط والاحكام",
     "Are you sure you want to logout?" : "هل تود تسجيل الخروج" ,
     "OK" : "نعم" ,
-    "cancel" : "إلغاء"
+    "cancel" : "إلغاء" ,
+    "The Profile was successfully Editted" : "تم تعديل الملف الشخصي بنجاح" ,
+    "Change Language" : "تغيير اللغة" ,
+    "Help" : "المساعدة" ,
+    "Terms & Conditions" : "الشروط والأحكام" ,
+    "About US" : "من نحن" ,
+    "Our Products" : "أعمالنا" ,
+    "Profile" : "الملف الشخصي" ,
+    "Notification" : "الإشعارات" ,
+    "Projects" : "المشاريع" ,
+    "changeLanguage" : "تغيير اللغة" ,
+    "changeLanguageMessage" : "تنبيه تغيير اللغة" ,
+    "change" : "تغيير"
 }

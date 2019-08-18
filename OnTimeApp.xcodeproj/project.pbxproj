@@ -24,6 +24,7 @@
 		F40AD00E22BA6CEF000F4077 /* DIN NEXT™ ARABIC BLACK_0.otf in Resources */ = {isa = PBXBuildFile; fileRef = F40AD00722BA6CEE000F4077 /* DIN NEXT™ ARABIC BLACK_0.otf */; };
 		F40AD00F22BA6CEF000F4077 /* DIN NEXT™ ARABIC REGULAR_0.otf in Resources */ = {isa = PBXBuildFile; fileRef = F40AD00822BA6CEE000F4077 /* DIN NEXT™ ARABIC REGULAR_0.otf */; };
 		F40AD01022BA6CEF000F4077 /* DIN NEXT™ ARABIC MEDIUM _0.otf in Resources */ = {isa = PBXBuildFile; fileRef = F40AD00922BA6CEF000F4077 /* DIN NEXT™ ARABIC MEDIUM _0.otf */; };
+		F40C175A230992CC00AFE79C /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40C1759230992CC00AFE79C /* MessageTableViewCell.swift */; };
 		F413AD0122B11E5F005A5CD5 /* NotificationsTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F413AD0022B11E5F005A5CD5 /* NotificationsTC.swift */; };
 		F418A049229172570021269A /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F418A047229172570021269A /* Profile.storyboard */; };
 		F418A04B229174A20021269A /* Introduction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F418A04A229174A20021269A /* Introduction.storyboard */; };
@@ -42,6 +43,8 @@
 		F4799713229C2D4400F4CA7A /* ProjectDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4799712229C2D4400F4CA7A /* ProjectDetails.storyboard */; };
 		F4799715229C2F0800F4CA7A /* Paid.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4799714229C2F0800F4CA7A /* Paid.storyboard */; };
 		F4799717229C300C00F4CA7A /* Help.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4799716229C300C00F4CA7A /* Help.storyboard */; };
+		F47C006C22EDF38C00233C22 /* Doc1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = F47C006B22EDF38B00233C22 /* Doc1.pdf */; };
+		F47C006E22EEFE4200233C22 /* RequestDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47C006D22EEFE4200233C22 /* RequestDetailModel.swift */; };
 		F492802222E712F600E35C1C /* ViewAddoneTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F492802122E712F600E35C1C /* ViewAddoneTC.swift */; };
 		F4ADB61A228DBDED00E38CB5 /* AloqoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADB619228DBDED00E38CB5 /* AloqoodVC.swift */; };
 		F4ADB61C228DBE1300E38CB5 /* AloqoodTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4ADB61B228DBE1300E38CB5 /* AloqoodTC.swift */; };
@@ -51,7 +54,9 @@
 		F4B15F2222CCDC1C005C74CA /* DepartmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B15F2122CCDC1C005C74CA /* DepartmentModel.swift */; };
 		F4B705782296AB6C00A2EF9B /* moreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B705772296AB6C00A2EF9B /* moreVC.swift */; };
 		F4B7057A2296AC9900A2EF9B /* moreTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B705792296AC9900A2EF9B /* moreTC.swift */; };
+		F4BD8AB222F0639A00C59248 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BD8AB122F0639A00C59248 /* NotificationModel.swift */; };
 		F4C46A6C22AE5AF400B6E9AE /* ProjectTypeCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C46A6B22AE5AF400B6E9AE /* ProjectTypeCVC.swift */; };
+		F4C64D8F2309767300B1C012 /* ContractModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C64D8E2309767300B1C012 /* ContractModel.swift */; };
 		F4D01F4322C0E15200D081AD /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D01F4222C0E15100D081AD /* RatingControl.swift */; };
 		F4DCF27822CA1D150089A17A /* AllignText&LabelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DCF27622CA1D150089A17A /* AllignText&LabelVC.swift */; };
 		F4DCF27922CA1D150089A17A /* AllignLocalizerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DCF27722CA1D150089A17A /* AllignLocalizerVC.swift */; };
@@ -171,6 +176,7 @@
 		F40AD00722BA6CEE000F4077 /* DIN NEXT™ ARABIC BLACK_0.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN NEXT™ ARABIC BLACK_0.otf"; sourceTree = "<group>"; };
 		F40AD00822BA6CEE000F4077 /* DIN NEXT™ ARABIC REGULAR_0.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN NEXT™ ARABIC REGULAR_0.otf"; sourceTree = "<group>"; };
 		F40AD00922BA6CEF000F4077 /* DIN NEXT™ ARABIC MEDIUM _0.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN NEXT™ ARABIC MEDIUM _0.otf"; sourceTree = "<group>"; };
+		F40C1759230992CC00AFE79C /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		F413AD0022B11E5F005A5CD5 /* NotificationsTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTC.swift; sourceTree = "<group>"; };
 		F418A048229172570021269A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		F418A04A229174A20021269A /* Introduction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Introduction.storyboard; sourceTree = "<group>"; };
@@ -192,6 +198,8 @@
 		F4799712229C2D4400F4CA7A /* ProjectDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProjectDetails.storyboard; sourceTree = "<group>"; };
 		F4799714229C2F0800F4CA7A /* Paid.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Paid.storyboard; sourceTree = "<group>"; };
 		F4799716229C300C00F4CA7A /* Help.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Help.storyboard; sourceTree = "<group>"; };
+		F47C006B22EDF38B00233C22 /* Doc1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Doc1.pdf; sourceTree = "<group>"; };
+		F47C006D22EEFE4200233C22 /* RequestDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestDetailModel.swift; sourceTree = "<group>"; };
 		F492802122E712F600E35C1C /* ViewAddoneTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAddoneTC.swift; sourceTree = "<group>"; };
 		F4ADB619228DBDED00E38CB5 /* AloqoodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AloqoodVC.swift; sourceTree = "<group>"; };
 		F4ADB61B228DBE1300E38CB5 /* AloqoodTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AloqoodTC.swift; sourceTree = "<group>"; };
@@ -201,7 +209,9 @@
 		F4B15F2122CCDC1C005C74CA /* DepartmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentModel.swift; sourceTree = "<group>"; };
 		F4B705772296AB6C00A2EF9B /* moreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moreVC.swift; sourceTree = "<group>"; };
 		F4B705792296AC9900A2EF9B /* moreTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moreTC.swift; sourceTree = "<group>"; };
+		F4BD8AB122F0639A00C59248 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		F4C46A6B22AE5AF400B6E9AE /* ProjectTypeCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTypeCVC.swift; sourceTree = "<group>"; };
+		F4C64D8E2309767300B1C012 /* ContractModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractModel.swift; sourceTree = "<group>"; };
 		F4D01F4222C0E15100D081AD /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 		F4DCF27622CA1D150089A17A /* AllignText&LabelVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "AllignText&LabelVC.swift"; path = "OnTimeApp/AllignText&LabelVC.swift"; sourceTree = SOURCE_ROOT; };
 		F4DCF27722CA1D150089A17A /* AllignLocalizerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AllignLocalizerVC.swift; path = OnTimeApp/AllignLocalizerVC.swift; sourceTree = SOURCE_ROOT; };
@@ -355,6 +365,7 @@
 		F436D58F228BA78000D0D6F1 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F40C1759230992CC00AFE79C /* MessageTableViewCell.swift */,
 				F436D590228BA7B400D0D6F1 /* ProjectTC.swift */,
 				F4ADB61B228DBE1300E38CB5 /* AloqoodTC.swift */,
 				F4ADB61F228DFDA100E38CB5 /* AttachmentTC.swift */,
@@ -460,6 +471,9 @@
 				F443E40222D3A147006E3376 /* ServicesModel.swift */,
 				F443E40422D3A155006E3376 /* AddonsModel.swift */,
 				F443E40622D3A178006E3376 /* RequestNServices.swift */,
+				F47C006D22EEFE4200233C22 /* RequestDetailModel.swift */,
+				F4BD8AB122F0639A00C59248 /* NotificationModel.swift */,
+				F4C64D8E2309767300B1C012 /* ContractModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -650,6 +664,7 @@
 		F4FD2D5322882F5000D9F15B /* OnTimeApp */ = {
 			isa = PBXGroup;
 			children = (
+				F47C006B22EDF38B00233C22 /* Doc1.pdf */,
 				F44E0DF522C02A62002F0F7A /* SWRevealViewController.m */,
 				F44E0DF322C02A49002F0F7A /* SWRevealViewController.h */,
 				F40ACFF622BA4ED4000F4077 /* Extention */,
@@ -865,6 +880,7 @@
 				F418A049229172570021269A /* Profile.storyboard in Resources */,
 				F4FD2D5A22882F5000D9F15B /* Projects.storyboard in Resources */,
 				F44E0DF222C0297B002F0F7A /* Test.storyboard in Resources */,
+				F47C006C22EDF38C00233C22 /* Doc1.pdf in Resources */,
 				F40AD00F22BA6CEF000F4077 /* DIN NEXT™ ARABIC REGULAR_0.otf in Resources */,
 				F40AD00E22BA6CEF000F4077 /* DIN NEXT™ ARABIC BLACK_0.otf in Resources */,
 				F4799715229C2F0800F4CA7A /* Paid.storyboard in Resources */,
@@ -1130,12 +1146,16 @@
 				F4F8CBDD229D599000C57BD7 /* ProjectTypeVC.swift in Sources */,
 				F443E40722D3A178006E3376 /* RequestNServices.swift in Sources */,
 				F46A578D22B7928A00C53CDE /* AllProjectVC.swift in Sources */,
+				F4BD8AB222F0639A00C59248 /* NotificationModel.swift in Sources */,
 				F4E74FE8229E8B0700A0D72B /* APIConstants.swift in Sources */,
+				F47C006E22EEFE4200233C22 /* RequestDetailModel.swift in Sources */,
 				F4ADB61A228DBDED00E38CB5 /* AloqoodVC.swift in Sources */,
 				F4E74FFB229E8B5300A0D72B /* HttpHelper.swift in Sources */,
 				F4E74FDB229E8B0700A0D72B /* DBController.swift in Sources */,
 				F4FD2D8B2288321800D9F15B /* AWSegmentAddMatch.swift in Sources */,
 				F4ADB620228DFDA100E38CB5 /* AttachmentTC.swift in Sources */,
+				F4C64D8F2309767300B1C012 /* ContractModel.swift in Sources */,
+				F40C175A230992CC00AFE79C /* MessageTableViewCell.swift in Sources */,
 				F4E74FEA229E8B0700A0D72B /* Countries.swift in Sources */,
 				F4F8CBE1229D5ACC00C57BD7 /* NewProjectRequest.swift in Sources */,
 				F4B7057A2296AC9900A2EF9B /* moreTC.swift in Sources */,

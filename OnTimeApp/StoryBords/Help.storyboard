@@ -1812,12 +1812,19 @@
                                                             <constraint firstItem="FnU-Dw-ETC" firstAttribute="width" secondItem="AlO-uU-g1O" secondAttribute="width" multiplier="0.3" id="uBQ-fw-pL7"/>
                                                         </constraints>
                                                     </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViI-pr-3pP">
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="48.5"/>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="AlO-uU-g1O" firstAttribute="centerX" secondItem="iOh-EN-vHE" secondAttribute="centerX" id="66N-Vv-aso"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ViI-pr-3pP" secondAttribute="trailing" id="AxQ-P7-3Io"/>
                                                     <constraint firstItem="AlO-uU-g1O" firstAttribute="width" secondItem="iOh-EN-vHE" secondAttribute="width" multiplier="0.6" id="Lj6-Yo-aya"/>
+                                                    <constraint firstItem="ViI-pr-3pP" firstAttribute="top" secondItem="iOh-EN-vHE" secondAttribute="top" id="Nzm-zW-nBE"/>
                                                     <constraint firstItem="AlO-uU-g1O" firstAttribute="height" secondItem="iOh-EN-vHE" secondAttribute="height" id="PBm-e8-MB2"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ViI-pr-3pP" secondAttribute="bottom" id="UuL-jC-2lP"/>
+                                                    <constraint firstItem="ViI-pr-3pP" firstAttribute="leading" secondItem="iOh-EN-vHE" secondAttribute="leading" id="Z6I-LN-MLr"/>
                                                     <constraint firstItem="AlO-uU-g1O" firstAttribute="centerY" secondItem="iOh-EN-vHE" secondAttribute="centerY" id="gTh-Yx-maZ"/>
                                                 </constraints>
                                             </view>
@@ -1926,6 +1933,7 @@
                     </view>
                     <connections>
                         <outlet property="RatingControl" destination="TVe-wx-TOT" id="z1c-mg-rof"/>
+                        <outlet property="txtRate" destination="EUW-dc-prL" id="1Q1-Lb-9W0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZj-ih-F0j" userLabel="First Responder" sceneMemberID="firstResponder"/>

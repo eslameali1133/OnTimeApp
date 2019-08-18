@@ -2,16 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>DIN NEXT™ ARABIC BLACK_0.otf</string>
-		<string>DIN NEXT™ ARABIC BOLD_0.otf</string>
-		<string>DIN NEXT™ ARABIC HEAVY_0.otf</string>
-		<string>DIN NEXT™ ARABIC LIGHT_0.otf</string>
-		<string>DIN NEXT™ ARABIC MEDIUM _0.otf</string>
-		<string>DIN NEXT™ ARABIC REGULAR_0.otf</string>
-		<string>DIN NEXT™ ARABIC ULTRALIGHT_0.otf</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -25,11 +15,30 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.2</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>This app will use camera to upload Projects imges or profile image</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>To can upload your Project images and profile image</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>DIN NEXT™ ARABIC BLACK_0.otf</string>
+		<string>DIN NEXT™ ARABIC BOLD_0.otf</string>
+		<string>DIN NEXT™ ARABIC HEAVY_0.otf</string>
+		<string>DIN NEXT™ ARABIC LIGHT_0.otf</string>
+		<string>DIN NEXT™ ARABIC MEDIUM _0.otf</string>
+		<string>DIN NEXT™ ARABIC REGULAR_0.otf</string>
+		<string>DIN NEXT™ ARABIC ULTRALIGHT_0.otf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -51,14 +60,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
-	<key>NSCameraUsageDescription</key>
-	<string>This app will use camera to upload Projects imges or profile image</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>To can upload your Project images and profile image</string>
 </dict>
 </plist>
