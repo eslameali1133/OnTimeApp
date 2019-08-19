@@ -10,6 +10,9 @@
 		34CBF24D27E1DAE88492538B /* Pods_OnTimeApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E402FA1DA02AB377632E73 /* Pods_OnTimeApp.framework */; };
 		42162F03091B4E942AA0B238 /* Pods_OnTimeAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E83462E70C182481A0BD8C /* Pods_OnTimeAppUITests.framework */; };
 		F4051A4322CDE2ED00BD81EC /* HomeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4051A4222CDE2ED00BD81EC /* HomeRequestModel.swift */; };
+		F4058985230AE7EA00222DFA /* BadgesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4058984230AE7EA00222DFA /* BadgesModel.swift */; };
+		F4058987230AE80400222DFA /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4058986230AE80400222DFA /* ProfileModel.swift */; };
+		F4058989230AF30800222DFA /* AttachmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4058988230AF30800222DFA /* AttachmentModel.swift */; };
 		F4095F4122898647007B3DA9 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4095F4022898647007B3DA9 /* SignUpVC.swift */; };
 		F40ACFFD22BA4ED4000F4077 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40ACFF722BA4ED4000F4077 /* UIView.swift */; };
 		F40ACFFE22BA4ED4000F4077 /* TableView+EX.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40ACFF822BA4ED4000F4077 /* TableView+EX.swift */; };
@@ -162,6 +165,9 @@
 		B9E83462E70C182481A0BD8C /* Pods_OnTimeAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnTimeAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E402FA1DA02AB377632E73 /* Pods_OnTimeApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnTimeApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4051A4222CDE2ED00BD81EC /* HomeRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRequestModel.swift; sourceTree = "<group>"; };
+		F4058984230AE7EA00222DFA /* BadgesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesModel.swift; sourceTree = "<group>"; };
+		F4058986230AE80400222DFA /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		F4058988230AF30800222DFA /* AttachmentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentModel.swift; sourceTree = "<group>"; };
 		F4095F4022898647007B3DA9 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		F40ACFF722BA4ED4000F4077 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		F40ACFF822BA4ED4000F4077 /* TableView+EX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TableView+EX.swift"; sourceTree = "<group>"; };
@@ -474,6 +480,9 @@
 				F47C006D22EEFE4200233C22 /* RequestDetailModel.swift */,
 				F4BD8AB122F0639A00C59248 /* NotificationModel.swift */,
 				F4C64D8E2309767300B1C012 /* ContractModel.swift */,
+				F4058984230AE7EA00222DFA /* BadgesModel.swift */,
+				F4058986230AE80400222DFA /* ProfileModel.swift */,
+				F4058988230AF30800222DFA /* AttachmentModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1071,6 +1080,7 @@
 				F4E74FDE229E8B0700A0D72B /* LocalizableString.swift in Sources */,
 				F4F8CC0A229D618C00C57BD7 /* BankingVC.swift in Sources */,
 				F4F8CBD9229D2DEF00C57BD7 /* TermsVC.swift in Sources */,
+				F4058987230AE80400222DFA /* ProfileModel.swift in Sources */,
 				F4E74FE3229E8B0700A0D72B /* LocalizableNavigationItem.swift in Sources */,
 				F492802222E712F600E35C1C /* ViewAddoneTC.swift in Sources */,
 				F4E74FEE229E8B2000A0D72B /* SharedData.swift in Sources */,
@@ -1097,6 +1107,7 @@
 				F46A579322B792E700C53CDE /* ContinueProjectVC.swift in Sources */,
 				F40ACFFE22BA4ED4000F4077 /* TableView+EX.swift in Sources */,
 				F4F8CC10229D63D500C57BD7 /* MakeAaqdVC.swift in Sources */,
+				F4058989230AF30800222DFA /* AttachmentModel.swift in Sources */,
 				F4E74FDA229E8B0700A0D72B /* Utilities.swift in Sources */,
 				F4FD2D5D22882F5000D9F15B /* OnTimeApp.xcdatamodeld in Sources */,
 				F4E74FE2229E8B0700A0D72B /* LocalizableButton.swift in Sources */,
@@ -1137,6 +1148,7 @@
 				F4FD2D5522882F5000D9F15B /* AppDelegate.swift in Sources */,
 				F4E74FE5229E8B0700A0D72B /* LocalizableLabel.swift in Sources */,
 				F4DCF27B22CA24910089A17A /* ResetPassword.swift in Sources */,
+				F4058985230AE7EA00222DFA /* BadgesModel.swift in Sources */,
 				F4F8CBF1229D5D8E00C57BD7 /* ProjectMessagesVC.swift in Sources */,
 				F4C46A6C22AE5AF400B6E9AE /* ProjectTypeCVC.swift in Sources */,
 				F4FD2D9122883EA100D9F15B /* VerificationCodeVC.swift in Sources */,

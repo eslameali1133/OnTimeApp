@@ -25,6 +25,7 @@ open class APIConstants {
     static let AddRequest = SERVER_URL + "add_request.php"
     
     static let GetUserRequests = SERVER_URL + "get_user_requests.php"
+    static let GetUserProfile = SERVER_URL + "get_profile.php"
     static let Terms = SERVER_URL + "get_terms.php"
     static let aboutUs = SERVER_URL + "who_we_are.php"
     

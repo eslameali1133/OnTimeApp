@@ -127,26 +127,29 @@ print(departmentID + serviceID)
             "Authorization": AccessToken]
         //AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
         //http.requestWithBody(url: APIConstants.AddRequest, method: .post, parameters: params, tag: 2, header: headers)
-        Alamofire.upload(
-            multipartFormData: { multipartFormData in
+//        Alamofire.upload(
+//            multipartFormData: { multipartFormData in
+        Alamofire.upload(multipartFormData: { (multipartFormData : MultipartFormData) in
+            
+            let count = self.attachment.count
+            
+            for i in 0..<count{
                 
-                
+                if  let imageData = self.attachment[i].jpegData(compressionQuality: 0.5){
+                    multipartFormData.append(imageData, withName: "attachments[\(i)]", fileName: "attachments\(arc4random_uniform(100))"+"-\(i)"+".jpeg", mimeType: "image/jpeg")
+                }
+            }
+
                 for (key,value) in params {
-                    if let value = value as? String {
-                        multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
-                    }
+                if let value = value as? String {
+                    multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
                 }
-                
-                for (index ,image) in self.attachment.enumerated() {
-                    if  let imageData = image.jpegData(compressionQuality: 0.5){
-                        multipartFormData.append(imageData, withName: "attachments", fileName: "Uploadimage\(arc4random_uniform(100))"+"\(index)"+".jpeg", mimeType: "image/jpeg")
-                    }
-                }
-                
+            }
+            print(multipartFormData)
         },
-            usingThreshold:UInt64.init(),
-            to: "https://appontime.net/mobile/add_request.php",
-            method: .post, headers: headers,
+         usingThreshold:UInt64.init(),
+          to: "https://appontime.net/mobile/add_request.php" ,
+           method: .post, headers: headers,
             encodingCompletion: { encodingResult in
                 switch encodingResult {
                 case .success(let upload, _, _):

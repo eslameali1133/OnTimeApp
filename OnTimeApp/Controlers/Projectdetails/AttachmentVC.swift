@@ -21,7 +21,8 @@ class AttachmentVC: UIViewController , UITableViewDataSource , UITableViewDelega
          popupSocial.frame = CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y, width: self.view.frame.width, height: self.view.frame.height)
         self.view.addSubview(popupSocial)
         popupSocial.isHidden = true
-                tblAttachment.delegate = self
+        
+        tblAttachment.delegate = self
         tblAttachment.dataSource = self
         // Do any additional setup after loading the view.
     }
@@ -64,12 +65,14 @@ class AttachmentVC: UIViewController , UITableViewDataSource , UITableViewDelega
         self.dismiss(animated: true, completion: nil)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return GRequestDetail._Attachment.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AttachmentTC", for: indexPath) as! AttachmentTC
-        
+        cell.lblDate.text = GRequestDetail._Attachment[indexPath.row]._upload_date
+        cell.lblName.text = GRequestDetail._Attachment[indexPath.row]._file
+        cell.lblSize.text = GRequestDetail._Attachment[indexPath.row]._size
         return cell
     }
     

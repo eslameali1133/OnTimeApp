@@ -19,6 +19,7 @@ class RequestDetailModelClass: NSObject {
     var _terms = ""
     var _addons = [AddonsModelClass]()
     var _contracts = [ContractModelClass]()
+    var _Attachment = [AttachmentModelClass]()
     
     init(
         request_name : String ,
@@ -30,7 +31,8 @@ class RequestDetailModelClass: NSObject {
         total_time : String ,
         terms : String ,
         addons : [AddonsModelClass],
-        Contracts : [ContractModelClass]) {
+        Contracts : [ContractModelClass] ,
+        Attachment : [AttachmentModelClass]) {
         
         self._request_name = request_name
         self._request_descr = request_descr
@@ -42,5 +44,6 @@ class RequestDetailModelClass: NSObject {
         self._terms = terms
         self._addons = addons
         self._contracts = Contracts
+        self._Attachment = Attachment
     }
 }

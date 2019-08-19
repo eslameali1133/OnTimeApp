@@ -1853,16 +1853,16 @@
                                                                                     <rect key="frame" x="62" y="12.5" width="201" height="57.5"/>
                                                                                     <subviews>
                                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Qg9-BN-Wgk">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="201" height="43"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="201" height="36"/>
                                                                                             <subviews>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الرد علي طلب مشروع تصميم مواقع" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBQ-LW-B03">
-                                                                                                    <rect key="frame" x="0.0" y="0.0" width="201" height="18"/>
+                                                                                                    <rect key="frame" x="0.0" y="0.0" width="201" height="14"/>
                                                                                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="12"/>
                                                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                                                     <nil key="highlightedColor"/>
                                                                                                 </label>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="هناك حقيقة مثبتة منذ زمن طويل" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Zd-cz-aIx">
-                                                                                                    <rect key="frame" x="0.0" y="28" width="201" height="15"/>
+                                                                                                    <rect key="frame" x="0.0" y="24" width="201" height="12"/>
                                                                                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="10"/>
                                                                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                     <nil key="highlightedColor"/>
@@ -2711,7 +2711,7 @@
                                                                         <rect key="frame" x="13" y="0.0" width="161" height="31"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عبد الرحمن عيسي" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XzT-S9-Qef">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="111" height="25"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="111" height="31"/>
                                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Light" family="DIN Next LT W23" pointSize="17"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -3771,7 +3771,11 @@
                         <outlet property="btnSideMenue" destination="K4H-QP-ovE" id="ShU-wh-2ae"/>
                         <outlet property="imgProfile" destination="zbH-rU-75D" id="vy6-4R-Qmu"/>
                         <outlet property="lblName" destination="ykC-IX-Hzm" id="yck-mU-lBE"/>
+                        <outlet property="lblPaid" destination="Ie5-FX-dgb" id="jvd-Z3-QBz"/>
                         <outlet property="lblPhone" destination="fdQ-5Q-aSW" id="ZQP-ei-PUE"/>
+                        <outlet property="lblPointPercentage" destination="hpV-WC-6K7" id="90R-tq-sqB"/>
+                        <outlet property="lblPoints" destination="nxN-0U-s41" id="IGd-Wn-E1u"/>
+                        <outlet property="lblProjects" destination="wV6-yS-jz2" id="kDU-gJ-EoP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUK-Ma-uRs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -9630,7 +9634,7 @@ AAAAAgEAAAAAAAAAbQAAAAAAAAAAAAAAAAAA5Us
         <image name="user_flow_vr6w" width="237" height="157.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pem-mk-BJ3"/>
+        <segue reference="Hyq-BW-06x"/>
         <segue reference="Vvt-o4-e6Y"/>
     </inferredMetricsTieBreakers>
 </document>
