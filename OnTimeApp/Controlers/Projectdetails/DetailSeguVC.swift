@@ -70,9 +70,9 @@ class DetailSeguVC: UIViewController {
     
     @IBAction func Attach(_ sender: Any) {
         infoC.isHidden = true
-        attachC.isHidden = false
+        attachC.isHidden = true
         oqoodC.isHidden = true
-        invoiceC.isHidden = true
+        invoiceC.isHidden = false
         
         infoV.backgroundColor = UIColor.white
         attachV.backgroundColor = UIColor.hexColor(string: "99DB90")
@@ -96,9 +96,9 @@ class DetailSeguVC: UIViewController {
     }
     @IBAction func Invoice(_ sender: Any) {
         infoC.isHidden = true
-        attachC.isHidden = true
+        attachC.isHidden = false
         oqoodC.isHidden = true
-        invoiceC.isHidden = false
+        invoiceC.isHidden = true
         
         infoV.backgroundColor = UIColor.white
         attachV.backgroundColor = UIColor.white

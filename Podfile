@@ -27,6 +27,10 @@ pod 'KKPinCodeTextField'
 pod 'Socket.IO-Client-Swift', '~> 11.1.3'
 pod 'SideMenu'
 pod 'InteractiveSideMenu'
+pod 'Firebase/Core'
+pod 'Firebase/Database'
+pod 'Firebase/Messaging'
+pod 'Firebase/Storage'
 
   target 'OnTimeAppTests' do
     inherit! :search_paths

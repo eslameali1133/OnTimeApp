@@ -9,8 +9,12 @@
 import UIKit
 import CoreData
 import IQKeyboardManagerSwift
+import UserNotifications
+import Firebase
+var FlagcomeNotification = false
+var NotificationModel : FirBasNotModelClass!
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenterDelegate, MessagingDelegate {
 
     var window: UIWindow?
 
@@ -19,6 +23,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         IQKeyboardManager.shared.enable = true
         StartApp()
+        
+        // fireBase
+        
+        FirebaseApp.configure()
+        if #available(iOS 10.0, *) {
+            // For iOS 10 display notification (sent via APNS)
+            UNUserNotificationCenter.current().delegate = self
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: authOptions,
+                completionHandler: {_, _ in })
+        }else {
+            let settings: UIUserNotificationSettings =
+                UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
+        }
+        
+        application.registerForRemoteNotifications()
+        
+        Messaging.messaging().delegate = self
+        let token = Messaging.messaging().fcmToken
+        
+        
+        print("FCM token: \(token ?? "")")
+        UserDefaults.standard.set(token, forKey: "token")
+        
         return true
     }
 
@@ -44,6 +74,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+    }
+    
+    ////// notification ///////////
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+     //   var type = ""
+        print(userInfo)
+        // Print full message.
+        print(userInfo)
+        completionHandler()
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        //
+        let userInfo:[AnyHashable:Any] =  notification.request.content.userInfo
+        //        let state : UIApplication.State = applicationl.applicationState
+       // var type = ""
+        
+        print(userInfo)
+        
+        FlagcomeNotification = true
+       
+        NotificationModel = FirBasNotModelClass(
+            message: (userInfo["message"]! as? String)!,
+            notification_id: (userInfo["notification_id"]! as? String)!,
+            request_id: (userInfo["request_id"]! as? String)!,
+            token: (userInfo["token"]! as? String)!,
+            type: (userInfo["type"]! as? String)!)
+       
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        // let storyboard = UIStoryboard(name: "StoryBord", bundle: nil)
+        let storyboard = UIStoryboard.init(name: "Projects", bundle: nil); delegate.window?.rootViewController = storyboard.instantiateInitialViewController()
+        
+        completionHandler([.alert,.badge,.sound])
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        print (userInfo)
     }
     
     func StartApp(){

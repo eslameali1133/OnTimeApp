@@ -37,8 +37,12 @@
 		F443E40322D3A147006E3376 /* ServicesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443E40222D3A147006E3376 /* ServicesModel.swift */; };
 		F443E40522D3A155006E3376 /* AddonsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443E40422D3A155006E3376 /* AddonsModel.swift */; };
 		F443E40722D3A178006E3376 /* RequestNServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F443E40622D3A178006E3376 /* RequestNServices.swift */; };
+		F4445206230D74E8008D2244 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F4445205230D74E7008D2244 /* GoogleService-Info.plist */; };
+		F4445208230D7DB5008D2244 /* FireBaseNotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4445207230D7DB4008D2244 /* FireBaseNotModel.swift */; };
 		F44E0DF222C0297B002F0F7A /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F44E0DF122C0297B002F0F7A /* Test.storyboard */; };
 		F44E0DF622C02A62002F0F7A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F44E0DF522C02A62002F0F7A /* SWRevealViewController.m */; };
+		F4696F6F230C0FCE004223A5 /* ComponentsTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4696F6E230C0FCE004223A5 /* ComponentsTC.swift */; };
+		F4696F71230C10B1004223A5 /* ComponentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4696F70230C10B1004223A5 /* ComponentModel.swift */; };
 		F46A578D22B7928A00C53CDE /* AllProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46A578C22B7928A00C53CDE /* AllProjectVC.swift */; };
 		F46A579122B792C800C53CDE /* RevisiedProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46A579022B792C800C53CDE /* RevisiedProjectVC.swift */; };
 		F46A579322B792E700C53CDE /* ContinueProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46A579222B792E700C53CDE /* ContinueProjectVC.swift */; };
@@ -193,10 +197,14 @@
 		F443E40222D3A147006E3376 /* ServicesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesModel.swift; sourceTree = "<group>"; };
 		F443E40422D3A155006E3376 /* AddonsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddonsModel.swift; sourceTree = "<group>"; };
 		F443E40622D3A178006E3376 /* RequestNServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestNServices.swift; sourceTree = "<group>"; };
+		F4445205230D74E7008D2244 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F4445207230D7DB4008D2244 /* FireBaseNotModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseNotModel.swift; sourceTree = "<group>"; };
 		F44E0DF122C0297B002F0F7A /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
 		F44E0DF322C02A49002F0F7A /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		F44E0DF422C02A61002F0F7A /* OnTimeApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OnTimeApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		F44E0DF522C02A62002F0F7A /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		F4696F6E230C0FCE004223A5 /* ComponentsTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsTC.swift; sourceTree = "<group>"; };
+		F4696F70230C10B1004223A5 /* ComponentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentModel.swift; sourceTree = "<group>"; };
 		F46A578C22B7928A00C53CDE /* AllProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProjectVC.swift; sourceTree = "<group>"; };
 		F46A579022B792C800C53CDE /* RevisiedProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisiedProjectVC.swift; sourceTree = "<group>"; };
 		F46A579222B792E700C53CDE /* ContinueProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinueProjectVC.swift; sourceTree = "<group>"; };
@@ -380,6 +388,7 @@
 				F413AD0022B11E5F005A5CD5 /* NotificationsTC.swift */,
 				F443E40022D34406006E3376 /* addOnesCVC.swift */,
 				F492802122E712F600E35C1C /* ViewAddoneTC.swift */,
+				F4696F6E230C0FCE004223A5 /* ComponentsTC.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -483,6 +492,8 @@
 				F4058984230AE7EA00222DFA /* BadgesModel.swift */,
 				F4058986230AE80400222DFA /* ProfileModel.swift */,
 				F4058988230AF30800222DFA /* AttachmentModel.swift */,
+				F4696F70230C10B1004223A5 /* ComponentModel.swift */,
+				F4445207230D7DB4008D2244 /* FireBaseNotModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -673,6 +684,7 @@
 		F4FD2D5322882F5000D9F15B /* OnTimeApp */ = {
 			isa = PBXGroup;
 			children = (
+				F4445205230D74E7008D2244 /* GoogleService-Info.plist */,
 				F47C006B22EDF38B00233C22 /* Doc1.pdf */,
 				F44E0DF522C02A62002F0F7A /* SWRevealViewController.m */,
 				F44E0DF322C02A49002F0F7A /* SWRevealViewController.h */,
@@ -891,6 +903,7 @@
 				F44E0DF222C0297B002F0F7A /* Test.storyboard in Resources */,
 				F47C006C22EDF38C00233C22 /* Doc1.pdf in Resources */,
 				F40AD00F22BA6CEF000F4077 /* DIN NEXT™ ARABIC REGULAR_0.otf in Resources */,
+				F4445206230D74E8008D2244 /* GoogleService-Info.plist in Resources */,
 				F40AD00E22BA6CEF000F4077 /* DIN NEXT™ ARABIC BLACK_0.otf in Resources */,
 				F4799715229C2F0800F4CA7A /* Paid.storyboard in Resources */,
 				F4799717229C300C00F4CA7A /* Help.storyboard in Resources */,
@@ -929,6 +942,7 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IBLocalizable/IBLocalizable.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
@@ -941,6 +955,7 @@
 				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
 				"${BUILT_PRODUCTS_DIR}/StarscreamSocketIO/StarscreamSocketIO.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -953,6 +968,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IBLocalizable.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
@@ -965,6 +981,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StarscreamSocketIO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1097,6 +1114,7 @@
 				F413AD0122B11E5F005A5CD5 /* NotificationsTC.swift in Sources */,
 				F4E74FD3229E8B0700A0D72B /* LanguageManager.swift in Sources */,
 				F4DCF27922CA1D150089A17A /* AllignLocalizerVC.swift in Sources */,
+				F4696F6F230C0FCE004223A5 /* ComponentsTC.swift in Sources */,
 				F4E74FDD229E8B0700A0D72B /* AppCommon.swift in Sources */,
 				F4F8CBFF229D603F00C57BD7 /* PaymentVC.swift in Sources */,
 				F4F8CBF7229D5F6E00C57BD7 /* HelpTopicsVC.swift in Sources */,
@@ -1149,6 +1167,7 @@
 				F4E74FE5229E8B0700A0D72B /* LocalizableLabel.swift in Sources */,
 				F4DCF27B22CA24910089A17A /* ResetPassword.swift in Sources */,
 				F4058985230AE7EA00222DFA /* BadgesModel.swift in Sources */,
+				F4696F71230C10B1004223A5 /* ComponentModel.swift in Sources */,
 				F4F8CBF1229D5D8E00C57BD7 /* ProjectMessagesVC.swift in Sources */,
 				F4C46A6C22AE5AF400B6E9AE /* ProjectTypeCVC.swift in Sources */,
 				F4FD2D9122883EA100D9F15B /* VerificationCodeVC.swift in Sources */,
@@ -1159,6 +1178,7 @@
 				F443E40722D3A178006E3376 /* RequestNServices.swift in Sources */,
 				F46A578D22B7928A00C53CDE /* AllProjectVC.swift in Sources */,
 				F4BD8AB222F0639A00C59248 /* NotificationModel.swift in Sources */,
+				F4445208230D7DB5008D2244 /* FireBaseNotModel.swift in Sources */,
 				F4E74FE8229E8B0700A0D72B /* APIConstants.swift in Sources */,
 				F47C006E22EEFE4200233C22 /* RequestDetailModel.swift in Sources */,
 				F4ADB61A228DBDED00E38CB5 /* AloqoodVC.swift in Sources */,

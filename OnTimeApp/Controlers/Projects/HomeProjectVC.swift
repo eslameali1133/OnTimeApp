@@ -83,9 +83,51 @@ class HomeProjectVC: AllignLocalizerVC {
 //        }
         // Do any additional setup after loading the view.
     }
-    override func viewDidAppear(_ animated: Bool) {
-        setcount()
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//      
+//        if  FlagcomeNotification == true
+//        {
+//            FlagcomeNotification = false
+//            
+//            if NotificationModel.type == "accept_request" {
+//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProjectTypeVC") as! ProjectTypeVC
+//                vc.modalPresentationStyle = .overCurrentContext
+//                vc.modalTransitionStyle = .crossDissolve
+//                present(vc, animated: true, completion: nil)
+//            }
+//            else if NotificationModel.type == "refuse_request" {
+//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProjectTypeVC") as! ProjectTypeVC
+//                vc.modalPresentationStyle = .overCurrentContext
+//                vc.modalTransitionStyle = .crossDissolve
+//                present(vc, animated: true, completion: nil)
+//            }
+//            else if NotificationModel.type == "view_components" {
+//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProjectTypeVC") as! ProjectTypeVC
+//                vc.modalPresentationStyle = .overCurrentContext
+//                vc.modalTransitionStyle = .crossDissolve
+//                present(vc, animated: true, completion: nil)
+//            }
+//            else if NotificationModel.type == "contract" {
+//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProjectTypeVC") as! ProjectTypeVC
+//                vc.modalPresentationStyle = .overCurrentContext
+//                vc.modalTransitionStyle = .crossDissolve
+//                present(vc, animated: true, completion: nil)
+//            }
+//            else if NotificationModel.type == "message" {
+//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProjectTypeVC") as! ProjectTypeVC
+//                vc.modalPresentationStyle = .overCurrentContext
+//                vc.modalTransitionStyle = .crossDissolve
+//                present(vc, animated: true, completion: nil)
+//            }
+//            else if NotificationModel.type == "help" {
+//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProjectTypeVC") as! ProjectTypeVC
+//                vc.modalPresentationStyle = .overCurrentContext
+//                vc.modalTransitionStyle = .crossDissolve
+//                present(vc, animated: true, completion: nil)
+//            }
+//            
+//        }
+//    }
     func setcount(){
         lblAllcount.text = Gallcount
         lblDonecount.text = Gdonecount
