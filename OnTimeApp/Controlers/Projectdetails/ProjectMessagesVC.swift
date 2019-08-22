@@ -193,22 +193,22 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
     func setSessionPlayback() {
 //        print("\(#function)")
 //
-//        let session = AVAudioSession.sharedInstance()
-//
-//        do {
-//            try session.setCategory(AVAudioSession.Category.playback, with: .defaultToSpeaker)
-//
-//        } catch {
-//            print("could not set session category")
-//            print(error.localizedDescription)
-//        }
-//
-//        do {
-//            try session.setActive(true)
-//        } catch {
-//            print("could not make session active")
-//            print(error.localizedDescription)
-//        }
+        let session = AVAudioSession.sharedInstance()
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+
+        } catch {
+            print("could not set session category")
+            print(error.localizedDescription)
+        }
+
+        do {
+            try session.setActive(true)
+        } catch {
+            print("could not make session active")
+            print(error.localizedDescription)
+        }
     }
     
     func setSessionPlayAndRecord() {
@@ -232,16 +232,17 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
     func askForNotifications() {
 //        print("\(#function)")
 //
-//        NotificationCenter.default.addObserver(self,
-//                                               selector: #selector(ProjectMessagesVC.background(_:)),
-//                                               name: NSNotification.Name.UIApplication.willResignActiveNotification,
-//                                               object: nil)
-//
-//        NotificationCenter.default.addObserver(self,
-//                                               selector: #selector(ProjectMessagesVC.foreground(_:)),
-//                                               name: NSNotification.Name.UIApplication.willEnterForegroundNotification,
-//                                               object: nil)
-//
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(ProjectMessagesVC.background(_:)),
+                                               name:
+            UIApplication.willResignActiveNotification,
+                                               object: nil)
+
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(ProjectMessagesVC.foreground(_:)),
+                                               name: UIApplication.willEnterForegroundNotification,
+                                               object: nil)
+
 //        NotificationCenter.default.addObserver(self,
 //                                               selector: #selector(ProjectMessagesVC.routeChange(_:)),
 //                                               name: NSNotification.Name.AVAudioSession.routeChangeNotification,

@@ -138,7 +138,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OnTimeApp/Controlers/Profile/LoginVC.swift"
-            timestampString = "588091613.98025"
+            timestampString = "588189959.424539"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "176"
@@ -330,7 +330,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OnTimeApp/Controlers/Profile/LoginVC.swift"
-            timestampString = "588091613.981122"
+            timestampString = "588189959.424949"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "170"
@@ -384,38 +384,6 @@
             startingLineNumber = "61"
             endingLineNumber = "61"
             landmarkName = "ratingButtonTapped(button:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OnTimeApp/Controlers/Projects/NotificationVC.swift"
-            timestampString = "588091613.981644"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "receivedResponse(dictResponse:Tag:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OnTimeApp/Controlers/Projects/NotificationVC.swift"
-            timestampString = "588091613.98208"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "receivedResponse(dictResponse:Tag:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -522,7 +490,7 @@
                   moduleName = "OnTimeApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/heisen/Desktop/IOSAPPS/OnTime%20App/OnTimeApp/OnTimeApp/OnTimeApp/Controlers/Projects/Profile.swift"
-                  timestampString = "588091614.765015"
+                  timestampString = "588189959.9038759"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "192"
@@ -537,7 +505,7 @@
                   moduleName = "OnTimeApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/heisen/Desktop/IOSAPPS/OnTime%20App/OnTimeApp/OnTimeApp/OnTimeApp/Controlers/Projects/Profile.swift"
-                  timestampString = "588091614.769078"
+                  timestampString = "588189959.907793"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "194"
@@ -602,7 +570,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OnTimeApp/Controlers/Profile/LoginVC.swift"
-            timestampString = "588091613.982698"
+            timestampString = "588189959.425375"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "139"
@@ -618,7 +586,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OnTimeApp/Controlers/Projectdetails/ProjectMessagesVC.swift"
-            timestampString = "587921985.443565"
+            timestampString = "588189959.425451"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "124"
@@ -730,11 +698,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OnTimeApp/Controlers/Projectdetails/ProjectMessagesVC.swift"
-            timestampString = "587921985.445053"
+            timestampString = "588189959.425694"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "741"
-            endingLineNumber = "741"
+            startingLineNumber = "742"
+            endingLineNumber = "742"
             landmarkName = "receivedResponse(dictResponse:Tag:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -767,6 +735,54 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "82"
             endingLineNumber = "82"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OnTimeApp/Controlers/Projects/HomeProjectVC.swift"
+            timestampString = "588189959.425822"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "300"
+            endingLineNumber = "300"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OnTimeApp/Controlers/Projects/HomeProjectVC.swift"
+            timestampString = "588189959.426487"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OnTimeApp/Controlers/Projects/HomeProjectVC.swift"
+            timestampString = "588189959.426998"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "265"
+            endingLineNumber = "265"
             landmarkName = "unknown"
             landmarkType = "0">
          </BreakpointContent>

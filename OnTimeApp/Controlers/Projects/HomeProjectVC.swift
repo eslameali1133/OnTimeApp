@@ -84,11 +84,11 @@ class HomeProjectVC: AllignLocalizerVC {
         // Do any additional setup after loading the view.
     }
 //    override func viewWillAppear(_ animated: Bool) {
-//      
+//
 //        if  FlagcomeNotification == true
 //        {
 //            FlagcomeNotification = false
-//            
+//
 //            if NotificationModel.type == "accept_request" {
 //                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProjectTypeVC") as! ProjectTypeVC
 //                vc.modalPresentationStyle = .overCurrentContext
@@ -125,7 +125,7 @@ class HomeProjectVC: AllignLocalizerVC {
 //                vc.modalTransitionStyle = .crossDissolve
 //                present(vc, animated: true, completion: nil)
 //            }
-//            
+//
 //        }
 //    }
     func setcount(){
