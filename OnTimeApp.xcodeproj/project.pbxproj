@@ -733,9 +733,9 @@
 				F418A047229172570021269A /* Profile.storyboard */,
 				F4FD2D5822882F5000D9F15B /* Projects.storyboard */,
 				F418A04A229174A20021269A /* Introduction.storyboard */,
-				F4799712229C2D4400F4CA7A /* ProjectDetails.storyboard */,
 				F4799714229C2F0800F4CA7A /* Paid.storyboard */,
 				F4799716229C300C00F4CA7A /* Help.storyboard */,
+				F4799712229C2D4400F4CA7A /* ProjectDetails.storyboard */,
 				F44E0DF122C0297B002F0F7A /* Test.storyboard */,
 			);
 			path = StoryBords;
@@ -842,7 +842,13 @@
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1010;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 							com.apple.iCloud = {

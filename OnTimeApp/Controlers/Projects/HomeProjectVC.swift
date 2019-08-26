@@ -14,6 +14,12 @@ class HomeProjectVC: AllignLocalizerVC {
     var Done = [HomeRequestModelClass]()
     var Revised = [HomeRequestModelClass]()
     var Continue = [HomeRequestModelClass]()
+    
+    
+    var Addons = [AddonsModelClass]()
+    var contracts = [ContractModelClass]()
+    var Attachments = [AttachmentModelClass]()
+    
     @IBOutlet weak var lblDonecount: UILabel!
     @IBOutlet weak var lblContinucount: UILabel!
     @IBOutlet weak var lblRivscount: UILabel!
@@ -64,70 +70,69 @@ class HomeProjectVC: AllignLocalizerVC {
         lblDonePro.font = UIFont(name: "DINNextLTW23-Light", size: 13.0)!
         lblAllPro.font = UIFont(name: "DINNextLTW23-Light", size: 13.0)!
         
-//        DIN Next LT W23
-//            == DINNextLTW23-Heavy
-//            == DINNextLTW23-Regular
-//            == DINNextLTW23-Bold
-//            == DINNextLTW23-Medium
-//            == DINNextLTW23-Light
-//            == DINNextLTW23-UltraLight
-//            == DINNextLTW23-Black
-//
-//        for family: String in UIFont.familyNames
-//        {
-//            print(family)
-//            for names: String in UIFont.fontNames(forFamilyName: family)
-//            {
-//                print("== \(names)")
-//            }
-//        }
-        // Do any additional setup after loading the view.
+
     }
-//    override func viewWillAppear(_ animated: Bool) {
-//
-//        if  FlagcomeNotification == true
-//        {
-//            FlagcomeNotification = false
-//
-//            if NotificationModel.type == "accept_request" {
-//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProjectTypeVC") as! ProjectTypeVC
-//                vc.modalPresentationStyle = .overCurrentContext
-//                vc.modalTransitionStyle = .crossDissolve
-//                present(vc, animated: true, completion: nil)
-//            }
-//            else if NotificationModel.type == "refuse_request" {
-//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProjectTypeVC") as! ProjectTypeVC
-//                vc.modalPresentationStyle = .overCurrentContext
-//                vc.modalTransitionStyle = .crossDissolve
-//                present(vc, animated: true, completion: nil)
-//            }
-//            else if NotificationModel.type == "view_components" {
-//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProjectTypeVC") as! ProjectTypeVC
-//                vc.modalPresentationStyle = .overCurrentContext
-//                vc.modalTransitionStyle = .crossDissolve
-//                present(vc, animated: true, completion: nil)
-//            }
-//            else if NotificationModel.type == "contract" {
-//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProjectTypeVC") as! ProjectTypeVC
-//                vc.modalPresentationStyle = .overCurrentContext
-//                vc.modalTransitionStyle = .crossDissolve
-//                present(vc, animated: true, completion: nil)
-//            }
-//            else if NotificationModel.type == "message" {
-//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProjectTypeVC") as! ProjectTypeVC
-//                vc.modalPresentationStyle = .overCurrentContext
-//                vc.modalTransitionStyle = .crossDissolve
-//                present(vc, animated: true, completion: nil)
-//            }
-//            else if NotificationModel.type == "help" {
-//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProjectTypeVC") as! ProjectTypeVC
-//                vc.modalPresentationStyle = .overCurrentContext
-//                vc.modalTransitionStyle = .crossDissolve
-//                present(vc, animated: true, completion: nil)
-//            }
-//
-//        }
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+
+        print(FlagcomeNotification)
+        
+        if  FlagcomeNotification == true
+        {
+            FlagcomeNotification = false
+
+            if NotificationModel.type == "accept_request" {
+                
+                let storyBoard : UIStoryboard = UIStoryboard(name: "ProjectDetails", bundle:nil)
+                let cont = storyBoard.instantiateViewController(withIdentifier: "ProjectMessagesVC")as! ProjectMessagesVC
+                cont.RequestID = NotificationModel.request_id
+                self.show(cont, sender: true)
+//                self.show(cont, animated: true, completion: nil)
+                
+               
+            }
+            else if NotificationModel.type == "refuse_request" {
+                let storyBoard : UIStoryboard = UIStoryboard(name: "ProjectDetails", bundle:nil)
+                let cont = storyBoard.instantiateViewController(withIdentifier: "ProjectMessagesVC")as! ProjectMessagesVC
+                cont.RequestID = NotificationModel.request_id
+                self.show(cont, sender: true)
+            }
+            else if NotificationModel.type == "view_components" {
+                
+                
+                let storyBoard : UIStoryboard = UIStoryboard(name: "ProjectDetails", bundle:nil)
+                let cont = storyBoard.instantiateViewController(withIdentifier: "RequestDetailsVC")as! RequestDetailsVC
+                cont.RequestID =  NotificationModel.request_id
+         
+                self.present(cont, animated: true, completion: nil)
+            }
+            else if NotificationModel.type == "contract" {
+                
+                let storyBoard : UIStoryboard = UIStoryboard(name: "ProjectDetails", bundle:nil)
+                let cont = storyBoard.instantiateViewController(withIdentifier: "ProjectMessagesVC")as! ProjectMessagesVC
+                cont.RequestID =  NotificationModel.request_id
+                 cont.ISComefromNotification = true
+                
+                self.present(cont, animated: true, completion: nil)
+                
+
+            }
+            else if NotificationModel.type == "message" {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProjectTypeVC") as! ProjectTypeVC
+                vc.modalPresentationStyle = .overCurrentContext
+                vc.modalTransitionStyle = .crossDissolve
+                present(vc, animated: true, completion: nil)
+            }
+            else if NotificationModel.type == "help" {
+                let storyBoard : UIStoryboard = UIStoryboard(name: "Help", bundle:nil)
+                let cont = storyBoard.instantiateViewController(withIdentifier: "HelpNAV")
+                isSideMenueHelp = true
+                present(cont, animated: true, completion: nil)
+            }
+
+        }
+        
+        
+    }
     func setcount(){
         lblAllcount.text = Gallcount
         lblDonecount.text = Gdonecount
@@ -248,6 +253,15 @@ class HomeProjectVC: AllignLocalizerVC {
             self.navigationController!.view)
         SideMenuManager.default.menuWidth = view.frame.width * 0.75
        
+    }
+    func GetRequestDetails(){
+        
+        let AccessToken = AppCommon.sharedInstance.getJSON("Profiledata")["token"].stringValue
+        print(AccessToken)
+        let params = ["token": AccessToken,
+                      "request_id" : RequestID ] as [String: Any]
+        AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
+        http.requestWithBody(url: APIConstants.GetRequestDetails, method: .post, parameters: params, tag: 9, header: nil)
     }
     
     func sideMenue(){

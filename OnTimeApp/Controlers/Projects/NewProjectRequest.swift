@@ -410,7 +410,7 @@ var RequestServices : RequestNServicesModelClass!
      
         attachment.append(selectedImage)
         AttachmentFiles.append(selectedImage)
-        AttachmentFiles.append(Bundle.main.url(forResource: "Doc1", withExtension: "pdf"))
+        AttachmentFiles.append(Bundle.main.url(forResource: "Doc1", withExtension: "pdf")!)
         print(attachment.count)
         print(AttachmentFiles.count)
         picker.dismiss(animated: true, completion: nil)

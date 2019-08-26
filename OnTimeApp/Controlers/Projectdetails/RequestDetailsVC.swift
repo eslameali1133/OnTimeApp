@@ -27,6 +27,7 @@ class RequestDetailsVC: UIViewController , UITableViewDelegate , UITableViewData
         tblComponents.dataSource = self
         tblComponents.delegate = self
         http.delegate = self
+        print(RequestID)
         GetCompnents()
         // Do any additional setup after loading the view.
     }
@@ -132,8 +133,8 @@ extension RequestDetailsVC : HttpHelperDelegate {
             
             if status.stringValue == "0" {
                 
-                
-                
+                Loader.showSuccess(message: "تمت العمليه بنجاح")
+                  self.dismiss(animated: true, completion: nil)
             } else {
                 Loader.showError(message: message.stringValue )
             }

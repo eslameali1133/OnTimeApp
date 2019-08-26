@@ -11,6 +11,9 @@ import CoreData
 import IQKeyboardManagerSwift
 import UserNotifications
 import Firebase
+import FirebaseCore
+
+
 var FlagcomeNotification = false
 var NotificationModel : FirBasNotModelClass!
 @UIApplicationMain
@@ -22,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         IQKeyboardManager.shared.enable = true
-        //StartApp()
+        StartApp()
         
         // fireBase
         
@@ -48,6 +51,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
         
         print("FCM token: \(token ?? "")")
         UserDefaults.standard.set(token, forKey: "token")
+        let udidKey = UIDevice.current.identifierForVendor!.uuidString
+        UserDefaults.standard.set(udidKey, forKey: "udidKey")
+        print("udidKey: \(udidKey)")
         
         return true
     }
@@ -84,35 +90,70 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
         print(userInfo)
         // Print full message.
         print(userInfo)
+        
+        FlagcomeNotification = true
+        
+        NotificationModel = FirBasNotModelClass(
+            message: "",
+            notification_id:"",
+            request_id: (userInfo["gcm.notification.request_id"]! as? String)!,
+            token: (userInfo["gcm.notification.token"]! as? String)!,
+            type: (userInfo["gcm.notification.type"]! as? String)!)
+        
+      
+      
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        let mainStoryboard = UIStoryboard(name: "Projects", bundle: nil)
+        let homeController = mainStoryboard.instantiateViewController(withIdentifier: "HomeProjectVC") as! HomeProjectVC
+        appDelegate?.window?.rootViewController = homeController
+        
+        
+        
         completionHandler()
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         //
         let userInfo:[AnyHashable:Any] =  notification.request.content.userInfo
-        //        let state : UIApplication.State = applicationl.applicationState
-       // var type = ""
+      
         
         print(userInfo)
         
         FlagcomeNotification = true
        
+        print((userInfo["gcm.notification.request_id"]! as? String)!)
         NotificationModel = FirBasNotModelClass(
-            message: (userInfo["message"]! as? String)!,
-            notification_id: (userInfo["notification_id"]! as? String)!,
-            request_id: (userInfo["request_id"]! as? String)!,
-            token: (userInfo["token"]! as? String)!,
-            type: (userInfo["type"]! as? String)!)
+            message: "",
+            notification_id:"",
+            request_id: (userInfo["gcm.notification.request_id"]! as? String)!,
+            token: (userInfo["gcm.notification.token"]! as? String)!,
+            type: (userInfo["gcm.notification.type"]! as? String)!)
        
-        let delegate = UIApplication.shared.delegate as! AppDelegate
-        // let storyboard = UIStoryboard(name: "StoryBord", bundle: nil)
-        let storyboard = UIStoryboard.init(name: "Projects", bundle: nil); delegate.window?.rootViewController = storyboard.instantiateInitialViewController()
+
         
         completionHandler([.alert,.badge,.sound])
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print (userInfo)
+        FlagcomeNotification = true
+        
+        NotificationModel = FirBasNotModelClass(
+            message: "",
+            notification_id:"",
+            request_id: (userInfo["gcm.notification.request_id"]! as? String)!,
+            token: (userInfo["gcm.notification.token"]! as? String)!,
+            type: (userInfo["gcm.notification.type"]! as? String)!)
+        
+        
+        
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        let mainStoryboard = UIStoryboard(name: "Projects", bundle: nil)
+        let homeController = mainStoryboard.instantiateViewController(withIdentifier: "HomeProjectVC") as! HomeProjectVC
+        appDelegate?.window?.rootViewController = homeController
+        
+       
+
     }
     
     func StartApp(){
@@ -128,6 +169,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
                 let delegate = UIApplication.shared.delegate as! AppDelegate
                 // let storyboard = UIStoryboard(name: "StoryBord", bundle: nil)
                 let storyboard = UIStoryboard.init(name: "Projects", bundle: nil); delegate.window?.rootViewController = storyboard.instantiateInitialViewController()
+            
+         
         }
             
     }

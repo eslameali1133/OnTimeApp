@@ -43,7 +43,7 @@ class Profile: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource 
         super.viewDidLoad()
         SetupUploadImage()
         SetData()
-        lblKey.text = "+966"
+//        lblKey.text = "+966"
         
         
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20.0)!]
@@ -97,7 +97,13 @@ class Profile: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource 
     }
     //single - company
     func SetData(){
-        lblPhone.text = AppCommon.sharedInstance.getJSON("Profiledata")["phone"].stringValue
+        let phonenum : String = AppCommon.sharedInstance.getJSON("Profiledata")["phone"].stringValue
+        print(phonenum.prefix(3))
+        
+        lblKey.text = String(phonenum.prefix(3))
+        lblPhone.text = String(phonenum.dropFirst(3))
+        
+//        lblPhone.text = AppCommon.sharedInstance.getJSON("Profiledata")["phone"].stringValue
         lblEmail.text = AppCommon.sharedInstance.getJSON("Profiledata")["email"].stringValue
         type = AppCommon.sharedInstance.getJSON("Profiledata")["user_type"].stringValue
         if type == "single"{
@@ -136,6 +142,7 @@ class Profile: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource 
     
         AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
         let Phone = lblKey.text! + lblPhone.text!
+    
         let AccessToken = AppCommon.sharedInstance.getJSON("Profiledata")["token"].stringValue
         var parameters = [:] as [String: Any]
         
@@ -156,7 +163,7 @@ class Profile: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource 
                          "phone" : Phone,
                          "user_type" : type,
                          "company_name" : lblOrgName.text! ,
-                         "ability" : ability ,
+                         "ability" : "" ,
                          "img" : imgdata!] as [String: Any]
         if type == "single"{
             parameters = UserParams
@@ -165,6 +172,8 @@ class Profile: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource 
             parameters = OrgParams
             print(parameters)
         }
+        
+        print(parameters)
         Alamofire.upload(
             multipartFormData: { multipartFormData in
                 for (key,value) in parameters {
@@ -173,10 +182,21 @@ class Profile: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource 
                     }
                 }
                 
-                if let data = self.imgProfile.image!.jpegData(compressionQuality: 0.5){
-                    multipartFormData.append(data, withName: "img", fileName: "img\(arc4random_uniform(100))"+".jpeg", mimeType: "jpeg")
-                    
+                
+//
+//                if let data = self.imgProfile.image!.jpegData(compressionQuality: 0.5){
+//
+//                    multipartFormData.append(data, withName: "img", fileName: "img\(arc4random_uniform(100))"+".jpeg", mimeType: "jpeg")
+//
+//                }
+                
+                
+                if let profiledata = self.imgProfile.image!.jpegData(compressionQuality: 0.5){
+                    multipartFormData.append(profiledata, withName: "img", fileName: "imgphoto\(arc4random_uniform(100))"+".jpeg", mimeType: "image/jpeg")
                 }
+                
+                
+                
                 
         },
             usingThreshold:UInt64.init(),
@@ -190,6 +210,7 @@ class Profile: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource 
                         print(progress)
                     })
                     upload.responseJSON { response in
+                        debugPrint(response)
                         // If the request to get activities is succesfull, store them
                         if response.result.isSuccess{
                             print(response.debugDescription)
