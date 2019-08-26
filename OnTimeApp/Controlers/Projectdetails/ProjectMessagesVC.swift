@@ -34,6 +34,7 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
     @IBOutlet var popupRecord: UIView!
     @IBOutlet var popupContractor: UIView!
     @IBOutlet var popRecorded: UIView!
+     var ISComefromNotification = false
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -57,6 +58,8 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
         askForNotifications()
         checkHeadphones()
         
+        
+       
         // Do any additional setup after loading the view.
     }
     
@@ -750,10 +753,16 @@ extension ProjectMessagesVC : HttpHelperDelegate {
             if status.stringValue == "0" {
                 txtContract.text = data["text"].stringValue
                 let name = data["name"].stringValue
+                if ISComefromNotification == true
+                {
+                    ISComefromNotification = false
+                    popupContractor.isHidden = false
+                }
             } else {
                 Loader.showError(message: message.stringValue )
             }
-        }else if Tag == 2 {
+        }
+        else if Tag == 2 {
             let status =  json["status"]
             let data = json["data"]
             let message = json["msg"]
@@ -814,7 +823,8 @@ extension ProjectMessagesVC : HttpHelperDelegate {
             } else {
                 Loader.showError(message: message.stringValue )
             }
-        }else if Tag == 3 {
+        }
+        else if Tag == 3 {
             let status =  json["status"]
             let data = json["data"]
             let message = json["msg"]

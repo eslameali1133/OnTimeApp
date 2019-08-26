@@ -72,7 +72,8 @@ class LoginVC: UIViewController {
         print(Phone)
         let params = [
             "phone":Phone,
-            "password":txtPassword.text!
+            "password":txtPassword.text!,
+            "fcm_token": "\(UserDefaults.standard.string(forKey: "token")!)"
             ] as [String: Any]
         //let headers = ["Accept": "application/json" ,   "lang":SharedData.SharedInstans.getLanguage() ,"Content-Type": "application/json"]
         AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))

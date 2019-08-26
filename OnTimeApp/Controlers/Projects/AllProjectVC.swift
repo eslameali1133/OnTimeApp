@@ -41,10 +41,12 @@ class AllProjectVC: UIViewController , UITableViewDataSource , UITableViewDelega
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let storyBoard : UIStoryboard = UIStoryboard(name: "ProjectDetails", bundle:nil)
         let cont = storyBoard.instantiateViewController(withIdentifier: "ProjectMessagesVC")as! ProjectMessagesVC
         cont.RequestID = HomeRequests[indexPath.row]._id
         self.present(cont, animated: true, completion: nil)
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

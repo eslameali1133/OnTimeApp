@@ -39,6 +39,10 @@
 		<string>DIN NEXT™ ARABIC REGULAR_0.otf</string>
 		<string>DIN NEXT™ ARABIC ULTRALIGHT_0.otf</string>
 	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

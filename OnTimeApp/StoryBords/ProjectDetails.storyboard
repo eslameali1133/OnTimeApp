@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xvg-1R-Egj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xvg-1R-Egj">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -4167,7 +4167,7 @@
         <image name="Group 79-1" width="20.5" height="15.5"/>
         <image name="add" width="58" height="42.5"/>
         <image name="arrow-in-circle-point-to-up" width="26" height="26"/>
-        <image name="check" width="384" height="384"/>
+        <image name="check" width="512" height="512"/>
         <image name="condtion" width="158" height="158"/>
         <image name="credit-card-4" width="31.5" height="25"/>
         <image name="direction-1" width="33" height="33"/>
@@ -4181,8 +4181,8 @@
         <image name="pdf-rounded-rectangular-outlined-file-type-symbol-1" width="22.5" height="13"/>
         <image name="phone-call-1" width="22" height="22"/>
         <image name="profiles" width="14" height="16"/>
-        <image name="radio-on-button (3)" width="409.60000610351562" height="409.60000610351562"/>
-        <image name="radio-on-button (4)" width="384" height="384"/>
+        <image name="radio-on-button (3)" width="512" height="512"/>
+        <image name="radio-on-button (4)" width="512" height="512"/>
         <image name="share-option-1" width="15.5" height="14"/>
         <image name="telegram-1" width="40" height="40"/>
         <image name="timeline-1" width="30.5" height="17.5"/>
