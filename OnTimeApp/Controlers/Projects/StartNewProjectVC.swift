@@ -32,9 +32,17 @@ class StartNewProjectVC: UIViewController {
     
     }
     }
+    @IBOutlet weak var lblToday: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-lblProfileName.text = "\(AppCommon.sharedInstance.getJSON("Profiledata")["name"].stringValue))"
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMMM yyyy"
+        let result = formatter.string(from: date)
+        lblToday.text = result
+        
+        imgProfile.loadimageUsingUrlString(url: AppCommon.sharedInstance.getJSON("Profiledata")["img"].stringValue)
+        lblProfileName.text = AppCommon.sharedInstance.getJSON("Profiledata")["name"].stringValue
         // Do any additional setup after loading the view.
     }
     

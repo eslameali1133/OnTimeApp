@@ -393,44 +393,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OnTimeApp/Controlers/Projects/ProfilePointsVC.swift"
-            timestampString = "588091613.982397"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "SetData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "OnTimeApp/Controlers/Projects/Profile.swift"
-            timestampString = "587909711.828339"
+            timestampString = "588435818.857204"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "SetData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OnTimeApp/Controlers/Projects/Profile.swift"
-            timestampString = "587909711.829129"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
             landmarkName = "EditProfile()"
             landmarkType = "7">
          </BreakpointContent>
@@ -442,11 +410,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OnTimeApp/Controlers/Projects/Profile.swift"
-            timestampString = "587909711.829764"
+            timestampString = "588435818.857343"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
             landmarkName = "EditProfile()"
             landmarkType = "7">
          </BreakpointContent>
@@ -458,27 +426,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OnTimeApp/Controlers/Projects/Profile.swift"
-            timestampString = "587909711.830392"
+            timestampString = "588435818.857434"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
-            landmarkName = "EditProfile()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "OnTimeApp/Controlers/Projects/Profile.swift"
-            timestampString = "587909711.830994"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
             landmarkName = "EditProfile()"
             landmarkType = "7">
             <Locations>
@@ -490,11 +442,11 @@
                   moduleName = "OnTimeApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/heisen/Desktop/IOSAPPS/OnTime%20App/OnTimeApp/OnTimeApp/OnTimeApp/Controlers/Projects/Profile.swift"
-                  timestampString = "588189959.9038759"
+                  timestampString = "588459772.024474"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "192"
-                  endingLineNumber = "192"
+                  startingLineNumber = "196"
+                  endingLineNumber = "196"
                   offsetFromSymbolStart = "267">
                </Location>
                <Location
@@ -505,11 +457,11 @@
                   moduleName = "OnTimeApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/heisen/Desktop/IOSAPPS/OnTime%20App/OnTimeApp/OnTimeApp/OnTimeApp/Controlers/Projects/Profile.swift"
-                  timestampString = "588189959.907793"
+                  timestampString = "588459772.031333"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "194"
-                  endingLineNumber = "194"
+                  startingLineNumber = "198"
+                  endingLineNumber = "198"
                   offsetFromSymbolStart = "56">
                </Location>
             </Locations>
@@ -522,11 +474,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OnTimeApp/Controlers/Projects/moreVC.swift"
-            timestampString = "587822108.170741"
+            timestampString = "588435818.8575079"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "changeLanguage()"
             landmarkType = "7">
          </BreakpointContent>
@@ -538,11 +490,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OnTimeApp/Controlers/Projects/moreVC.swift"
-            timestampString = "587822108.171306"
+            timestampString = "588435818.857573"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
             landmarkName = "changeLanguage()"
             landmarkType = "7">
          </BreakpointContent>
@@ -586,7 +538,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OnTimeApp/Controlers/Projectdetails/ProjectMessagesVC.swift"
-            timestampString = "588189959.425451"
+            timestampString = "588459769.997551"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "124"
@@ -634,7 +586,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OnTimeApp/Controlers/Projects/VerifyProjectRequest.swift"
-            timestampString = "587921985.444685"
+            timestampString = "588421214.874781"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "104"
@@ -666,7 +618,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OnTimeApp/Controlers/Projects/VerifyProjectRequest.swift"
-            timestampString = "587921985.444849"
+            timestampString = "588421214.8748651"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "169"
@@ -682,7 +634,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OnTimeApp/Controlers/Projects/VerifyProjectRequest.swift"
-            timestampString = "587921985.444953"
+            timestampString = "588421214.874922"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "134"
@@ -698,7 +650,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OnTimeApp/Controlers/Projectdetails/ProjectMessagesVC.swift"
-            timestampString = "588189959.425694"
+            timestampString = "588459769.999608"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "742"
@@ -714,11 +666,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "OnTimeApp/Controlers/Projects/ProfilePointsVC.swift"
-            timestampString = "588091613.983319"
+            timestampString = "588435818.857946"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "receivedResponse(dictResponse:Tag:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -745,14 +697,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OnTimeApp/Controlers/Projects/HomeProjectVC.swift"
-            timestampString = "588189959.425822"
+            filePath = "OnTimeApp/Controlers/Projects/Profile.swift"
+            timestampString = "588435818.858049"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "300"
-            endingLineNumber = "300"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "SetData()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -761,14 +713,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OnTimeApp/Controlers/Projects/HomeProjectVC.swift"
-            timestampString = "588189959.426487"
+            filePath = "OnTimeApp/Controlers/Projects/Profile.swift"
+            timestampString = "588435818.858129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -777,14 +729,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "OnTimeApp/Controlers/Projects/HomeProjectVC.swift"
-            timestampString = "588189959.426998"
+            filePath = "OnTimeApp/Controlers/Projects/Profile.swift"
+            timestampString = "588435818.858211"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "265"
-            endingLineNumber = "265"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "213"
+            endingLineNumber = "213"
+            landmarkName = "EditProfile()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

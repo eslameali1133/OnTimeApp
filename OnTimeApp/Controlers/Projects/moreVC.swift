@@ -41,15 +41,24 @@ class moreVC: AllignLocalizerVC ,UITableViewDataSource , UITableViewDelegate {
 //
     var arryimag = ["briefcase-2","notification-1","Mask Group 2-1","computer-graphic","info-sign-1","question (1)-1","phone-call-small" , "translation"]
     @IBOutlet weak var tblMore: UITableView!
+    @IBOutlet weak var lblToday: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        lblProfileName.text = "\(AppCommon.sharedInstance.getJSON("Profiledata")["name"].stringValue))"
         tblMore.delegate = self
         tblMore.dataSource = self
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMMM yyyy"
+        let result = formatter.string(from: date)
+        lblToday.text = result
+        imgProfile.loadimageUsingUrlString(url: AppCommon.sharedInstance.getJSON("Profiledata")["img"].stringValue)
+        lblProfileName.text = AppCommon.sharedInstance.getJSON("Profiledata")["name"].stringValue
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrylabel.count

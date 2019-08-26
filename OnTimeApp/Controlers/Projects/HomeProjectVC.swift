@@ -42,6 +42,7 @@ class HomeProjectVC: AllignLocalizerVC {
     @IBOutlet weak var revisionC: UIView!
     @IBOutlet weak var contenueC: UIView!
     @IBOutlet weak var doneC: UIView!
+    @IBOutlet weak var lblToday: UILabel!
     
     @IBOutlet weak var lblDonePro: UILabel!
     @IBOutlet weak var lblContinuePro: UILabel!
@@ -53,7 +54,6 @@ class HomeProjectVC: AllignLocalizerVC {
         GetDoneRequests()
         GetRevisedRequests()
         GetContinueRequests()
-        lblProfileName.text = "\(AppCommon.sharedInstance.getJSON("Profiledata")["name"].stringValue))"
         sideMenue()
        // setupSideMenu()
          http.delegate = self
@@ -83,51 +83,59 @@ class HomeProjectVC: AllignLocalizerVC {
 //        }
         // Do any additional setup after loading the view.
     }
-//    override func viewWillAppear(_ animated: Bool) {
-//
-//        if  FlagcomeNotification == true
-//        {
-//            FlagcomeNotification = false
-//
-//            if NotificationModel.type == "accept_request" {
-//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProjectTypeVC") as! ProjectTypeVC
-//                vc.modalPresentationStyle = .overCurrentContext
-//                vc.modalTransitionStyle = .crossDissolve
-//                present(vc, animated: true, completion: nil)
-//            }
-//            else if NotificationModel.type == "refuse_request" {
-//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProjectTypeVC") as! ProjectTypeVC
-//                vc.modalPresentationStyle = .overCurrentContext
-//                vc.modalTransitionStyle = .crossDissolve
-//                present(vc, animated: true, completion: nil)
-//            }
-//            else if NotificationModel.type == "view_components" {
-//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProjectTypeVC") as! ProjectTypeVC
-//                vc.modalPresentationStyle = .overCurrentContext
-//                vc.modalTransitionStyle = .crossDissolve
-//                present(vc, animated: true, completion: nil)
-//            }
-//            else if NotificationModel.type == "contract" {
-//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProjectTypeVC") as! ProjectTypeVC
-//                vc.modalPresentationStyle = .overCurrentContext
-//                vc.modalTransitionStyle = .crossDissolve
-//                present(vc, animated: true, completion: nil)
-//            }
-//            else if NotificationModel.type == "message" {
-//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProjectTypeVC") as! ProjectTypeVC
-//                vc.modalPresentationStyle = .overCurrentContext
-//                vc.modalTransitionStyle = .crossDissolve
-//                present(vc, animated: true, completion: nil)
-//            }
-//            else if NotificationModel.type == "help" {
-//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProjectTypeVC") as! ProjectTypeVC
-//                vc.modalPresentationStyle = .overCurrentContext
-//                vc.modalTransitionStyle = .crossDissolve
-//                present(vc, animated: true, completion: nil)
-//            }
-//
-//        }
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMMM yyyy"
+        let result = formatter.string(from: date)
+        lblToday.text = result
+        
+        imgProfile.loadimageUsingUrlString(url: AppCommon.sharedInstance.getJSON("Profiledata")["img"].stringValue)
+        lblProfileName.text = AppCommon.sharedInstance.getJSON("Profiledata")["name"].stringValue
+        if  FlagcomeNotification == true
+        {
+            FlagcomeNotification = false
+
+            if NotificationModel.type == "accept_request" {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProjectTypeVC") as! ProjectTypeVC
+                vc.modalPresentationStyle = .overCurrentContext
+                vc.modalTransitionStyle = .crossDissolve
+                present(vc, animated: true, completion: nil)
+            }
+            else if NotificationModel.type == "refuse_request" {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProjectTypeVC") as! ProjectTypeVC
+                vc.modalPresentationStyle = .overCurrentContext
+                vc.modalTransitionStyle = .crossDissolve
+                present(vc, animated: true, completion: nil)
+            }
+            else if NotificationModel.type == "view_components" {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProjectTypeVC") as! ProjectTypeVC
+                vc.modalPresentationStyle = .overCurrentContext
+                vc.modalTransitionStyle = .crossDissolve
+                present(vc, animated: true, completion: nil)
+            }
+            else if NotificationModel.type == "contract" {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProjectTypeVC") as! ProjectTypeVC
+                vc.modalPresentationStyle = .overCurrentContext
+                vc.modalTransitionStyle = .crossDissolve
+                present(vc, animated: true, completion: nil)
+            }
+            else if NotificationModel.type == "message" {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProjectTypeVC") as! ProjectTypeVC
+                vc.modalPresentationStyle = .overCurrentContext
+                vc.modalTransitionStyle = .crossDissolve
+                present(vc, animated: true, completion: nil)
+            }
+            else if NotificationModel.type == "help" {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProjectTypeVC") as! ProjectTypeVC
+                vc.modalPresentationStyle = .overCurrentContext
+                vc.modalTransitionStyle = .crossDissolve
+                present(vc, animated: true, completion: nil)
+            }
+
+        }
+    }
     func setcount(){
         lblAllcount.text = Gallcount
         lblDonecount.text = Gdonecount

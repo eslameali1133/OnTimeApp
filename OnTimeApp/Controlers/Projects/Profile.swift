@@ -12,6 +12,7 @@ import SwiftyJSON
 class Profile: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource , UIImagePickerControllerDelegate ,UINavigationControllerDelegate {
     var ability = ""
     var type = ""
+    var ProfileData : ProfileModelClass!
     var policyChecked = false
     var invoicChecked = false
     var AlertController: UIAlertController!
@@ -43,9 +44,9 @@ class Profile: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource 
         super.viewDidLoad()
         SetupUploadImage()
         SetData()
-        lblKey.text = "+966"
+        //lblKey.text = "+966"
         
-        
+        print(ProfileData._name)
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20.0)!]
         // Do any additional setup after loading the view.
     }
@@ -97,9 +98,12 @@ class Profile: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource 
     }
     //single - company
     func SetData(){
-        lblPhone.text = AppCommon.sharedInstance.getJSON("Profiledata")["phone"].stringValue
-        lblEmail.text = AppCommon.sharedInstance.getJSON("Profiledata")["email"].stringValue
-        type = AppCommon.sharedInstance.getJSON("Profiledata")["user_type"].stringValue
+        let phonenum : String = ProfileData._phone
+        print(phonenum.prefix(3))
+        lblKey.text = String(phonenum.prefix(3))
+        lblPhone.text = String(phonenum.dropFirst(3))
+        lblEmail.text = ProfileData._email
+        type = ProfileData._user_type
         if type == "single"{
             imgPeople.image = UIImage(named: "radio-on-button (3)")
             imgOrg.image = UIImage(named: "radio-on-button (4)")
@@ -107,9 +111,9 @@ class Profile: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource 
             imgOrg.image = UIImage(named: "radio-on-button (3)")
             imgPeople.image = UIImage(named: "radio-on-button (4)")
         }
-        lblOrgName.text = AppCommon.sharedInstance.getJSON("Profiledata")["company_name"].stringValue
-        imgProfile.loadimageUsingUrlString(url: AppCommon.sharedInstance.getJSON("Profiledata")["img"].stringValue)
-        lblPeopleName.text = AppCommon.sharedInstance.getJSON("Profiledata")["name"].stringValue
+        lblOrgName.text = ProfileData._company_name
+        imgProfile.loadimageUsingUrlString(url: ProfileData._img)
+        lblPeopleName.text = ProfileData._name
     }
     
     func SetupUploadImage()
