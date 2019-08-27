@@ -12,7 +12,7 @@ import IQKeyboardManagerSwift
 import UserNotifications
 import Firebase
 import FirebaseCore
-
+import SwiftyJSON
 
 var FlagcomeNotification = false
 var NotificationModel : FirBasNotModelClass!
@@ -21,12 +21,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
 
     var window: UIWindow?
 
+    var http = HttpHelper()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         IQKeyboardManager.shared.enable = true
         StartApp()
-        
+        http.delegate = self
         // fireBase
         
         FirebaseApp.configure()
@@ -80,6 +81,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+    }
+    
+    func Login() {
+        let Phone = UserDefaults.standard.string(forKey: "Phone")!
+        print(Phone)
+        print(UserDefaults.standard.string(forKey: "Password")!)
+        let params = [
+            "phone":Phone,
+            "password":"\(UserDefaults.standard.string(forKey: "Password")!)",
+            "fcm_token": "\(UserDefaults.standard.string(forKey: "token")!)"
+            ] as [String: Any]
+        //let headers = ["Accept": "application/json" ,   "lang":SharedData.SharedInstans.getLanguage() ,"Content-Type": "application/json"]
+        http.requestWithBody(url: APIConstants.Login, method: .post, parameters: params, tag: 1, header: nil)
     }
     
     ////// notification ///////////
@@ -161,15 +175,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
         {
             let delegate = UIApplication.shared.delegate as! AppDelegate
             // let storyboard = UIStoryboard(name: "StoryBord", bundle: nil)
-            let storyboard = UIStoryboard.init(name: "Profile", bundle: nil); delegate.window?.rootViewController = storyboard.instantiateInitialViewController()
+            let storyboard = UIStoryboard.init(name: "Introduction", bundle: nil); delegate.window?.rootViewController = storyboard.instantiateInitialViewController()
         }
         else
         {
+            //Login()
+
+//            FlagcomeNotification = true
+//
+//            NotificationModel = FirBasNotModelClass(
+//                message: "",
+//                notification_id:"",
+//                request_id: "110",
+//                token: "",
+//                type: "view_components"
+//
+//            )
+//            let currentController = self.getCurrentViewController()
+//            let storyBoard : UIStoryboard = UIStoryboard(name: "Projects", bundle:nil)
+//            let cont = storyBoard.instantiateViewController(withIdentifier: "HomeNAV")
+//            currentController?.revealViewController()?.pushFrontViewController(cont, animated: true)
+//            let appDelegate = UIApplication.shared.delegate as? AppDelegate
+//            let mainStoryboard = UIStoryboard(name: "Projects", bundle: nil)
+//            let homeController = mainStoryboard.instantiateViewController(withIdentifier: "HomeNAV")
+//            appDelegate?.window?.rootViewController = homeController
+
             
+
                 let delegate = UIApplication.shared.delegate as! AppDelegate
                 // let storyboard = UIStoryboard(name: "StoryBord", bundle: nil)
                 let storyboard = UIStoryboard.init(name: "Projects", bundle: nil); delegate.window?.rootViewController = storyboard.instantiateInitialViewController()
-            
+           
+       
          
         }
             
@@ -204,6 +241,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
         return container
     }()
 
+    func getCurrentViewController() -> UIViewController? {
+        
+        if let rootController = UIApplication.shared.keyWindow?.rootViewController {
+            var currentController: UIViewController! = rootController
+            while( currentController.presentedViewController != nil ) {
+                currentController = currentController.presentedViewController
+            }
+            return currentController
+        }
+        return nil
+        
+    }
+    
     // MARK: - Core Data Saving support
 
     func saveContext () {
@@ -221,4 +271,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
     }
 
 }
-
+extension AppDelegate: HttpHelperDelegate {
+    func receivedResponse(dictResponse: Any, Tag: Int) {
+        print(dictResponse)
+    
+        let json = JSON(dictResponse)
+        if Tag == 1 {
+            
+            let status =  json["status"]
+            let Message = json["msg"]
+            let data = json["data"]
+            let token = data["token"]
+            print(token)
+            print(status)
+            print(Message)
+            print(data)
+            
+            if status.stringValue  == "0" {
+                
+                AppCommon.sharedInstance.saveJSON(json: data, key: "Profiledata")
+                print(AppCommon.sharedInstance.getJSON("Profiledata")["token"].stringValue)
+                SharedData.SharedInstans.SetIsLogin(true)
+                
+                let delegate = UIApplication.shared.delegate as! AppDelegate
+                // let storyboard = UIStoryboard(name: "StoryBord", bundle: nil)
+                let storyboard = UIStoryboard.init(name: "Projects", bundle: nil); delegate.window?.rootViewController = storyboard.instantiateInitialViewController()
+                
+            } else {
+                
+                let message = json["message"]
+                Loader.showError(message: message.stringValue )
+                
+            }
+            
+        }
+    }
+    
+    func receivedErrorWithStatusCode(statusCode: Int) {
+        print(statusCode)
+        
+    }
+    
+    func retryResponse(numberOfrequest: Int) {
+        
+    }
+}

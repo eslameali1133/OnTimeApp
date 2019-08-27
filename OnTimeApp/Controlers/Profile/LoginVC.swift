@@ -153,8 +153,9 @@ extension LoginVC: HttpHelperDelegate {
             print(data)
             
             if status.stringValue  == "0" {
-               // UserDefaults.standard.set(Token.stringValue, forKey: "access_token")
-              //  UserDefaults.standard.set(Name.stringValue, forKey: "user_name")
+               let Phone = lblKey.text! + txtUserName.text!
+               UserDefaults.standard.set(txtPassword.text, forKey: "Password")
+               UserDefaults.standard.set(Phone, forKey: "Phone")
                 //UserDefaults.standard.set(Email.stringValue, forKey: "user_email")
         
                // ChatToken = UserDefaults.standard.string(forKey: "chat_token")!

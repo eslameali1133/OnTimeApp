@@ -35,13 +35,18 @@ class ProfilePointsVC: UIViewController {
         super.viewDidLoad()
         sideMenue()
        // SetData()
-        GetProfileData()
+        
         
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20.0)!]
         http.delegate = self
         // Do any additional setup after loading the view.
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        GetProfileData()
+    }
+    @IBAction func btnEdit(_ sender: Any) {
+        Edit()
+    }
     @IBAction func btnSideMenue(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Projects", bundle: nil)
         let cont = storyboard.instantiateViewController(withIdentifier: "RightMenuNavigationController")
@@ -69,6 +74,13 @@ class ProfilePointsVC: UIViewController {
             "Authorization": AccessToken]
         AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
         http.requestWithBody(url: APIConstants.GetUserProfile, method: .post, parameters: params, tag: 1, header: headers)
+    }
+    
+    func Edit(){
+        let storyboard = UIStoryboard(name: "Projects", bundle: nil)
+        let cont = storyboard.instantiateViewController(withIdentifier: "Profile") as! Profile
+        cont.ProfileData = ProfileData
+        self.present(cont, animated: true, completion: nil)
     }
     
     func SetData(){

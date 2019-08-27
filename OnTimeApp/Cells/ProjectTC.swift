@@ -13,10 +13,11 @@ class ProjectTC: UITableViewCell {
     var id = ""
     var percentage = ""
     @IBOutlet weak var statusdescr: UILabel!
-    @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var icon: customImageView!
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var desce: UILabel!
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var widthconst: NSLayoutConstraint!
     @IBOutlet weak var img: customImageView!{
         didSet{
             img.layer.cornerRadius =  img.frame.width / 2
@@ -27,6 +28,8 @@ class ProjectTC: UITableViewCell {
             
         }
     }
+    @IBOutlet weak var viewStatus: UIView!
+    @IBOutlet weak var viewMain: AMCircleUIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

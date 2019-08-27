@@ -12,6 +12,7 @@ import SwiftyJSON
 class Profile: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource , UIImagePickerControllerDelegate ,UINavigationControllerDelegate {
     var ability = ""
     var type = ""
+    var ProfileData : ProfileModelClass!
     var policyChecked = false
     var invoicChecked = false
     var AlertController: UIAlertController!
@@ -43,9 +44,9 @@ class Profile: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource 
         super.viewDidLoad()
         SetupUploadImage()
         SetData()
-//        lblKey.text = "+966"
+        //lblKey.text = "+966"
         
-        
+        print(ProfileData._name)
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20.0)!]
         // Do any additional setup after loading the view.
     }
@@ -97,15 +98,13 @@ class Profile: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource 
     }
     //single - company
     func SetData(){
-        let phonenum : String = AppCommon.sharedInstance.getJSON("Profiledata")["phone"].stringValue
+        let phonenum : String = ProfileData._phone
         print(phonenum.prefix(3))
         
         lblKey.text = String(phonenum.prefix(3))
         lblPhone.text = String(phonenum.dropFirst(3))
-        
-//        lblPhone.text = AppCommon.sharedInstance.getJSON("Profiledata")["phone"].stringValue
-        lblEmail.text = AppCommon.sharedInstance.getJSON("Profiledata")["email"].stringValue
-        type = AppCommon.sharedInstance.getJSON("Profiledata")["user_type"].stringValue
+        lblEmail.text = ProfileData._email
+        type = ProfileData._user_type
         if type == "single"{
             imgPeople.image = UIImage(named: "radio-on-button (3)")
             imgOrg.image = UIImage(named: "radio-on-button (4)")
@@ -113,9 +112,9 @@ class Profile: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource 
             imgOrg.image = UIImage(named: "radio-on-button (3)")
             imgPeople.image = UIImage(named: "radio-on-button (4)")
         }
-        lblOrgName.text = AppCommon.sharedInstance.getJSON("Profiledata")["company_name"].stringValue
-        imgProfile.loadimageUsingUrlString(url: AppCommon.sharedInstance.getJSON("Profiledata")["img"].stringValue)
-        lblPeopleName.text = AppCommon.sharedInstance.getJSON("Profiledata")["name"].stringValue
+        lblOrgName.text = ProfileData._company_name
+        imgProfile.loadimageUsingUrlString(url: ProfileData._img)
+        lblPeopleName.text = ProfileData._name
     }
     
     func SetupUploadImage()
@@ -148,7 +147,7 @@ class Profile: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource 
         
         print(AccessToken)
         let imgdata = self.imgProfile.image!.jpegData(compressionQuality: 0.5)
-        print(imgdata!)
+        //print(imgdata!)
         let UserParams = [
             "token":AccessToken,
             "name" : lblPeopleName.text!,
@@ -176,6 +175,8 @@ class Profile: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource 
         print(parameters)
         Alamofire.upload(
             multipartFormData: { multipartFormData in
+                multipartFormData.append(imgdata!, withName: "img", fileName: "img\(arc4random_uniform(100))"+".jpeg", mimeType: "image/jpg")
+                
                 for (key,value) in parameters {
                     if let value = value as? String {
                         multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
@@ -191,16 +192,12 @@ class Profile: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource 
 //                }
                 
                 
-                if let profiledata = self.imgProfile.image!.jpegData(compressionQuality: 0.5){
-                    multipartFormData.append(profiledata, withName: "img", fileName: "imgphoto\(arc4random_uniform(100))"+".jpeg", mimeType: "image/jpeg")
-                }
                 
                 
                 
                 
-        },
-            usingThreshold:UInt64.init(),
-            to: "https://appontime.net/mobile/edit_profile.php",
+                
+        },to: "https://appontime.net/mobile/edit_profile.php",
             method: .post, headers: nil,
             encodingCompletion: { encodingResult in
                 switch encodingResult {
@@ -209,48 +206,30 @@ class Profile: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource 
                     upload.uploadProgress(closure: { (progress) in
                         print(progress)
                     })
-                    upload.responseJSON { response in
+                    upload.responseString { response in
                         debugPrint(response)
                         // If the request to get activities is succesfull, store them
-                        if response.result.isSuccess{
-                            print(response.debugDescription)
-                            AppCommon.sharedInstance.dismissLoader(self.view)
-                            // print(response.data!)
-                            // print(response.result)
-                            let json = JSON(response.data)
+                        
+                        print(response.result)
+                        print("Response : ", response)
+                        
+                        if response.result.isSuccess
+                        {
+                           AppCommon.sharedInstance.dismissLoader(self.view)
+                            let json = JSON(response.data as Any)
                             print(json)
                             let status =  json["status"]
                             let message = json["msg"]
                             let data = json["data"]
                             if status.stringValue == "0" {
-                                
-                                Loader.showSuccess(message: AppCommon.sharedInstance.localization("The Profile was successfully Editted"))
-                                AppCommon.sharedInstance.saveJSON(json: data, key: "Profiledata")
-                                print(AppCommon.sharedInstance.getJSON("Profiledata")["company_name"].stringValue)
-                                let storyBoard : UIStoryboard = UIStoryboard(name: "Projects", bundle:nil)
-                                let cont = storyBoard.instantiateViewController(withIdentifier: "ProfileNAV")
-                                self.revealViewController()?.pushFrontViewController(cont, animated: true)
                             
-                            }else{
-                                Loader.showError(message: message.stringValue)
+                            Loader.showSuccess(message: AppCommon.sharedInstance.localization("The Profile was successfully Editted"))
+                            AppCommon.sharedInstance.saveJSON(json: data, key: "Profiledata")
+                                                            print(AppCommon.sharedInstance.getJSON("Profiledata")["company_name"].stringValue)
+                                self.dismiss(animated: true, completion: nil)
                             }
                             
-                        } else {
-                            let errorMessage = "ERROR MESSAGE: "
-                            if let data = response.data {
-                                // Print message
-                                print(errorMessage)
-                                AppCommon.sharedInstance.dismissLoader(self.view)
-                                
-                                
-                                
-                            }
-                            print(errorMessage) //Contains General error message or specific.
-                            print(response.debugDescription)
-                            AppCommon.sharedInstance.dismissLoader(self.view)
                         }
-                        
-                        
                     }
                 case .failure(let encodingError):
                     print("FALLE ------------")

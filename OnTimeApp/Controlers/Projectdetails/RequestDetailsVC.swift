@@ -112,7 +112,7 @@ extension RequestDetailsVC : HttpHelperDelegate {
                     let obj = ComponentModelClass(
                         component_name: json["component_name"].stringValue,
                         price: json["price"].stringValue,
-                        duration: json["duration"].stringValue
+                        duration: json["duration"].stringValue, done: "", end_date: ""
                         
                     )
                     //print(obj)

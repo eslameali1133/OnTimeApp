@@ -48,6 +48,7 @@ class HomeProjectVC: AllignLocalizerVC {
     @IBOutlet weak var revisionC: UIView!
     @IBOutlet weak var contenueC: UIView!
     @IBOutlet weak var doneC: UIView!
+    @IBOutlet weak var lblToday: UILabel!
     
     @IBOutlet weak var lblDonePro: UILabel!
     @IBOutlet weak var lblContinuePro: UILabel!
@@ -59,7 +60,6 @@ class HomeProjectVC: AllignLocalizerVC {
         GetDoneRequests()
         GetRevisedRequests()
         GetContinueRequests()
-        lblProfileName.text = "\(AppCommon.sharedInstance.getJSON("Profiledata")["name"].stringValue))"
         sideMenue()
        // setupSideMenu()
          http.delegate = self
@@ -75,46 +75,45 @@ class HomeProjectVC: AllignLocalizerVC {
     override func viewWillAppear(_ animated: Bool) {
 
         print(FlagcomeNotification)
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMMM yyyy"
+        let result = formatter.string(from: date)
+        lblToday.text = result
         
+        imgProfile.loadimageUsingUrlString(url: AppCommon.sharedInstance.getJSON("Profiledata")["img"].stringValue)
+        lblProfileName.text = AppCommon.sharedInstance.getJSON("Profiledata")["name"].stringValue
         if  FlagcomeNotification == true
         {
             FlagcomeNotification = false
 
             if NotificationModel.type == "accept_request" {
-                
+               
                 let storyBoard : UIStoryboard = UIStoryboard(name: "ProjectDetails", bundle:nil)
                 let cont = storyBoard.instantiateViewController(withIdentifier: "ProjectMessagesVC")as! ProjectMessagesVC
                 cont.RequestID = NotificationModel.request_id
-                self.show(cont, sender: true)
-//                self.show(cont, animated: true, completion: nil)
-                
+                self.revealViewController()?.show(cont, sender: true)
                
             }
             else if NotificationModel.type == "refuse_request" {
                 let storyBoard : UIStoryboard = UIStoryboard(name: "ProjectDetails", bundle:nil)
                 let cont = storyBoard.instantiateViewController(withIdentifier: "ProjectMessagesVC")as! ProjectMessagesVC
                 cont.RequestID = NotificationModel.request_id
-                self.show(cont, sender: true)
+                self.revealViewController()?.show(cont, sender: true)
             }
             else if NotificationModel.type == "view_components" {
-                
-                
                 let storyBoard : UIStoryboard = UIStoryboard(name: "ProjectDetails", bundle:nil)
                 let cont = storyBoard.instantiateViewController(withIdentifier: "RequestDetailsVC")as! RequestDetailsVC
-                cont.RequestID =  NotificationModel.request_id
-         
-                self.present(cont, animated: true, completion: nil)
+                cont.RequestID = NotificationModel.request_id
+                self.revealViewController()?.show(cont, sender: true)
             }
             else if NotificationModel.type == "contract" {
-                
                 let storyBoard : UIStoryboard = UIStoryboard(name: "ProjectDetails", bundle:nil)
                 let cont = storyBoard.instantiateViewController(withIdentifier: "ProjectMessagesVC")as! ProjectMessagesVC
                 cont.RequestID =  NotificationModel.request_id
-                 cont.ISComefromNotification = true
+                cont.ISComefromNotification = true
+                self.revealViewController()?.show(cont, sender: true)
                 
-                self.present(cont, animated: true, completion: nil)
-                
-
             }
             else if NotificationModel.type == "message" {
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProjectTypeVC") as! ProjectTypeVC
@@ -126,7 +125,8 @@ class HomeProjectVC: AllignLocalizerVC {
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Help", bundle:nil)
                 let cont = storyBoard.instantiateViewController(withIdentifier: "HelpNAV")
                 isSideMenueHelp = true
-                present(cont, animated: true, completion: nil)
+                self.revealViewController()?.pushFrontViewController(cont, animated: true)
+                
             }
 
         }
