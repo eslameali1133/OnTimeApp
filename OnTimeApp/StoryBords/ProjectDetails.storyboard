@@ -2063,11 +2063,96 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fsv-ly-GpS">
+                                                                <rect key="frame" x="0.0" y="30" width="375" height="46"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hte-b4-ySL" userLabel="text">
+                                                                        <rect key="frame" x="28" y="0.0" width="319" height="32"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="بدء منذ 5 أيام و 4 ساعات" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hnc-zF-xhE">
+                                                                                <rect key="frame" x="-139" y="5" width="319" height="32"/>
+                                                                                <fontDescription key="fontDescription" name="DINNextLTW23-Light" family="DIN Next LT W23" pointSize="14"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="( 10 أيام )" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Oc-pt-aKM">
+                                                                                <rect key="frame" x="138" y="5" width="42" height="21"/>
+                                                                                <fontDescription key="fontDescription" name="DINNextLTW23-Medium" family="DIN Next LT W23" pointSize="14"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" red="0.91764705879999997" green="0.90196078430000004" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <constraints>
+                                                                            <constraint firstItem="2Oc-pt-aKM" firstAttribute="leading" secondItem="hte-b4-ySL" secondAttribute="leading" id="64a-SL-Jcg"/>
+                                                                            <constraint firstItem="2Oc-pt-aKM" firstAttribute="width" secondItem="hte-b4-ySL" secondAttribute="width" multiplier="0.3" id="98f-JL-Zd0"/>
+                                                                            <constraint firstItem="2Oc-pt-aKM" firstAttribute="height" secondItem="hte-b4-ySL" secondAttribute="height" multiplier="0.5" id="S43-kq-FXQ"/>
+                                                                            <constraint firstItem="Hnc-zF-xhE" firstAttribute="height" secondItem="hte-b4-ySL" secondAttribute="height" multiplier="0.5" id="eKN-qf-g96"/>
+                                                                            <constraint firstItem="2Oc-pt-aKM" firstAttribute="top" secondItem="hte-b4-ySL" secondAttribute="top" constant="10" id="mUf-9O-LRO"/>
+                                                                            <constraint firstItem="Hnc-zF-xhE" firstAttribute="width" secondItem="hte-b4-ySL" secondAttribute="width" multiplier="0.7" id="pEj-tp-3IV"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="Hnc-zF-xhE" secondAttribute="trailing" id="uby-Eo-NeU"/>
+                                                                            <constraint firstItem="Hnc-zF-xhE" firstAttribute="top" secondItem="hte-b4-ySL" secondAttribute="top" constant="10" id="xvN-Rh-M5N"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1Y-7H-i8N">
+                                                                        <rect key="frame" x="0.0" y="32" width="375" height="14"/>
+                                                                        <subviews>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7pn-Bn-yXQ" customClass="AMUIView" customModule="OnTimeApp" customModuleProvider="target">
+                                                                                <rect key="frame" x="28" y="2" width="319" height="10"/>
+                                                                                <subviews>
+                                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PFb-Id-TaY" customClass="AMUIView" customModule="OnTimeApp" customModuleProvider="target">
+                                                                                        <rect key="frame" x="159.5" y="0.0" width="159.5" height="10"/>
+                                                                                        <color key="backgroundColor" red="0.71428054730000001" green="0.89768401019999999" blue="0.36123171269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                        <userDefinedRuntimeAttributes>
+                                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCornerRadius" value="YES"/>
+                                                                                        </userDefinedRuntimeAttributes>
+                                                                                    </view>
+                                                                                </subviews>
+                                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <constraints>
+                                                                                    <constraint firstItem="PFb-Id-TaY" firstAttribute="centerY" secondItem="7pn-Bn-yXQ" secondAttribute="centerY" id="8nT-y2-h0z"/>
+                                                                                    <constraint firstItem="PFb-Id-TaY" firstAttribute="height" secondItem="7pn-Bn-yXQ" secondAttribute="height" id="cd1-A5-yfT"/>
+                                                                                    <constraint firstAttribute="trailing" secondItem="PFb-Id-TaY" secondAttribute="trailing" id="nD2-jg-mnQ"/>
+                                                                                    <constraint firstItem="PFb-Id-TaY" firstAttribute="width" secondItem="7pn-Bn-yXQ" secondAttribute="width" multiplier="0.5" id="qiz-xd-uhc"/>
+                                                                                </constraints>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isCornerRadius" value="YES"/>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </view>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" red="0.91764705879999997" green="0.90196078430000004" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <constraints>
+                                                                            <constraint firstItem="7pn-Bn-yXQ" firstAttribute="height" secondItem="t1Y-7H-i8N" secondAttribute="height" multiplier="0.5" id="WJr-My-V3o"/>
+                                                                            <constraint firstItem="7pn-Bn-yXQ" firstAttribute="width" secondItem="t1Y-7H-i8N" secondAttribute="width" multiplier="0.85" id="ium-eo-Enu"/>
+                                                                            <constraint firstItem="7pn-Bn-yXQ" firstAttribute="centerX" secondItem="t1Y-7H-i8N" secondAttribute="centerX" id="nrQ-qc-bSu"/>
+                                                                            <constraint firstItem="7pn-Bn-yXQ" firstAttribute="centerY" secondItem="t1Y-7H-i8N" secondAttribute="centerY" id="vnI-Da-OP3"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCornerRadius" value="YES"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                </subviews>
+                                                                <color key="backgroundColor" red="0.91764705879999997" green="0.90196078430000004" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="trailing" secondItem="t1Y-7H-i8N" secondAttribute="trailing" id="FeD-e2-hEQ"/>
+                                                                    <constraint firstItem="hte-b4-ySL" firstAttribute="top" secondItem="Fsv-ly-GpS" secondAttribute="top" id="JgP-fN-WSc"/>
+                                                                    <constraint firstItem="hte-b4-ySL" firstAttribute="width" secondItem="Fsv-ly-GpS" secondAttribute="width" multiplier="0.85" id="bVf-lB-Idv"/>
+                                                                    <constraint firstItem="t1Y-7H-i8N" firstAttribute="top" secondItem="hte-b4-ySL" secondAttribute="bottom" id="bjC-Lq-V5Z"/>
+                                                                    <constraint firstItem="hte-b4-ySL" firstAttribute="height" secondItem="Fsv-ly-GpS" secondAttribute="height" multiplier="0.7" id="jyu-tY-7xK"/>
+                                                                    <constraint firstItem="t1Y-7H-i8N" firstAttribute="height" secondItem="Fsv-ly-GpS" secondAttribute="height" multiplier="0.3" id="tdw-oW-AhX"/>
+                                                                    <constraint firstItem="t1Y-7H-i8N" firstAttribute="leading" secondItem="Fsv-ly-GpS" secondAttribute="leading" id="wU9-MA-65g"/>
+                                                                    <constraint firstItem="hte-b4-ySL" firstAttribute="centerX" secondItem="Fsv-ly-GpS" secondAttribute="centerX" id="xH0-5h-noD"/>
+                                                                </constraints>
+                                                            </view>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.91764705879999997" green="0.90196078430000004" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstItem="qHI-y5-eRu" firstAttribute="top" secondItem="nTm-5W-HlX" secondAttribute="top" constant="5" id="2Ri-8h-KxK"/>
+                                                            <constraint firstItem="Fsv-ly-GpS" firstAttribute="leading" secondItem="nTm-5W-HlX" secondAttribute="leading" id="Czc-3A-UmQ"/>
                                                             <constraint firstItem="qHI-y5-eRu" firstAttribute="width" secondItem="nTm-5W-HlX" secondAttribute="width" multiplier="0.3" id="Lad-Mv-lpq"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Fsv-ly-GpS" secondAttribute="bottom" id="hGl-aG-GaF"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Fsv-ly-GpS" secondAttribute="trailing" id="nTy-Gn-0dj"/>
+                                                            <constraint firstItem="Fsv-ly-GpS" firstAttribute="top" secondItem="qHI-y5-eRu" secondAttribute="bottom" id="oVA-8k-1EP"/>
                                                             <constraint firstAttribute="trailing" secondItem="qHI-y5-eRu" secondAttribute="trailing" constant="20" id="sLo-5E-5we"/>
                                                         </constraints>
                                                     </view>
