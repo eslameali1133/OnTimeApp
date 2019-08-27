@@ -20,6 +20,7 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
     var Addons = [AddonsModelClass]()
     var contracts = [ContractModelClass]()
     var Attachments = [AttachmentModelClass]()
+    var Components = [ComponentModelClass]()
     @IBOutlet weak var txtContract: UITextView!
     var http = HttpHelper()
     var RequestID = ""
@@ -528,6 +529,11 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
     
     func GetRequestDetails(){
         
+        Addons.removeAll()
+        Attachments.removeAll()
+        Components.removeAll()
+        contracts.removeAll()
+        
         let AccessToken = AppCommon.sharedInstance.getJSON("Profiledata")["token"].stringValue
         print(AccessToken)
         let params = ["token": AccessToken,
@@ -770,8 +776,9 @@ extension ProjectMessagesVC : HttpHelperDelegate {
             let JContracts = data["contracts"].arrayValue
             let JAttachment = data["attachments"].arrayValue
             
+            let JComponents = data["components"].arrayValue
+            
             if status.stringValue == "0" {
-                
                 for json in Jaddons{
                     let obj = AddonsModelClass(
                         id: "",
@@ -800,6 +807,16 @@ extension ProjectMessagesVC : HttpHelperDelegate {
                     Attachments.append(obj)
                 }
                 
+                for json in JComponents{
+                    let obj = ComponentModelClass(
+                        component_name: json["name"].stringValue, price: "", duration: "",
+                        done: json["done"].stringValue, end_date: json["end_date"].stringValue
+                        
+                    )
+                    //print(obj)
+                    Components.append(obj)
+                }
+                
                 GRequestDetail = RequestDetailModelClass(
                     request_name: data["request_name"].stringValue,
                     request_descr: data["request_descr"].stringValue,
@@ -811,7 +828,7 @@ extension ProjectMessagesVC : HttpHelperDelegate {
                     terms: data["terms"].stringValue,
                     addons: Addons,
                     Contracts: contracts,
-                    Attachment: Attachments
+                    Attachment: Attachments, components: Components
                 )
                 
                 let storyboard = UIStoryboard(name: "ProjectDetails", bundle: nil)

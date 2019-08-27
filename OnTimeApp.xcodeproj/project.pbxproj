@@ -41,6 +41,8 @@
 		F4445208230D7DB5008D2244 /* FireBaseNotModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4445207230D7DB4008D2244 /* FireBaseNotModel.swift */; };
 		F44E0DF222C0297B002F0F7A /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F44E0DF122C0297B002F0F7A /* Test.storyboard */; };
 		F44E0DF622C02A62002F0F7A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F44E0DF522C02A62002F0F7A /* SWRevealViewController.m */; };
+		F4633B6323140E6B007AC0B5 /* ComponentDetailsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4633B6223140E6B007AC0B5 /* ComponentDetailsCVC.swift */; };
+		F4633B6523141B03007AC0B5 /* ComponentPopUpTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4633B6423141B03007AC0B5 /* ComponentPopUpTC.swift */; };
 		F4696F6F230C0FCE004223A5 /* ComponentsTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4696F6E230C0FCE004223A5 /* ComponentsTC.swift */; };
 		F4696F71230C10B1004223A5 /* ComponentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4696F70230C10B1004223A5 /* ComponentModel.swift */; };
 		F46A578D22B7928A00C53CDE /* AllProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46A578C22B7928A00C53CDE /* AllProjectVC.swift */; };
@@ -203,6 +205,8 @@
 		F44E0DF322C02A49002F0F7A /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		F44E0DF422C02A61002F0F7A /* OnTimeApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OnTimeApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		F44E0DF522C02A62002F0F7A /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		F4633B6223140E6B007AC0B5 /* ComponentDetailsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentDetailsCVC.swift; sourceTree = "<group>"; };
+		F4633B6423141B03007AC0B5 /* ComponentPopUpTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentPopUpTC.swift; sourceTree = "<group>"; };
 		F4696F6E230C0FCE004223A5 /* ComponentsTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsTC.swift; sourceTree = "<group>"; };
 		F4696F70230C10B1004223A5 /* ComponentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentModel.swift; sourceTree = "<group>"; };
 		F46A578C22B7928A00C53CDE /* AllProjectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProjectVC.swift; sourceTree = "<group>"; };
@@ -389,6 +393,8 @@
 				F443E40022D34406006E3376 /* addOnesCVC.swift */,
 				F492802122E712F600E35C1C /* ViewAddoneTC.swift */,
 				F4696F6E230C0FCE004223A5 /* ComponentsTC.swift */,
+				F4633B6223140E6B007AC0B5 /* ComponentDetailsCVC.swift */,
+				F4633B6423141B03007AC0B5 /* ComponentPopUpTC.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1117,6 +1123,7 @@
 				F4F8CC03229D60B300C57BD7 /* VisaCardsVC.swift in Sources */,
 				F46A579122B792C800C53CDE /* RevisiedProjectVC.swift in Sources */,
 				F4DCF27822CA1D150089A17A /* AllignText&LabelVC.swift in Sources */,
+				F4633B6523141B03007AC0B5 /* ComponentPopUpTC.swift in Sources */,
 				F413AD0122B11E5F005A5CD5 /* NotificationsTC.swift in Sources */,
 				F4E74FD3229E8B0700A0D72B /* LanguageManager.swift in Sources */,
 				F4DCF27922CA1D150089A17A /* AllignLocalizerVC.swift in Sources */,
@@ -1142,6 +1149,7 @@
 				F4F8CC0C229D630D00C57BD7 /* AaqdVerificationCode.swift in Sources */,
 				F4095F4122898647007B3DA9 /* SignUpVC.swift in Sources */,
 				F4E74FD9229E8B0700A0D72B /* Loader.swift in Sources */,
+				F4633B6323140E6B007AC0B5 /* ComponentDetailsCVC.swift in Sources */,
 				F4F8CBDB229D592000C57BD7 /* StartNewProjectVC.swift in Sources */,
 				F4F8CBF9229D5F9800C57BD7 /* HelpMethodVC.swift in Sources */,
 				F4E74FD4229E8B0700A0D72B /* CusImageview.swift in Sources */,

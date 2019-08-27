@@ -30,9 +30,11 @@ var Gdonecount = "0"
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectTC", for: indexPath) as! ProjectTC
+            let width = (100 * Int(cell.viewMain.frame.width) ) / 100
+            cell.viewStatus.frame.size.width = CGFloat(width)
             cell.id = HomeRequests[indexPath.row]._id
             cell.percentage = HomeRequests[indexPath.row]._percentage
-            cell.icon.image = UIImage(named: HomeRequests[indexPath.row]._icon)
+            cell.icon.loadimageUsingUrlString(url: HomeRequests[indexPath.row]._icon)
             cell.statusdescr.text = HomeRequests[indexPath.row]._status_descr
             cell.status.text = HomeRequests[indexPath.row]._status
             cell.img.loadimageUsingUrlString(url: HomeRequests[indexPath.row]._img)
@@ -93,6 +95,7 @@ extension doneProjectVC : HttpHelperDelegate {
                     )
                     HomeRequests.append(obj)
                 }
+                HomeRequests.reverse()
                 tblProjects.reloadData()
                 Gdonecount = "\(HomeRequests.count)"; AppCommon.sharedInstance.dismissLoader(self.view);
                 

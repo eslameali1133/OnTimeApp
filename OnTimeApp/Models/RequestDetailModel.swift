@@ -20,7 +20,7 @@ class RequestDetailModelClass: NSObject {
     var _addons = [AddonsModelClass]()
     var _contracts = [ContractModelClass]()
     var _Attachment = [AttachmentModelClass]()
-    
+    var _components = [ComponentModelClass]()
     init(
         request_name : String ,
         request_descr : String ,
@@ -32,7 +32,8 @@ class RequestDetailModelClass: NSObject {
         terms : String ,
         addons : [AddonsModelClass],
         Contracts : [ContractModelClass] ,
-        Attachment : [AttachmentModelClass]) {
+        Attachment : [AttachmentModelClass],
+        components : [ComponentModelClass]) {
         
         self._request_name = request_name
         self._request_descr = request_descr
@@ -45,5 +46,6 @@ class RequestDetailModelClass: NSObject {
         self._addons = addons
         self._contracts = Contracts
         self._Attachment = Attachment
+        self._components = components
     }
 }
