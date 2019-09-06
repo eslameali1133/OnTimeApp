@@ -64,6 +64,8 @@
 		F4B705782296AB6C00A2EF9B /* moreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B705772296AB6C00A2EF9B /* moreVC.swift */; };
 		F4B7057A2296AC9900A2EF9B /* moreTC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B705792296AC9900A2EF9B /* moreTC.swift */; };
 		F4BD8AB222F0639A00C59248 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BD8AB122F0639A00C59248 /* NotificationModel.swift */; };
+		F4C035C3231BE8240090CF0B /* OPPWAMobile-Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F4C035C2231BE8240090CF0B /* OPPWAMobile-Resources.bundle */; };
+		F4C035C5231BE8310090CF0B /* OPPWAMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4C035C4231BE8310090CF0B /* OPPWAMobile.framework */; };
 		F4C46A6C22AE5AF400B6E9AE /* ProjectTypeCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C46A6B22AE5AF400B6E9AE /* ProjectTypeCVC.swift */; };
 		F4C64D8F2309767300B1C012 /* ContractModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C64D8E2309767300B1C012 /* ContractModel.swift */; };
 		F4D01F4322C0E15200D081AD /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D01F4222C0E15100D081AD /* RatingControl.swift */; };
@@ -228,6 +230,8 @@
 		F4B705772296AB6C00A2EF9B /* moreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moreVC.swift; sourceTree = "<group>"; };
 		F4B705792296AC9900A2EF9B /* moreTC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moreTC.swift; sourceTree = "<group>"; };
 		F4BD8AB122F0639A00C59248 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		F4C035C2231BE8240090CF0B /* OPPWAMobile-Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "OPPWAMobile-Resources.bundle"; sourceTree = "<group>"; };
+		F4C035C4231BE8310090CF0B /* OPPWAMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OPPWAMobile.framework; sourceTree = "<group>"; };
 		F4C46A6B22AE5AF400B6E9AE /* ProjectTypeCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTypeCVC.swift; sourceTree = "<group>"; };
 		F4C64D8E2309767300B1C012 /* ContractModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractModel.swift; sourceTree = "<group>"; };
 		F4D01F4222C0E15100D081AD /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
@@ -321,6 +325,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4C035C5231BE8310090CF0B /* OPPWAMobile.framework in Frameworks */,
 				34CBF24D27E1DAE88492538B /* Pods_OnTimeApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,6 +352,8 @@
 		30ED092029CA10F9864A7EED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F4C035C4231BE8310090CF0B /* OPPWAMobile.framework */,
+				F4C035C2231BE8240090CF0B /* OPPWAMobile-Resources.bundle */,
 				C0E402FA1DA02AB377632E73 /* Pods_OnTimeApp.framework */,
 				42C4128F75E469E134FC1090 /* Pods_OnTimeAppTests.framework */,
 				B9E83462E70C182481A0BD8C /* Pods_OnTimeAppUITests.framework */,
@@ -899,6 +906,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F40AD00A22BA6CEF000F4077 /* DIN NEXT™ ARABIC BOLD_0.otf in Resources */,
+				F4C035C3231BE8240090CF0B /* OPPWAMobile-Resources.bundle in Resources */,
 				F4E74FF7229E8B3900A0D72B /* lang-en.json in Resources */,
 				F418A04B229174A20021269A /* Introduction.storyboard in Resources */,
 				F40AD01022BA6CEF000F4077 /* DIN NEXT™ ARABIC MEDIUM _0.otf in Resources */,
@@ -1405,6 +1413,10 @@
 				CODE_SIGN_ENTITLEMENTS = OnTimeApp/OnTimeApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M4GL8RY9H9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = OnTimeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1428,6 +1440,10 @@
 				CODE_SIGN_ENTITLEMENTS = OnTimeApp/OnTimeApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M4GL8RY9H9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = OnTimeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -64,5 +64,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>Privacy - Microphone Usage Description
+Privacy - Microphone Usage Description
+</key>
+	<string>This app use your Microphone to Send Voice Note
+</string>
 </dict>
 </plist>

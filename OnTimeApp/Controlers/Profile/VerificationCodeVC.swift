@@ -11,23 +11,28 @@ import SwiftyJSON
 import KKPinCodeTextField
 class VerificationCodeVC: UIViewController {
 
+    var count = 60
     var isLogin = false
     var isRegister = false
     var http = HttpHelper()
     var vereficationCode = ""
     var Email = ""
     var Token = ""
+    @IBOutlet weak var lblTimer: UILabel!
     @IBOutlet var popupVerefy: UIView!
     
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtCode: KKPinCodeTextField!
     @IBOutlet weak var btnSend: UIButton!
+    @IBOutlet weak var btnResend: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if (isRegister == true) || (isLogin == true) {
             SendCode()
             btnSend.setTitle(AppCommon.sharedInstance.localization("CONFIRM"), for: .normal)
+        }else{
+            Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
         }
         http.delegate = self
         print(vereficationCode,Email)
@@ -79,6 +84,7 @@ class VerificationCodeVC: UIViewController {
         }
     }
     func ResendCode(){
+        
         print(Email)
         let params = ["email":Email] as [String: Any]
         //AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
@@ -114,8 +120,18 @@ class VerificationCodeVC: UIViewController {
         return isValid
     }
     
+    
+    @objc func update() {
+        btnResend.isEnabled = false
+        if(count > 0) {
+            count -= 1
+            lblTimer.text = String(count)
+        }else{
+            btnResend.isEnabled = true
+        }
+    }
+    
     func SendCode(){
-      
         print(Token)
     let params = ["token": Token] as [String: Any]
         let headers = [
@@ -198,12 +214,15 @@ extension VerificationCodeVC : HttpHelperDelegate {
                 Loader.showError(message: message.stringValue )
             }
         }else if Tag == 3 {
+
             let status =  json["status"]
             let message = json["msg"]
             let code = json["vcode"]
             let NewToken = json["token"]
             print(code)
             if status.stringValue == "0" {
+                Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+
                 Loader.showSuccess(message: message.stringValue)
                 self.Token = NewToken.stringValue
                 self.vereficationCode = code.stringValue
@@ -217,6 +236,9 @@ extension VerificationCodeVC : HttpHelperDelegate {
                 let Token =  json["token"]
                 let code = json["pcode"]
                 if status.stringValue  == "0" {
+                    count = 60
+                    lblTimer.text = "60"
+                    Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
                      self.vereficationCode = code.stringValue
                     self.Token = Token.stringValue
                    
