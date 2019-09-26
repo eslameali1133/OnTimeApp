@@ -172,6 +172,8 @@ typedef NS_ENUM( NSInteger, FrontViewPosition)
     // you intent to remove the front controller view from the view hierarchy.
     FrontViewPositionRightMostRemoved,
     
+    FrontViewPositionRightSide,
+    
 };
 
 // Enum values for toggleAnimationType
@@ -214,7 +216,9 @@ typedef NS_ENUM(NSInteger, SWRevealToggleAnimationType)
 // to perform user triggered postion change of the controller views. This is ussually added to a
 // button on top left or right of the frontViewController
 - (IBAction)revealToggle:(id)sender;
-- (IBAction)rightRevealToggle:(id)sender; // <-- simetric implementation of the above for the rightViewController
+- (IBAction)rightRevealToggle:(id)sender; // <-- simetric implementation of the
+- (IBAction)lefttRevealToggle:(id)sender;
+//above for the rightViewController
 
 // Toogles the current state of the front controller between Left or Right and fully visible
 // Use setFrontViewPosition to set a particular position
@@ -242,7 +246,8 @@ typedef NS_ENUM(NSInteger, SWRevealToggleAnimationType)
 // Negative values indicate that the reveal width should be computed by substracting the full front view width,
 // so the revealed frontView width is kept constant when bounds change as opposed to the rear or right width.
 @property (nonatomic) CGFloat rearViewRevealWidth;
-@property (nonatomic) CGFloat rightViewRevealWidth; // <-- simetric implementation of the above for the rightViewController
+@property (nonatomic) CGFloat rightViewRevealWidth;
+@property (nonatomic) CGFloat leftViewRevealWidth; // <-- simetric implementation of the above for the rightViewController
 
 // Defines how much of an overdraw can occur when dragging further than 'rearViewRevealWidth', default is 60.
 @property (nonatomic) CGFloat rearViewRevealOverdraw;

@@ -41,5 +41,9 @@ open class APIConstants {
     
     static let GetNotificatios = SERVER_URL + "get_user_notification.php"
     static let ReadNotification = SERVER_URL + "read_notification.php"
+    static let GetMessages = SERVER_URL + "request_chat.php"
+    static let SendMessage = SERVER_URL + "send_chat_msg.php"
+    
+    
     
 }

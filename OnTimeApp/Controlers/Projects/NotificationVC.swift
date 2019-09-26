@@ -10,21 +10,30 @@ import UIKit
 import SideMenu
 import SwiftyJSON
 class NotificationVC: UIViewController , UITableViewDelegate , UITableViewDataSource {
+    var cellSpacingHeight : CGFloat = -15
     var http = HttpHelper()
     var Notifications = [NotificationModelClass]()
     @IBOutlet weak var lblNotificationNum: UILabel!
     @IBOutlet weak var btnSideMenue: UIBarButtonItem!
+    @IBOutlet weak var btnBack: UIBarButtonItem!
+    @IBOutlet weak var imgAlarm: UIImageView!
     @IBOutlet weak var tblNotification: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if  SharedData.SharedInstans.getLanguage() != "en" {
+            btnSideMenue.image = UIImage(named: "arrow-in-circle-point-to-up")
+            btnBack.image = UIImage(named: "Group 1")
+        }
         http.delegate = self
         GetNotifications()
         sideMenue()
         tblNotification.delegate = self
         tblNotification.dataSource = self
         
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20.0)!]
+        let attributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20)!]
+        UINavigationBar.appearance().titleTextAttributes = attributes
+        //self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20.0)!]
         // Do any additional setup after loading the view.
     }
     
@@ -76,12 +85,25 @@ class NotificationVC: UIViewController , UITableViewDelegate , UITableViewDataSo
     }
     
     func sideMenue(){
-        if revealViewController() != nil {
-            btnSideMenue.target = revealViewController()
-            btnSideMenue.action = #selector(SWRevealViewController.rightRevealToggle(_:))
-            revealViewController()?.rightViewRevealWidth =  view.frame.width * 0.75
-            revealViewController()?.rearViewRevealWidth = view.frame.width * 0.25
-            view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
+        if  SharedData.SharedInstans.getLanguage() == "en" {
+            if revealViewController() != nil {
+                btnSideMenue.target = revealViewController()
+                
+                btnSideMenue.action = #selector(SWRevealViewController.rightRevealToggle(_:))
+                revealViewController()?.rightViewRevealWidth =  view.frame.width * 0.75
+                revealViewController()?.rearViewRevealWidth = view.frame.width * 0.25
+                view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
+            }
+        }else{
+            if revealViewController() != nil {
+                btnBack.target = revealViewController()
+                
+                btnBack.action = #selector(SWRevealViewController.lefttRevealToggle(_:))
+                revealViewController()?.rightViewRevealWidth =  view.frame.width * 0.75
+                revealViewController()?.rearViewRevealWidth = view.frame.width * 0.25
+                view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
+                
+            }
         }
     }
 
@@ -95,6 +117,7 @@ class NotificationVC: UIViewController , UITableViewDelegate , UITableViewDataSo
         cell.lblHeader.text = Notifications[indexPath.row]._msg_header
         cell.lblMessage.text = Notifications[indexPath.row]._msg_body
         cell.lblTime.text = Notifications[indexPath.row]._time
+        cell.imgNotification.loadimageUsingUrlString(url: Notifications[indexPath.row]._icon)
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -109,7 +132,16 @@ class NotificationVC: UIViewController , UITableViewDelegate , UITableViewDataSo
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 100
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return cellSpacingHeight
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
     }
 
 }
@@ -129,15 +161,18 @@ extension NotificationVC : HttpHelperDelegate {
                 for json in data{
                     let obj = NotificationModelClass(
                         id: json["id"].stringValue,
-                        type: json["id"].stringValue,
-                        msg_header: json["id"].stringValue,
-                        msg_body: json["id"].stringValue,
-                        time: json["id"].stringValue,
-                        icon: json["id"].stringValue,
-                        request_id: json["id"].stringValue,
-                        read_status: json["id"].stringValue
+                        type: json["type"].stringValue,
+                        msg_header: json["msg_header"].stringValue,
+                        msg_body: json["msg_body"].stringValue,
+                        time: json["time"].stringValue,
+                        icon: json["icon"].stringValue,
+                        request_id: json["request_id"].stringValue,
+                        read_status: json["read_status"].stringValue
                         )
                     Notifications.append(obj)
+                }
+                if Notifications.count == 0 {
+                    imgAlarm.image = UIImage(named: "no-alert")
                 }
                 lblNotificationNum.text = "لديك \(UnreadNum.stringValue) رساله غير مقروءة"
                 tblNotification.reloadData()

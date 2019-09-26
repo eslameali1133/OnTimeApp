@@ -12,6 +12,7 @@ var isSideMenueHelp = false
 class HelpMethodVC: UIViewController {
     @IBOutlet weak var btnArrow: UIButton!
     @IBOutlet weak var btnSideMenue: UIBarButtonItem!
+    @IBOutlet weak var bttnArrow: UIBarButtonItem!
     override func viewDidLoad() {
          super.viewDidLoad()
         if isSideMenueHelp == true{
@@ -19,7 +20,13 @@ class HelpMethodVC: UIViewController {
             isSideMenueHelp = false
         }
         sideMenue()
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20.0)!]
+        let attributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20)!]
+        UINavigationBar.appearance().titleTextAttributes = attributes
+        if  SharedData.SharedInstans.getLanguage() != "en" {
+            btnSideMenue.image = UIImage(named: "arrow-in-circle-point-to-up")
+            bttnArrow.image = UIImage(named: "Group 1")
+        }
+        
 //setupSideMenu()
         // Do any additional setup after loading the view.
     }
@@ -37,15 +44,28 @@ class HelpMethodVC: UIViewController {
     }
     
     func sideMenue(){
-        if revealViewController() != nil {
-            btnSideMenue.target = revealViewController()
-            btnSideMenue.action = #selector(SWRevealViewController.rightRevealToggle(_:))
-            revealViewController()?.rightViewRevealWidth =  view.frame.width * 0.75
-            revealViewController()?.rearViewRevealWidth = view.frame.width * 0.25
-            view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
+        
+        if  SharedData.SharedInstans.getLanguage() == "en" {
+            if revealViewController() != nil {
+                btnSideMenue.target = revealViewController()
+                
+                btnSideMenue.action = #selector(SWRevealViewController.rightRevealToggle(_:))
+                revealViewController()?.rightViewRevealWidth =  view.frame.width * 0.75
+                revealViewController()?.rearViewRevealWidth = view.frame.width * 0.25
+                view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
+            }
+        }else{
+            if revealViewController() != nil {
+                bttnArrow.target = revealViewController()
+                
+                bttnArrow.action = #selector(SWRevealViewController.lefttRevealToggle(_:))
+                revealViewController()?.rightViewRevealWidth =  view.frame.width * 0.75
+                revealViewController()?.rearViewRevealWidth = view.frame.width * 0.25
+                view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
+                
+            }
         }
     }
-
     
  @IBAction func DismissView(_ sender: Any) {
     

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SwiftyJSON
 class AaqdInfoVC: UIViewController {
 var imgChecked1 = false
     var imgChecked2 = false

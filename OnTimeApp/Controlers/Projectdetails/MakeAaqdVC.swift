@@ -27,7 +27,8 @@ class MakeAaqdVC: UIViewController , UIImagePickerControllerDelegate ,UINavigati
        // http.delegate = self
         SetupUploadImage()
         
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20.0)!]
+        let attributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20)!]
+        UINavigationBar.appearance().titleTextAttributes = attributes
         // Do any additional setup after loading the view.
     }
     
@@ -178,7 +179,7 @@ class MakeAaqdVC: UIViewController , UIImagePickerControllerDelegate ,UINavigati
                     upload.uploadProgress(closure: { (progress) in
                         print(progress)
                     })
-                    upload.responseJSON { response in
+                    upload.responseString { response in
                         // If the request to get activities is succesfull, store them
                         if response.result.isSuccess{
                             print(response.debugDescription)

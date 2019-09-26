@@ -17,6 +17,7 @@ class ProfilePointsVC: UIViewController {
     @IBOutlet weak var lblPhone: UILabel!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var btnSideMenue: UIBarButtonItem!
+    @IBOutlet weak var bttnArrow: UIBarButtonItem!
     @IBOutlet weak var lblPointPercentage: UILabel!
     @IBOutlet weak var lblProjects: UILabel!
     @IBOutlet weak var lblPaid: UILabel!
@@ -36,8 +37,13 @@ class ProfilePointsVC: UIViewController {
         sideMenue()
        // SetData()
         
+        if  SharedData.SharedInstans.getLanguage() != "en" {
+            btnSideMenue.image = UIImage(named: "arrow-in-circle-point-to-up")
+            bttnArrow.image = UIImage(named: "Group 1")
+        }
         
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20.0)!]
+        let attributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20)!]
+        UINavigationBar.appearance().titleTextAttributes = attributes
         http.delegate = self
         // Do any additional setup after loading the view.
     }
@@ -56,12 +62,26 @@ class ProfilePointsVC: UIViewController {
     }
 
     func sideMenue(){
-        if revealViewController() != nil {
-            btnSideMenue.target = revealViewController()
-            btnSideMenue.action = #selector(SWRevealViewController.rightRevealToggle(_:))
-            revealViewController()?.rightViewRevealWidth =  view.frame.width * 0.75
-            revealViewController()?.rearViewRevealWidth = view.frame.width * 0.25
-            view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
+        
+        if  SharedData.SharedInstans.getLanguage() == "en" {
+            if revealViewController() != nil {
+                btnSideMenue.target = revealViewController()
+                
+                btnSideMenue.action = #selector(SWRevealViewController.rightRevealToggle(_:))
+                revealViewController()?.rightViewRevealWidth =  view.frame.width * 0.75
+                revealViewController()?.rearViewRevealWidth = view.frame.width * 0.25
+                view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
+            }
+        }else{
+            if revealViewController() != nil {
+                bttnArrow.target = revealViewController()
+                
+                bttnArrow.action = #selector(SWRevealViewController.lefttRevealToggle(_:))
+                revealViewController()?.rightViewRevealWidth =  view.frame.width * 0.75
+                revealViewController()?.rearViewRevealWidth = view.frame.width * 0.25
+                view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
+                
+            }
         }
     }
 

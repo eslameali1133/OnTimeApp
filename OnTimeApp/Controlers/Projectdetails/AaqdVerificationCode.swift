@@ -19,7 +19,8 @@ class AaqdVerificationCode: UIViewController {
         SendCode()
         http.delegate = self
         
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20.0)!]
+        let attributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20)!]
+        UINavigationBar.appearance().titleTextAttributes = attributes
         // Do any additional setup after loading the view.
     }
     

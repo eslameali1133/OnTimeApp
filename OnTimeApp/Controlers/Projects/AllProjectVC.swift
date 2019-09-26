@@ -11,6 +11,7 @@ import SwiftyJSON
 var Gallcount = "0"
 class AllProjectVC: UIViewController , UITableViewDataSource , UITableViewDelegate {
     var http = HttpHelper()
+    let cellSpacingHeight: CGFloat = 0
     var HomeRequests = [HomeRequestModelClass]()
     @IBOutlet weak var tblProjects: UITableView!
     override func viewDidLoad() {
@@ -49,12 +50,22 @@ class AllProjectVC: UIViewController , UITableViewDataSource , UITableViewDelega
         let storyBoard : UIStoryboard = UIStoryboard(name: "ProjectDetails", bundle:nil)
         let cont = storyBoard.instantiateViewController(withIdentifier: "ProjectMessagesVC")as! ProjectMessagesVC
         cont.RequestID = HomeRequests[indexPath.row]._id
+        //cont.HasChat = false
         self.present(cont, animated: true, completion: nil)
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 75
+        return 100
+    }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return cellSpacingHeight
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
     }
     
     // all - under_preview - in_progress - finished
@@ -101,7 +112,7 @@ extension AllProjectVC : HttpHelperDelegate {
                     )
                     HomeRequests.append(obj)
                 }
-                HomeRequests.reverse()
+                //HomeRequests.reverse()
                 tblProjects.reloadData()
                 Gallcount = "\(HomeRequests.count)"; AppCommon.sharedInstance.dismissLoader(self.view);
                 print(Gallcount)
@@ -123,4 +134,21 @@ extension AllProjectVC : HttpHelperDelegate {
         
     }
     
+}
+class ShadowView: UIView {
+    override var bounds: CGRect {
+        didSet {
+            setupShadow()
+        }
+    }
+    
+    private func setupShadow() {
+        //self.layer.cornerRadius = 8
+        self.layer.shadowOffset = CGSize(width: 0, height: 3)
+        self.layer.shadowRadius = 3
+        self.layer.shadowOpacity = 0.3
+        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: .allCorners, cornerRadii: CGSize(width: 8, height: 8)).cgPath
+        self.layer.shouldRasterize = true
+        self.layer.rasterizationScale = UIScreen.main.scale
+    }
 }

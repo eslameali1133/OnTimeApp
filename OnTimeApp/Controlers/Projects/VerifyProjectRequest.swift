@@ -44,7 +44,9 @@ print(departmentID + serviceID)
         self.view.addSubview(popupRequest)
         popupRequest.isHidden = true
         
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20.0)!]
+        let attributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20)!]
+        UINavigationBar.appearance().titleTextAttributes = attributes
+        //self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20.0)!]
         // Do any additional setup after loading the view.
     }
     
@@ -65,12 +67,16 @@ print(departmentID + serviceID)
             imgPolicies.image = UIImage(named: "check")
             policiesChecked = true
         }else{
-            imgPolicies.image = UIImage(named: "check")
+            imgPolicies.image = UIImage(named: "check (1)")
             policiesChecked = false
         }
     }
     @IBAction func btnVerify(_ sender: Any) {
+        if policiesChecked == true{
         AddRequest()
+        }else{
+            Loader.showError(message: "يجب الموافقة علي الشروط والاحكام الخحاصه ب on time")
+        }
     }
     func SelectedAddOnes(){
     

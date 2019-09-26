@@ -14,7 +14,7 @@ var hasContract = false
 var hasPrice = false
 var isEdit = false
 var RequestID = ""
-class NewProjectRequest: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource , UIDocumentMenuDelegate, UIDocumentPickerDelegate, UIImagePickerControllerDelegate , UINavigationControllerDelegate , UITextViewDelegate{
+class NewProjectRequest: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource , UIDocumentMenuDelegate, UIDocumentPickerDelegate, UIImagePickerControllerDelegate , UINavigationControllerDelegate , UITextViewDelegate,UIScrollViewDelegate{
 var RequestServices : RequestNServicesModelClass!
     var attachment : [UIImage] = []
     var AttachmentFiles : [Any] = []
@@ -47,11 +47,13 @@ var RequestServices : RequestNServicesModelClass!
     @IBOutlet weak var imgQueikService: UIImageView!
     @IBOutlet weak var imgTranslation: UIImageView!
     @IBOutlet weak var imgScinario: UIImageView!
+    @IBOutlet weak var scrollView: UIScrollView!
     var Price = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         http.delegate = self
         txtdesc.delegate = self
+        scrollView.delegate = self
         txtdesc.text = "وصف المشروع"
         txtdesc.textColor = UIColor.lightGray
         addOnesCV.delegate = self
@@ -59,9 +61,10 @@ var RequestServices : RequestNServicesModelClass!
         GetServices(ServicesID: service_id)
         SetupActionSheet()
      
+        let attributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20)!]
+        UINavigationBar.appearance().titleTextAttributes = attributes
         
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20.0)!]
-        // Do any additional setup after loading the view.
+                // Do any additional setup after loading the view.
     }
     
     @IBAction func btnNext(_ sender: Any) {
@@ -261,6 +264,11 @@ var RequestServices : RequestNServicesModelClass!
         
         
         self.present(importMenu, animated: true, completion: nil)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let verticalIndicator = scrollView.subviews.last as? UIImageView
+        verticalIndicator?.backgroundColor = UIColor.green
     }
     
     func EditRequest (){
@@ -568,14 +576,14 @@ extension NewProjectRequest : HttpHelperDelegate {
                 
                 print(data["has_time"].stringValue)
                 if data["has_time"].stringValue == "1" {
-                    self.lbl_Time.text = "\(data["average_time"].stringValue) d "
+                    self.lbl_Time.text = "\(data["average_time"].stringValue) أيام "
                 }
                 else{
                        self.lbl_Time.text = "بعد اعتماد الطلب"
                 }
                 
                 if data["has_price"].stringValue == "1" {
-                    self.lbl_Price.text = "\(data["price"].stringValue) "
+                    self.lbl_Price.text = "\(data["price"].stringValue) ر.س"
                     self.Price = data["price"].intValue
                     hasPrice = true
                 }

@@ -184,6 +184,7 @@ open class SocketIOClient : NSObject, SocketIOClientSpec, SocketEngineClient, So
         status = .connecting
 
         if engine == nil || forceNew {
+            print("addEngine")
             addEngine()
         }
 

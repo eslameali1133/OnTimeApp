@@ -8,7 +8,9 @@
 import UIKit
 import SideMenu
 import SwiftyJSON
+import SocketIO
 class HomeProjectVC: AllignLocalizerVC {
+    
     var http = HttpHelper()
     var All = [HomeRequestModelClass]()
     var Done = [HomeRequestModelClass]()
@@ -26,6 +28,7 @@ class HomeProjectVC: AllignLocalizerVC {
     @IBOutlet weak var lblAllcount: UILabel!
     @IBOutlet weak var lblProfileName: UILabel!
     @IBOutlet weak var btnSideMenue: UIBarButtonItem!
+    @IBOutlet weak var btnnotification: UIBarButtonItem!
     @IBOutlet weak var  imgProfile: customImageView!{
     didSet{
     imgProfile.layer.cornerRadius =  imgProfile.frame.width / 2
@@ -54,8 +57,23 @@ class HomeProjectVC: AllignLocalizerVC {
     @IBOutlet weak var lblContinuePro: UILabel!
     @IBOutlet weak var lblRevisedPro: UILabel!
     @IBOutlet weak var lblAllPro: UILabel!
+    @IBOutlet weak var ContainerView: UIView!
+    @IBOutlet weak var NewProjectView: UIView!
+    @IBOutlet weak var tblview: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if  SharedData.SharedInstans.getLanguage() != "en" {
+            btnSideMenue.image = UIImage(named: "Group 45-2")
+            btnnotification.image = UIImage(named: "Group 1")
+        }
+        
+       SocketManger.shared.connect()
+        SocketManger.shared.onConnect {
+            
+        }
+        
         GetAllRequests()
         GetDoneRequests()
         GetRevisedRequests()
@@ -264,7 +282,22 @@ class HomeProjectVC: AllignLocalizerVC {
         http.requestWithBody(url: APIConstants.GetRequestDetails, method: .post, parameters: params, tag: 9, header: nil)
     }
     
+    @IBAction func btnnotification(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Projects", bundle:nil)
+        let cont = storyBoard.instantiateViewController(withIdentifier: "NotificationNAV")
+        self.revealViewController()?.pushFrontViewController(cont, animated: true)
+    }
+    
+    @IBAction func btnside(_ sender: Any) {
+        
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Projects", bundle:nil)
+        let cont = storyBoard.instantiateViewController(withIdentifier: "NotificationNAV")
+        self.revealViewController()?.pushFrontViewController(cont, animated: true)
+    }
+    
     func sideMenue(){
+
+        if  SharedData.SharedInstans.getLanguage() == "en" {
         if revealViewController() != nil {
             btnSideMenue.target = revealViewController()
             
@@ -273,6 +306,17 @@ class HomeProjectVC: AllignLocalizerVC {
             revealViewController()?.rearViewRevealWidth = view.frame.width * 0.25
             view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
         }
+        }else{
+            if revealViewController() != nil {
+                btnnotification.target = revealViewController()
+                
+                btnnotification.action = #selector(SWRevealViewController.lefttRevealToggle(_:))
+                revealViewController()?.rightViewRevealWidth =  view.frame.width * 0.75
+                revealViewController()?.rearViewRevealWidth = view.frame.width * 0.25
+                view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
+
+        }
+    }
     }
    
     func GetAllRequests(){
@@ -342,9 +386,14 @@ extension HomeProjectVC : HttpHelperDelegate {
                     )
                     All.append(obj)
                 }
-                lblAllcount.text = "\(All.count)"; AppCommon.sharedInstance.dismissLoader(self.view);
-
-                
+                if All.count == 0 {
+                    tblview.isHidden = true
+                    NewProjectView.isHidden = false
+                }else{
+                    tblview.isHidden = false
+                    NewProjectView.isHidden = true
+                }
+               lblAllcount.text = "\(All.count)"; AppCommon.sharedInstance.dismissLoader(self.view);
             } else {
                 Loader.showError(message: message.stringValue )
             }

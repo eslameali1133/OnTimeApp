@@ -20,7 +20,9 @@ class ProjectTypeVC: UIViewController , UICollectionViewDelegate , UICollectionV
         collectionImg.delegate = self
         collectionImg.dataSource = self
         
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20.0)!]
+        //self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20.0)!]
+        let attributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20)!]
+        UINavigationBar.appearance().titleTextAttributes = attributes
         // Do any additional setup after loading the view.
     }
     
@@ -33,9 +35,14 @@ class ProjectTypeVC: UIViewController , UICollectionViewDelegate , UICollectionV
     }
     @IBAction func btnNextSlide(_ sender: Any) {
     
-            if let coll  = collectionImg {
-                for cell in coll.visibleCells {
-                    let indexPath: IndexPath? = coll.indexPath(for: cell)
+        print(Departments.count)
+        let visibleRect = CGRect(origin: collectionImg.contentOffset, size: collectionImg.bounds.size)
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        let visibleIndexPath = collectionImg.indexPathForItem(at: visiblePoint)
+        if let coll  = collectionImg {
+           //     for cell in coll.visibleCells {
+                  //  let indexPath: IndexPath? = //coll.indexPath(for: cell)
+            let indexPath: IndexPath? = visibleIndexPath
                     if ((indexPath?.row)! < Departments.count - 1){
                         let indexPath1: IndexPath?
                         indexPath1 = IndexPath.init(row: (indexPath?.row)! + 1, section: (indexPath?.section)!)
@@ -48,13 +55,17 @@ class ProjectTypeVC: UIViewController , UICollectionViewDelegate , UICollectionV
                         coll.scrollToItem(at: indexPath1!, at: .left, animated: true)
                     }
                     
-                }
+           //     }
             }
         }
     @IBAction func btnPrevSlide(_ sender: Any) {
+        let visibleRect = CGRect(origin: collectionImg.contentOffset, size: collectionImg.bounds.size)
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        let visibleIndexPath = collectionImg.indexPathForItem(at: visiblePoint)
         if let coll  = collectionImg {
-            for cell in coll.visibleCells {
-                let indexPath: IndexPath? = coll.indexPath(for: cell)
+            //     for cell in coll.visibleCells {
+            //  let indexPath: IndexPath? = //coll.indexPath(for: cell)
+            let indexPath: IndexPath? = visibleIndexPath
                 if ((indexPath?.row)! > 0){
                     let indexPath1: IndexPath?
                     indexPath1 = IndexPath.init(row: (indexPath?.row)! - 1, section: (indexPath?.section)!)
@@ -67,8 +78,7 @@ class ProjectTypeVC: UIViewController , UICollectionViewDelegate , UICollectionV
                     coll.scrollToItem(at: indexPath1!, at: .right, animated: true)
                 }
                 
-            }
-        }
+                   }
     }
     @IBAction func DismissView(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)

@@ -49,6 +49,9 @@ class SignUpVC: UIViewController {
         btnSignUp.layer.shadowOpacity = 1.0
         btnSignUp.layer.shadowRadius = 3.0
         btnSignUp.layer.masksToBounds = false
+        let attributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20)!]
+        UINavigationBar.appearance().titleTextAttributes = attributes
+        
         // Do any additional setup after loading the view.
     }
     

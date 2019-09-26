@@ -10,8 +10,19 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import AVFoundation
+import MobileCoreServices
 class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentPickerDelegate, UIImagePickerControllerDelegate , UINavigationControllerDelegate{
 
+    var Socket : SocketModelClass!
+    var HasChat = true
+    let rest = RestManager()
+    var VideoData : Data!
+    var videoUrl : URL!
+    var picker : MediaPickerController!
+    var ContractStatus = ""
+    var Selectedimg : UIImage!
+    var FileType = "no_file" //no_file
+    var messagesList = [MessageModelClass]()
     var recorder: AVAudioRecorder!
     var player: AVAudioPlayer!
     var meterTimer: Timer!
@@ -32,25 +43,44 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
     @IBOutlet weak var lblStatus: UILabel!
     @IBOutlet weak var lblText: UILabel!
     @IBOutlet weak var lblTimer: UILabel!
+    @IBOutlet weak var txtMessage: UITextField!
     @IBOutlet var popupRecord: UIView!
     @IBOutlet var popupContractor: UIView!
+    @IBOutlet weak var txtimgChat: UITextField!
     @IBOutlet var popRecorded: UIView!
-     var ISComefromNotification = false
+    @IBOutlet var popupImgChat: UIView!
+    @IBOutlet weak var ContractView: UIView!
+    @IBOutlet weak var ChatView: UITableView!
+    var ISComefromNotification = false
+    @IBOutlet weak var tblChat: UITableView!
+    @IBOutlet weak var imgChat: customImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        SocketManger.shared.handleNewMessage { (message) in
+            print(message)
+//            if self.SelectedPlayer.user_id == message._from {
+//
+//                self.messages.append(message)
+//                self.tableView.reloadData()
+//                self.scrollToBottomOfChat()
+            }
         lblTimer.text = "Tab To Record"
         http.delegate = self
-        GetContracttext()
         SetupActionSheet()
          popupContractor.frame = CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y, width: self.view.frame.width, height: self.view.frame.height)
         self.view.addSubview(popupContractor)
+        
+        popupImgChat.frame = CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y, width: self.view.frame.width, height: self.view.frame.height)
+        self.view.addSubview(popupImgChat)
         
         popRecorded.frame = CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y, width: self.view.frame.width, height: self.view.frame.height)
         self.view.addSubview(popRecorded)
         popupContractor.isHidden = true
         popRecorded.isHidden = true
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20.0)!]
+        popupImgChat.isHidden = true
+        let attributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20)!]
+        UINavigationBar.appearance().titleTextAttributes = attributes
         
         
         //Record
@@ -58,12 +88,31 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
         setSessionPlayback()
         askForNotifications()
         checkHeadphones()
-        
+        if HasChat == true {
+        GetMessages()
+        }
+        else{
+            ChatView.isHidden = true
+            ContractView.isHidden = false
+            HasChat = true
+        }
+        tblChat.dataSource = self
+        tblChat.delegate = self
         
        
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func cancelImgChat(_ sender: Any) {
+        popupImgChat.isHidden = true
+        FileType = "no_file"
+    }
+    @IBAction func btnSendImg(_ sender: Any) {
+        SendMessage()
+    }
+    @IBAction func btnSendMessage(_ sender: Any) {
+        SendMessage()
+    }
     @objc func updateAudioMeter(_ timer: Timer) {
         
         if let recorder = self.recorder {
@@ -456,7 +505,6 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
     
     
     
-    
     @IBAction func btnStartRecord(_ sender: Any) {
         if isRecord == true {
             Record()
@@ -542,6 +590,257 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
         http.requestWithBody(url: APIConstants.GetRequestDetails, method: .post, parameters: params, tag: 2, header: nil)
     }
     
+    func SendMessage(){
+    //no_file - voice - video - img - file - url
+        let AccessToken = AppCommon.sharedInstance.getJSON("Profiledata")["token"].stringValue
+        print(AccessToken)
+        print(RequestID)
+        if FileType == "no_file"{
+            let params = [
+                      "token": AccessToken,
+                      "request_id" : RequestID,
+                      "msg_text" : txtMessage.text!,
+                      "file_type" : FileType
+                     ] as [String: Any]
+       
+            Alamofire.upload(
+                multipartFormData: { multipartFormData in
+
+                    for (key,value) in params {
+                        if let value = value as? String {
+                            multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+                        }
+                    }
+                    
+            },to: "https://appontime.net/mobile/send_chat_msg.php",
+              method: .post, headers: nil,
+              encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .success(let upload, _, _):
+                    
+                    upload.uploadProgress(closure: { (progress) in
+                        print(progress)
+                    })
+                    upload.responseString { response in
+                        debugPrint(response)
+                        // If the request to get activities is succesfull, store them
+                        
+                        print(response.result)
+                        print("Response : ", response)
+                        
+                        if response.result.isSuccess
+                        {
+                            //AppCommon.sharedInstance.dismissLoader(self.view)
+                            let json = JSON(response.data as Any)
+                            print(json)
+                            let status =  json["status"]
+                            let message = json["msg"]
+                            let Jsocket = json["socket"]
+                            if status.stringValue == "0" {
+                                self.tblChat.reloadData()
+                                self.txtMessage.text = ""
+                                self.Socket = SocketModelClass(
+                                    user_id: Jsocket["user_id"].stringValue,
+                                    room_id: Jsocket["room_id"].stringValue,
+                                    time: Jsocket["time"].stringValue,
+                                    file_type: Jsocket["file_type"].stringValue,
+                                    msg_type: Jsocket["msg_type"].stringValue,
+                                    msg_text: Jsocket["msg_text"].stringValue,
+                                    file_url: Jsocket["file_url"].stringValue,
+                                    request_id: Jsocket["request_id"].stringValue)
+                            }
+                            SocketManger.shared.sendObject(data: self.Socket)
+                            
+                            
+                        }
+                    }
+                case .failure(let encodingError):
+                    print("FALLE ------------")
+                    print(encodingError)
+                    AppCommon.sharedInstance.dismissLoader(self.view)
+                }
+            }
+            )
+            
+        }else if FileType == "img"{
+            let imgdata = self.imgChat.image!.jpegData(compressionQuality: 0.5)
+            print(imgdata!)
+            let params = ["token": AccessToken,
+                          "request_id" : RequestID,
+                          "msg_text" : txtimgChat.text!,
+                          "file_type" : FileType,
+                          "file" : imgdata!,
+                          ] as [String: Any]
+            Alamofire.upload(
+                multipartFormData: { multipartFormData in
+                    multipartFormData.append(imgdata!, withName: "file", fileName: "file\(arc4random_uniform(100))"+".jpeg", mimeType: "image/jpg")
+                    
+                    for (key,value) in params {
+                        if let value = value as? String {
+                            multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+                        }
+                    }
+                    
+            },to: "https://appontime.net/mobile/send_chat_msg.php",
+              method: .post, headers: nil,
+              encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .success(let upload, _, _):
+                    
+                    upload.uploadProgress(closure: { (progress) in
+                        print(progress)
+                    })
+                    upload.responseString { response in
+                        debugPrint(response)
+                        // If the request to get activities is succesfull, store them
+                        
+                        print(response.result)
+                        print("Response : ", response)
+                        
+                        if response.result.isSuccess
+                        {
+                            //AppCommon.sharedInstance.dismissLoader(self.view)
+                            let json = JSON(response.data as Any)
+                            print(json)
+                            let status =  json["status"]
+                            let message = json["msg"]
+                            let socket = json["socket"]
+                            if status.stringValue == "0" {
+                            self.popupImgChat.isHidden = true
+                              self.tblChat.reloadData()
+                                self.txtimgChat.text = ""
+                                self.FileType = "no_file"
+                                                            }
+                            
+                        }
+                    }
+                case .failure(let encodingError):
+                    print("FALLE ------------")
+                    print(encodingError)
+                    AppCommon.sharedInstance.dismissLoader(self.view)
+                }
+            }
+            )
+            
+        }else if FileType == "video"{
+            print(VideoData!)
+            let params = ["token": AccessToken,
+                          "request_id" : RequestID,
+                          "msg_text" : txtimgChat.text!,
+                          "file_type" : FileType,
+                          "file" : VideoData!,
+                          ] as [String: Any]
+            Alamofire.upload(
+                multipartFormData: { multipartFormData in
+                    multipartFormData.append(self.VideoData!, withName: "file", fileName: "file\(arc4random_uniform(100))"+".mp4", mimeType: "video/mp4")
+                    
+                    for (key,value) in params {
+                        if let value = value as? String {
+                            multipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+                        }
+                    }
+                    
+            },to: "https://appontime.net/mobile/send_chat_msg.php",
+              method: .post, headers: nil,
+              encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .success(let upload, _, _):
+                    
+                    upload.uploadProgress(closure: { (progress) in
+                        print(progress)
+                    })
+                    upload.responseString { response in
+                        debugPrint(response)
+                        // If the request to get activities is succesfull, store them
+                        
+                        print(response.result)
+                        print("Response : ", response)
+                        
+                        if response.result.isSuccess
+                        {
+                            //AppCommon.sharedInstance.dismissLoader(self.view)
+                            let json = JSON(response.data as Any)
+                            print(json)
+                            let status =  json["status"]
+                            let message = json["msg"]
+                            let socket = json["socket"]
+                            if status.stringValue == "0" {
+                                self.popupImgChat.isHidden = true
+                                self.tblChat.reloadData()
+                                self.txtimgChat.text = ""
+                                self.FileType = "no_file"
+                            }
+                            
+                        }
+                    }
+                case .failure(let encodingError):
+                    print("FALLE ------------")
+                    print(encodingError)
+                    AppCommon.sharedInstance.dismissLoader(self.view)
+                }
+            }
+            )
+            
+        }
+        else if FileType == "file"{
+            
+                let fileURL = Bundle.main.url(forResource: "sampleText", withExtension: "txt")
+            print(fileURL!)
+                let fileInfo = RestManager.FileInfo(withFileURL: fileURL, filename: "sampleText.txt", name: "uploadedFile", mimetype: "text/plain")
+                
+                rest.httpBodyParameters.add(value: AccessToken, forKey: "token")
+                rest.httpBodyParameters.add(value: RequestID, forKey: "request_id")
+            rest.httpBodyParameters.add(value: txtMessage.text!, forKey: "msg_text")
+            rest.httpBodyParameters.add(value: FileType, forKey: "file_type")
+            rest.httpBodyParameters.add(value: fileInfo, forKey: "file")
+            rest.httpBodyParameters.add(value: fileURL!, forKey: "file_url")
+                upload(files: [fileInfo], toURL: URL(string: "https://appontime.net/mobile/send_chat_msg.php"))
+            
+            
+        
+            
+        }
+        
+    }
+    
+    
+    func upload(files: [RestManager.FileInfo], toURL url: URL?) {
+        if let uploadURL = url {
+            rest.upload(files: files, toURL: uploadURL, withHttpMethod: .post) { (results, failedFilesList) in
+                print("HTTP status code:", results.response?.httpStatusCode ?? 0)
+                
+                if let error = results.error {
+                    print(error)
+                }
+                
+                if let data = results.data {
+                    if let toDictionary = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) {
+                        print(toDictionary)
+                    }
+                }
+                
+                if let failedFiles = failedFilesList {
+                    for file in failedFiles {
+                        print(file)
+                    }
+                }
+            }
+        }
+    }
+    
+    func GetMessages(){
+   
+        messagesList.removeAll()
+        let AccessToken = AppCommon.sharedInstance.getJSON("Profiledata")["token"].stringValue
+        print(AccessToken)
+        print(RequestID)
+        let params = ["token": AccessToken,
+                      "request_id" : RequestID ] as [String: Any]
+        //AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
+        http.requestWithBody(url: APIConstants.GetMessages, method: .post, parameters: params, tag: 4, header: nil)
+    
+    }
+    
     func GetContracttext(){
     print(RequestID)
         let AccessToken = AppCommon.sharedInstance.getJSON("Profiledata")["token"].stringValue
@@ -576,13 +875,14 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
         let Gerall = UIAlertAction(title: "المعرض", style: UIAlertAction.Style.default, handler: { (action) in
             self.openGalleryImagePicker()
         })
+
         
         let Docs = UIAlertAction(title: "الملفات", style: UIAlertAction.Style.default, handler: { (action) in
             self.openDcumentPicker()
         })
-        let Map = UIAlertAction(title: "الموقع", style: UIAlertAction.Style.default, handler: { (action) in
-            self.openGalleryImagePicker()
-        })
+//        let Map = UIAlertAction(title: "الموقع", style: UIAlertAction.Style.default, handler: { (action) in
+//            self.openGalleryImagePicker()
+//        })
         
         let Cancel = UIAlertAction(title: AppCommon.sharedInstance.localization("cancel"), style: UIAlertAction.Style.cancel, handler: { (action) in
             //
@@ -591,14 +891,14 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
         self.AlertController.addAction(Cam)
         self.AlertController.addAction(Gerall)
         self.AlertController.addAction(Docs)
-        self.AlertController.addAction(Map)
+        //self.AlertController.addAction(Map)
         self.AlertController.addAction(Cancel)
     }
     
     // Delegate Method for UIDocumentMenuDelegate.
     func documentMenu(_ documentMenu: UIDocumentMenuViewController, didPickDocumentPicker documentPicker: UIDocumentPickerViewController) {
         documentPicker.delegate = self
-        self.present(documentPicker, animated: true, completion: nil)
+        present(documentPicker, animated: true, completion: nil)
     }
     
     // Delegate Method for UIDocumentPickerDelegate.
@@ -642,10 +942,15 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
             print("Unknown")
         }
         
+//        guard let myURL = urls.first else {
+//            return
+//        }
+//        print("import result : \(myURL)")
+//
     }
     // Method to handle cancel action.
     func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
-        //        dismiss(animated: true, completion: nil)
+                dismiss(animated: true, completion: nil)
     }
     
     func openDcumentPicker() {
@@ -660,6 +965,8 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
         //        let aviMovie = String(kUTTypeAVIMovie)
         let importMenu = UIDocumentMenuViewController(documentTypes: [pdf, docs, number, spreadsheet], in: UIDocumentPickerMode.import)
         importMenu.delegate = self
+        importMenu.modalPresentationStyle = .formSheet
+
         
         //        if Helper.isDeviceiPad() {
         //
@@ -674,12 +981,29 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
     
     func openGalleryImagePicker() {
         
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        picker.allowsEditing = false
-        picker.sourceType = .photoLibrary
-        picker.modalPresentationStyle = .fullScreen
-        self.present(picker, animated: true)
+        
+        self.picker = MediaPickerController(type: .imageAndVideo, presentingViewController: self)
+        self.picker.delegate = self
+        self.picker.show()
+        
+//        let picker = UIImagePickerController()
+//        picker.delegate = self
+//        picker.allowsEditing = false
+//        picker.sourceType = .photoLibrary
+//        //picker.mediaTypes = ["public.image", "public.movie"]
+//        picker.modalPresentationStyle = .fullScreen
+//        self.present(picker, animated: true)
+    }
+    
+    func openVideoPicker(){
+        func showImagePicker(){
+            let picker = UIImagePickerController()
+            picker.delegate = self
+           // picker.mediaTypes = [kUTTypeMovie as String]
+            self.present(picker, animated: true, completion: nil)
+        }
+        
+        
     }
     
     func openCameraImagePicker() {
@@ -693,52 +1017,27 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
     }
     
     // MARK: - UIImagePickerControllerDelegate Methods
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [AnyHashable: Any]!) {
-        //        imageProfile.contentMode = .scaleAspectFit
-        print("image: \(image)")
-        dismiss(animated: true, completion: nil)
-    }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        //        let assetPath = info[UIImagePickerControllerReferenceURL] as! URL
-        //        let imgName = assetPath.lastPathComponent
+    func imagePickerController(_ imgpicker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        if #available(iOS 11.0, *) {
-            if let assetPath = info["UIImagePickerControllerImageURL"] as? URL{
-                let imgName = assetPath.lastPathComponent
-                print(imgName)
-                if (assetPath.absoluteString.hasSuffix("jpg")) {
-                    print("jpg")
-                    if let pickedImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
-                        print("image: \(pickedImage)")
-                        
-                    }
-                }else if (assetPath.absoluteString.hasSuffix("jpeg")) {
-                    print("jpeg")
-                    
-                }
-                else if (assetPath.absoluteString.hasSuffix("png")) {
-                    print("png")
-                }
-                else if (assetPath.absoluteString.hasSuffix("gif")) {
-                    print("gif")
-                    
-                }
-                else {
-                    print("Unknown")
-                }
-                
-            }else {
-                if let pickedImage = info["UIImagePickerControllerOriginalImage"] as? UIImage {
-                    //  sendImg.image = pickedImage
-                    let imagePath = URL(fileURLWithPath: "")
-                    
-                }
-            }
-        } else {
-            // Fallback on earlier versions
+        //guard let videoUrl = info[UIImagePickerController.InfoKey.mediaURL] as? URL else {
+//            return
+//        }
+//        do {
+//            let data = try Data(contentsOf: videoUrl, options: .mappedIfSafe)
+//            print(data)
+//            //  here you can see data bytes of selected video, this data object is upload to server by multipartFormData upload
+//        } catch  {
+//        }
+        guard let selectedImage = info[.originalImage] as? UIImage else {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
-        dismiss(animated: true, completion: nil)
+        popupImgChat.isHidden = false
+        popupImgChat.backgroundColor = UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.75)
+        imgChat.image = selectedImage
+        FileType = "img"
+        imgpicker.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -858,6 +1157,55 @@ extension ProjectMessagesVC : HttpHelperDelegate {
             } else {
                 Loader.showError(message: message.stringValue )
             }
+        }else if Tag == 5 {
+            let status =  json["status"]
+            let socket = json["socket"]
+            let message = json["msg"]
+            
+            if status.stringValue == "0" {
+                
+                
+                
+            } else {
+                Loader.showError(message: message.stringValue )
+            }
+        }
+        else if Tag == 4 {
+            let status =  json["status"]
+            let data = json["data"].arrayValue
+            let message = json["msg"]
+            
+            if status.stringValue == "0" {
+                ChatView.isHidden = false
+                ContractView.isHidden = true
+                for json in data{
+                    let obj = MessageModelClass(
+                        id: json["id"].stringValue,
+                        msg_text: json["msg_text"].stringValue,
+                        file_type: json["file_type"].stringValue,
+                        file_url: json["file_url"].stringValue,
+                        time: json["time"].stringValue,
+                        msg_type: json["msg_type"].stringValue,
+                        readed: json["readed"].stringValue
+                    )
+                    //print(obj)
+                    messagesList.append(obj)
+                }
+                tblChat.reloadData()
+                
+                
+            }else if status.stringValue == "217" {
+                GetContracttext()
+                ContractStatus = "Unsigned"
+                ChatView.isHidden = true
+                ContractView.isHidden = false
+            }else if status.stringValue == "218" {
+                ContractStatus = "Unverified"
+                ChatView.isHidden = true
+                ContractView.isHidden = false
+            }else {
+                Loader.showError(message: message.stringValue )
+            }
         }
         
     }
@@ -925,4 +1273,157 @@ extension ProjectMessagesVC: AVAudioPlayerDelegate {
         }
         
     }
+}
+extension ProjectMessagesVC: UITableViewDataSource , UITableViewDelegate {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messagesList.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let message = messagesList[indexPath.row]
+        if message._msg_type == "client_to_team" {
+             //no_file - voice - video - img - url -  file
+            if message._file_type == "img" {
+                let cell = tblChat.dequeueReusableCell(withIdentifier: "outgoingimgcell", for: indexPath) as! outgoingimgcell
+                let messagePic = message._file_url
+                cell.img.loadimageUsingUrlString(url: messagePic)
+                
+                cell.lblTime.text = message._time
+                cell.lblDescription.text = message._msg_text
+                return cell
+            }else if message._file_type == "file" {
+                let cell = tblChat.dequeueReusableCell(withIdentifier: "outgoingfilecell", for: indexPath) as! outgoingfilecell
+//                let messagePic = message.ImagePath
+//                let fileName = message.ImageName!
+//                //                let fileName = messagePic?.replacingOccurrences(of: "\(APIConstants.SERVER_URL)/Images/", with: "")
+//                if let url = URL.init(string: messagePic!) {
+//                    if (url.absoluteString.hasSuffix("docx")) {
+//                        print("docx")
+//                        cell.fileImageExt.image = #imageLiteral(resourceName: "docExt")
+//                        cell.fileNameLabel.text = "\(fileName).docx"
+//                    }
+//                    else if (url.absoluteString.hasSuffix("xls")) {
+//                        print("xls")
+//                        cell.fileImageExt.image = #imageLiteral(resourceName: "xlsExt")
+//                        cell.fileNameLabel.text = "\(fileName).xls"
+//                    }
+//                    else if (url.absoluteString.hasSuffix("txt")) {
+//                        print("txt")
+//                        cell.fileImageExt.image = #imageLiteral(resourceName: "txtsExt")
+//                        cell.fileNameLabel.text = "\(fileName).txt"
+//                    }
+//                    else if (url.absoluteString.hasSuffix("pdf")) {
+//                        print("pdf")
+//                        cell.fileImageExt.image = #imageLiteral(resourceName: "pdfExt")
+//                        cell.fileNameLabel.text = "\(fileName).pdf"
+//                    }
+//                    else if (url.absoluteString.hasSuffix("xlsx")) {
+//                        print("xlsx")
+//                        cell.fileImageExt.image = #imageLiteral(resourceName: "xlsxExt")
+//                        cell.fileNameLabel.text = "\(fileName).xlsx"
+//                    }
+//                    else if (url.absoluteString.hasSuffix("ppt")) {
+//                        print("xlsx")
+//                        cell.fileImageExt.image = #imageLiteral(resourceName: "pptExt")
+//                        cell.fileNameLabel.text = "\(fileName).ppt"
+//                    }
+//                    else {
+//                        print("Unknown")
+//                    }
+//                }
+                //cell.messageTimeLabel.text = message.MessageTime
+                return cell
+            }else if message._file_type == "voice" {
+                let cell = tblChat.dequeueReusableCell(withIdentifier: "outgoingvoicecell", for: indexPath) as! outgoingvoicecell
+                
+                return cell
+            }else if message._file_type == "video" {
+                let cell = tblChat.dequeueReusableCell(withIdentifier: "outgoingvideocell", for: indexPath) as! outgoingvideocell
+                
+                return cell
+            }else if message._file_type == "url" {
+                let cell = tblChat.dequeueReusableCell(withIdentifier: "outgoingurlcell", for: indexPath) as! outgoingurlcell
+                
+                return cell
+            }
+            else {
+                let cell = tblChat.dequeueReusableCell(withIdentifier: "outgoingtxtcell", for: indexPath) as! outgoingtxtcell
+//                DispatchQueue.main.async {
+//                    cell.recevierMessageView.roundCorners([.bottomLeft, .bottomRight, .topLeft], radius: 10)
+//                }
+                cell.lblMessage.text = message._msg_text
+                cell.lblTime.text = message._time
+                return cell
+            }
+            
+        }else {
+            if message._file_type == "img" {
+                let cell = tblChat.dequeueReusableCell(withIdentifier: "incomingimgcell", for: indexPath) as! incomingimgcell
+                let messagePic = message._file_url
+                let trimmedString = messagePic.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed)
+                cell.img.image = #imageLiteral(resourceName: "officePlaceholder")
+                if let url = URL.init(string: trimmedString!) {
+                    cell.img.loadimageUsingUrlString(url: trimmedString!)
+                    
+                    
+                } else{
+                    print("nil")
+                }
+                cell.lblTime.text = message._time
+                cell.lblDescreption.text = message._msg_text
+                return cell
+            }else if message._file_type == "file" {
+                let cell = tblChat.dequeueReusableCell(withIdentifier: "incomingfilecell", for: indexPath) as! incomingfilecell
+                
+                return cell
+            }else if message._file_type == "voice" {
+                let cell = tblChat.dequeueReusableCell(withIdentifier: "incomingvoicecell", for: indexPath) as! incomingvoicecell
+                
+                return cell
+            }else if message._file_type == "video" {
+                let cell = tblChat.dequeueReusableCell(withIdentifier: "incomingvideocell", for: indexPath) as! incomingvideocell
+                
+                return cell
+            }else if message._file_type == "url" {
+                let cell = tblChat.dequeueReusableCell(withIdentifier: "incomingurlcell", for: indexPath) as! incomingurlcell
+                
+                return cell
+            }
+            else {
+                let cell = tblChat.dequeueReusableCell(withIdentifier: "incomimingtxtcell", for: indexPath) as! incomimingtxtcell
+                              //  DispatchQueue.main.async {
+                //                    cell.recevierMessageView.roundCorners([.bottomLeft, .bottomRight, .topLeft], radius: 10)
+                //                }
+                cell.lblMessage.text = message._msg_text
+                cell.lblTime.text = message._time
+                return cell
+            }
+        }
+    }
+}
+extension ProjectMessagesVC: MediaPickerControllerDelegate {
+    
+    func mediaPickerControllerDidPickImage(_ image: UIImage) {
+        //self.statusLabel.text = "Picked Image\nPreview:"
+        popupImgChat.isHidden = false
+        popupImgChat.backgroundColor = UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.75)
+        FileType = "img"
+        self.imgChat.image = image
+    }
+    
+    func mediaPickerControllerDidPickVideo(url: URL, data: Data, thumbnail: UIImage) {
+        //self.statusLabel.text = "Picked Video\nURL in device: \(url.absoluteString)\nThumbnail Preview:"
+        popupImgChat.isHidden = false
+        popupImgChat.backgroundColor = UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.75)
+        FileType = "video"
+        self.imgChat.image = thumbnail
+        self.videoUrl = url
+        self.VideoData = data
+    }
+    
 }

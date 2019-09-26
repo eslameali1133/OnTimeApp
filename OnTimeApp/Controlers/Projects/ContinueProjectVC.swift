@@ -45,11 +45,12 @@ var Gcontinucount = "0"
             let storyBoard : UIStoryboard = UIStoryboard(name: "ProjectDetails", bundle:nil)
             let cont = storyBoard.instantiateViewController(withIdentifier: "ProjectMessagesVC")as! ProjectMessagesVC
             cont.RequestID = HomeRequests[indexPath.row]._id
+            cont.HasChat = true
             self.present(cont, animated: true, completion: nil)
         }
         
         func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return 75
+            return 100
         }
         // all - under_preview - in_progress - finished
         func GetHomeRequests(){
@@ -94,7 +95,7 @@ extension ContinueProjectVC : HttpHelperDelegate {
                     )
                     HomeRequests.append(obj)
                 }
-                HomeRequests.reverse()
+                //HomeRequests.reverse()
                 tblProjects.reloadData()
                 Gcontinucount = "\(HomeRequests.count)"; AppCommon.sharedInstance.dismissLoader(self.view);
                 

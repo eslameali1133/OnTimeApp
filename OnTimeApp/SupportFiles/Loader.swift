@@ -12,12 +12,12 @@ import SVProgressHUD
 final class Loader {
     
     static func setup() {
-//        SVProgressHUD.setDefaultStyle(.light)
-//        SVProgressHUD.setDefaultMaskType(.black)
-//        SVProgressHUD.setForegroundColor(UIColor.nocDark)
-//        SVProgressHUD.setBackgroundColor(UIColor.lightGray)
-//        SVProgressHUD.setMinimumDismissTimeInterval(0.5)
-        SVProgressHUD.setMaximumDismissTimeInterval(1.0)
+        SVProgressHUD.setDefaultStyle(.light)
+        SVProgressHUD.setDefaultMaskType(.black)
+        SVProgressHUD.setForegroundColor(UIColor.nocDark)
+        SVProgressHUD.setBackgroundColor(UIColor.blue)
+        SVProgressHUD.setMinimumDismissTimeInterval(0.5)
+        SVProgressHUD.setMaximumDismissTimeInterval(3)
     }
     
     static func show() {
@@ -33,11 +33,24 @@ final class Loader {
     }
     
     static func showError(message: String) {
-        SVProgressHUD.setMaximumDismissTimeInterval(1.0)
+        SVProgressHUD.setDefaultStyle(.light)
+        SVProgressHUD.setDefaultMaskType(.black)
+        SVProgressHUD.setForegroundColor(UIColor.nocDark)
+        SVProgressHUD.setBackgroundColor(UIColor.yellow)
+        SVProgressHUD.setMinimumDismissTimeInterval(0.5)
+        
+        SVProgressHUD.setMaximumDismissTimeInterval(4.0)
         SVProgressHUD.showError(withStatus: message)
     }
     
     static func showSuccess(message: String) {
+        SVProgressHUD.setDefaultStyle(.light)
+        SVProgressHUD.setDefaultMaskType(.black)
+        SVProgressHUD.setForegroundColor(UIColor.nocDark)
+        SVProgressHUD.setBackgroundColor(UIColor.green)
+        SVProgressHUD.setMinimumDismissTimeInterval(0.5)
+        
+        SVProgressHUD.setMaximumDismissTimeInterval(4.0)
         SVProgressHUD.showSuccess(withStatus: message)
     }
     

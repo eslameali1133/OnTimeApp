@@ -8,7 +8,7 @@
 
 import UIKit
 import SwiftyJSON
-class moreVC: AllignLocalizerVC ,UITableViewDataSource , UITableViewDelegate {
+class moreVC: UIViewController ,UITableViewDataSource , UITableViewDelegate {
 
     @IBOutlet weak var lblProfileName: UILabel!
     @IBOutlet weak var imgProfile: customImageView!{

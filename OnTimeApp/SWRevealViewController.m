@@ -857,6 +857,15 @@ const int FrontViewPositionNone = 0xff;
     [self setFrontViewPosition:toggledFrontViewPosition animated:animated];
 }
 
+- (void)leftRevealToggleAnimated:(BOOL)animated
+{
+    FrontViewPosition toggledFrontViewPosition = FrontViewPositionRight;
+    if (_frontViewPosition >= FrontViewPositionRight)
+        toggledFrontViewPosition = FrontViewPositionRight;
+    
+    [self setFrontViewPosition:toggledFrontViewPosition animated:animated];
+}
+
 
 - (void)setFrontViewPosition:(FrontViewPosition)frontViewPosition
 {
@@ -953,7 +962,10 @@ const int FrontViewPositionNone = 0xff;
 {    
     [self rightRevealToggleAnimated:YES];
 }
-
+- (IBAction)lefttRevealToggle:(id)sender
+{
+    [self rightRevealToggleAnimated:YES];
+}
 
 #pragma mark - UserInteractionEnabling
 

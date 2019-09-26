@@ -21,7 +21,8 @@ var documentInteractionController = UIDocumentInteractionController()
         http.delegate = self
         print(ProjectURL)
         
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20.0)!]
+        let attributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20)!]
+        UINavigationBar.appearance().titleTextAttributes = attributes
         // Do any additional setup after loading the view.
     }
     

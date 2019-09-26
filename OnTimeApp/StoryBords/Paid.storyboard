@@ -2530,6 +2530,7 @@
         <image name="visa-pay-logo-1" width="49" height="15.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yNC-QT-ZPp"/>
+        <segue reference="etT-G3-PXI"/>
+        <segue reference="imu-qh-e3L"/>
     </inferredMetricsTieBreakers>
 </document>

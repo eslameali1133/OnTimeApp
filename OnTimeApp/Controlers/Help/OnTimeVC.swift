@@ -16,10 +16,18 @@ class OnTimeVC: UIViewController {
     var txtInstigram = ""
     var http = HttpHelper()
     @IBOutlet weak var btnSideMenue: UIBarButtonItem!
+    @IBOutlet weak var bttnArrow: UIBarButtonItem!
+    @IBOutlet weak var txtdesc: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20.0)!]
+        if  SharedData.SharedInstans.getLanguage() != "en" {
+            btnSideMenue.image = UIImage(named: "arrow-in-circle-point-to-up")
+            bttnArrow.image = UIImage(named: "Group 1")
+        }
+        
+        let attributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20)!]
+        UINavigationBar.appearance().titleTextAttributes = attributes
         http.delegate = self
         aboutUs()
         sideMenue()
@@ -29,15 +37,15 @@ class OnTimeVC: UIViewController {
     }
     
     @IBAction func btnFaceBook(_ sender: Any) {
-        guard let url = URL(string: "https://www.ontime.sa") else { return }
+        guard let url = URL(string: txtFacebook) else { return }
         UIApplication.shared.open(url)
     }
     @IBAction func btnInstigram(_ sender: Any) {
-        guard let url = URL(string: "https://www.ontime.sa") else { return }
+        guard let url = URL(string: txtInstigram) else { return }
         UIApplication.shared.open(url)
     }
     @IBAction func btnTwitter(_ sender: Any) {
-        guard let url = URL(string: "https://www.ontime.sa") else { return }
+        guard let url = URL(string: txtTwiter) else { return }
         UIApplication.shared.open(url)
     }
     @IBAction func btnSideMenue(_ sender: Any) {
@@ -49,12 +57,26 @@ class OnTimeVC: UIViewController {
     }
     
     func sideMenue(){
-        if revealViewController() != nil {
-            btnSideMenue.target = revealViewController()
-            btnSideMenue.action = #selector(SWRevealViewController.rightRevealToggle(_:))
-            revealViewController()?.rightViewRevealWidth =  view.frame.width * 0.75
-            revealViewController()?.rearViewRevealWidth = view.frame.width * 0.25
-            view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
+        
+        if  SharedData.SharedInstans.getLanguage() == "en" {
+            if revealViewController() != nil {
+                btnSideMenue.target = revealViewController()
+                
+                btnSideMenue.action = #selector(SWRevealViewController.rightRevealToggle(_:))
+                revealViewController()?.rightViewRevealWidth =  view.frame.width * 0.75
+                revealViewController()?.rearViewRevealWidth = view.frame.width * 0.25
+                view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
+            }
+        }else{
+            if revealViewController() != nil {
+                bttnArrow.target = revealViewController()
+                
+                bttnArrow.action = #selector(SWRevealViewController.lefttRevealToggle(_:))
+                revealViewController()?.rightViewRevealWidth =  view.frame.width * 0.75
+                revealViewController()?.rearViewRevealWidth = view.frame.width * 0.25
+                view.addGestureRecognizer((self.revealViewController()?.panGestureRecognizer())!)
+                
+            }
         }
     }
 
@@ -85,7 +107,7 @@ extension OnTimeVC: HttpHelperDelegate {
             let Message = json["msg"]
             let data = json["data"]
             if status.stringValue  == "0" {
-                txtAboutUs = data["who_we_are"].stringValue
+                txtdesc.text = data["who_we_are"].stringValue
                 txtFacebook = data["fb"].stringValue
                 txtTwiter = data["tw"].stringValue
                 txtInstigram = data["ins"].stringValue
