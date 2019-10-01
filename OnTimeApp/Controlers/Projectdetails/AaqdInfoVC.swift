@@ -16,6 +16,7 @@ var imgChecked1 = false
     @IBOutlet weak var AddOnesCV: UICollectionView!
     @IBOutlet weak var ComponentsCV: UICollectionView!
     @IBOutlet weak var tblComponent: UITableView!
+    @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var txtTerms: UITextView!
     @IBOutlet weak var txtDesc: UITextView!
@@ -24,6 +25,9 @@ var imgChecked1 = false
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if  SharedData.SharedInstans.getLanguage() != "en" {
+            btnBack.setImage(UIImage(named: "arrow-in-circle-point-to-up-1") , for: .normal)
+        }
         SetData()
         AddOnesCV.delegate = self
         AddOnesCV.dataSource = self

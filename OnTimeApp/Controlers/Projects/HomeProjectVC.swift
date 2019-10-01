@@ -168,10 +168,10 @@ class HomeProjectVC: AllignLocalizerVC {
         lblRevisedPro.textColor = UIColor.black
         lblContinuePro.textColor = UIColor.black
         
-        AllLine.backgroundColor = UIColor.hexColor(string: "55DBA8")
+        DoneLine.backgroundColor = UIColor.hexColor(string: "55DBA8")
         ReviLine.backgroundColor = UIColor.clear
         continLine.backgroundColor = UIColor.clear
-        DoneLine.backgroundColor = UIColor.clear
+        AllLine.backgroundColor = UIColor.clear
         
     }
     @IBAction func btnAllPro(_ sender: Any) {
@@ -185,10 +185,10 @@ class HomeProjectVC: AllignLocalizerVC {
         lblRevisedPro.textColor = UIColor.black
         lblContinuePro.textColor = UIColor.black
         
-        AllLine.backgroundColor = UIColor.hexColor(string: "55DBA8")
+        DoneLine.backgroundColor = UIColor.hexColor(string: "55DBA8")
         ReviLine.backgroundColor = UIColor.clear
         continLine.backgroundColor = UIColor.clear
-        DoneLine.backgroundColor = UIColor.clear
+        AllLine.backgroundColor = UIColor.clear
         
     }
     @IBAction func btnContinuePro(_ sender: Any) {
@@ -208,8 +208,8 @@ class HomeProjectVC: AllignLocalizerVC {
         lblContinuePro.textColor = UIColor.hexColor(string: "55DBA8")
         
         AllLine.backgroundColor = UIColor.clear
-        ReviLine.backgroundColor = UIColor.clear
-        continLine.backgroundColor = UIColor.hexColor(string: "55DBA8")
+        continLine.backgroundColor = UIColor.clear
+        ReviLine.backgroundColor = UIColor.hexColor(string: "55DBA8")
         DoneLine.backgroundColor = UIColor.clear
         
     }
@@ -229,10 +229,10 @@ class HomeProjectVC: AllignLocalizerVC {
         lblRevisedPro.textColor = UIColor.black
         lblContinuePro.textColor = UIColor.black
         
-        AllLine.backgroundColor = UIColor.clear
+        DoneLine.backgroundColor = UIColor.clear
         ReviLine.backgroundColor = UIColor.clear
         continLine.backgroundColor = UIColor.clear
-        DoneLine.backgroundColor = UIColor.hexColor(string: "55DBA8")
+        AllLine.backgroundColor = UIColor.hexColor(string: "55DBA8")
         
     }
     
@@ -254,8 +254,8 @@ class HomeProjectVC: AllignLocalizerVC {
         lblContinuePro.textColor = UIColor.black
         
         AllLine.backgroundColor = UIColor.clear
-        ReviLine.backgroundColor = UIColor.hexColor(string: "55DBA8")
-        continLine.backgroundColor = UIColor.clear
+        continLine.backgroundColor = UIColor.hexColor(string: "55DBA8")
+        ReviLine.backgroundColor = UIColor.clear
         DoneLine.backgroundColor = UIColor.clear
         
     }
@@ -394,7 +394,13 @@ extension HomeProjectVC : HttpHelperDelegate {
                     NewProjectView.isHidden = true
                 }
                lblAllcount.text = "\(All.count)"; AppCommon.sharedInstance.dismissLoader(self.view);
-            } else {
+            } else if status.stringValue == "500"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+            }else if status.stringValue == "1"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+            }else if status.stringValue == "204"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("un authorized"))
+            }else {
                 Loader.showError(message: message.stringValue )
             }
         }
@@ -428,7 +434,13 @@ extension HomeProjectVC : HttpHelperDelegate {
                 }
                 lblRivscount.text = "\(Revised.count)"; AppCommon.sharedInstance.dismissLoader(self.view);
                 
-            } else {
+            } else if status.stringValue == "500"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+            }else if status.stringValue == "1"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+            }else if status.stringValue == "204"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("un authorized"))
+            }else {
                 Loader.showError(message: message.stringValue )
             }
         }
@@ -463,7 +475,13 @@ extension HomeProjectVC : HttpHelperDelegate {
                 lblContinucount.text = "\(Continue.count)"; AppCommon.sharedInstance.dismissLoader(self.view);
                 
                 
-            } else {
+            } else if status.stringValue == "500"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+            }else if status.stringValue == "1"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+            }else if status.stringValue == "204"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("un authorized"))
+            }else {
                 Loader.showError(message: message.stringValue )
             }
         }
@@ -497,7 +515,13 @@ extension HomeProjectVC : HttpHelperDelegate {
                 }
                 lblDonecount.text = "\(Done.count)"; AppCommon.sharedInstance.dismissLoader(self.view);
                 
-            } else {
+            }else if status.stringValue == "500"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+            }else if status.stringValue == "1"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+            }else if status.stringValue == "204"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("un authorized"))
+            }else {
                 Loader.showError(message: message.stringValue )
             }
         }

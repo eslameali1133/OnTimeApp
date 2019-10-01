@@ -178,8 +178,17 @@ extension LoginVC: HttpHelperDelegate {
                 cont.Token = Token.stringValue
                 cont.isLogin = true
                 self.present(cont, animated: true, completion: nil)
-            }
-            else {
+            }else if status.stringValue == "500"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+            }else if status.stringValue == "1"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+            }else if status.stringValue == "204"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("un authorized"))
+            }else if status.stringValue == "505"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("error"))
+            }else if status.stringValue == "212"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("wrong phone or password "))
+            }else {
                 Loader.showError(message: Message.stringValue)
             }
             

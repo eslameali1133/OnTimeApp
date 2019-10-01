@@ -18,6 +18,7 @@ class TermsVC: UIViewController {
     @IBOutlet weak var btnSideMenue: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         http.delegate = self
         GetTerms()
         if isSideMenueTerms == true {
@@ -28,6 +29,7 @@ class TermsVC: UIViewController {
         if  SharedData.SharedInstans.getLanguage() != "en" {
             btnSideMenue.image = UIImage(named: "arrow-in-circle-point-to-up")
             bttnArrow.image = UIImage(named: "Group 1")
+            btnArrow.setImage(UIImage(named: "arrow-in-circle-point-to-up-1") , for: .normal)
         }
         
         sideMenue()
@@ -104,6 +106,8 @@ extension TermsVC: HttpHelperDelegate {
                 
                 txtTerms.text = "\(data["terms"].stringValue)"
                 
+            }else if status.stringValue == "500"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
             }
             else {
                 Loader.showError(message: Message.stringValue)

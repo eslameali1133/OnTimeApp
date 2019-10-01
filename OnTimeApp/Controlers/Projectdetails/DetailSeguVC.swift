@@ -16,6 +16,7 @@ class DetailSeguVC: UIViewController {
     var http = HttpHelper()
     @IBOutlet weak var lblTo: UILabel!
     @IBOutlet weak var lblFrom: UILabel!
+    @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var lblProjectName: UILabel!
     @IBOutlet weak var invoiceC: UIView!
     @IBOutlet weak var oqoodC: UIView!
@@ -29,6 +30,9 @@ class DetailSeguVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if  SharedData.SharedInstans.getLanguage() != "en" {
+            btnBack.setImage(UIImage(named: "arrow-in-circle-point-to-up-1") , for: .normal)
+        }
        // GetRequestDetails()
         lblProjectName.text = GRequestDetail._service_name
         lblFrom.text = GRequestDetail._start_time

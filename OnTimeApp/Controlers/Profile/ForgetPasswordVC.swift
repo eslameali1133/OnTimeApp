@@ -13,8 +13,12 @@ class ForgetPasswordVC: UIViewController {
     var http = HttpHelper()
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var btnSend: UIButton!
+    @IBOutlet weak var btnBack: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        if  SharedData.SharedInstans.getLanguage() != "en" {
+            btnBack.setImage(UIImage(named: "arrow-in-circle-point-to-up-1") , for: .normal)
+        }
         http.delegate = self
         btnSend.layer.cornerRadius = 25
         //btnSend.layer.borderWidth = 1
@@ -80,7 +84,15 @@ extension ForgetPasswordVC : HttpHelperDelegate {
                 controller.Token = Token.stringValue
                self.show(controller, sender: true)
             }
-             else{
+            else if status.stringValue == "500"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+            }else if status.stringValue == "1"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+            }else if status.stringValue == "204"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("un authorized"))
+            }else if status.stringValue == "206"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Send failed"))
+            }else{
                 
                 Loader.showError(message: Message.stringValue )
             }

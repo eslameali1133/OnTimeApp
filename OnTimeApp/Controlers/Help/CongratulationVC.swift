@@ -14,10 +14,13 @@ var documentInteractionController = UIDocumentInteractionController()
     var RequestID = ""
     var http = HttpHelper()
     @IBOutlet weak var RatingControl: RatingControl!
+    @IBOutlet weak var btnBack: UIBarButtonItem!
     @IBOutlet weak var txtRate: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if  SharedData.SharedInstans.getLanguage() != "en" {
+            btnBack.image = UIImage(named: "arrow-in-circle-point-to-up-1")
+        }
         http.delegate = self
         print(ProjectURL)
         
@@ -81,7 +84,7 @@ var documentInteractionController = UIDocumentInteractionController()
         let headers = [
             "Authorization": AccessToken]
         //AppCommon.sharedInstance.ShowLoader(self.view,color: UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.35))
-        http.requestWithBody(url: APIConstants.RecieveProject, method: .post, parameters: params, tag: 1, header: headers)
+        http.requestWithBody(url: APIConstants.SendRate, method: .post, parameters: params, tag: 1, header: headers)
     }
 
 }
@@ -108,7 +111,17 @@ extension CongratulationVC : HttpHelperDelegate {
                 let cont = storyboard.instantiateViewController(withIdentifier: "Home")
                 
                 self.present(cont, animated: true, completion: nil)
-            } else {
+            } else if status.stringValue == "500"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+            }else if status.stringValue == "505"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("error"))
+            }else if status.stringValue == "1"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+            }else if status.stringValue == "204"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("un authorized"))
+            }else if status.stringValue == "219"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Not finished yet"))
+            }else {
                 Loader.showError(message: message.stringValue )
             }
         }

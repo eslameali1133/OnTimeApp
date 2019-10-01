@@ -23,6 +23,7 @@ var policiesChecked = false
     var departmentID = ""
     var serviceID = ""
     @IBOutlet weak var imgPolicies: UIImageView!
+    @IBOutlet weak var btnBack: UIBarButtonItem!
     @IBOutlet weak var lblDesc: UILabel!
     @IBOutlet weak var lblTax: UILabel!
     @IBOutlet weak var lblTotalPrice: UILabel!
@@ -35,6 +36,9 @@ var policiesChecked = false
     @IBOutlet var popupRequest: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        if  SharedData.SharedInstans.getLanguage() != "en" {
+            btnBack.image = UIImage(named: "arrow-in-circle-point-to-up-1")
+        }
         SelectedAddOnes()
 print(departmentID + serviceID)
         SetData()
@@ -190,6 +194,16 @@ print(departmentID + serviceID)
                                 self.popupRequest.isHidden = false
                                 self.popupRequest.backgroundColor = UIColor.hexColorWithAlpha(string: "#000000", alpha: 0.75)
                                 }
+                            }else if status.stringValue == "500"{
+                                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+                            }else if status.stringValue == "1"{
+                                Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+                            }else if status.stringValue == "204"{
+                                Loader.showError(message: AppCommon.sharedInstance.localization("un authorized"))
+                            }else if status.stringValue == "505"{
+                                Loader.showError(message: AppCommon.sharedInstance.localization("error"))
+                            }else if status.stringValue == "506"{
+                                Loader.showError(message: AppCommon.sharedInstance.localization("Files too big"))
                             }else{
                                 Loader.showError(message: message.stringValue)
                             }

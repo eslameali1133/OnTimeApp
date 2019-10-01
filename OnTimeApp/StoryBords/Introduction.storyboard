@@ -76,12 +76,12 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sxG-Sc-QdG">
                                                 <rect key="frame" x="109" y="19.5" width="117" height="7"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KDa-f7-aG2" userLabel="3">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZQJ-zd-PFC" userLabel="1">
                                                         <rect key="frame" x="0.0" y="0.0" width="32.5" height="7"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Iv-F8-sOu" customClass="AMCircleUIView" customModule="OnTimeApp" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vaR-2e-r4u" customClass="AMCircleUIView" customModule="OnTimeApp" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="32.5" height="7"/>
-                                                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -89,23 +89,23 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jh3-mm-2S7">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yw9-hF-3cV">
                                                                 <rect key="frame" x="0.0" y="0.0" width="32.5" height="7"/>
                                                                 <connections>
-                                                                    <action selector="tab3:" destination="5Xi-6U-JgR" eventType="touchUpInside" id="7qt-6x-516"/>
+                                                                    <action selector="tab1:" destination="5Xi-6U-JgR" eventType="touchUpInside" id="gUm-6F-fad"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstItem="0Iv-F8-sOu" firstAttribute="centerY" secondItem="KDa-f7-aG2" secondAttribute="centerY" id="3SN-l8-Amu"/>
-                                                            <constraint firstAttribute="trailing" secondItem="jh3-mm-2S7" secondAttribute="trailing" id="AiH-En-tE6"/>
-                                                            <constraint firstItem="jh3-mm-2S7" firstAttribute="leading" secondItem="KDa-f7-aG2" secondAttribute="leading" id="Lln-Ur-XRP"/>
-                                                            <constraint firstItem="0Iv-F8-sOu" firstAttribute="centerX" secondItem="KDa-f7-aG2" secondAttribute="centerX" id="Rpd-gI-lY8"/>
-                                                            <constraint firstItem="0Iv-F8-sOu" firstAttribute="width" secondItem="KDa-f7-aG2" secondAttribute="width" id="fih-aO-S2q"/>
-                                                            <constraint firstItem="jh3-mm-2S7" firstAttribute="top" secondItem="KDa-f7-aG2" secondAttribute="top" id="gPH-tH-ZWM"/>
-                                                            <constraint firstItem="0Iv-F8-sOu" firstAttribute="height" secondItem="KDa-f7-aG2" secondAttribute="height" id="lVH-Lq-kKD"/>
-                                                            <constraint firstAttribute="bottom" secondItem="jh3-mm-2S7" secondAttribute="bottom" id="ya8-V6-RQN"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Yw9-hF-3cV" secondAttribute="bottom" id="6LJ-yg-OlU"/>
+                                                            <constraint firstItem="vaR-2e-r4u" firstAttribute="height" secondItem="ZQJ-zd-PFC" secondAttribute="height" id="6e6-J2-aER"/>
+                                                            <constraint firstItem="Yw9-hF-3cV" firstAttribute="top" secondItem="ZQJ-zd-PFC" secondAttribute="top" id="CFZ-X5-sDg"/>
+                                                            <constraint firstItem="vaR-2e-r4u" firstAttribute="centerX" secondItem="ZQJ-zd-PFC" secondAttribute="centerX" id="Kjd-Ul-aNb"/>
+                                                            <constraint firstItem="vaR-2e-r4u" firstAttribute="width" secondItem="ZQJ-zd-PFC" secondAttribute="width" id="Wcz-8w-aI1"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Yw9-hF-3cV" secondAttribute="trailing" id="gXF-cU-Jy7"/>
+                                                            <constraint firstItem="vaR-2e-r4u" firstAttribute="centerY" secondItem="ZQJ-zd-PFC" secondAttribute="centerY" id="nbZ-qE-Ekt"/>
+                                                            <constraint firstItem="Yw9-hF-3cV" firstAttribute="leading" secondItem="ZQJ-zd-PFC" secondAttribute="leading" id="opS-46-aTN"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4eB-MI-z4L" userLabel="2">
@@ -140,12 +140,12 @@
                                                             <constraint firstItem="5L6-zJ-Yhn" firstAttribute="centerX" secondItem="4eB-MI-z4L" secondAttribute="centerX" id="vTW-6F-RAy"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZQJ-zd-PFC" userLabel="1">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KDa-f7-aG2" userLabel="3">
                                                         <rect key="frame" x="84.5" y="0.0" width="32.5" height="7"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vaR-2e-r4u" customClass="AMCircleUIView" customModule="OnTimeApp" customModuleProvider="target">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Iv-F8-sOu" customClass="AMCircleUIView" customModule="OnTimeApp" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="32.5" height="7"/>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -153,23 +153,23 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yw9-hF-3cV">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jh3-mm-2S7">
                                                                 <rect key="frame" x="0.0" y="0.0" width="32.5" height="7"/>
                                                                 <connections>
-                                                                    <action selector="tab1:" destination="5Xi-6U-JgR" eventType="touchUpInside" id="gUm-6F-fad"/>
+                                                                    <action selector="tab3:" destination="5Xi-6U-JgR" eventType="touchUpInside" id="7qt-6x-516"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="Yw9-hF-3cV" secondAttribute="bottom" id="6LJ-yg-OlU"/>
-                                                            <constraint firstItem="vaR-2e-r4u" firstAttribute="height" secondItem="ZQJ-zd-PFC" secondAttribute="height" id="6e6-J2-aER"/>
-                                                            <constraint firstItem="Yw9-hF-3cV" firstAttribute="top" secondItem="ZQJ-zd-PFC" secondAttribute="top" id="CFZ-X5-sDg"/>
-                                                            <constraint firstItem="vaR-2e-r4u" firstAttribute="centerX" secondItem="ZQJ-zd-PFC" secondAttribute="centerX" id="Kjd-Ul-aNb"/>
-                                                            <constraint firstItem="vaR-2e-r4u" firstAttribute="width" secondItem="ZQJ-zd-PFC" secondAttribute="width" id="Wcz-8w-aI1"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Yw9-hF-3cV" secondAttribute="trailing" id="gXF-cU-Jy7"/>
-                                                            <constraint firstItem="vaR-2e-r4u" firstAttribute="centerY" secondItem="ZQJ-zd-PFC" secondAttribute="centerY" id="nbZ-qE-Ekt"/>
-                                                            <constraint firstItem="Yw9-hF-3cV" firstAttribute="leading" secondItem="ZQJ-zd-PFC" secondAttribute="leading" id="opS-46-aTN"/>
+                                                            <constraint firstItem="0Iv-F8-sOu" firstAttribute="centerY" secondItem="KDa-f7-aG2" secondAttribute="centerY" id="3SN-l8-Amu"/>
+                                                            <constraint firstAttribute="trailing" secondItem="jh3-mm-2S7" secondAttribute="trailing" id="AiH-En-tE6"/>
+                                                            <constraint firstItem="jh3-mm-2S7" firstAttribute="leading" secondItem="KDa-f7-aG2" secondAttribute="leading" id="Lln-Ur-XRP"/>
+                                                            <constraint firstItem="0Iv-F8-sOu" firstAttribute="centerX" secondItem="KDa-f7-aG2" secondAttribute="centerX" id="Rpd-gI-lY8"/>
+                                                            <constraint firstItem="0Iv-F8-sOu" firstAttribute="width" secondItem="KDa-f7-aG2" secondAttribute="width" id="fih-aO-S2q"/>
+                                                            <constraint firstItem="jh3-mm-2S7" firstAttribute="top" secondItem="KDa-f7-aG2" secondAttribute="top" id="gPH-tH-ZWM"/>
+                                                            <constraint firstItem="0Iv-F8-sOu" firstAttribute="height" secondItem="KDa-f7-aG2" secondAttribute="height" id="lVH-Lq-kKD"/>
+                                                            <constraint firstAttribute="bottom" secondItem="jh3-mm-2S7" secondAttribute="bottom" id="ya8-V6-RQN"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -189,41 +189,17 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="h1K-Hv-FwJ">
                                                 <rect key="frame" x="33.5" y="36" width="268" height="38.5"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="41h-NG-aGi" customClass="AMCircleUIView" customModule="OnTimeApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="94" height="38.5"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تخطي" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfN-hr-NkJ">
-                                                                <rect key="frame" x="26.5" y="6.5" width="40.5" height="25"/>
-                                                                <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="17"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWM-Sl-M5a">
-                                                                <rect key="frame" x="0.0" y="0.0" width="94" height="38.5"/>
-                                                                <connections>
-                                                                    <action selector="btnSkip:" destination="5Xi-6U-JgR" eventType="touchUpInside" id="y6I-ji-g0g"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="sfN-hr-NkJ" firstAttribute="centerX" secondItem="41h-NG-aGi" secondAttribute="centerX" id="8W1-1n-pBp"/>
-                                                            <constraint firstItem="JWM-Sl-M5a" firstAttribute="top" secondItem="41h-NG-aGi" secondAttribute="top" id="IvB-nb-Gk7"/>
-                                                            <constraint firstAttribute="trailing" secondItem="JWM-Sl-M5a" secondAttribute="trailing" id="U8P-UW-HVO"/>
-                                                            <constraint firstItem="sfN-hr-NkJ" firstAttribute="centerY" secondItem="41h-NG-aGi" secondAttribute="centerY" id="V00-1x-jqb"/>
-                                                            <constraint firstAttribute="bottom" secondItem="JWM-Sl-M5a" secondAttribute="bottom" id="Wwn-sF-HTH"/>
-                                                            <constraint firstItem="JWM-Sl-M5a" firstAttribute="leading" secondItem="41h-NG-aGi" secondAttribute="leading" id="cRB-3K-pLK"/>
-                                                        </constraints>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gl6-hI-O5l" customClass="AMCircleUIView" customModule="OnTimeApp" customModuleProvider="target">
-                                                        <rect key="frame" x="114" y="0.0" width="154" height="38.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="154" height="38.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التالي" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wju-vb-g8x">
-                                                                <rect key="frame" x="59" y="6.5" width="35.5" height="25"/>
+                                                                <rect key="frame" x="59.5" y="6.5" width="35.5" height="25"/>
                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="17"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="Next"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5q-cC-kJ7">
                                                                 <rect key="frame" x="0.0" y="0.0" width="154" height="38.5"/>
@@ -240,6 +216,36 @@
                                                             <constraint firstItem="f5q-cC-kJ7" firstAttribute="top" secondItem="gl6-hI-O5l" secondAttribute="top" id="kQS-R4-TS3"/>
                                                             <constraint firstAttribute="bottom" secondItem="f5q-cC-kJ7" secondAttribute="bottom" id="qFS-t3-0Re"/>
                                                             <constraint firstItem="wju-vb-g8x" firstAttribute="centerX" secondItem="gl6-hI-O5l" secondAttribute="centerX" id="yob-oi-v6M"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="41h-NG-aGi" customClass="AMCircleUIView" customModule="OnTimeApp" customModuleProvider="target">
+                                                        <rect key="frame" x="174" y="0.0" width="94" height="38.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تخطي" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfN-hr-NkJ">
+                                                                <rect key="frame" x="27" y="6.5" width="40.5" height="25"/>
+                                                                <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="17"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="Skip"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWM-Sl-M5a">
+                                                                <rect key="frame" x="0.0" y="0.0" width="94" height="38.5"/>
+                                                                <connections>
+                                                                    <action selector="btnSkip:" destination="5Xi-6U-JgR" eventType="touchUpInside" id="y6I-ji-g0g"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="sfN-hr-NkJ" firstAttribute="centerX" secondItem="41h-NG-aGi" secondAttribute="centerX" id="8W1-1n-pBp"/>
+                                                            <constraint firstItem="JWM-Sl-M5a" firstAttribute="top" secondItem="41h-NG-aGi" secondAttribute="top" id="IvB-nb-Gk7"/>
+                                                            <constraint firstAttribute="trailing" secondItem="JWM-Sl-M5a" secondAttribute="trailing" id="U8P-UW-HVO"/>
+                                                            <constraint firstItem="sfN-hr-NkJ" firstAttribute="centerY" secondItem="41h-NG-aGi" secondAttribute="centerY" id="V00-1x-jqb"/>
+                                                            <constraint firstAttribute="bottom" secondItem="JWM-Sl-M5a" secondAttribute="bottom" id="Wwn-sF-HTH"/>
+                                                            <constraint firstItem="JWM-Sl-M5a" firstAttribute="leading" secondItem="41h-NG-aGi" secondAttribute="leading" id="cRB-3K-pLK"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
@@ -345,8 +351,11 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="البرمجة الآمنة وفق أحدث التقنيات" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUh-mj-4Sa">
                                                         <rect key="frame" x="47" y="0.0" width="281" height="32.5"/>
-                                                        <fontDescription key="fontDescription" name="DINNextLTW23-Medium" family="DIN Next LT W23" pointSize="20"/>
+                                                        <fontDescription key="fontDescription" name="DINNextLTW23-Medium" family="DIN Next LT W23" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="Secure programming according to the latest technology"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfz-Ti-und">
                                                         <rect key="frame" x="68" y="30" width="239" height="2"/>
@@ -374,6 +383,11 @@
                                                         <string key="text">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوي المقروء لصفحة ما سيلهي القارئ في التركيز علي الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة اللتي يقرأها</string>
                                                         <fontDescription key="fontDescription" name="DINNextLTW23-UltraLight" family="DIN Next LT W23" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString">
+                                                                <string key="value">A long-established fact is that the readable content of a page will distract the reader in focusing on the text's outline or the form of paragraphs placed on the page it reads.</string>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </textView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -472,7 +486,7 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="البرمجة الآمنة وفق أحدث التقنيات" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lW7-TE-814">
                                                         <rect key="frame" x="47" y="0.0" width="281" height="32.5"/>
-                                                        <fontDescription key="fontDescription" name="DINNextLTW23-Medium" family="DIN Next LT W23" pointSize="20"/>
+                                                        <fontDescription key="fontDescription" name="DINNextLTW23-Medium" family="DIN Next LT W23" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rLE-9E-zdU">
@@ -599,7 +613,7 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="البرمجة الآمنة وفق أحدث التقنيات" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeP-wm-B2v">
                                                         <rect key="frame" x="47" y="0.0" width="281" height="32.5"/>
-                                                        <fontDescription key="fontDescription" name="DINNextLTW23-Medium" family="DIN Next LT W23" pointSize="20"/>
+                                                        <fontDescription key="fontDescription" name="DINNextLTW23-Medium" family="DIN Next LT W23" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdb-QM-4Z2">

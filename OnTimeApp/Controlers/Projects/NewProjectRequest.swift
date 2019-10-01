@@ -37,6 +37,7 @@ var RequestServices : RequestNServicesModelClass!
     var documentInteractionController = UIDocumentInteractionController()
     
     @IBOutlet weak var txtdesc: UITextView!
+    @IBOutlet weak var btnBack: UIBarButtonItem!
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var imgServices: customImageView!
     @IBOutlet weak var addOnesCV: UICollectionView!
@@ -51,6 +52,9 @@ var RequestServices : RequestNServicesModelClass!
     var Price = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        if  SharedData.SharedInstans.getLanguage() != "en" {
+            btnBack.image = UIImage(named: "arrow-in-circle-point-to-up-1")
+        }
         http.delegate = self
         txtdesc.delegate = self
         scrollView.delegate = self
@@ -602,7 +606,13 @@ extension NewProjectRequest : HttpHelperDelegate {
                 AppCommon.sharedInstance.dismissLoader(self.view)
 
 
-            } else {
+            } else if status.stringValue == "500"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+            }else if status.stringValue == "1"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+            }else if status.stringValue == "204"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("un authorized"))
+            }else {
                 Loader.showError(message: message.stringValue )
             }
         }

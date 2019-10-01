@@ -11,6 +11,7 @@ import UIKit
 class StartNewProjectVC: UIViewController {
 
     @IBOutlet weak var lblProfileName: UILabel!
+    @IBOutlet weak var btnBack: UIBarButtonItem!
     @IBOutlet weak var imgPro:  customImageView!
 //        {
 //    didSet{

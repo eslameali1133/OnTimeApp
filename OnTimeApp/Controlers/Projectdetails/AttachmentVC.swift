@@ -14,10 +14,14 @@ class AttachmentVC: UIViewController , UITableViewDataSource , UITableViewDelega
     @IBOutlet weak var btnDownload: UIButton!
     @IBOutlet weak var btnShare: UIButton!
     @IBOutlet var popupSocial: UIView!
+    @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var tblAttachment: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if  SharedData.SharedInstans.getLanguage() != "en" {
+            btnBack.setImage(UIImage(named: "arrow-in-circle-point-to-up-1") , for: .normal)
+        }
          popupSocial.frame = CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y, width: self.view.frame.width, height: self.view.frame.height)
         self.view.addSubview(popupSocial)
         popupSocial.isHidden = true

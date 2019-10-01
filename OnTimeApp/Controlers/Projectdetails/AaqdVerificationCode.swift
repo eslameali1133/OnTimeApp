@@ -12,10 +12,13 @@ class AaqdVerificationCode: UIViewController {
 
     var ContractID = ""
     var http = HttpHelper()
+    @IBOutlet weak var btnBack: UIBarButtonItem!
     @IBOutlet weak var txtCode: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if  SharedData.SharedInstans.getLanguage() != "en" {
+            btnBack.image = UIImage(named: "arrow-in-circle-point-to-up-1")
+        }
         SendCode()
         http.delegate = self
         
@@ -71,11 +74,19 @@ extension AaqdVerificationCode : HttpHelperDelegate {
             let message = json["msg"]
             
             if status.stringValue == "0" {
-                Loader.showSuccess(message: message.stringValue)
+                Loader.showSuccess(message: AppCommon.sharedInstance.localization("success"))
                 let sb = UIStoryboard(name: "ProjectDetails", bundle: nil)
                 let controller = sb.instantiateViewController(withIdentifier: "ProjectMessagesVC") as! LoginVC
                 self.show(controller, sender: true)
                 
+            }else if status.stringValue == "500"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+            }else if status.stringValue == "1"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+            }else if status.stringValue == "204"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("un authorized"))
+            }else if status.stringValue == "206"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Send failed"))
             } else {
                 Loader.showError(message: message.stringValue )
             }
@@ -84,7 +95,15 @@ extension AaqdVerificationCode : HttpHelperDelegate {
             let message = json["msg"]
             
             if status.stringValue == "0" {
-                Loader.showSuccess(message: message.stringValue)
+                Loader.showSuccess(message: AppCommon.sharedInstance.localization("success"))
+            }else if status.stringValue == "500"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+            }else if status.stringValue == "1"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+            }else if status.stringValue == "204"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("un authorized"))
+            }else if status.stringValue == "206"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Send failed"))
             } else {
                 Loader.showError(message: message.stringValue )
             }

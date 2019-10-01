@@ -100,6 +100,12 @@ extension ContinueProjectVC : HttpHelperDelegate {
                 Gcontinucount = "\(HomeRequests.count)"; AppCommon.sharedInstance.dismissLoader(self.view);
                 
                 
+            }else if status.stringValue == "500"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+            }else if status.stringValue == "1"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+            }else if status.stringValue == "204"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("un authorized"))
             } else {
                 Loader.showError(message: message.stringValue )
             }

@@ -112,6 +112,8 @@ extension OnTimeVC: HttpHelperDelegate {
                 txtTwiter = data["tw"].stringValue
                 txtInstigram = data["ins"].stringValue
                 
+            }else if status.stringValue == "500"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
             }
             else {
                 Loader.showError(message: Message.stringValue)

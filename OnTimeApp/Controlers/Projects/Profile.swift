@@ -19,6 +19,7 @@ class Profile: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource 
     let imgpicker = UIImagePickerController()
     @IBOutlet weak var lblKey: UILabel!
     @IBOutlet weak var lblPeopleName: UITextField!
+    @IBOutlet weak var btnBack: UIBarButtonItem!
     @IBOutlet weak var lblOrgName: UITextField!
     @IBOutlet weak var lblPhone: UITextField!
     @IBOutlet weak var lblPassword: UITextField!
@@ -42,6 +43,9 @@ class Profile: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource 
     @IBOutlet weak var imgOrg: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        if  SharedData.SharedInstans.getLanguage() != "en" {
+            btnBack.image = UIImage(named: "arrow-in-circle-point-to-up-1")
+        }
         SetupUploadImage()
         SetData()
         //lblKey.text = "+966"
@@ -228,6 +232,18 @@ class Profile: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource 
                             AppCommon.sharedInstance.saveJSON(json: data, key: "Profiledata")
                                                             print(AppCommon.sharedInstance.getJSON("Profiledata")["company_name"].stringValue)
                                 self.dismiss(animated: true, completion: nil)
+                            }else if status.stringValue == "500"{
+                                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+                            }else if status.stringValue == "1"{
+                                Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+                            }else if status.stringValue == "201"{
+                                Loader.showError(message: AppCommon.sharedInstance.localization("Email duplicate"))
+                            }else if status.stringValue == "202"{
+                                Loader.showError(message: AppCommon.sharedInstance.localization("Phone duplicate"))
+                            }else if status.stringValue == "203"{
+                                Loader.showError(message: AppCommon.sharedInstance.localization("Some fields are empty after validation"))
+                            }else if status.stringValue == "400"{
+                                Loader.showError(message: AppCommon.sharedInstance.localization("Insertion error"))
                             }
                             
                         }

@@ -17,9 +17,13 @@ class HelpMessagesVC: UIViewController , UIDocumentMenuDelegate, UIDocumentPicke
     let imgpicker = UIImagePickerController()
     var documentInteractionController = UIDocumentInteractionController()
 
+    @IBOutlet weak var btnBack: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if  SharedData.SharedInstans.getLanguage() != "en" {
+            btnBack.image = UIImage(named: "arrow-in-circle-point-to-up-1")
+        }
         SetupActionSheet()
         
         let attributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20)!]

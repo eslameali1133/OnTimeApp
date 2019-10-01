@@ -190,7 +190,15 @@ extension VerificationCodeVC : HttpHelperDelegate {
                self.show(controller, sender: true)
                 
                 
-            } else {
+            }else if status.stringValue == "500"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+            }else if status.stringValue == "1"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+            }else if status.stringValue == "204"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("un authorized"))
+            }else if status.stringValue == "207"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("wrong code"))
+            }else {
                 Loader.showError(message: message.stringValue )
             }
         }else if  Tag == 2 {
@@ -198,7 +206,7 @@ extension VerificationCodeVC : HttpHelperDelegate {
             let message = json["msg"]
             
             if status.stringValue == "0" {
-                Loader.showSuccess(message: message.stringValue)
+                Loader.showSuccess(message: AppCommon.sharedInstance.localization("success"))
                // if isRegister == true {
                 let sb = UIStoryboard(name: "Profile", bundle: nil)
                 let controller = sb.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
@@ -210,6 +218,14 @@ extension VerificationCodeVC : HttpHelperDelegate {
 //                    let storyboard = UIStoryboard.init(name: "Projects", bundle: nil); delegate.window?.rootViewController = storyboard.instantiateInitialViewController()
 //                }
                 
+            }else if status.stringValue == "500"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+            }else if status.stringValue == "1"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+            }else if status.stringValue == "204"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("un authorized"))
+            }else if status.stringValue == "206"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("wrong code"))
             } else {
                 Loader.showError(message: message.stringValue )
             }
@@ -223,10 +239,20 @@ extension VerificationCodeVC : HttpHelperDelegate {
             if status.stringValue == "0" {
                 Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
 
-                Loader.showSuccess(message: message.stringValue)
+                Loader.showSuccess(message: AppCommon.sharedInstance.localization("success"))
                 self.Token = NewToken.stringValue
                 self.vereficationCode = code.stringValue
-            } else {
+            } else if status.stringValue == "500"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+            }else if status.stringValue == "1"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+            }else if status.stringValue == "204"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("un authorized"))
+            }else if status.stringValue == "205"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("user already verified"))
+            }else if status.stringValue == "206"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Send failed"))
+            }else {
                 Loader.showError(message: message.stringValue )
             }
         }else if Tag == 4 {
@@ -242,8 +268,15 @@ extension VerificationCodeVC : HttpHelperDelegate {
                      self.vereficationCode = code.stringValue
                     self.Token = Token.stringValue
                    
-                }
-                else{
+                }else if status.stringValue == "500"{
+                    Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+                }else if status.stringValue == "1"{
+                    Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+                }else if status.stringValue == "204"{
+                    Loader.showError(message: AppCommon.sharedInstance.localization("un authorized"))
+                }else if status.stringValue == "206"{
+                    Loader.showError(message: AppCommon.sharedInstance.localization("Send failed"))
+                }else{
                     
                     Loader.showError(message: Message.stringValue )
                 }

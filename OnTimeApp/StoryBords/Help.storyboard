@@ -49,6 +49,9 @@
                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Medium" family="DIN Next LT W23" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="Important note"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </label>
                                                 </subviews>
                                             </stackView>
@@ -101,37 +104,17 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="pbb-9q-COn">
                                                 <rect key="frame" x="37.5" y="15" width="300" height="44.5"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GkD-Cw-Kqk" customClass="AMCircleUIView" customModule="OnTimeApp" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="137.5" height="44.5"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="وجود ملاحظات" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lma-at-Kby">
-                                                                <rect key="frame" x="0.0" y="0.0" width="137.5" height="44.5"/>
-                                                                <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="15"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstItem="lma-at-Kby" firstAttribute="width" secondItem="GkD-Cw-Kqk" secondAttribute="width" id="1bV-jb-60D"/>
-                                                            <constraint firstItem="lma-at-Kby" firstAttribute="height" secondItem="GkD-Cw-Kqk" secondAttribute="height" id="MNU-C8-3VV"/>
-                                                            <constraint firstItem="lma-at-Kby" firstAttribute="centerY" secondItem="GkD-Cw-Kqk" secondAttribute="centerY" id="Ndu-R7-xBA"/>
-                                                            <constraint firstItem="lma-at-Kby" firstAttribute="centerX" secondItem="GkD-Cw-Kqk" secondAttribute="centerX" id="Sjv-Wi-2pr"/>
-                                                        </constraints>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" red="0.33333333329999998" green="0.85882352939999995" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fDe-yW-tgc" customClass="AMCircleUIView" customModule="OnTimeApp" customModuleProvider="target">
-                                                        <rect key="frame" x="162.5" y="0.0" width="137.5" height="44.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="137.5" height="44.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="إعتماد" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flE-jv-A0t">
                                                                 <rect key="frame" x="0.0" y="0.0" width="137.5" height="44.5"/>
                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="15"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="Approval"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.33333333329999998" green="0.85882352939999995" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -140,6 +123,32 @@
                                                             <constraint firstItem="flE-jv-A0t" firstAttribute="centerX" secondItem="fDe-yW-tgc" secondAttribute="centerX" id="DPZ-Eq-Nvg"/>
                                                             <constraint firstItem="flE-jv-A0t" firstAttribute="width" secondItem="fDe-yW-tgc" secondAttribute="width" id="F5x-QI-AQM"/>
                                                             <constraint firstItem="flE-jv-A0t" firstAttribute="centerY" secondItem="fDe-yW-tgc" secondAttribute="centerY" id="KG1-gM-m5b"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.33333333329999998" green="0.85882352939999995" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GkD-Cw-Kqk" customClass="AMCircleUIView" customModule="OnTimeApp" customModuleProvider="target">
+                                                        <rect key="frame" x="162.5" y="0.0" width="137.5" height="44.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="وجود ملاحظات" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lma-at-Kby">
+                                                                <rect key="frame" x="0.0" y="0.0" width="137.5" height="44.5"/>
+                                                                <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="15"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="Having notes"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="lma-at-Kby" firstAttribute="width" secondItem="GkD-Cw-Kqk" secondAttribute="width" id="1bV-jb-60D"/>
+                                                            <constraint firstItem="lma-at-Kby" firstAttribute="height" secondItem="GkD-Cw-Kqk" secondAttribute="height" id="MNU-C8-3VV"/>
+                                                            <constraint firstItem="lma-at-Kby" firstAttribute="centerY" secondItem="GkD-Cw-Kqk" secondAttribute="centerY" id="Ndu-R7-xBA"/>
+                                                            <constraint firstItem="lma-at-Kby" firstAttribute="centerX" secondItem="GkD-Cw-Kqk" secondAttribute="centerX" id="Sjv-Wi-2pr"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -165,11 +174,14 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ONf-FJ-8Sx">
                                                 <rect key="frame" x="19" y="11" width="337.5" height="52"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="المحتوي" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iKi-LI-o2Q">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="المحتوي" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iKi-LI-o2Q">
                                                         <rect key="frame" x="0.0" y="0.0" width="337.5" height="51.5"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="15"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="Content"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tdb-sK-H2o">
                                                         <rect key="frame" x="0.0" y="51.5" width="337.5" height="0.5"/>
@@ -200,6 +212,9 @@
                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="15"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="Send"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.33333333329999998" green="0.85882352939999995" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -229,28 +244,31 @@
                                         <rect key="frame" x="0.0" y="601.5" width="375" height="45.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EyG-qH-5Ql">
-                                                <rect key="frame" x="19" y="7" width="337.5" height="31.5"/>
+                                                <rect key="frame" x="19" y="5" width="337.5" height="35.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="في حال عدم الرد علي هذه الرسالة سيتم تطبيق ما تراه الإدارة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3c-0D-pAI">
-                                                        <rect key="frame" x="0.0" y="7" width="286.5" height="18"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 658" translatesAutoresizingMaskIntoConstraints="NO" id="hf2-eg-arX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50.5" height="35.5"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="في حال عدم الرد علي هذه الرسالة سيتم تطبيق ما تراه الإدارة" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3c-0D-pAI">
+                                                        <rect key="frame" x="50.5" y="9" width="287" height="18"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="In case of failure to reply to this message, the administration will see what applies"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </label>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 658" translatesAutoresizingMaskIntoConstraints="NO" id="hf2-eg-arX">
-                                                        <rect key="frame" x="286.5" y="0.0" width="51" height="31.5"/>
-                                                    </imageView>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="hf2-eg-arX" firstAttribute="width" secondItem="EyG-qH-5Ql" secondAttribute="width" multiplier="0.15" id="U3Q-G1-OEP"/>
-                                                    <constraint firstItem="hf2-eg-arX" firstAttribute="leading" secondItem="F3c-0D-pAI" secondAttribute="trailing" id="xLk-mV-MQk"/>
+                                                    <constraint firstItem="F3c-0D-pAI" firstAttribute="leading" secondItem="hf2-eg-arX" secondAttribute="trailing" id="W0L-Q0-vYh"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="EyG-qH-5Ql" firstAttribute="centerY" secondItem="mdw-pd-5Rh" secondAttribute="centerY" id="Cw0-kS-6e0"/>
-                                            <constraint firstItem="EyG-qH-5Ql" firstAttribute="height" secondItem="mdw-pd-5Rh" secondAttribute="height" multiplier="0.7" id="Mr5-7Z-NQm"/>
+                                            <constraint firstItem="EyG-qH-5Ql" firstAttribute="height" secondItem="mdw-pd-5Rh" secondAttribute="height" multiplier="0.78" id="Mr5-7Z-NQm"/>
                                             <constraint firstItem="EyG-qH-5Ql" firstAttribute="centerX" secondItem="mdw-pd-5Rh" secondAttribute="centerX" id="dlG-qq-za1"/>
                                             <constraint firstItem="EyG-qH-5Ql" firstAttribute="width" secondItem="mdw-pd-5Rh" secondAttribute="width" multiplier="0.9" id="neb-q2-wSs"/>
                                         </constraints>
@@ -378,6 +396,9 @@
                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="How we can help"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -393,61 +414,8 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="qob-FA-l8r">
                                                         <rect key="frame" x="25" y="48" width="285" height="119.5"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQm-38-mDC">
-                                                                <rect key="frame" x="0.0" y="0.0" width="135" height="119.5"/>
-                                                                <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="khp-4b-MOG" customClass="AMCircleUIView" customModule="OnTimeApp" customModuleProvider="target">
-                                                                        <rect key="frame" x="2.5" y="-5" width="130" height="130"/>
-                                                                        <subviews>
-                                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zN6-PL-gFS">
-                                                                                <rect key="frame" x="20" y="19.5" width="90" height="91"/>
-                                                                                <subviews>
-                                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message" translatesAutoresizingMaskIntoConstraints="NO" id="g2d-5o-FRk">
-                                                                                        <rect key="frame" x="23.5" y="0.0" width="43" height="45.5"/>
-                                                                                    </imageView>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="محادثة مباشرة" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7v-va-dfj">
-                                                                                        <rect key="frame" x="0.0" y="45.5" width="90" height="45.5"/>
-                                                                                        <fontDescription key="fontDescription" name="DINNextLTW23-Light" family="DIN Next LT W23" pointSize="17"/>
-                                                                                        <nil key="textColor"/>
-                                                                                        <nil key="highlightedColor"/>
-                                                                                    </label>
-                                                                                </subviews>
-                                                                            </stackView>
-                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dux-Oh-yCZ">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
-                                                                                <connections>
-                                                                                    <segue destination="ERs-ff-Yog" kind="presentation" id="CSk-6r-Ryg"/>
-                                                                                </connections>
-                                                                            </button>
-                                                                        </subviews>
-                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="130" id="0wf-vk-hzd"/>
-                                                                            <constraint firstAttribute="height" constant="130" id="1In-gE-bPS"/>
-                                                                            <constraint firstItem="zN6-PL-gFS" firstAttribute="height" secondItem="khp-4b-MOG" secondAttribute="height" multiplier="0.7" id="6HL-Ew-UAe"/>
-                                                                            <constraint firstItem="dux-Oh-yCZ" firstAttribute="top" secondItem="khp-4b-MOG" secondAttribute="top" id="GfD-e4-2B6"/>
-                                                                            <constraint firstItem="dux-Oh-yCZ" firstAttribute="leading" secondItem="khp-4b-MOG" secondAttribute="leading" id="T59-m6-EmT"/>
-                                                                            <constraint firstAttribute="bottom" secondItem="dux-Oh-yCZ" secondAttribute="bottom" id="WZ2-LL-TEQ"/>
-                                                                            <constraint firstItem="zN6-PL-gFS" firstAttribute="centerX" secondItem="khp-4b-MOG" secondAttribute="centerX" id="bo7-BO-Hz3"/>
-                                                                            <constraint firstItem="zN6-PL-gFS" firstAttribute="centerY" secondItem="khp-4b-MOG" secondAttribute="centerY" id="gvv-dp-8pV"/>
-                                                                            <constraint firstAttribute="trailing" secondItem="dux-Oh-yCZ" secondAttribute="trailing" id="tb0-gO-l7m"/>
-                                                                        </constraints>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                                <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </view>
-                                                                </subviews>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <constraints>
-                                                                    <constraint firstItem="khp-4b-MOG" firstAttribute="centerX" secondItem="TQm-38-mDC" secondAttribute="centerX" id="IbE-la-BiV"/>
-                                                                    <constraint firstItem="khp-4b-MOG" firstAttribute="centerY" secondItem="TQm-38-mDC" secondAttribute="centerY" id="c8P-mC-IqO"/>
-                                                                </constraints>
-                                                            </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S4Q-9y-C2e">
-                                                                <rect key="frame" x="150" y="0.0" width="135" height="119.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="135" height="119.5"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LSa-JU-xKO" customClass="AMCircleUIView" customModule="OnTimeApp" customModuleProvider="target">
                                                                         <rect key="frame" x="2.5" y="-5" width="130" height="130"/>
@@ -463,6 +431,9 @@
                                                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Light" family="DIN Next LT W23" pointSize="17"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
+                                                                                        <userDefinedRuntimeAttributes>
+                                                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="direct connection"/>
+                                                                                        </userDefinedRuntimeAttributes>
                                                                                     </label>
                                                                                 </subviews>
                                                                             </stackView>
@@ -497,6 +468,62 @@
                                                                 <constraints>
                                                                     <constraint firstItem="LSa-JU-xKO" firstAttribute="centerY" secondItem="S4Q-9y-C2e" secondAttribute="centerY" id="Bwd-tx-F8L"/>
                                                                     <constraint firstItem="LSa-JU-xKO" firstAttribute="centerX" secondItem="S4Q-9y-C2e" secondAttribute="centerX" id="CNb-GB-jgg"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQm-38-mDC">
+                                                                <rect key="frame" x="150" y="0.0" width="135" height="119.5"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="khp-4b-MOG" customClass="AMCircleUIView" customModule="OnTimeApp" customModuleProvider="target">
+                                                                        <rect key="frame" x="2.5" y="-5" width="130" height="130"/>
+                                                                        <subviews>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zN6-PL-gFS">
+                                                                                <rect key="frame" x="20" y="19.5" width="90" height="91"/>
+                                                                                <subviews>
+                                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message" translatesAutoresizingMaskIntoConstraints="NO" id="g2d-5o-FRk">
+                                                                                        <rect key="frame" x="23.5" y="0.0" width="43" height="45.5"/>
+                                                                                    </imageView>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="محادثة مباشرة" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7v-va-dfj">
+                                                                                        <rect key="frame" x="0.0" y="45.5" width="90" height="45.5"/>
+                                                                                        <fontDescription key="fontDescription" name="DINNextLTW23-Light" family="DIN Next LT W23" pointSize="17"/>
+                                                                                        <nil key="textColor"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                        <userDefinedRuntimeAttributes>
+                                                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="Live conversation"/>
+                                                                                        </userDefinedRuntimeAttributes>
+                                                                                    </label>
+                                                                                </subviews>
+                                                                            </stackView>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dux-Oh-yCZ">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+                                                                                <connections>
+                                                                                    <segue destination="ERs-ff-Yog" kind="presentation" id="CSk-6r-Ryg"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="130" id="0wf-vk-hzd"/>
+                                                                            <constraint firstAttribute="height" constant="130" id="1In-gE-bPS"/>
+                                                                            <constraint firstItem="zN6-PL-gFS" firstAttribute="height" secondItem="khp-4b-MOG" secondAttribute="height" multiplier="0.7" id="6HL-Ew-UAe"/>
+                                                                            <constraint firstItem="dux-Oh-yCZ" firstAttribute="top" secondItem="khp-4b-MOG" secondAttribute="top" id="GfD-e4-2B6"/>
+                                                                            <constraint firstItem="dux-Oh-yCZ" firstAttribute="leading" secondItem="khp-4b-MOG" secondAttribute="leading" id="T59-m6-EmT"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="dux-Oh-yCZ" secondAttribute="bottom" id="WZ2-LL-TEQ"/>
+                                                                            <constraint firstItem="zN6-PL-gFS" firstAttribute="centerX" secondItem="khp-4b-MOG" secondAttribute="centerX" id="bo7-BO-Hz3"/>
+                                                                            <constraint firstItem="zN6-PL-gFS" firstAttribute="centerY" secondItem="khp-4b-MOG" secondAttribute="centerY" id="gvv-dp-8pV"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="dux-Oh-yCZ" secondAttribute="trailing" id="tb0-gO-l7m"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                                <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isCircle" value="YES"/>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </view>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="khp-4b-MOG" firstAttribute="centerX" secondItem="TQm-38-mDC" secondAttribute="centerX" id="IbE-la-BiV"/>
+                                                                    <constraint firstItem="khp-4b-MOG" firstAttribute="centerY" secondItem="TQm-38-mDC" secondAttribute="centerY" id="c8P-mC-IqO"/>
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
@@ -577,6 +604,9 @@
                                 <action selector="DismissView:" destination="hpD-wg-8wg" id="qHU-xC-Ysh"/>
                             </connections>
                         </barButtonItem>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="Help"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <connections>
                         <outlet property="btnArrow" destination="11j-zp-gtB" id="d01-Gw-qD8"/>
@@ -614,6 +644,9 @@
                                                         <action selector="DismissView:" destination="ERs-ff-Yog" id="QSI-2x-OPv"/>
                                                     </connections>
                                                 </barButtonItem>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="Help"/>
+                                                </userDefinedRuntimeAttributes>
                                             </navigationItem>
                                         </items>
                                     </navigationBar>
@@ -625,6 +658,9 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="Select the appropriate section to help you in the best way"/>
+                                                </userDefinedRuntimeAttributes>
                                             </textView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -661,6 +697,9 @@
                                                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="17"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
+                                                                                        <userDefinedRuntimeAttributes>
+                                                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="Databases"/>
+                                                                                        </userDefinedRuntimeAttributes>
                                                                                     </label>
                                                                                 </subviews>
                                                                             </stackView>
@@ -710,6 +749,9 @@
                                                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="17"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
+                                                                                        <userDefinedRuntimeAttributes>
+                                                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="Graphic"/>
+                                                                                        </userDefinedRuntimeAttributes>
                                                                                     </label>
                                                                                 </subviews>
                                                                             </stackView>
@@ -770,6 +812,9 @@
                                                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="17"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
+                                                                                        <userDefinedRuntimeAttributes>
+                                                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="Marketing"/>
+                                                                                        </userDefinedRuntimeAttributes>
                                                                                     </label>
                                                                                 </subviews>
                                                                             </stackView>
@@ -817,6 +862,9 @@
                                                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="17"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
+                                                                                        <userDefinedRuntimeAttributes>
+                                                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="design"/>
+                                                                                        </userDefinedRuntimeAttributes>
                                                                                     </label>
                                                                                 </subviews>
                                                                             </stackView>
@@ -870,6 +918,9 @@
                                                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="17"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
+                                                                                        <userDefinedRuntimeAttributes>
+                                                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="Applications"/>
+                                                                                        </userDefinedRuntimeAttributes>
                                                                                     </label>
                                                                                 </subviews>
                                                                             </stackView>
@@ -917,6 +968,9 @@
                                                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="17"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
+                                                                                        <userDefinedRuntimeAttributes>
+                                                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="Web Site"/>
+                                                                                        </userDefinedRuntimeAttributes>
                                                                                     </label>
                                                                                 </subviews>
                                                                             </stackView>
@@ -1000,6 +1054,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hly-l7-6fK"/>
                     </view>
+                    <connections>
+                        <outlet property="btnBack" destination="ZbE-jP-ZgA" id="umN-sf-TS3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="INR-XC-hjC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1034,6 +1091,9 @@
                                                                 <action selector="DismissView:" destination="xQJ-4I-gwT" id="ym8-HK-C82"/>
                                                             </connections>
                                                         </barButtonItem>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="Help"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </navigationItem>
                                                 </items>
                                             </navigationBar>
@@ -1114,11 +1174,14 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yr4-8d-DuO" customClass="AMCircleUIView" customModule="OnTimeApp" customModuleProvider="target">
                                                 <rect key="frame" x="79" y="9.5" width="243.5" height="45.5"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="اكتب رسالتك" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4c0-SE-esz">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="اكتب رسالتك" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4c0-SE-esz">
                                                         <rect key="frame" x="24" y="0.0" width="195" height="45.5"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="Type your message"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1230,6 +1293,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dsh-6E-07b"/>
                     </view>
+                    <connections>
+                        <outlet property="btnBack" destination="DcU-8D-ITt" id="app-Ke-8WU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zfw-NP-rcW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1421,6 +1487,9 @@
                                 <action selector="DismissView:" destination="NKV-LZ-JEL" id="1Fn-rS-NuU"/>
                             </connections>
                         </barButtonItem>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="who are we"/>
+                        </userDefinedRuntimeAttributes>
                     </navigationItem>
                     <connections>
                         <outlet property="btnSideMenue" destination="PvE-i0-tsd" id="2Rs-AC-I8b"/>
@@ -1477,10 +1546,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tPD-6D-CaR">
-                                <rect key="frame" x="0.0" y="20" width="340" height="1192"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JR3-Ej-6Zk">
-                                        <rect key="frame" x="0.0" y="0.0" width="340" height="119"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <textAttributes key="titleTextAttributes">
@@ -1498,10 +1567,10 @@
                                         </items>
                                     </navigationBar>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qSp-80-IN3">
-                                        <rect key="frame" x="0.0" y="119" width="340" height="298"/>
+                                        <rect key="frame" x="0.0" y="64.5" width="375" height="162"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="undraw_superhero_kguv (1)" translatesAutoresizingMaskIntoConstraints="NO" id="fFS-ds-lCa">
-                                                <rect key="frame" x="93.5" y="74.5" width="153" height="149"/>
+                                                <rect key="frame" x="103" y="40.5" width="169" height="81"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1513,19 +1582,19 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H90-36-dsp">
-                                        <rect key="frame" x="20" y="417" width="300" height="596"/>
+                                        <rect key="frame" x="20" y="226.5" width="335" height="323.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="K1v-Q1-9s7">
-                                                <rect key="frame" x="15" y="0.0" width="270" height="89.5"/>
+                                                <rect key="frame" x="17" y="0.0" width="301.5" height="48.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="3ez-n2-4J5">
-                                                        <rect key="frame" x="0.0" y="20" width="81" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="48.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ry9-eq-CJ0">
-                                                                <rect key="frame" x="0.0" y="0.0" width="33" height="50"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="37.5" height="48.5"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fNV-Ue-INp" customClass="AMCircleUIView" customModule="OnTimeApp" customModuleProvider="target">
-                                                                        <rect key="frame" x="-1" y="7.5" width="35" height="35"/>
+                                                                        <rect key="frame" x="1" y="6.5" width="35" height="35"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download-button-1" translatesAutoresizingMaskIntoConstraints="NO" id="a3q-Ki-Y44">
                                                                                 <rect key="frame" x="9" y="9" width="17.5" height="17.5"/>
@@ -1545,7 +1614,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKK-WG-pj3">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="33" height="50"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="37.5" height="48.5"/>
                                                                         <connections>
                                                                             <action selector="btnShare:" destination="wD4-fm-PbN" eventType="touchUpInside" id="sZa-3u-J5c"/>
                                                                         </connections>
@@ -1565,16 +1634,16 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gZz-Y3-lOA">
-                                                                <rect key="frame" x="48" y="0.0" width="33" height="50"/>
+                                                                <rect key="frame" x="52.5" y="0.0" width="37.5" height="48.5"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCY-9W-WTI">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="33" height="50"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="37.5" height="48.5"/>
                                                                     </button>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mA5-yK-xWd" customClass="AMCircleUIView" customModule="OnTimeApp" customModuleProvider="target">
-                                                                        <rect key="frame" x="-1" y="7.5" width="35" height="35"/>
+                                                                        <rect key="frame" x="1.5" y="6.5" width="35" height="35"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="share-option-1" translatesAutoresizingMaskIntoConstraints="NO" id="xUT-gD-oXG">
-                                                                                <rect key="frame" x="9" y="9" width="17.5" height="17.5"/>
+                                                                                <rect key="frame" x="8.5" y="9" width="17.5" height="17.5"/>
                                                                             </imageView>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPn-T8-SS5">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
@@ -1617,18 +1686,21 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vXi-2l-Nge">
-                                                        <rect key="frame" x="91" y="32.5" width="142" height="25"/>
+                                                        <rect key="frame" x="100" y="11.5" width="161" height="25"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رابط المشروع" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgX-cY-vnQ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="142" height="25"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رابط المشروع" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YgX-cY-vnQ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="161" height="25"/>
                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="17"/>
                                                                 <color key="textColor" red="0.33333333329999998" green="0.85882352939999995" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="Project link"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                         </subviews>
                                                     </stackView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 79-1" translatesAutoresizingMaskIntoConstraints="NO" id="fN7-B2-YUP">
-                                                        <rect key="frame" x="243" y="0.0" width="27" height="89.5"/>
+                                                        <rect key="frame" x="271" y="0.0" width="30.5" height="48.5"/>
                                                     </imageView>
                                                 </subviews>
                                                 <constraints>
@@ -1639,13 +1711,16 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y11-Pn-GfB">
-                                                <rect key="frame" x="0.0" y="89.5" width="300" height="59.5"/>
+                                                <rect key="frame" x="0.0" y="48.5" width="335" height="32.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مبروك عليك المشروع بالتوفيق والنجاح" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mS3-7S-Pk0">
-                                                        <rect key="frame" x="7.5" y="7.5" width="285" height="59.5"/>
+                                                        <rect key="frame" x="8.5" y="4" width="318" height="32.5"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="Congratulations on your project"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1657,10 +1732,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fKh-MS-D3e">
-                                                <rect key="frame" x="0.0" y="154" width="300" height="119.5"/>
+                                                <rect key="frame" x="0.0" y="86" width="335" height="64.5"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xe8-hQ-4fc">
-                                                        <rect key="frame" x="15" y="0.0" width="270" height="119.5"/>
+                                                        <rect key="frame" x="17" y="0.0" width="301.5" height="64.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                         <fontDescription key="fontDescription" name="DINNextLTW23-UltraLight" family="DIN Next LT W23" pointSize="12"/>
@@ -1676,10 +1751,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jcq-hg-nYs">
-                                                <rect key="frame" x="0.0" y="278.5" width="300" height="59.5"/>
+                                                <rect key="frame" x="0.0" y="155.5" width="335" height="32.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="TVe-wx-TOT" customClass="RatingControl" customModule="OnTimeApp" customModuleProvider="target">
-                                                        <rect key="frame" x="45" y="14.5" width="210" height="30"/>
+                                                        <rect key="frame" x="50.5" y="3.5" width="234.5" height="25.5"/>
                                                     </stackView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1691,17 +1766,20 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xqh-Ae-WmH">
-                                                <rect key="frame" x="0.0" y="338" width="300" height="179"/>
+                                                <rect key="frame" x="0.0" y="188" width="335" height="97"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JkF-aJ-Lrh" customClass="AMCircleUIView" customModule="OnTimeApp" customModuleProvider="target">
-                                                        <rect key="frame" x="30" y="18" width="240" height="143"/>
+                                                        <rect key="frame" x="33.5" y="9.5" width="268" height="77.5"/>
                                                         <subviews>
                                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="نسعد بتقييمك" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="EUW-dc-prL">
-                                                                <rect key="frame" x="13.5" y="20" width="213" height="103"/>
+                                                                <rect key="frame" x="17" y="12" width="234" height="54"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="textColor" red="0.33333333329999998" green="0.85882352939999995" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="15"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="We are happy with your's evaluation"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </textView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1727,19 +1805,22 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iOh-EN-vHE">
-                                                <rect key="frame" x="0.0" y="517" width="300" height="89"/>
+                                                <rect key="frame" x="0.0" y="285" width="335" height="48.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="AlO-uU-g1O">
-                                                        <rect key="frame" x="60" y="0.0" width="180" height="89"/>
+                                                        <rect key="frame" x="67" y="0.0" width="201" height="48.5"/>
                                                         <subviews>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="microphone-1" translatesAutoresizingMaskIntoConstraints="NO" id="FnU-Dw-ETC">
-                                                                <rect key="frame" x="0.0" y="31" width="54" height="27"/>
+                                                                <rect key="frame" x="0.0" y="10.5" width="60.5" height="27"/>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="أضف رسالة صوتية" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jb6-Cj-1vl">
-                                                                <rect key="frame" x="54" y="33.5" width="126" height="22.5"/>
+                                                                <rect key="frame" x="60.5" y="13" width="140.5" height="22.5"/>
                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="15"/>
                                                                 <color key="textColor" red="0.33333333329999998" green="0.85882352939999995" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="Add a voice message"/>
+                                                                </userDefinedRuntimeAttributes>
                                                             </label>
                                                         </subviews>
                                                         <constraints>
@@ -1747,7 +1828,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViI-pr-3pP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="300" height="89"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="48.5"/>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1792,19 +1873,22 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1PH-l6-JfC">
-                                        <rect key="frame" x="0.0" y="1013" width="340" height="179"/>
+                                        <rect key="frame" x="0.0" y="550" width="375" height="97"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shL-dW-rpG" userLabel="MotionGraphic" customClass="AMCircleUIView" customModule="OnTimeApp" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="54" width="136" height="71.5"/>
+                                                <rect key="frame" x="20" y="29" width="150" height="39"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="إرسال" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bU8-PN-fhQ">
-                                                        <rect key="frame" x="52.5" y="24.5" width="31.5" height="22.5"/>
+                                                        <rect key="frame" x="59.5" y="8" width="31.5" height="22.5"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="15"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVs-Hu-1zD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="136" height="71.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="39"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="localizableString" value="Send"/>
+                                                        </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="btnSend:" destination="wD4-fm-PbN" eventType="touchUpInside" id="lWG-Ol-XXH"/>
                                                         </connections>
@@ -1867,6 +1951,7 @@
                     </view>
                     <connections>
                         <outlet property="RatingControl" destination="TVe-wx-TOT" id="z1c-mg-rof"/>
+                        <outlet property="btnBack" destination="g6x-p4-rEy" id="Zva-RC-9Bu"/>
                         <outlet property="txtRate" destination="EUW-dc-prL" id="1Q1-Lb-9W0"/>
                     </connections>
                 </viewController>

@@ -10,6 +10,7 @@ import UIKit
 import SwiftyJSON
 class ResetPassword: UIViewController {
 
+    @IBOutlet weak var btnBack: UIButton!
     var http = HttpHelper()
     var Token = ""
     var Email = ""
@@ -18,6 +19,9 @@ class ResetPassword: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if  SharedData.SharedInstans.getLanguage() != "en" {
+            btnBack.setImage(UIImage(named: "arrow-in-circle-point-to-up-1") , for: .normal)
+                    }
         http.delegate = self
         
         print(Email)
@@ -94,6 +98,14 @@ extension ResetPassword : HttpHelperDelegate {
                 let sb = UIStoryboard(name: "Profile", bundle: nil)
                 let controller = sb.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
                 self.show(controller, sender: true)
+            }else if status.stringValue == "500"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+            }else if status.stringValue == "1"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+            }else if status.stringValue == "204"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("un authorized"))
+            }else if status.stringValue == "505"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("error"))
             }
             else {
                 Loader.showError(message: message.stringValue )

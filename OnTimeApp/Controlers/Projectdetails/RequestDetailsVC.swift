@@ -18,11 +18,15 @@ class RequestDetailsVC: UIViewController , UITableViewDelegate , UITableViewData
     @IBOutlet weak var lblPrice: UILabel!
     @IBOutlet weak var lblComponent: UILabel!
     @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var btnBack: UIBarButtonItem!
     @IBOutlet weak var imgRequest: UIImageView!
     @IBOutlet weak var tblComponents: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if  SharedData.SharedInstans.getLanguage() != "en" {
+            btnBack.image = UIImage(named: "arrow-in-circle-point-to-up-1")
+        }
         let attributes = [NSAttributedString.Key.font: UIFont(name: "DINNextLTW23-Regular", size: 20)!]
         UINavigationBar.appearance().titleTextAttributes = attributes
         tblComponents.dataSource = self
@@ -124,7 +128,15 @@ extension RequestDetailsVC : HttpHelperDelegate {
                 lblTotal.text = total.stringValue
                 tblComponents.reloadData()
                 
-            } else {
+            } else if status.stringValue == "500"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+            }else if status.stringValue == "1"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+            }else if status.stringValue == "204"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("un authorized"))
+            }else if status.stringValue == "210"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Request under preview"))
+            }else {
                 Loader.showError(message: message.stringValue )
             }
         }else if Tag == 2 {
@@ -134,8 +146,16 @@ extension RequestDetailsVC : HttpHelperDelegate {
             
             if status.stringValue == "0" {
                 
-                Loader.showSuccess(message: "تمت العمليه بنجاح")
+                Loader.showSuccess(message: AppCommon.sharedInstance.localization("success"))
                   self.dismiss(animated: true, completion: nil)
+            }else if status.stringValue == "500"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+            }else if status.stringValue == "1"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+            }else if status.stringValue == "204"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("un authorized"))
+            }else if status.stringValue == "210"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Request under preview"))
             } else {
                 Loader.showError(message: message.stringValue )
             }

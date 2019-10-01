@@ -25,6 +25,7 @@ class HelpMethodVC: UIViewController {
         if  SharedData.SharedInstans.getLanguage() != "en" {
             btnSideMenue.image = UIImage(named: "arrow-in-circle-point-to-up")
             bttnArrow.image = UIImage(named: "Group 1")
+            btnArrow.setImage(UIImage(named: "arrow-in-circle-point-to-up-1") , for: .normal)
         }
         
 //setupSideMenu()

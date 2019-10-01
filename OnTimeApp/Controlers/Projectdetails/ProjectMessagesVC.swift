@@ -21,6 +21,7 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
     var picker : MediaPickerController!
     var ContractStatus = ""
     var Selectedimg : UIImage!
+    @IBOutlet weak var btnBack: UIBarButtonItem!
     var FileType = "no_file" //no_file
     var messagesList = [MessageModelClass]()
     var recorder: AVAudioRecorder!
@@ -56,7 +57,9 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
     @IBOutlet weak var imgChat: customImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if  SharedData.SharedInstans.getLanguage() != "en" {
+            btnBack.image = UIImage(named: "arrow-in-circle-point-to-up-1")
+        }
         SocketManger.shared.handleNewMessage { (message) in
             print(message)
 //            if self.SelectedPlayer.user_id == message._from {
@@ -648,9 +651,19 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
                                     msg_text: Jsocket["msg_text"].stringValue,
                                     file_url: Jsocket["file_url"].stringValue,
                                     request_id: Jsocket["request_id"].stringValue)
-                            }
-                            SocketManger.shared.sendObject(data: self.Socket)
                             
+                            SocketManger.shared.sendObject(data: self.Socket)
+                            }else if status.stringValue == "500"{
+                                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+                            }else if status.stringValue == "1"{
+                                Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+                            }else if status.stringValue == "204"{
+                                Loader.showError(message: AppCommon.sharedInstance.localization("un authorized"))
+                            }else if status.stringValue == "505"{
+                                Loader.showError(message: AppCommon.sharedInstance.localization("error"))
+                            }else if status.stringValue == "506"{
+                                Loader.showError(message: AppCommon.sharedInstance.localization("Files too big"))
+                            }
                             
                         }
                     }
@@ -710,7 +723,17 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
                               self.tblChat.reloadData()
                                 self.txtimgChat.text = ""
                                 self.FileType = "no_file"
-                                                            }
+                            }else if status.stringValue == "500"{
+                                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+                            }else if status.stringValue == "1"{
+                                Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+                            }else if status.stringValue == "204"{
+                                Loader.showError(message: AppCommon.sharedInstance.localization("un authorized"))
+                            }else if status.stringValue == "505"{
+                                Loader.showError(message: AppCommon.sharedInstance.localization("error"))
+                            }else if status.stringValue == "506"{
+                                Loader.showError(message: AppCommon.sharedInstance.localization("Files too big"))
+                            }
                             
                         }
                     }
@@ -769,6 +792,16 @@ class ProjectMessagesVC: UIViewController  , UIDocumentMenuDelegate, UIDocumentP
                                 self.tblChat.reloadData()
                                 self.txtimgChat.text = ""
                                 self.FileType = "no_file"
+                            }else if status.stringValue == "500"{
+                                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+                            }else if status.stringValue == "1"{
+                                Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+                            }else if status.stringValue == "204"{
+                                Loader.showError(message: AppCommon.sharedInstance.localization("un authorized"))
+                            }else if status.stringValue == "505"{
+                                Loader.showError(message: AppCommon.sharedInstance.localization("error"))
+                            }else if status.stringValue == "506"{
+                                Loader.showError(message: AppCommon.sharedInstance.localization("Files too big"))
                             }
                             
                         }
@@ -1063,6 +1096,14 @@ extension ProjectMessagesVC : HttpHelperDelegate {
                     ISComefromNotification = false
                     popupContractor.isHidden = false
                 }
+            }else if status.stringValue == "500"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+            }else if status.stringValue == "1"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+            }else if status.stringValue == "204"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("un authorized"))
+            }else if status.stringValue == "211"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Request doesn't have contract OR already filled"))
             } else {
                 Loader.showError(message: message.stringValue )
             }
@@ -1136,6 +1177,14 @@ extension ProjectMessagesVC : HttpHelperDelegate {
                 self.show(cont, sender: true)
                 
                 
+            }else if status.stringValue == "500"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+            }else if status.stringValue == "1"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+            }else if status.stringValue == "204"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("un authorized"))
+            }else if status.stringValue == "505"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("error"))
             } else {
                 Loader.showError(message: message.stringValue )
             }
@@ -1154,7 +1203,17 @@ extension ProjectMessagesVC : HttpHelperDelegate {
                 cont.RequestID = RequestID
                 self.present(cont, animated: true, completion: nil)
                 
-            } else {
+            } else if status.stringValue == "500"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+            }else if status.stringValue == "1"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+            }else if status.stringValue == "204"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("un authorized"))
+            }else if status.stringValue == "505"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("error"))
+            }else if status.stringValue == "219"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Not finished yet"))
+            }else {
                 Loader.showError(message: message.stringValue )
             }
         }else if Tag == 5 {
@@ -1203,6 +1262,12 @@ extension ProjectMessagesVC : HttpHelperDelegate {
                 ContractStatus = "Unverified"
                 ChatView.isHidden = true
                 ContractView.isHidden = false
+            }else if status.stringValue == "500"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+            }else if status.stringValue == "1"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+            }else if status.stringValue == "204"{
+                Loader.showError(message: AppCommon.sharedInstance.localization("un authorized"))
             }else {
                 Loader.showError(message: message.stringValue )
             }

@@ -287,6 +287,18 @@ extension SignUpVC: HttpHelperDelegate {
                                     cont.isRegister = true
                                     self.present(cont, animated: true, completion: nil)
                     
+                }else if status.stringValue == "500"{
+                    Loader.showError(message: AppCommon.sharedInstance.localization("Wrong request type"))
+                }else if status.stringValue == "1"{
+                    Loader.showError(message: AppCommon.sharedInstance.localization("some missing data"))
+                }else if status.stringValue == "201"{
+                    Loader.showError(message: AppCommon.sharedInstance.localization("Email duplicate"))
+                }else if status.stringValue == "202"{
+                    Loader.showError(message: AppCommon.sharedInstance.localization("Phone duplicate"))
+                }else if status.stringValue == "203"{
+                    Loader.showError(message: AppCommon.sharedInstance.localization("Some fields are empty after validation"))
+                }else if status.stringValue == "400"{
+                    Loader.showError(message: AppCommon.sharedInstance.localization("Insertion error"))
                 }else {
                     //let message = json["message"]
                     Loader.showError(message: message.stringValue )
